@@ -1,0 +1,34 @@
+name: Analyzer
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Set up Dart and Flutter
+      - name: Set up Dart and Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.2'
+
+      - name: Disable Flutter telemetry
+        run: echo "FLUTTER_TELEMETRY_DISABLED=true" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Uncomment this step to verify the use of 'dart format' on each commit.
+      # - name: Verify formatting
+      #   run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze project source
+        run: dart analyze --fatal-infos

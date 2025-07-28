@@ -1,0 +1,41 @@
+name: shopify_flutter
+description: A Flutter package to seamlessly connect your Shopify store with your app.
+version: 2.6.0
+publish_to: 'none'
+
+tags:
+  - shopify
+  - shopify_flutter
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=1.17.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  graphql_flutter:
+    path: '../graphql_flutter'
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+  json_serializable: ^6.9.5
+  shared_preferences: ^2.5.3
+  intl: '>=0.19.0 <0.21.2'
+  url_launcher: ^6.1.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  # dart run build_runner watch --delete-conflicting-outputs
+  build_runner: ^2.4.14
+  freezed: ^3.0.6
+  analyzer: ^7.6.0
