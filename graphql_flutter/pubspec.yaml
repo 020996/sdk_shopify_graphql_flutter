@@ -7,7 +7,7 @@ publish_to: 'none'
 
 dependencies:
   graphql:
-    path: '../graphql'
+    path: graphql
   gql_exec: ^1.0.0
   flutter:
     sdk: flutter

@@ -23,7 +23,7 @@ dependencies:
   flutter:
     sdk: flutter
   graphql_flutter:
-    path: '../graphql_flutter'
+    path: graphql_flutter
   freezed_annotation: ^3.1.0
   json_annotation: ^4.9.0
   json_serializable: ^6.9.5

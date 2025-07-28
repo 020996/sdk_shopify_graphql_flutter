@@ -59,16 +59,6 @@
       ]
     },
     {
-      "name": "http",
-      "version": "1.4.0",
-      "dependencies": [
-        "async",
-        "http_parser",
-        "meta",
-        "web"
-      ]
-    },
-    {
       "name": "flutter_test",
       "version": "0.0.0",
       "dependencies": [
@@ -467,21 +457,6 @@
       ]
     },
     {
-      "name": "web",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "http_parser",
-      "version": "4.1.2",
-      "dependencies": [
-        "collection",
-        "source_span",
-        "string_scanner",
-        "typed_data"
-      ]
-    },
-    {
       "name": "vm_service",
       "version": "15.0.0",
       "dependencies": []
@@ -632,6 +607,11 @@
       ]
     },
     {
+      "name": "web",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
       "name": "connectivity_plus_platform_interface",
       "version": "2.0.1",
       "dependencies": [
@@ -737,31 +717,20 @@
       ]
     },
     {
-      "name": "gql_dedupe_link",
-      "version": "2.0.4-alpha+1715521079596",
-      "dependencies": [
-        "async",
-        "gql_exec",
-        "gql_link",
-        "meta"
-      ]
-    },
-    {
-      "name": "gql_error_link",
-      "version": "1.0.0+1",
-      "dependencies": [
-        "async",
-        "gql_exec",
-        "gql_link",
-        "meta"
-      ]
-    },
-    {
       "name": "gql_transform_link",
       "version": "1.0.0",
       "dependencies": [
         "gql_exec",
         "gql_link"
+      ]
+    },
+    {
+      "name": "gql_link",
+      "version": "1.0.1-alpha+1730759315378",
+      "dependencies": [
+        "gql",
+        "gql_exec",
+        "meta"
       ]
     },
     {
@@ -777,11 +746,22 @@
       ]
     },
     {
-      "name": "gql_link",
-      "version": "1.0.1-alpha+1730759315378",
+      "name": "gql_error_link",
+      "version": "1.0.0+1",
       "dependencies": [
-        "gql",
+        "async",
         "gql_exec",
+        "gql_link",
+        "meta"
+      ]
+    },
+    {
+      "name": "gql_dedupe_link",
+      "version": "2.0.4-alpha+1715521079596",
+      "dependencies": [
+        "async",
+        "gql_exec",
+        "gql_link",
         "meta"
       ]
     },
@@ -841,6 +821,16 @@
       "name": "mime",
       "version": "2.0.0",
       "dependencies": []
+    },
+    {
+      "name": "http_parser",
+      "version": "4.1.2",
+      "dependencies": [
+        "collection",
+        "source_span",
+        "string_scanner",
+        "typed_data"
+      ]
     },
     {
       "name": "convert",
@@ -1106,6 +1096,15 @@
       "version": "6.1.0",
       "dependencies": [
         "collection",
+        "meta"
+      ]
+    },
+    {
+      "name": "http",
+      "version": "0.13.6",
+      "dependencies": [
+        "async",
+        "http_parser",
         "meta"
       ]
     }
