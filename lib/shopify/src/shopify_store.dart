@@ -506,7 +506,7 @@ class ShopifyStore with ShopifyError {
   /// Returns the first [limit] Products after the given [startCursor].
   ///
   /// [limit] has to be in the range of 0 and 250.
-  Future<List<Product>?> searchProducts(
+  Future<Products?> searchProducts(
     String query, {
     int limit = 15,
     String? startCursor,
@@ -534,7 +534,7 @@ class ShopifyStore with ShopifyError {
     );
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
-    return Products.fromGraphJson(result.data?['search']).productList;
+    return Products.fromGraphJson(result.data?['search']);
   }
 
   /// Returns a List of [Product].
@@ -580,7 +580,7 @@ class ShopifyStore with ShopifyError {
   /// Returns a List of [Product].
   ///
   /// Gets [limit] amount of [Product] from the [query] search, sorted by [sortKey].
-  Future<List<Product>?> getXProductsOnQueryAfterCursor(
+  Future<Products?> getXProductsOnQueryAfterCursor(
     String query,
     int limit,
     String? cursor, {
@@ -606,7 +606,6 @@ class ShopifyStore with ShopifyError {
     final QueryResult result =
         await ShopifyConfig.graphQLClient!.query(_options);
     checkForError(result);
-    return Products.fromGraphJson((result.data ?? const {})['products'])
-        .productList;
+    return Products.fromGraphJson((result.data ?? const {})['products']);
   }
 }
