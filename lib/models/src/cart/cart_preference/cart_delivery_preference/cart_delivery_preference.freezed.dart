@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,38 +10,55 @@ part of 'cart_delivery_preference.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CartDeliveryPreference _$CartDeliveryPreferenceFromJson(
-    Map<String, dynamic> json) {
-  return _CartDeliveryPreference.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CartDeliveryPreference {
-  String? get deliveryMethod => throw _privateConstructorUsedError;
-  List<String?>? get pickupHandle => throw _privateConstructorUsedError;
-  CartDeliveryCoordinatesPreference? get coordinates =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this CartDeliveryPreference to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get deliveryMethod;
+  List<String?>? get pickupHandle;
+  CartDeliveryCoordinatesPreference? get coordinates;
 
   /// Create a copy of CartDeliveryPreference
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CartDeliveryPreferenceCopyWith<CartDeliveryPreference> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$CartDeliveryPreferenceCopyWithImpl<CartDeliveryPreference>(
+          this as CartDeliveryPreference, _$identity);
+
+  /// Serializes this CartDeliveryPreference to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CartDeliveryPreference &&
+            (identical(other.deliveryMethod, deliveryMethod) ||
+                other.deliveryMethod == deliveryMethod) &&
+            const DeepCollectionEquality()
+                .equals(other.pickupHandle, pickupHandle) &&
+            (identical(other.coordinates, coordinates) ||
+                other.coordinates == coordinates));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, deliveryMethod,
+      const DeepCollectionEquality().hash(pickupHandle), coordinates);
+
+  @override
+  String toString() {
+    return 'CartDeliveryPreference(deliveryMethod: $deliveryMethod, pickupHandle: $pickupHandle, coordinates: $coordinates)';
+  }
 }
 
 /// @nodoc
-abstract class $CartDeliveryPreferenceCopyWith<$Res> {
+abstract mixin class $CartDeliveryPreferenceCopyWith<$Res> {
   factory $CartDeliveryPreferenceCopyWith(CartDeliveryPreference value,
-          $Res Function(CartDeliveryPreference) then) =
-      _$CartDeliveryPreferenceCopyWithImpl<$Res, CartDeliveryPreference>;
+          $Res Function(CartDeliveryPreference) _then) =
+      _$CartDeliveryPreferenceCopyWithImpl;
   @useResult
   $Res call(
       {String? deliveryMethod,
@@ -51,15 +69,12 @@ abstract class $CartDeliveryPreferenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CartDeliveryPreferenceCopyWithImpl<$Res,
-        $Val extends CartDeliveryPreference>
+class _$CartDeliveryPreferenceCopyWithImpl<$Res>
     implements $CartDeliveryPreferenceCopyWith<$Res> {
-  _$CartDeliveryPreferenceCopyWithImpl(this._value, this._then);
+  _$CartDeliveryPreferenceCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CartDeliveryPreference _self;
+  final $Res Function(CartDeliveryPreference) _then;
 
   /// Create a copy of CartDeliveryPreference
   /// with the given fields replaced by the non-null parameter values.
@@ -70,20 +85,20 @@ class _$CartDeliveryPreferenceCopyWithImpl<$Res,
     Object? pickupHandle = freezed,
     Object? coordinates = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       deliveryMethod: freezed == deliveryMethod
-          ? _value.deliveryMethod
+          ? _self.deliveryMethod
           : deliveryMethod // ignore: cast_nullable_to_non_nullable
               as String?,
       pickupHandle: freezed == pickupHandle
-          ? _value.pickupHandle
+          ? _self.pickupHandle
           : pickupHandle // ignore: cast_nullable_to_non_nullable
               as List<String?>?,
       coordinates: freezed == coordinates
-          ? _value.coordinates
+          ? _self.coordinates
           : coordinates // ignore: cast_nullable_to_non_nullable
               as CartDeliveryCoordinatesPreference?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of CartDeliveryPreference
@@ -91,83 +106,28 @@ class _$CartDeliveryPreferenceCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $CartDeliveryCoordinatesPreferenceCopyWith<$Res>? get coordinates {
-    if (_value.coordinates == null) {
+    if (_self.coordinates == null) {
       return null;
     }
 
-    return $CartDeliveryCoordinatesPreferenceCopyWith<$Res>(_value.coordinates!,
+    return $CartDeliveryCoordinatesPreferenceCopyWith<$Res>(_self.coordinates!,
         (value) {
-      return _then(_value.copyWith(coordinates: value) as $Val);
+      return _then(_self.copyWith(coordinates: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$CartDeliveryPreferenceImplCopyWith<$Res>
-    implements $CartDeliveryPreferenceCopyWith<$Res> {
-  factory _$$CartDeliveryPreferenceImplCopyWith(
-          _$CartDeliveryPreferenceImpl value,
-          $Res Function(_$CartDeliveryPreferenceImpl) then) =
-      __$$CartDeliveryPreferenceImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? deliveryMethod,
-      List<String?>? pickupHandle,
-      CartDeliveryCoordinatesPreference? coordinates});
-
-  @override
-  $CartDeliveryCoordinatesPreferenceCopyWith<$Res>? get coordinates;
-}
-
-/// @nodoc
-class __$$CartDeliveryPreferenceImplCopyWithImpl<$Res>
-    extends _$CartDeliveryPreferenceCopyWithImpl<$Res,
-        _$CartDeliveryPreferenceImpl>
-    implements _$$CartDeliveryPreferenceImplCopyWith<$Res> {
-  __$$CartDeliveryPreferenceImplCopyWithImpl(
-      _$CartDeliveryPreferenceImpl _value,
-      $Res Function(_$CartDeliveryPreferenceImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CartDeliveryPreference
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? deliveryMethod = freezed,
-    Object? pickupHandle = freezed,
-    Object? coordinates = freezed,
-  }) {
-    return _then(_$CartDeliveryPreferenceImpl(
-      deliveryMethod: freezed == deliveryMethod
-          ? _value.deliveryMethod
-          : deliveryMethod // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pickupHandle: freezed == pickupHandle
-          ? _value._pickupHandle
-          : pickupHandle // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      coordinates: freezed == coordinates
-          ? _value.coordinates
-          : coordinates // ignore: cast_nullable_to_non_nullable
-              as CartDeliveryCoordinatesPreference?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$CartDeliveryPreferenceImpl extends _CartDeliveryPreference {
-  _$CartDeliveryPreferenceImpl(
+class _CartDeliveryPreference extends CartDeliveryPreference {
+  _CartDeliveryPreference(
       {required this.deliveryMethod,
       required final List<String?>? pickupHandle,
       this.coordinates})
       : _pickupHandle = pickupHandle,
         super._();
-
-  factory _$CartDeliveryPreferenceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CartDeliveryPreferenceImplFromJson(json);
+  factory _CartDeliveryPreference.fromJson(Map<String, dynamic> json) =>
+      _$CartDeliveryPreferenceFromJson(json);
 
   @override
   final String? deliveryMethod;
@@ -184,16 +144,27 @@ class _$CartDeliveryPreferenceImpl extends _CartDeliveryPreference {
   @override
   final CartDeliveryCoordinatesPreference? coordinates;
 
+  /// Create a copy of CartDeliveryPreference
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CartDeliveryPreference(deliveryMethod: $deliveryMethod, pickupHandle: $pickupHandle, coordinates: $coordinates)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CartDeliveryPreferenceCopyWith<_CartDeliveryPreference> get copyWith =>
+      __$CartDeliveryPreferenceCopyWithImpl<_CartDeliveryPreference>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CartDeliveryPreferenceToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CartDeliveryPreferenceImpl &&
+            other is _CartDeliveryPreference &&
             (identical(other.deliveryMethod, deliveryMethod) ||
                 other.deliveryMethod == deliveryMethod) &&
             const DeepCollectionEquality()
@@ -207,45 +178,76 @@ class _$CartDeliveryPreferenceImpl extends _CartDeliveryPreference {
   int get hashCode => Object.hash(runtimeType, deliveryMethod,
       const DeepCollectionEquality().hash(_pickupHandle), coordinates);
 
-  /// Create a copy of CartDeliveryPreference
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CartDeliveryPreferenceImplCopyWith<_$CartDeliveryPreferenceImpl>
-      get copyWith => __$$CartDeliveryPreferenceImplCopyWithImpl<
-          _$CartDeliveryPreferenceImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CartDeliveryPreferenceImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CartDeliveryPreference(deliveryMethod: $deliveryMethod, pickupHandle: $pickupHandle, coordinates: $coordinates)';
   }
 }
 
-abstract class _CartDeliveryPreference extends CartDeliveryPreference {
-  factory _CartDeliveryPreference(
-          {required final String? deliveryMethod,
-          required final List<String?>? pickupHandle,
-          final CartDeliveryCoordinatesPreference? coordinates}) =
-      _$CartDeliveryPreferenceImpl;
-  _CartDeliveryPreference._() : super._();
+/// @nodoc
+abstract mixin class _$CartDeliveryPreferenceCopyWith<$Res>
+    implements $CartDeliveryPreferenceCopyWith<$Res> {
+  factory _$CartDeliveryPreferenceCopyWith(_CartDeliveryPreference value,
+          $Res Function(_CartDeliveryPreference) _then) =
+      __$CartDeliveryPreferenceCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? deliveryMethod,
+      List<String?>? pickupHandle,
+      CartDeliveryCoordinatesPreference? coordinates});
 
-  factory _CartDeliveryPreference.fromJson(Map<String, dynamic> json) =
-      _$CartDeliveryPreferenceImpl.fromJson;
+  @override
+  $CartDeliveryCoordinatesPreferenceCopyWith<$Res>? get coordinates;
+}
 
-  @override
-  String? get deliveryMethod;
-  @override
-  List<String?>? get pickupHandle;
-  @override
-  CartDeliveryCoordinatesPreference? get coordinates;
+/// @nodoc
+class __$CartDeliveryPreferenceCopyWithImpl<$Res>
+    implements _$CartDeliveryPreferenceCopyWith<$Res> {
+  __$CartDeliveryPreferenceCopyWithImpl(this._self, this._then);
+
+  final _CartDeliveryPreference _self;
+  final $Res Function(_CartDeliveryPreference) _then;
 
   /// Create a copy of CartDeliveryPreference
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CartDeliveryPreferenceImplCopyWith<_$CartDeliveryPreferenceImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? deliveryMethod = freezed,
+    Object? pickupHandle = freezed,
+    Object? coordinates = freezed,
+  }) {
+    return _then(_CartDeliveryPreference(
+      deliveryMethod: freezed == deliveryMethod
+          ? _self.deliveryMethod
+          : deliveryMethod // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pickupHandle: freezed == pickupHandle
+          ? _self._pickupHandle
+          : pickupHandle // ignore: cast_nullable_to_non_nullable
+              as List<String?>?,
+      coordinates: freezed == coordinates
+          ? _self.coordinates
+          : coordinates // ignore: cast_nullable_to_non_nullable
+              as CartDeliveryCoordinatesPreference?,
+    ));
+  }
+
+  /// Create a copy of CartDeliveryPreference
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CartDeliveryCoordinatesPreferenceCopyWith<$Res>? get coordinates {
+    if (_self.coordinates == null) {
+      return null;
+    }
+
+    return $CartDeliveryCoordinatesPreferenceCopyWith<$Res>(_self.coordinates!,
+        (value) {
+      return _then(_self.copyWith(coordinates: value));
+    });
+  }
 }
+
+// dart format on

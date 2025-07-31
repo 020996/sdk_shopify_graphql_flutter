@@ -6,7 +6,7 @@ part 'shipping_address.g.dart';
 @freezed
 
 /// The shipping address
-class ShippingAddress with _$ShippingAddress {
+abstract class ShippingAddress with _$ShippingAddress {
   /// the shipping address constructor
   factory ShippingAddress({
     required String name,

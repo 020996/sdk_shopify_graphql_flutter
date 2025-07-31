@@ -6,7 +6,7 @@ part of 'cart.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CartImpl _$$CartImplFromJson(Map<String, dynamic> json) => _$CartImpl(
+_Cart _$CartFromJson(Map<String, dynamic> json) => _Cart(
       id: json['id'] as String,
       checkoutUrl: json['checkoutUrl'] as String?,
       cost: json['cost'] == null
@@ -37,8 +37,7 @@ _$CartImpl _$$CartImplFromJson(Map<String, dynamic> json) => _$CartImpl(
       lines: JsonHelper.lines(json['lines']),
     );
 
-Map<String, dynamic> _$$CartImplToJson(_$CartImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$CartToJson(_Cart instance) => <String, dynamic>{
       'id': instance.id,
       'checkoutUrl': instance.checkoutUrl,
       'cost': instance.cost?.toJson(),

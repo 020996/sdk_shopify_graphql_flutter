@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,182 +10,35 @@ part of 'product_media.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 ProductMedia _$ProductMediaFromJson(Map<String, dynamic> json) {
   return _ProductVariant.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ProductMedia {
-  String get id => throw _privateConstructorUsedError;
-  String get mediaContentType => throw _privateConstructorUsedError;
-  ShopifyImage? get image => throw _privateConstructorUsedError;
-  String? get alt => throw _privateConstructorUsedError;
-
-  /// Serializes this ProductMedia to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get mediaContentType;
+  ShopifyImage? get image;
+  String? get alt;
 
   /// Create a copy of ProductMedia
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ProductMediaCopyWith<ProductMedia> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ProductMediaCopyWithImpl<ProductMedia>(
+          this as ProductMedia, _$identity);
 
-/// @nodoc
-abstract class $ProductMediaCopyWith<$Res> {
-  factory $ProductMediaCopyWith(
-          ProductMedia value, $Res Function(ProductMedia) then) =
-      _$ProductMediaCopyWithImpl<$Res, ProductMedia>;
-  @useResult
-  $Res call(
-      {String id, String mediaContentType, ShopifyImage? image, String? alt});
-
-  $ShopifyImageCopyWith<$Res>? get image;
-}
-
-/// @nodoc
-class _$ProductMediaCopyWithImpl<$Res, $Val extends ProductMedia>
-    implements $ProductMediaCopyWith<$Res> {
-  _$ProductMediaCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ProductMedia
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? mediaContentType = null,
-    Object? image = freezed,
-    Object? alt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      mediaContentType: null == mediaContentType
-          ? _value.mediaContentType
-          : mediaContentType // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as ShopifyImage?,
-      alt: freezed == alt
-          ? _value.alt
-          : alt // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-
-  /// Create a copy of ProductMedia
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ShopifyImageCopyWith<$Res>? get image {
-    if (_value.image == null) {
-      return null;
-    }
-
-    return $ShopifyImageCopyWith<$Res>(_value.image!, (value) {
-      return _then(_value.copyWith(image: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ProductVariantImplCopyWith<$Res>
-    implements $ProductMediaCopyWith<$Res> {
-  factory _$$ProductVariantImplCopyWith(_$ProductVariantImpl value,
-          $Res Function(_$ProductVariantImpl) then) =
-      __$$ProductVariantImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id, String mediaContentType, ShopifyImage? image, String? alt});
-
-  @override
-  $ShopifyImageCopyWith<$Res>? get image;
-}
-
-/// @nodoc
-class __$$ProductVariantImplCopyWithImpl<$Res>
-    extends _$ProductMediaCopyWithImpl<$Res, _$ProductVariantImpl>
-    implements _$$ProductVariantImplCopyWith<$Res> {
-  __$$ProductVariantImplCopyWithImpl(
-      _$ProductVariantImpl _value, $Res Function(_$ProductVariantImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProductMedia
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? mediaContentType = null,
-    Object? image = freezed,
-    Object? alt = freezed,
-  }) {
-    return _then(_$ProductVariantImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      mediaContentType: null == mediaContentType
-          ? _value.mediaContentType
-          : mediaContentType // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as ShopifyImage?,
-      alt: freezed == alt
-          ? _value.alt
-          : alt // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ProductVariantImpl extends _ProductVariant {
-  _$ProductVariantImpl(
-      {required this.id, required this.mediaContentType, this.image, this.alt})
-      : super._();
-
-  factory _$ProductVariantImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductVariantImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String mediaContentType;
-  @override
-  final ShopifyImage? image;
-  @override
-  final String? alt;
-
-  @override
-  String toString() {
-    return 'ProductMedia(id: $id, mediaContentType: $mediaContentType, image: $image, alt: $alt)';
-  }
+  /// Serializes this ProductMedia to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProductVariantImpl &&
+            other is ProductMedia &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.mediaContentType, mediaContentType) ||
                 other.mediaContentType == mediaContentType) &&
@@ -197,47 +51,198 @@ class _$ProductVariantImpl extends _ProductVariant {
   int get hashCode =>
       Object.hash(runtimeType, id, mediaContentType, image, alt);
 
-  /// Create a copy of ProductMedia
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ProductVariantImplCopyWith<_$ProductVariantImpl> get copyWith =>
-      __$$ProductVariantImplCopyWithImpl<_$ProductVariantImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProductVariantImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ProductMedia(id: $id, mediaContentType: $mediaContentType, image: $image, alt: $alt)';
   }
 }
 
-abstract class _ProductVariant extends ProductMedia {
-  factory _ProductVariant(
-      {required final String id,
-      required final String mediaContentType,
-      final ShopifyImage? image,
-      final String? alt}) = _$ProductVariantImpl;
-  _ProductVariant._() : super._();
+/// @nodoc
+abstract mixin class $ProductMediaCopyWith<$Res> {
+  factory $ProductMediaCopyWith(
+          ProductMedia value, $Res Function(ProductMedia) _then) =
+      _$ProductMediaCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id, String mediaContentType, ShopifyImage? image, String? alt});
 
-  factory _ProductVariant.fromJson(Map<String, dynamic> json) =
-      _$ProductVariantImpl.fromJson;
+  $ShopifyImageCopyWith<$Res>? get image;
+}
+
+/// @nodoc
+class _$ProductMediaCopyWithImpl<$Res> implements $ProductMediaCopyWith<$Res> {
+  _$ProductMediaCopyWithImpl(this._self, this._then);
+
+  final ProductMedia _self;
+  final $Res Function(ProductMedia) _then;
+
+  /// Create a copy of ProductMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? mediaContentType = null,
+    Object? image = freezed,
+    Object? alt = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      mediaContentType: null == mediaContentType
+          ? _self.mediaContentType
+          : mediaContentType // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: freezed == image
+          ? _self.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as ShopifyImage?,
+      alt: freezed == alt
+          ? _self.alt
+          : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of ProductMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ShopifyImageCopyWith<$Res>? get image {
+    if (_self.image == null) {
+      return null;
+    }
+
+    return $ShopifyImageCopyWith<$Res>(_self.image!, (value) {
+      return _then(_self.copyWith(image: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ProductVariant extends ProductMedia {
+  _ProductVariant(
+      {required this.id, required this.mediaContentType, this.image, this.alt})
+      : super._();
+  factory _ProductVariant.fromJson(Map<String, dynamic> json) =>
+      _$ProductVariantFromJson(json);
 
   @override
-  String get id;
+  final String id;
   @override
-  String get mediaContentType;
+  final String mediaContentType;
   @override
-  ShopifyImage? get image;
+  final ShopifyImage? image;
   @override
-  String? get alt;
+  final String? alt;
 
   /// Create a copy of ProductMedia
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProductVariantImplCopyWith<_$ProductVariantImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ProductVariantCopyWith<_ProductVariant> get copyWith =>
+      __$ProductVariantCopyWithImpl<_ProductVariant>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ProductVariantToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ProductVariant &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.mediaContentType, mediaContentType) ||
+                other.mediaContentType == mediaContentType) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.alt, alt) || other.alt == alt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, mediaContentType, image, alt);
+
+  @override
+  String toString() {
+    return 'ProductMedia(id: $id, mediaContentType: $mediaContentType, image: $image, alt: $alt)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ProductVariantCopyWith<$Res>
+    implements $ProductMediaCopyWith<$Res> {
+  factory _$ProductVariantCopyWith(
+          _ProductVariant value, $Res Function(_ProductVariant) _then) =
+      __$ProductVariantCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id, String mediaContentType, ShopifyImage? image, String? alt});
+
+  @override
+  $ShopifyImageCopyWith<$Res>? get image;
+}
+
+/// @nodoc
+class __$ProductVariantCopyWithImpl<$Res>
+    implements _$ProductVariantCopyWith<$Res> {
+  __$ProductVariantCopyWithImpl(this._self, this._then);
+
+  final _ProductVariant _self;
+  final $Res Function(_ProductVariant) _then;
+
+  /// Create a copy of ProductMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? mediaContentType = null,
+    Object? image = freezed,
+    Object? alt = freezed,
+  }) {
+    return _then(_ProductVariant(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      mediaContentType: null == mediaContentType
+          ? _self.mediaContentType
+          : mediaContentType // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: freezed == image
+          ? _self.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as ShopifyImage?,
+      alt: freezed == alt
+          ? _self.alt
+          : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of ProductMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ShopifyImageCopyWith<$Res>? get image {
+    if (_self.image == null) {
+      return null;
+    }
+
+    return $ShopifyImageCopyWith<$Res>(_self.image!, (value) {
+      return _then(_self.copyWith(image: value));
+    });
+  }
+}
+
+// dart format on

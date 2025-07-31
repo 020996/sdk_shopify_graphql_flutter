@@ -6,7 +6,7 @@ part 'metafield.g.dart';
 @freezed
 
 /// The Metafield class
-class Metafield with _$Metafield {
+abstract class Metafield with _$Metafield {
   const Metafield._();
 
   /// The Metafield constructor

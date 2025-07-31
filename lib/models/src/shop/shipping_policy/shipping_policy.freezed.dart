@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,108 +10,67 @@ part of 'shipping_policy.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ShippingPolicy _$ShippingPolicyFromJson(Map<String, dynamic> json) {
-  return _ShippingPolicy.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ShippingPolicy {
-  String? get body => throw _privateConstructorUsedError;
-  String? get handle => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
-
-  /// Serializes this ShippingPolicy to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get body;
+  String? get handle;
+  String? get id;
+  String? get title;
+  String? get url;
 
   /// Create a copy of ShippingPolicy
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ShippingPolicyCopyWith<ShippingPolicy> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ShippingPolicyCopyWith<$Res> {
-  factory $ShippingPolicyCopyWith(
-          ShippingPolicy value, $Res Function(ShippingPolicy) then) =
-      _$ShippingPolicyCopyWithImpl<$Res, ShippingPolicy>;
-  @useResult
-  $Res call(
-      {String? body, String? handle, String? id, String? title, String? url});
-}
-
-/// @nodoc
-class _$ShippingPolicyCopyWithImpl<$Res, $Val extends ShippingPolicy>
-    implements $ShippingPolicyCopyWith<$Res> {
-  _$ShippingPolicyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ShippingPolicy
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ShippingPolicyCopyWith<ShippingPolicy> get copyWith =>
+      _$ShippingPolicyCopyWithImpl<ShippingPolicy>(
+          this as ShippingPolicy, _$identity);
+
+  /// Serializes this ShippingPolicy to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? body = freezed,
-    Object? handle = freezed,
-    Object? id = freezed,
-    Object? title = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_value.copyWith(
-      body: freezed == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String?,
-      handle: freezed == handle
-          ? _value.handle
-          : handle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ShippingPolicy &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.handle, handle) || other.handle == handle) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, body, handle, id, title, url);
+
+  @override
+  String toString() {
+    return 'ShippingPolicy(body: $body, handle: $handle, id: $id, title: $title, url: $url)';
   }
 }
 
 /// @nodoc
-abstract class _$$ShippingPolicyImplCopyWith<$Res>
-    implements $ShippingPolicyCopyWith<$Res> {
-  factory _$$ShippingPolicyImplCopyWith(_$ShippingPolicyImpl value,
-          $Res Function(_$ShippingPolicyImpl) then) =
-      __$$ShippingPolicyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ShippingPolicyCopyWith<$Res> {
+  factory $ShippingPolicyCopyWith(
+          ShippingPolicy value, $Res Function(ShippingPolicy) _then) =
+      _$ShippingPolicyCopyWithImpl;
   @useResult
   $Res call(
       {String? body, String? handle, String? id, String? title, String? url});
 }
 
 /// @nodoc
-class __$$ShippingPolicyImplCopyWithImpl<$Res>
-    extends _$ShippingPolicyCopyWithImpl<$Res, _$ShippingPolicyImpl>
-    implements _$$ShippingPolicyImplCopyWith<$Res> {
-  __$$ShippingPolicyImplCopyWithImpl(
-      _$ShippingPolicyImpl _value, $Res Function(_$ShippingPolicyImpl) _then)
-      : super(_value, _then);
+class _$ShippingPolicyCopyWithImpl<$Res>
+    implements $ShippingPolicyCopyWith<$Res> {
+  _$ShippingPolicyCopyWithImpl(this._self, this._then);
+
+  final ShippingPolicy _self;
+  final $Res Function(ShippingPolicy) _then;
 
   /// Create a copy of ShippingPolicy
   /// with the given fields replaced by the non-null parameter values.
@@ -123,25 +83,25 @@ class __$$ShippingPolicyImplCopyWithImpl<$Res>
     Object? title = freezed,
     Object? url = freezed,
   }) {
-    return _then(_$ShippingPolicyImpl(
+    return _then(_self.copyWith(
       body: freezed == body
-          ? _value.body
+          ? _self.body
           : body // ignore: cast_nullable_to_non_nullable
               as String?,
       handle: freezed == handle
-          ? _value.handle
+          ? _self.handle
           : handle // ignore: cast_nullable_to_non_nullable
               as String?,
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       title: freezed == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
       url: freezed == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -150,11 +110,10 @@ class __$$ShippingPolicyImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ShippingPolicyImpl implements _ShippingPolicy {
-  _$ShippingPolicyImpl({this.body, this.handle, this.id, this.title, this.url});
-
-  factory _$ShippingPolicyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ShippingPolicyImplFromJson(json);
+class _ShippingPolicy implements ShippingPolicy {
+  _ShippingPolicy({this.body, this.handle, this.id, this.title, this.url});
+  factory _ShippingPolicy.fromJson(Map<String, dynamic> json) =>
+      _$ShippingPolicyFromJson(json);
 
   @override
   final String? body;
@@ -167,16 +126,26 @@ class _$ShippingPolicyImpl implements _ShippingPolicy {
   @override
   final String? url;
 
+  /// Create a copy of ShippingPolicy
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ShippingPolicy(body: $body, handle: $handle, id: $id, title: $title, url: $url)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ShippingPolicyCopyWith<_ShippingPolicy> get copyWith =>
+      __$ShippingPolicyCopyWithImpl<_ShippingPolicy>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ShippingPolicyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShippingPolicyImpl &&
+            other is _ShippingPolicy &&
             (identical(other.body, body) || other.body == body) &&
             (identical(other.handle, handle) || other.handle == handle) &&
             (identical(other.id, id) || other.id == id) &&
@@ -188,49 +157,66 @@ class _$ShippingPolicyImpl implements _ShippingPolicy {
   @override
   int get hashCode => Object.hash(runtimeType, body, handle, id, title, url);
 
-  /// Create a copy of ShippingPolicy
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ShippingPolicyImplCopyWith<_$ShippingPolicyImpl> get copyWith =>
-      __$$ShippingPolicyImplCopyWithImpl<_$ShippingPolicyImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ShippingPolicyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ShippingPolicy(body: $body, handle: $handle, id: $id, title: $title, url: $url)';
   }
 }
 
-abstract class _ShippingPolicy implements ShippingPolicy {
-  factory _ShippingPolicy(
-      {final String? body,
-      final String? handle,
-      final String? id,
-      final String? title,
-      final String? url}) = _$ShippingPolicyImpl;
+/// @nodoc
+abstract mixin class _$ShippingPolicyCopyWith<$Res>
+    implements $ShippingPolicyCopyWith<$Res> {
+  factory _$ShippingPolicyCopyWith(
+          _ShippingPolicy value, $Res Function(_ShippingPolicy) _then) =
+      __$ShippingPolicyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? body, String? handle, String? id, String? title, String? url});
+}
 
-  factory _ShippingPolicy.fromJson(Map<String, dynamic> json) =
-      _$ShippingPolicyImpl.fromJson;
+/// @nodoc
+class __$ShippingPolicyCopyWithImpl<$Res>
+    implements _$ShippingPolicyCopyWith<$Res> {
+  __$ShippingPolicyCopyWithImpl(this._self, this._then);
 
-  @override
-  String? get body;
-  @override
-  String? get handle;
-  @override
-  String? get id;
-  @override
-  String? get title;
-  @override
-  String? get url;
+  final _ShippingPolicy _self;
+  final $Res Function(_ShippingPolicy) _then;
 
   /// Create a copy of ShippingPolicy
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ShippingPolicyImplCopyWith<_$ShippingPolicyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? body = freezed,
+    Object? handle = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? url = freezed,
+  }) {
+    return _then(_ShippingPolicy(
+      body: freezed == body
+          ? _self.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      handle: freezed == handle
+          ? _self.handle
+          : handle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: freezed == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: freezed == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
+
+// dart format on

@@ -6,7 +6,7 @@ part 'successful_fulfilment_tracking_info.g.dart';
 @freezed
 
 ///
-class SuccessfulFullfilmentTrackingInfo
+abstract class SuccessfulFullfilmentTrackingInfo
     with _$SuccessfulFullfilmentTrackingInfo {
   const SuccessfulFullfilmentTrackingInfo._();
 

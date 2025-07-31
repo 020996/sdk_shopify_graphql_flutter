@@ -26,7 +26,7 @@ QueryResult<TParsed> mapFetchResultToQueryResult<TParsed>(
         break;
       case ErrorPolicy.none:
       default:
-        // TODO not actually sure if apollo even casts graphql errors in `none` mode,
+        // not actually sure if apollo even casts graphql errors in `none` mode,
         // it's also kind of legacy
         errors = response.errors;
         break;

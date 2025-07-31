@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,35 +10,51 @@ part of 'cart_preference.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CartPreference _$CartPreferenceFromJson(Map<String, dynamic> json) {
-  return _CartPreference.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CartPreference {
-  List<String?> get wallet => throw _privateConstructorUsedError;
-  CartDeliveryPreference? get delivery => throw _privateConstructorUsedError;
-
-  /// Serializes this CartPreference to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String?> get wallet;
+  CartDeliveryPreference? get delivery;
 
   /// Create a copy of CartPreference
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CartPreferenceCopyWith<CartPreference> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$CartPreferenceCopyWithImpl<CartPreference>(
+          this as CartPreference, _$identity);
+
+  /// Serializes this CartPreference to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CartPreference &&
+            const DeepCollectionEquality().equals(other.wallet, wallet) &&
+            (identical(other.delivery, delivery) ||
+                other.delivery == delivery));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(wallet), delivery);
+
+  @override
+  String toString() {
+    return 'CartPreference(wallet: $wallet, delivery: $delivery)';
+  }
 }
 
 /// @nodoc
-abstract class $CartPreferenceCopyWith<$Res> {
+abstract mixin class $CartPreferenceCopyWith<$Res> {
   factory $CartPreferenceCopyWith(
-          CartPreference value, $Res Function(CartPreference) then) =
-      _$CartPreferenceCopyWithImpl<$Res, CartPreference>;
+          CartPreference value, $Res Function(CartPreference) _then) =
+      _$CartPreferenceCopyWithImpl;
   @useResult
   $Res call({List<String?> wallet, CartDeliveryPreference? delivery});
 
@@ -45,14 +62,12 @@ abstract class $CartPreferenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CartPreferenceCopyWithImpl<$Res, $Val extends CartPreference>
+class _$CartPreferenceCopyWithImpl<$Res>
     implements $CartPreferenceCopyWith<$Res> {
-  _$CartPreferenceCopyWithImpl(this._value, this._then);
+  _$CartPreferenceCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CartPreference _self;
+  final $Res Function(CartPreference) _then;
 
   /// Create a copy of CartPreference
   /// with the given fields replaced by the non-null parameter values.
@@ -62,16 +77,16 @@ class _$CartPreferenceCopyWithImpl<$Res, $Val extends CartPreference>
     Object? wallet = null,
     Object? delivery = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       wallet: null == wallet
-          ? _value.wallet
+          ? _self.wallet
           : wallet // ignore: cast_nullable_to_non_nullable
               as List<String?>,
       delivery: freezed == delivery
-          ? _value.delivery
+          ? _self.delivery
           : delivery // ignore: cast_nullable_to_non_nullable
               as CartDeliveryPreference?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of CartPreference
@@ -79,68 +94,24 @@ class _$CartPreferenceCopyWithImpl<$Res, $Val extends CartPreference>
   @override
   @pragma('vm:prefer-inline')
   $CartDeliveryPreferenceCopyWith<$Res>? get delivery {
-    if (_value.delivery == null) {
+    if (_self.delivery == null) {
       return null;
     }
 
-    return $CartDeliveryPreferenceCopyWith<$Res>(_value.delivery!, (value) {
-      return _then(_value.copyWith(delivery: value) as $Val);
+    return $CartDeliveryPreferenceCopyWith<$Res>(_self.delivery!, (value) {
+      return _then(_self.copyWith(delivery: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$CartPreferenceImplCopyWith<$Res>
-    implements $CartPreferenceCopyWith<$Res> {
-  factory _$$CartPreferenceImplCopyWith(_$CartPreferenceImpl value,
-          $Res Function(_$CartPreferenceImpl) then) =
-      __$$CartPreferenceImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<String?> wallet, CartDeliveryPreference? delivery});
-
-  @override
-  $CartDeliveryPreferenceCopyWith<$Res>? get delivery;
-}
-
-/// @nodoc
-class __$$CartPreferenceImplCopyWithImpl<$Res>
-    extends _$CartPreferenceCopyWithImpl<$Res, _$CartPreferenceImpl>
-    implements _$$CartPreferenceImplCopyWith<$Res> {
-  __$$CartPreferenceImplCopyWithImpl(
-      _$CartPreferenceImpl _value, $Res Function(_$CartPreferenceImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CartPreference
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? wallet = null,
-    Object? delivery = freezed,
-  }) {
-    return _then(_$CartPreferenceImpl(
-      wallet: null == wallet
-          ? _value._wallet
-          : wallet // ignore: cast_nullable_to_non_nullable
-              as List<String?>,
-      delivery: freezed == delivery
-          ? _value.delivery
-          : delivery // ignore: cast_nullable_to_non_nullable
-              as CartDeliveryPreference?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$CartPreferenceImpl extends _CartPreference {
-  _$CartPreferenceImpl({required final List<String?> wallet, this.delivery})
+class _CartPreference extends CartPreference {
+  _CartPreference({required final List<String?> wallet, this.delivery})
       : _wallet = wallet,
         super._();
-
-  factory _$CartPreferenceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CartPreferenceImplFromJson(json);
+  factory _CartPreference.fromJson(Map<String, dynamic> json) =>
+      _$CartPreferenceFromJson(json);
 
   final List<String?> _wallet;
   @override
@@ -153,16 +124,26 @@ class _$CartPreferenceImpl extends _CartPreference {
   @override
   final CartDeliveryPreference? delivery;
 
+  /// Create a copy of CartPreference
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CartPreference(wallet: $wallet, delivery: $delivery)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CartPreferenceCopyWith<_CartPreference> get copyWith =>
+      __$CartPreferenceCopyWithImpl<_CartPreference>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CartPreferenceToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CartPreferenceImpl &&
+            other is _CartPreference &&
             const DeepCollectionEquality().equals(other._wallet, _wallet) &&
             (identical(other.delivery, delivery) ||
                 other.delivery == delivery));
@@ -173,41 +154,67 @@ class _$CartPreferenceImpl extends _CartPreference {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_wallet), delivery);
 
-  /// Create a copy of CartPreference
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CartPreferenceImplCopyWith<_$CartPreferenceImpl> get copyWith =>
-      __$$CartPreferenceImplCopyWithImpl<_$CartPreferenceImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CartPreferenceImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CartPreference(wallet: $wallet, delivery: $delivery)';
   }
 }
 
-abstract class _CartPreference extends CartPreference {
-  factory _CartPreference(
-      {required final List<String?> wallet,
-      final CartDeliveryPreference? delivery}) = _$CartPreferenceImpl;
-  _CartPreference._() : super._();
-
-  factory _CartPreference.fromJson(Map<String, dynamic> json) =
-      _$CartPreferenceImpl.fromJson;
+/// @nodoc
+abstract mixin class _$CartPreferenceCopyWith<$Res>
+    implements $CartPreferenceCopyWith<$Res> {
+  factory _$CartPreferenceCopyWith(
+          _CartPreference value, $Res Function(_CartPreference) _then) =
+      __$CartPreferenceCopyWithImpl;
+  @override
+  @useResult
+  $Res call({List<String?> wallet, CartDeliveryPreference? delivery});
 
   @override
-  List<String?> get wallet;
-  @override
-  CartDeliveryPreference? get delivery;
+  $CartDeliveryPreferenceCopyWith<$Res>? get delivery;
+}
+
+/// @nodoc
+class __$CartPreferenceCopyWithImpl<$Res>
+    implements _$CartPreferenceCopyWith<$Res> {
+  __$CartPreferenceCopyWithImpl(this._self, this._then);
+
+  final _CartPreference _self;
+  final $Res Function(_CartPreference) _then;
 
   /// Create a copy of CartPreference
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CartPreferenceImplCopyWith<_$CartPreferenceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? wallet = null,
+    Object? delivery = freezed,
+  }) {
+    return _then(_CartPreference(
+      wallet: null == wallet
+          ? _self._wallet
+          : wallet // ignore: cast_nullable_to_non_nullable
+              as List<String?>,
+      delivery: freezed == delivery
+          ? _self.delivery
+          : delivery // ignore: cast_nullable_to_non_nullable
+              as CartDeliveryPreference?,
+    ));
+  }
+
+  /// Create a copy of CartPreference
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CartDeliveryPreferenceCopyWith<$Res>? get delivery {
+    if (_self.delivery == null) {
+      return null;
+    }
+
+    return $CartDeliveryPreferenceCopyWith<$Res>(_self.delivery!, (value) {
+      return _then(_self.copyWith(delivery: value));
+    });
+  }
 }
+
+// dart format on

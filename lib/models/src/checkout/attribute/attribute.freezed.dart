@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,132 +10,29 @@ part of 'attribute.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Attribute _$AttributeFromJson(Map<String, dynamic> json) {
-  return _Attribute.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Attribute {
-  String get key => throw _privateConstructorUsedError;
-  String? get value => throw _privateConstructorUsedError;
-
-  /// Serializes this Attribute to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get key;
+  String? get value;
 
   /// Create a copy of Attribute
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AttributeCopyWith<Attribute> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$AttributeCopyWithImpl<Attribute>(this as Attribute, _$identity);
 
-/// @nodoc
-abstract class $AttributeCopyWith<$Res> {
-  factory $AttributeCopyWith(Attribute value, $Res Function(Attribute) then) =
-      _$AttributeCopyWithImpl<$Res, Attribute>;
-  @useResult
-  $Res call({String key, String? value});
-}
-
-/// @nodoc
-class _$AttributeCopyWithImpl<$Res, $Val extends Attribute>
-    implements $AttributeCopyWith<$Res> {
-  _$AttributeCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Attribute
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? key = null,
-    Object? value = freezed,
-  }) {
-    return _then(_value.copyWith(
-      key: null == key
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$AttributeImplCopyWith<$Res>
-    implements $AttributeCopyWith<$Res> {
-  factory _$$AttributeImplCopyWith(
-          _$AttributeImpl value, $Res Function(_$AttributeImpl) then) =
-      __$$AttributeImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String key, String? value});
-}
-
-/// @nodoc
-class __$$AttributeImplCopyWithImpl<$Res>
-    extends _$AttributeCopyWithImpl<$Res, _$AttributeImpl>
-    implements _$$AttributeImplCopyWith<$Res> {
-  __$$AttributeImplCopyWithImpl(
-      _$AttributeImpl _value, $Res Function(_$AttributeImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Attribute
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? key = null,
-    Object? value = freezed,
-  }) {
-    return _then(_$AttributeImpl(
-      key: null == key
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AttributeImpl extends _Attribute {
-  _$AttributeImpl({required this.key, this.value}) : super._();
-
-  factory _$AttributeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AttributeImplFromJson(json);
-
-  @override
-  final String key;
-  @override
-  final String? value;
-
-  @override
-  String toString() {
-    return 'Attribute(key: $key, value: $value)';
-  }
+  /// Serializes this Attribute to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AttributeImpl &&
+            other is Attribute &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.value, value) || other.value == value));
   }
@@ -143,39 +41,131 @@ class _$AttributeImpl extends _Attribute {
   @override
   int get hashCode => Object.hash(runtimeType, key, value);
 
-  /// Create a copy of Attribute
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AttributeImplCopyWith<_$AttributeImpl> get copyWith =>
-      __$$AttributeImplCopyWithImpl<_$AttributeImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AttributeImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Attribute(key: $key, value: $value)';
   }
 }
 
-abstract class _Attribute extends Attribute {
-  factory _Attribute({required final String key, final String? value}) =
-      _$AttributeImpl;
-  _Attribute._() : super._();
+/// @nodoc
+abstract mixin class $AttributeCopyWith<$Res> {
+  factory $AttributeCopyWith(Attribute value, $Res Function(Attribute) _then) =
+      _$AttributeCopyWithImpl;
+  @useResult
+  $Res call({String key, String? value});
+}
 
-  factory _Attribute.fromJson(Map<String, dynamic> json) =
-      _$AttributeImpl.fromJson;
+/// @nodoc
+class _$AttributeCopyWithImpl<$Res> implements $AttributeCopyWith<$Res> {
+  _$AttributeCopyWithImpl(this._self, this._then);
+
+  final Attribute _self;
+  final $Res Function(Attribute) _then;
+
+  /// Create a copy of Attribute
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? key = null,
+    Object? value = freezed,
+  }) {
+    return _then(_self.copyWith(
+      key: null == key
+          ? _self.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: freezed == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _Attribute extends Attribute {
+  _Attribute({required this.key, this.value}) : super._();
+  factory _Attribute.fromJson(Map<String, dynamic> json) =>
+      _$AttributeFromJson(json);
 
   @override
-  String get key;
+  final String key;
   @override
-  String? get value;
+  final String? value;
 
   /// Create a copy of Attribute
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AttributeImplCopyWith<_$AttributeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$AttributeCopyWith<_Attribute> get copyWith =>
+      __$AttributeCopyWithImpl<_Attribute>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AttributeToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Attribute &&
+            (identical(other.key, key) || other.key == key) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, key, value);
+
+  @override
+  String toString() {
+    return 'Attribute(key: $key, value: $value)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$AttributeCopyWith<$Res>
+    implements $AttributeCopyWith<$Res> {
+  factory _$AttributeCopyWith(
+          _Attribute value, $Res Function(_Attribute) _then) =
+      __$AttributeCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String key, String? value});
+}
+
+/// @nodoc
+class __$AttributeCopyWithImpl<$Res> implements _$AttributeCopyWith<$Res> {
+  __$AttributeCopyWithImpl(this._self, this._then);
+
+  final _Attribute _self;
+  final $Res Function(_Attribute) _then;
+
+  /// Create a copy of Attribute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? key = null,
+    Object? value = freezed,
+  }) {
+    return _then(_Attribute(
+      key: null == key
+          ? _self.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: freezed == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

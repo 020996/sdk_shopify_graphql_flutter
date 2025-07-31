@@ -6,7 +6,7 @@ part 'mailing_address.g.dart';
 @freezed
 
 /// The mailing address
-class MailingAddress with _$MailingAddress {
+abstract class MailingAddress with _$MailingAddress {
   /// The mailing address constructor
   factory MailingAddress({
     required String id,

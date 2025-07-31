@@ -175,7 +175,6 @@ class GraphQLCache extends NormalizingDataProxy {
     return parentId == null || _patchExistsFor(parentId);
   }
 
-  // TODO does patch hierachy still makes sense
   /// Record the given [transaction] into a patch with the id [addId]
   ///
   /// 1 level of hierarchical optimism is supported:

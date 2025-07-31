@@ -11,7 +11,7 @@ part 'price_v_2.g.dart';
 @freezed
 
 /// The PriceV2 class
-class PriceV2 with _$PriceV2 {
+abstract class PriceV2 with _$PriceV2 {
   /// the number formatter for price
   static NumberFormat? priceFormat;
 

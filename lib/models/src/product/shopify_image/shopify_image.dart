@@ -6,7 +6,7 @@ part 'shopify_image.g.dart';
 @freezed
 
 /// The ShopifyImage class
-class ShopifyImage with _$ShopifyImage {
+abstract class ShopifyImage with _$ShopifyImage {
   const ShopifyImage._();
 
   /// The ShopifyImage constructor

@@ -6,7 +6,7 @@ part 'attribute.g.dart';
 @freezed
 
 /// The attribute input
-class Attribute with _$Attribute {
+abstract class Attribute with _$Attribute {
   const Attribute._();
 
   /// The attribute input constructor

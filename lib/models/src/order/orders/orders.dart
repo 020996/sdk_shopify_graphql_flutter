@@ -8,7 +8,7 @@ part 'orders.g.dart';
 @freezed
 
 /// The Orders class
-class Orders with _$Orders {
+abstract class Orders with _$Orders {
   /// The Orders constructor
   factory Orders({required List<Order> orderList, required bool hasNextPage}) =
       _Orders;

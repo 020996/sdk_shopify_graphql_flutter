@@ -36,7 +36,7 @@ enum FetchPolicy {
   networkOnly,
 }
 
-// TODO investigate the relationship between optimistic results
+//  investigate the relationship between optimistic results
 // and policy in flutter
 bool shouldRespondEagerlyFromCache(FetchPolicy? fetchPolicy) =>
     fetchPolicy == FetchPolicy.cacheFirst ||

@@ -68,7 +68,6 @@ class OptimisticProxy extends NormalizingDataProxy {
     return data[rootId] ?? cache.readNormalized(rootId, optimistic: true);
   }
 
-  // TODO consider using store for optimistic patches
   /// Write normalized data into the patch,
   /// deeply merging maps with existing values
   ///

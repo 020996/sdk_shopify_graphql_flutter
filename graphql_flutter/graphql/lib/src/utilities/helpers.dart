@@ -81,7 +81,7 @@ typedef SanitizeVariables = Map<String, dynamic>? Function(
 SanitizeVariables variableSanitizer(
   Object? Function(Object?)? sanitizeVariables,
 ) =>
-    // TODO use more efficient traversal method
+    //  use more efficient traversal method
     sanitizeVariables == null
         ? (v) => v
         : (variables) => jsonDecode(

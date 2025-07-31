@@ -6,7 +6,7 @@ part 'subscription_policy.g.dart';
 @freezed
 
 /// The SubscriptionPolicy class
-class SubscriptionPolicy with _$SubscriptionPolicy {
+abstract class SubscriptionPolicy with _$SubscriptionPolicy {
   /// The SubscriptionPolicy constructor
   factory SubscriptionPolicy({
     String? body,

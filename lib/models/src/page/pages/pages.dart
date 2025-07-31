@@ -8,7 +8,7 @@ part 'pages.g.dart';
 @freezed
 
 /// The Pages class
-class Pages with _$Pages {
+abstract class Pages with _$Pages {
   /// The Pages constructor
   factory Pages({required List<Page> pageList}) = _Pages;
 

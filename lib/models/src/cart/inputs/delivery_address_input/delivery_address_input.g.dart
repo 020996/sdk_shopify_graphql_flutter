@@ -6,9 +6,9 @@ part of 'delivery_address_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DeliveryAddressInputImpl _$$DeliveryAddressInputImplFromJson(
+_DeliveryAddressInput _$DeliveryAddressInputFromJson(
         Map<String, dynamic> json) =>
-    _$DeliveryAddressInputImpl(
+    _DeliveryAddressInput(
       customerAddressId: json['customerAddressId'] as String?,
       deliveryAddress: json['deliveryAddress'] == null
           ? null
@@ -16,8 +16,8 @@ _$DeliveryAddressInputImpl _$$DeliveryAddressInputImplFromJson(
               json['deliveryAddress'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$DeliveryAddressInputImplToJson(
-        _$DeliveryAddressInputImpl instance) =>
+Map<String, dynamic> _$DeliveryAddressInputToJson(
+        _DeliveryAddressInput instance) =>
     <String, dynamic>{
       'customerAddressId': instance.customerAddressId,
       'deliveryAddress': instance.deliveryAddress?.toJson(),

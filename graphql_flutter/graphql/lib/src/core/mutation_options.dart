@@ -156,7 +156,7 @@ class MutationCallbackHandler<TParsed> {
   // cleanup is handled by heirarchical optimism -
   // as in, because our patch id is prefixed with '${observableQuery.queryId}.',
   // it will be discarded along with the observableQuery.queryId patch
-  // TODO this results in an implicit coupling with the patch id system
+  //  this results in an implicit coupling with the patch id system
   OnData<TParsed>? get update {
     if (options.update != null) {
       // dereference all variables that might be needed if the widget is disposed

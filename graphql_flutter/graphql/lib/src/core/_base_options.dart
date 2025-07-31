@@ -9,7 +9,7 @@ TParsed unprovidedParserFn<TParsed>(_d) => throw UnimplementedError(
       "Please provide a parser function to support result parsing.",
     );
 
-/// TODO refactor into [Request] container
+///  refactor into [Request] container
 /// Base options.
 @immutable
 abstract class BaseOptions<TParsed extends Object?> {
@@ -64,7 +64,7 @@ abstract class BaseOptions<TParsed extends Object?> {
   /// Override default query timeout
   final Duration? queryRequestTimeout;
 
-  // TODO consider inverting this relationship
+  //  consider inverting this relationship
   /// Resolve these options into a request
   Request get asRequest => Request(
         operation: Operation(
@@ -95,7 +95,7 @@ abstract class BaseOptions<TParsed extends Object?> {
         (node) => node.name!.value != operationName,
       );
     }
-    // TODO differentiate error types, add exception
+    //  differentiate error types, add exception
     assert(definitions.length == 1);
     return definitions.first.type;
   }

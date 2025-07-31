@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,41 +10,72 @@ part of 'line_item_order.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-LineItemOrder _$LineItemOrderFromJson(Map<String, dynamic> json) {
-  return _LineItemOrder.fromJson(json);
-}
 
 /// @nodoc
 mixin _$LineItemOrder {
-  int get currentQuantity => throw _privateConstructorUsedError;
-  PriceV2 get discountedTotalPrice => throw _privateConstructorUsedError;
-  PriceV2 get originalTotalPrice => throw _privateConstructorUsedError;
-  int get quantity => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  List<DiscountAllocations> get discountAllocations =>
-      throw _privateConstructorUsedError;
-  ProductVariant? get variant => throw _privateConstructorUsedError;
-
-  /// Serializes this LineItemOrder to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get currentQuantity;
+  PriceV2 get discountedTotalPrice;
+  PriceV2 get originalTotalPrice;
+  int get quantity;
+  String get title;
+  List<DiscountAllocations> get discountAllocations;
+  ProductVariant? get variant;
 
   /// Create a copy of LineItemOrder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $LineItemOrderCopyWith<LineItemOrder> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$LineItemOrderCopyWithImpl<LineItemOrder>(
+          this as LineItemOrder, _$identity);
+
+  /// Serializes this LineItemOrder to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LineItemOrder &&
+            (identical(other.currentQuantity, currentQuantity) ||
+                other.currentQuantity == currentQuantity) &&
+            (identical(other.discountedTotalPrice, discountedTotalPrice) ||
+                other.discountedTotalPrice == discountedTotalPrice) &&
+            (identical(other.originalTotalPrice, originalTotalPrice) ||
+                other.originalTotalPrice == originalTotalPrice) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality()
+                .equals(other.discountAllocations, discountAllocations) &&
+            (identical(other.variant, variant) || other.variant == variant));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      currentQuantity,
+      discountedTotalPrice,
+      originalTotalPrice,
+      quantity,
+      title,
+      const DeepCollectionEquality().hash(discountAllocations),
+      variant);
+
+  @override
+  String toString() {
+    return 'LineItemOrder(currentQuantity: $currentQuantity, discountedTotalPrice: $discountedTotalPrice, originalTotalPrice: $originalTotalPrice, quantity: $quantity, title: $title, discountAllocations: $discountAllocations, variant: $variant)';
+  }
 }
 
 /// @nodoc
-abstract class $LineItemOrderCopyWith<$Res> {
+abstract mixin class $LineItemOrderCopyWith<$Res> {
   factory $LineItemOrderCopyWith(
-          LineItemOrder value, $Res Function(LineItemOrder) then) =
-      _$LineItemOrderCopyWithImpl<$Res, LineItemOrder>;
+          LineItemOrder value, $Res Function(LineItemOrder) _then) =
+      _$LineItemOrderCopyWithImpl;
   @useResult
   $Res call(
       {int currentQuantity,
@@ -60,14 +92,12 @@ abstract class $LineItemOrderCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
+class _$LineItemOrderCopyWithImpl<$Res>
     implements $LineItemOrderCopyWith<$Res> {
-  _$LineItemOrderCopyWithImpl(this._value, this._then);
+  _$LineItemOrderCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final LineItemOrder _self;
+  final $Res Function(LineItemOrder) _then;
 
   /// Create a copy of LineItemOrder
   /// with the given fields replaced by the non-null parameter values.
@@ -82,36 +112,36 @@ class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
     Object? discountAllocations = null,
     Object? variant = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       currentQuantity: null == currentQuantity
-          ? _value.currentQuantity
+          ? _self.currentQuantity
           : currentQuantity // ignore: cast_nullable_to_non_nullable
               as int,
       discountedTotalPrice: null == discountedTotalPrice
-          ? _value.discountedTotalPrice
+          ? _self.discountedTotalPrice
           : discountedTotalPrice // ignore: cast_nullable_to_non_nullable
               as PriceV2,
       originalTotalPrice: null == originalTotalPrice
-          ? _value.originalTotalPrice
+          ? _self.originalTotalPrice
           : originalTotalPrice // ignore: cast_nullable_to_non_nullable
               as PriceV2,
       quantity: null == quantity
-          ? _value.quantity
+          ? _self.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
       title: null == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       discountAllocations: null == discountAllocations
-          ? _value.discountAllocations
+          ? _self.discountAllocations
           : discountAllocations // ignore: cast_nullable_to_non_nullable
               as List<DiscountAllocations>,
       variant: freezed == variant
-          ? _value.variant
+          ? _self.variant
           : variant // ignore: cast_nullable_to_non_nullable
               as ProductVariant?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of LineItemOrder
@@ -119,8 +149,8 @@ class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
   @override
   @pragma('vm:prefer-inline')
   $PriceV2CopyWith<$Res> get discountedTotalPrice {
-    return $PriceV2CopyWith<$Res>(_value.discountedTotalPrice, (value) {
-      return _then(_value.copyWith(discountedTotalPrice: value) as $Val);
+    return $PriceV2CopyWith<$Res>(_self.discountedTotalPrice, (value) {
+      return _then(_self.copyWith(discountedTotalPrice: value));
     });
   }
 
@@ -129,8 +159,8 @@ class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
   @override
   @pragma('vm:prefer-inline')
   $PriceV2CopyWith<$Res> get originalTotalPrice {
-    return $PriceV2CopyWith<$Res>(_value.originalTotalPrice, (value) {
-      return _then(_value.copyWith(originalTotalPrice: value) as $Val);
+    return $PriceV2CopyWith<$Res>(_self.originalTotalPrice, (value) {
+      return _then(_self.copyWith(originalTotalPrice: value));
     });
   }
 
@@ -139,99 +169,20 @@ class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
   @override
   @pragma('vm:prefer-inline')
   $ProductVariantCopyWith<$Res>? get variant {
-    if (_value.variant == null) {
+    if (_self.variant == null) {
       return null;
     }
 
-    return $ProductVariantCopyWith<$Res>(_value.variant!, (value) {
-      return _then(_value.copyWith(variant: value) as $Val);
+    return $ProductVariantCopyWith<$Res>(_self.variant!, (value) {
+      return _then(_self.copyWith(variant: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$LineItemOrderImplCopyWith<$Res>
-    implements $LineItemOrderCopyWith<$Res> {
-  factory _$$LineItemOrderImplCopyWith(
-          _$LineItemOrderImpl value, $Res Function(_$LineItemOrderImpl) then) =
-      __$$LineItemOrderImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {int currentQuantity,
-      PriceV2 discountedTotalPrice,
-      PriceV2 originalTotalPrice,
-      int quantity,
-      String title,
-      List<DiscountAllocations> discountAllocations,
-      ProductVariant? variant});
-
-  @override
-  $PriceV2CopyWith<$Res> get discountedTotalPrice;
-  @override
-  $PriceV2CopyWith<$Res> get originalTotalPrice;
-  @override
-  $ProductVariantCopyWith<$Res>? get variant;
-}
-
-/// @nodoc
-class __$$LineItemOrderImplCopyWithImpl<$Res>
-    extends _$LineItemOrderCopyWithImpl<$Res, _$LineItemOrderImpl>
-    implements _$$LineItemOrderImplCopyWith<$Res> {
-  __$$LineItemOrderImplCopyWithImpl(
-      _$LineItemOrderImpl _value, $Res Function(_$LineItemOrderImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LineItemOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? currentQuantity = null,
-    Object? discountedTotalPrice = null,
-    Object? originalTotalPrice = null,
-    Object? quantity = null,
-    Object? title = null,
-    Object? discountAllocations = null,
-    Object? variant = freezed,
-  }) {
-    return _then(_$LineItemOrderImpl(
-      currentQuantity: null == currentQuantity
-          ? _value.currentQuantity
-          : currentQuantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      discountedTotalPrice: null == discountedTotalPrice
-          ? _value.discountedTotalPrice
-          : discountedTotalPrice // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
-      originalTotalPrice: null == originalTotalPrice
-          ? _value.originalTotalPrice
-          : originalTotalPrice // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      discountAllocations: null == discountAllocations
-          ? _value._discountAllocations
-          : discountAllocations // ignore: cast_nullable_to_non_nullable
-              as List<DiscountAllocations>,
-      variant: freezed == variant
-          ? _value.variant
-          : variant // ignore: cast_nullable_to_non_nullable
-              as ProductVariant?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$LineItemOrderImpl extends _LineItemOrder {
-  _$LineItemOrderImpl(
+class _LineItemOrder extends LineItemOrder {
+  _LineItemOrder(
       {required this.currentQuantity,
       required this.discountedTotalPrice,
       required this.originalTotalPrice,
@@ -241,9 +192,8 @@ class _$LineItemOrderImpl extends _LineItemOrder {
       this.variant = null})
       : _discountAllocations = discountAllocations,
         super._();
-
-  factory _$LineItemOrderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LineItemOrderImplFromJson(json);
+  factory _LineItemOrder.fromJson(Map<String, dynamic> json) =>
+      _$LineItemOrderFromJson(json);
 
   @override
   final int currentQuantity;
@@ -269,16 +219,26 @@ class _$LineItemOrderImpl extends _LineItemOrder {
   @JsonKey()
   final ProductVariant? variant;
 
+  /// Create a copy of LineItemOrder
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'LineItemOrder(currentQuantity: $currentQuantity, discountedTotalPrice: $discountedTotalPrice, originalTotalPrice: $originalTotalPrice, quantity: $quantity, title: $title, discountAllocations: $discountAllocations, variant: $variant)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LineItemOrderCopyWith<_LineItemOrder> get copyWith =>
+      __$LineItemOrderCopyWithImpl<_LineItemOrder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LineItemOrderToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LineItemOrderImpl &&
+            other is _LineItemOrder &&
             (identical(other.currentQuantity, currentQuantity) ||
                 other.currentQuantity == currentQuantity) &&
             (identical(other.discountedTotalPrice, discountedTotalPrice) ||
@@ -305,55 +265,123 @@ class _$LineItemOrderImpl extends _LineItemOrder {
       const DeepCollectionEquality().hash(_discountAllocations),
       variant);
 
-  /// Create a copy of LineItemOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LineItemOrderImplCopyWith<_$LineItemOrderImpl> get copyWith =>
-      __$$LineItemOrderImplCopyWithImpl<_$LineItemOrderImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LineItemOrderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LineItemOrder(currentQuantity: $currentQuantity, discountedTotalPrice: $discountedTotalPrice, originalTotalPrice: $originalTotalPrice, quantity: $quantity, title: $title, discountAllocations: $discountAllocations, variant: $variant)';
   }
 }
 
-abstract class _LineItemOrder extends LineItemOrder {
-  factory _LineItemOrder(
-      {required final int currentQuantity,
-      required final PriceV2 discountedTotalPrice,
-      required final PriceV2 originalTotalPrice,
-      required final int quantity,
-      required final String title,
-      final List<DiscountAllocations> discountAllocations,
-      final ProductVariant? variant}) = _$LineItemOrderImpl;
-  _LineItemOrder._() : super._();
+/// @nodoc
+abstract mixin class _$LineItemOrderCopyWith<$Res>
+    implements $LineItemOrderCopyWith<$Res> {
+  factory _$LineItemOrderCopyWith(
+          _LineItemOrder value, $Res Function(_LineItemOrder) _then) =
+      __$LineItemOrderCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int currentQuantity,
+      PriceV2 discountedTotalPrice,
+      PriceV2 originalTotalPrice,
+      int quantity,
+      String title,
+      List<DiscountAllocations> discountAllocations,
+      ProductVariant? variant});
 
-  factory _LineItemOrder.fromJson(Map<String, dynamic> json) =
-      _$LineItemOrderImpl.fromJson;
+  @override
+  $PriceV2CopyWith<$Res> get discountedTotalPrice;
+  @override
+  $PriceV2CopyWith<$Res> get originalTotalPrice;
+  @override
+  $ProductVariantCopyWith<$Res>? get variant;
+}
 
-  @override
-  int get currentQuantity;
-  @override
-  PriceV2 get discountedTotalPrice;
-  @override
-  PriceV2 get originalTotalPrice;
-  @override
-  int get quantity;
-  @override
-  String get title;
-  @override
-  List<DiscountAllocations> get discountAllocations;
-  @override
-  ProductVariant? get variant;
+/// @nodoc
+class __$LineItemOrderCopyWithImpl<$Res>
+    implements _$LineItemOrderCopyWith<$Res> {
+  __$LineItemOrderCopyWithImpl(this._self, this._then);
+
+  final _LineItemOrder _self;
+  final $Res Function(_LineItemOrder) _then;
 
   /// Create a copy of LineItemOrder
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LineItemOrderImplCopyWith<_$LineItemOrderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? currentQuantity = null,
+    Object? discountedTotalPrice = null,
+    Object? originalTotalPrice = null,
+    Object? quantity = null,
+    Object? title = null,
+    Object? discountAllocations = null,
+    Object? variant = freezed,
+  }) {
+    return _then(_LineItemOrder(
+      currentQuantity: null == currentQuantity
+          ? _self.currentQuantity
+          : currentQuantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      discountedTotalPrice: null == discountedTotalPrice
+          ? _self.discountedTotalPrice
+          : discountedTotalPrice // ignore: cast_nullable_to_non_nullable
+              as PriceV2,
+      originalTotalPrice: null == originalTotalPrice
+          ? _self.originalTotalPrice
+          : originalTotalPrice // ignore: cast_nullable_to_non_nullable
+              as PriceV2,
+      quantity: null == quantity
+          ? _self.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      discountAllocations: null == discountAllocations
+          ? _self._discountAllocations
+          : discountAllocations // ignore: cast_nullable_to_non_nullable
+              as List<DiscountAllocations>,
+      variant: freezed == variant
+          ? _self.variant
+          : variant // ignore: cast_nullable_to_non_nullable
+              as ProductVariant?,
+    ));
+  }
+
+  /// Create a copy of LineItemOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PriceV2CopyWith<$Res> get discountedTotalPrice {
+    return $PriceV2CopyWith<$Res>(_self.discountedTotalPrice, (value) {
+      return _then(_self.copyWith(discountedTotalPrice: value));
+    });
+  }
+
+  /// Create a copy of LineItemOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PriceV2CopyWith<$Res> get originalTotalPrice {
+    return $PriceV2CopyWith<$Res>(_self.originalTotalPrice, (value) {
+      return _then(_self.copyWith(originalTotalPrice: value));
+    });
+  }
+
+  /// Create a copy of LineItemOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProductVariantCopyWith<$Res>? get variant {
+    if (_self.variant == null) {
+      return null;
+    }
+
+    return $ProductVariantCopyWith<$Res>(_self.variant!, (value) {
+      return _then(_self.copyWith(variant: value));
+    });
+  }
 }
+
+// dart format on

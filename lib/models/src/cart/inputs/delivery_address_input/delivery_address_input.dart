@@ -10,7 +10,7 @@ part 'delivery_address_input.g.dart';
 ///
 /// Must not contain both [customerAddressId] and [deliveryAddress].
 ///
-class DeliveryAddressInput with _$DeliveryAddressInput {
+abstract class DeliveryAddressInput with _$DeliveryAddressInput {
   const DeliveryAddressInput._();
 
   @Assert('customerAddressId == null || deliveryAddress == null',

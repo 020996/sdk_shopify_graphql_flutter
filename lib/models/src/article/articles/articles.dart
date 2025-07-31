@@ -8,7 +8,7 @@ part 'articles.g.dart';
 @freezed
 
 ///  The `Articles` class
-class Articles with _$Articles {
+abstract class Articles with _$Articles {
   /// The `Articles` constructor
   factory Articles({required List<Article> articleList}) = _Articles;
 

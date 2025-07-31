@@ -6,9 +6,9 @@ part of 'unit_price_measurement.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UnitPriceMeasurementImpl _$$UnitPriceMeasurementImplFromJson(
+_UnitPriceMeasurement _$UnitPriceMeasurementFromJson(
         Map<String, dynamic> json) =>
-    _$UnitPriceMeasurementImpl(
+    _UnitPriceMeasurement(
       measuredType: json['measuredType'] as String,
       quantityUnit: json['quantityUnit'] as String,
       quantityValue: (json['quantityValue'] as num).toDouble(),
@@ -16,8 +16,8 @@ _$UnitPriceMeasurementImpl _$$UnitPriceMeasurementImplFromJson(
       referenceValue: (json['referenceValue'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$UnitPriceMeasurementImplToJson(
-        _$UnitPriceMeasurementImpl instance) =>
+Map<String, dynamic> _$UnitPriceMeasurementToJson(
+        _UnitPriceMeasurement instance) =>
     <String, dynamic>{
       'measuredType': instance.measuredType,
       'quantityUnit': instance.quantityUnit,

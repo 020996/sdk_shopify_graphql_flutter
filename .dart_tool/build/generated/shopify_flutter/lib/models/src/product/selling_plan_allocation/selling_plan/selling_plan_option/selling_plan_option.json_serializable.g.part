@@ -1,0 +1,15 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_SellingPlanOption _$SellingPlanOptionFromJson(Map<String, dynamic> json) =>
+    _SellingPlanOption(
+      name: json['name'] as String,
+      value: json['value'] as String,
+    );
+
+Map<String, dynamic> _$SellingPlanOptionToJson(_SellingPlanOption instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'value': instance.value,
+    };

@@ -6,7 +6,7 @@ part 'cart_delivery_coordinates_preference.g.dart';
 @freezed
 
 /// The cart delivery coordinates preference
-class CartDeliveryCoordinatesPreference
+abstract class CartDeliveryCoordinatesPreference
     with _$CartDeliveryCoordinatesPreference {
   const CartDeliveryCoordinatesPreference._();
 

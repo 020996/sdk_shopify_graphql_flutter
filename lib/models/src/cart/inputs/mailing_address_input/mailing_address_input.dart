@@ -6,7 +6,7 @@ part 'mailing_address_input.g.dart';
 @freezed
 
 /// The mailing address input
-class MailingAddressInput with _$MailingAddressInput {
+abstract class MailingAddressInput with _$MailingAddressInput {
   const MailingAddressInput._();
 
   /// The mailing address input constructor

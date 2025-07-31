@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,148 +10,31 @@ part of 'shopify_image.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ShopifyImage _$ShopifyImageFromJson(Map<String, dynamic> json) {
-  return _ShopifyImage.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ShopifyImage {
-  String get originalSrc => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  String? get altText => throw _privateConstructorUsedError;
-
-  /// Serializes this ShopifyImage to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get originalSrc;
+  String get id;
+  String? get altText;
 
   /// Create a copy of ShopifyImage
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ShopifyImageCopyWith<ShopifyImage> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$ShopifyImageCopyWithImpl<ShopifyImage>(
+          this as ShopifyImage, _$identity);
 
-/// @nodoc
-abstract class $ShopifyImageCopyWith<$Res> {
-  factory $ShopifyImageCopyWith(
-          ShopifyImage value, $Res Function(ShopifyImage) then) =
-      _$ShopifyImageCopyWithImpl<$Res, ShopifyImage>;
-  @useResult
-  $Res call({String originalSrc, String id, String? altText});
-}
-
-/// @nodoc
-class _$ShopifyImageCopyWithImpl<$Res, $Val extends ShopifyImage>
-    implements $ShopifyImageCopyWith<$Res> {
-  _$ShopifyImageCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ShopifyImage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? originalSrc = null,
-    Object? id = null,
-    Object? altText = freezed,
-  }) {
-    return _then(_value.copyWith(
-      originalSrc: null == originalSrc
-          ? _value.originalSrc
-          : originalSrc // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      altText: freezed == altText
-          ? _value.altText
-          : altText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ShopifyImageImplCopyWith<$Res>
-    implements $ShopifyImageCopyWith<$Res> {
-  factory _$$ShopifyImageImplCopyWith(
-          _$ShopifyImageImpl value, $Res Function(_$ShopifyImageImpl) then) =
-      __$$ShopifyImageImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String originalSrc, String id, String? altText});
-}
-
-/// @nodoc
-class __$$ShopifyImageImplCopyWithImpl<$Res>
-    extends _$ShopifyImageCopyWithImpl<$Res, _$ShopifyImageImpl>
-    implements _$$ShopifyImageImplCopyWith<$Res> {
-  __$$ShopifyImageImplCopyWithImpl(
-      _$ShopifyImageImpl _value, $Res Function(_$ShopifyImageImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ShopifyImage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? originalSrc = null,
-    Object? id = null,
-    Object? altText = freezed,
-  }) {
-    return _then(_$ShopifyImageImpl(
-      originalSrc: null == originalSrc
-          ? _value.originalSrc
-          : originalSrc // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      altText: freezed == altText
-          ? _value.altText
-          : altText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ShopifyImageImpl extends _ShopifyImage {
-  _$ShopifyImageImpl(
-      {required this.originalSrc, required this.id, this.altText})
-      : super._();
-
-  factory _$ShopifyImageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ShopifyImageImplFromJson(json);
-
-  @override
-  final String originalSrc;
-  @override
-  final String id;
-  @override
-  final String? altText;
-
-  @override
-  String toString() {
-    return 'ShopifyImage(originalSrc: $originalSrc, id: $id, altText: $altText)';
-  }
+  /// Serializes this ShopifyImage to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShopifyImageImpl &&
+            other is ShopifyImage &&
             (identical(other.originalSrc, originalSrc) ||
                 other.originalSrc == originalSrc) &&
             (identical(other.id, id) || other.id == id) &&
@@ -161,43 +45,148 @@ class _$ShopifyImageImpl extends _ShopifyImage {
   @override
   int get hashCode => Object.hash(runtimeType, originalSrc, id, altText);
 
-  /// Create a copy of ShopifyImage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ShopifyImageImplCopyWith<_$ShopifyImageImpl> get copyWith =>
-      __$$ShopifyImageImplCopyWithImpl<_$ShopifyImageImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ShopifyImageImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ShopifyImage(originalSrc: $originalSrc, id: $id, altText: $altText)';
   }
 }
 
-abstract class _ShopifyImage extends ShopifyImage {
-  factory _ShopifyImage(
-      {required final String originalSrc,
-      required final String id,
-      final String? altText}) = _$ShopifyImageImpl;
-  _ShopifyImage._() : super._();
+/// @nodoc
+abstract mixin class $ShopifyImageCopyWith<$Res> {
+  factory $ShopifyImageCopyWith(
+          ShopifyImage value, $Res Function(ShopifyImage) _then) =
+      _$ShopifyImageCopyWithImpl;
+  @useResult
+  $Res call({String originalSrc, String id, String? altText});
+}
 
-  factory _ShopifyImage.fromJson(Map<String, dynamic> json) =
-      _$ShopifyImageImpl.fromJson;
+/// @nodoc
+class _$ShopifyImageCopyWithImpl<$Res> implements $ShopifyImageCopyWith<$Res> {
+  _$ShopifyImageCopyWithImpl(this._self, this._then);
+
+  final ShopifyImage _self;
+  final $Res Function(ShopifyImage) _then;
+
+  /// Create a copy of ShopifyImage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? originalSrc = null,
+    Object? id = null,
+    Object? altText = freezed,
+  }) {
+    return _then(_self.copyWith(
+      originalSrc: null == originalSrc
+          ? _self.originalSrc
+          : originalSrc // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      altText: freezed == altText
+          ? _self.altText
+          : altText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ShopifyImage extends ShopifyImage {
+  _ShopifyImage({required this.originalSrc, required this.id, this.altText})
+      : super._();
+  factory _ShopifyImage.fromJson(Map<String, dynamic> json) =>
+      _$ShopifyImageFromJson(json);
 
   @override
-  String get originalSrc;
+  final String originalSrc;
   @override
-  String get id;
+  final String id;
   @override
-  String? get altText;
+  final String? altText;
 
   /// Create a copy of ShopifyImage
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ShopifyImageImplCopyWith<_$ShopifyImageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ShopifyImageCopyWith<_ShopifyImage> get copyWith =>
+      __$ShopifyImageCopyWithImpl<_ShopifyImage>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ShopifyImageToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ShopifyImage &&
+            (identical(other.originalSrc, originalSrc) ||
+                other.originalSrc == originalSrc) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.altText, altText) || other.altText == altText));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, originalSrc, id, altText);
+
+  @override
+  String toString() {
+    return 'ShopifyImage(originalSrc: $originalSrc, id: $id, altText: $altText)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$ShopifyImageCopyWith<$Res>
+    implements $ShopifyImageCopyWith<$Res> {
+  factory _$ShopifyImageCopyWith(
+          _ShopifyImage value, $Res Function(_ShopifyImage) _then) =
+      __$ShopifyImageCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String originalSrc, String id, String? altText});
+}
+
+/// @nodoc
+class __$ShopifyImageCopyWithImpl<$Res>
+    implements _$ShopifyImageCopyWith<$Res> {
+  __$ShopifyImageCopyWithImpl(this._self, this._then);
+
+  final _ShopifyImage _self;
+  final $Res Function(_ShopifyImage) _then;
+
+  /// Create a copy of ShopifyImage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? originalSrc = null,
+    Object? id = null,
+    Object? altText = freezed,
+  }) {
+    return _then(_ShopifyImage(
+      originalSrc: null == originalSrc
+          ? _self.originalSrc
+          : originalSrc // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      altText: freezed == altText
+          ? _self.altText
+          : altText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

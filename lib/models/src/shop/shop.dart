@@ -14,7 +14,7 @@ part 'shop.g.dart';
 @freezed
 
 /// The shop
-class Shop with _$Shop {
+abstract class Shop with _$Shop {
   /// The shop factory constructor
   factory Shop({
     String? description,

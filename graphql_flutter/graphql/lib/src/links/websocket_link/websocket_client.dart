@@ -384,7 +384,7 @@ class SocketClient {
     _keepAliveSubscription?.cancel();
     _messageSubscription?.cancel();
 
-    //TODO: do we really need this check here because few lines bellow there is another check
+    // do we really need this check here because few lines bellow there is another check
     if (_connectionStateController.isClosed || _wasDisposed) {
       return;
     }

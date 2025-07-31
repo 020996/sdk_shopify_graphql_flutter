@@ -88,7 +88,7 @@ class QueryManager {
 
     // Add optimistic or cache-based result to the stream if any
     if (options.optimisticResult != null) {
-      // TODO optimisticResults for streams just skip the cache for now
+      //  optimisticResults for streams just skip the cache for now
       yield QueryResult.optimistic(
         data: options.optimisticResult as Map<String, dynamic>?,
         options: options,

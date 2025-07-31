@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,159 +10,32 @@ part of 'cart_delivery_coordinates_preference.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CartDeliveryCoordinatesPreference _$CartDeliveryCoordinatesPreferenceFromJson(
-    Map<String, dynamic> json) {
-  return _CartDeliveryCoordinatesPreference.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CartDeliveryCoordinatesPreference {
-  double? get latitude => throw _privateConstructorUsedError;
-  double? get longitude => throw _privateConstructorUsedError;
-  String? get countryCode => throw _privateConstructorUsedError;
-
-  /// Serializes this CartDeliveryCoordinatesPreference to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  double? get latitude;
+  double? get longitude;
+  String? get countryCode;
 
   /// Create a copy of CartDeliveryCoordinatesPreference
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CartDeliveryCoordinatesPreferenceCopyWith<CartDeliveryCoordinatesPreference>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$CartDeliveryCoordinatesPreferenceCopyWithImpl<
+              CartDeliveryCoordinatesPreference>(
+          this as CartDeliveryCoordinatesPreference, _$identity);
 
-/// @nodoc
-abstract class $CartDeliveryCoordinatesPreferenceCopyWith<$Res> {
-  factory $CartDeliveryCoordinatesPreferenceCopyWith(
-          CartDeliveryCoordinatesPreference value,
-          $Res Function(CartDeliveryCoordinatesPreference) then) =
-      _$CartDeliveryCoordinatesPreferenceCopyWithImpl<$Res,
-          CartDeliveryCoordinatesPreference>;
-  @useResult
-  $Res call({double? latitude, double? longitude, String? countryCode});
-}
-
-/// @nodoc
-class _$CartDeliveryCoordinatesPreferenceCopyWithImpl<$Res,
-        $Val extends CartDeliveryCoordinatesPreference>
-    implements $CartDeliveryCoordinatesPreferenceCopyWith<$Res> {
-  _$CartDeliveryCoordinatesPreferenceCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of CartDeliveryCoordinatesPreference
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? countryCode = freezed,
-  }) {
-    return _then(_value.copyWith(
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      countryCode: freezed == countryCode
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CartDeliveryCoordinatesPreferenceImplCopyWith<$Res>
-    implements $CartDeliveryCoordinatesPreferenceCopyWith<$Res> {
-  factory _$$CartDeliveryCoordinatesPreferenceImplCopyWith(
-          _$CartDeliveryCoordinatesPreferenceImpl value,
-          $Res Function(_$CartDeliveryCoordinatesPreferenceImpl) then) =
-      __$$CartDeliveryCoordinatesPreferenceImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({double? latitude, double? longitude, String? countryCode});
-}
-
-/// @nodoc
-class __$$CartDeliveryCoordinatesPreferenceImplCopyWithImpl<$Res>
-    extends _$CartDeliveryCoordinatesPreferenceCopyWithImpl<$Res,
-        _$CartDeliveryCoordinatesPreferenceImpl>
-    implements _$$CartDeliveryCoordinatesPreferenceImplCopyWith<$Res> {
-  __$$CartDeliveryCoordinatesPreferenceImplCopyWithImpl(
-      _$CartDeliveryCoordinatesPreferenceImpl _value,
-      $Res Function(_$CartDeliveryCoordinatesPreferenceImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CartDeliveryCoordinatesPreference
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? countryCode = freezed,
-  }) {
-    return _then(_$CartDeliveryCoordinatesPreferenceImpl(
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      countryCode: freezed == countryCode
-          ? _value.countryCode
-          : countryCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$CartDeliveryCoordinatesPreferenceImpl
-    extends _CartDeliveryCoordinatesPreference {
-  _$CartDeliveryCoordinatesPreferenceImpl(
-      {required this.latitude,
-      required this.longitude,
-      required this.countryCode})
-      : super._();
-
-  factory _$CartDeliveryCoordinatesPreferenceImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$CartDeliveryCoordinatesPreferenceImplFromJson(json);
-
-  @override
-  final double? latitude;
-  @override
-  final double? longitude;
-  @override
-  final String? countryCode;
-
-  @override
-  String toString() {
-    return 'CartDeliveryCoordinatesPreference(latitude: $latitude, longitude: $longitude, countryCode: $countryCode)';
-  }
+  /// Serializes this CartDeliveryCoordinatesPreference to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CartDeliveryCoordinatesPreferenceImpl &&
+            other is CartDeliveryCoordinatesPreference &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -175,49 +49,161 @@ class _$CartDeliveryCoordinatesPreferenceImpl
   int get hashCode =>
       Object.hash(runtimeType, latitude, longitude, countryCode);
 
-  /// Create a copy of CartDeliveryCoordinatesPreference
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CartDeliveryCoordinatesPreferenceImplCopyWith<
-          _$CartDeliveryCoordinatesPreferenceImpl>
-      get copyWith => __$$CartDeliveryCoordinatesPreferenceImplCopyWithImpl<
-          _$CartDeliveryCoordinatesPreferenceImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CartDeliveryCoordinatesPreferenceImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CartDeliveryCoordinatesPreference(latitude: $latitude, longitude: $longitude, countryCode: $countryCode)';
   }
 }
 
-abstract class _CartDeliveryCoordinatesPreference
+/// @nodoc
+abstract mixin class $CartDeliveryCoordinatesPreferenceCopyWith<$Res> {
+  factory $CartDeliveryCoordinatesPreferenceCopyWith(
+          CartDeliveryCoordinatesPreference value,
+          $Res Function(CartDeliveryCoordinatesPreference) _then) =
+      _$CartDeliveryCoordinatesPreferenceCopyWithImpl;
+  @useResult
+  $Res call({double? latitude, double? longitude, String? countryCode});
+}
+
+/// @nodoc
+class _$CartDeliveryCoordinatesPreferenceCopyWithImpl<$Res>
+    implements $CartDeliveryCoordinatesPreferenceCopyWith<$Res> {
+  _$CartDeliveryCoordinatesPreferenceCopyWithImpl(this._self, this._then);
+
+  final CartDeliveryCoordinatesPreference _self;
+  final $Res Function(CartDeliveryCoordinatesPreference) _then;
+
+  /// Create a copy of CartDeliveryCoordinatesPreference
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? countryCode = freezed,
+  }) {
+    return _then(_self.copyWith(
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      countryCode: freezed == countryCode
+          ? _self.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CartDeliveryCoordinatesPreference
     extends CartDeliveryCoordinatesPreference {
-  factory _CartDeliveryCoordinatesPreference(
-          {required final double? latitude,
-          required final double? longitude,
-          required final String? countryCode}) =
-      _$CartDeliveryCoordinatesPreferenceImpl;
-  _CartDeliveryCoordinatesPreference._() : super._();
-
+  _CartDeliveryCoordinatesPreference(
+      {required this.latitude,
+      required this.longitude,
+      required this.countryCode})
+      : super._();
   factory _CartDeliveryCoordinatesPreference.fromJson(
-          Map<String, dynamic> json) =
-      _$CartDeliveryCoordinatesPreferenceImpl.fromJson;
+          Map<String, dynamic> json) =>
+      _$CartDeliveryCoordinatesPreferenceFromJson(json);
 
   @override
-  double? get latitude;
+  final double? latitude;
   @override
-  double? get longitude;
+  final double? longitude;
   @override
-  String? get countryCode;
+  final String? countryCode;
 
   /// Create a copy of CartDeliveryCoordinatesPreference
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CartDeliveryCoordinatesPreferenceImplCopyWith<
-          _$CartDeliveryCoordinatesPreferenceImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$CartDeliveryCoordinatesPreferenceCopyWith<
+          _CartDeliveryCoordinatesPreference>
+      get copyWith => __$CartDeliveryCoordinatesPreferenceCopyWithImpl<
+          _CartDeliveryCoordinatesPreference>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CartDeliveryCoordinatesPreferenceToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CartDeliveryCoordinatesPreference &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, latitude, longitude, countryCode);
+
+  @override
+  String toString() {
+    return 'CartDeliveryCoordinatesPreference(latitude: $latitude, longitude: $longitude, countryCode: $countryCode)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$CartDeliveryCoordinatesPreferenceCopyWith<$Res>
+    implements $CartDeliveryCoordinatesPreferenceCopyWith<$Res> {
+  factory _$CartDeliveryCoordinatesPreferenceCopyWith(
+          _CartDeliveryCoordinatesPreference value,
+          $Res Function(_CartDeliveryCoordinatesPreference) _then) =
+      __$CartDeliveryCoordinatesPreferenceCopyWithImpl;
+  @override
+  @useResult
+  $Res call({double? latitude, double? longitude, String? countryCode});
+}
+
+/// @nodoc
+class __$CartDeliveryCoordinatesPreferenceCopyWithImpl<$Res>
+    implements _$CartDeliveryCoordinatesPreferenceCopyWith<$Res> {
+  __$CartDeliveryCoordinatesPreferenceCopyWithImpl(this._self, this._then);
+
+  final _CartDeliveryCoordinatesPreference _self;
+  final $Res Function(_CartDeliveryCoordinatesPreference) _then;
+
+  /// Create a copy of CartDeliveryCoordinatesPreference
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? countryCode = freezed,
+  }) {
+    return _then(_CartDeliveryCoordinatesPreference(
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      countryCode: freezed == countryCode
+          ? _self.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -6,8 +6,7 @@ part of 'article.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ArticleImpl _$$ArticleImplFromJson(Map<String, dynamic> json) =>
-    _$ArticleImpl(
+_Article _$ArticleFromJson(Map<String, dynamic> json) => _Article(
       author: json['author'] == null
           ? null
           : AuthorV2.fromJson(json['author'] as Map<String, dynamic>),
@@ -29,8 +28,7 @@ _$ArticleImpl _$$ArticleImplFromJson(Map<String, dynamic> json) =>
       onlineStoreUrl: json['onlineStoreUrl'] as String?,
     );
 
-Map<String, dynamic> _$$ArticleImplToJson(_$ArticleImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ArticleToJson(_Article instance) => <String, dynamic>{
       'author': instance.author?.toJson(),
       'commentList': instance.commentList?.map((e) => e.toJson()).toList(),
       'content': instance.content,

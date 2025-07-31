@@ -9,7 +9,7 @@ part 'collection.g.dart';
 @freezed
 
 /// The collection
-class Collection with _$Collection {
+abstract class Collection with _$Collection {
   const Collection._();
 
   /// The collection constructor

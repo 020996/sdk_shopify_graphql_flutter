@@ -1,0 +1,15 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_CartDiscountCode _$CartDiscountCodeFromJson(Map<String, dynamic> json) =>
+    _CartDiscountCode(
+      applicable: json['applicable'] as bool?,
+      code: json['code'] as String?,
+    );
+
+Map<String, dynamic> _$CartDiscountCodeToJson(_CartDiscountCode instance) =>
+    <String, dynamic>{
+      'applicable': instance.applicable,
+      'code': instance.code,
+    };

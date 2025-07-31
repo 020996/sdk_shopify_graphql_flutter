@@ -429,7 +429,7 @@ extension WithType on Request {
         (node) => node.name!.value != operation.operationName,
       );
     }
-    // TODO differentiate error types, add exception
+    //  differentiate error types, add exception
     assert(definitions.length == 1);
     return definitions.first.type;
   }
@@ -448,7 +448,7 @@ class QueryCallbackHandler<TParsed> {
   Iterable<OnData<TParsed>> get callbacks {
     var callbacks = List<OnData<TParsed>?>.empty(growable: true);
     callbacks.addAll([onCompleted, onError]);
-    // FIXME: can we remove the type in whereType?
+    //  can we remove the type in whereType?
     return callbacks.whereType<OnData<TParsed>>();
   }
 

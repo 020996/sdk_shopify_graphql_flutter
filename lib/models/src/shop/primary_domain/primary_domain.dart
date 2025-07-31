@@ -6,7 +6,7 @@ part 'primary_domain.g.dart';
 @freezed
 
 /// The PrimaryDomain class
-class PrimaryDomain with _$PrimaryDomain {
+abstract class PrimaryDomain with _$PrimaryDomain {
   ///  The PrimaryDomain constructor
   factory PrimaryDomain({String? host, bool? sslEnabled, String? url}) =
       _PrimaryDomain;

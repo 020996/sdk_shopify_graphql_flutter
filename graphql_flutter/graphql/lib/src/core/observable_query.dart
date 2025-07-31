@@ -277,7 +277,7 @@ class ObservableQuery<TParsed> {
 
     latestResult = result;
 
-    // TODO should callbacks be applied before or after streaming
+    //  should callbacks be applied before or after streaming
     if (!controller.isClosed) {
       controller.add(result);
     }

@@ -6,7 +6,7 @@ part of 'shop.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShopImpl _$$ShopImplFromJson(Map<String, dynamic> json) => _$ShopImpl(
+_Shop _$ShopFromJson(Map<String, dynamic> json) => _Shop(
       description: json['description'] as String?,
       moneyFormat: json['moneyFormat'] as String?,
       name: json['name'] as String?,
@@ -42,8 +42,7 @@ _$ShopImpl _$$ShopImplFromJson(Map<String, dynamic> json) => _$ShopImpl(
               json['termsOfService'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ShopImplToJson(_$ShopImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ShopToJson(_Shop instance) => <String, dynamic>{
       'description': instance.description,
       'moneyFormat': instance.moneyFormat,
       'name': instance.name,

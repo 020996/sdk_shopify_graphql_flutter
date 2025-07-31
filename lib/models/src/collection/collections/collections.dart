@@ -8,7 +8,7 @@ part 'collections.g.dart';
 @freezed
 
 /// The Collections class
-class Collections with _$Collections {
+abstract class Collections with _$Collections {
   /// The Collections constructor
   factory Collections(
       {required List<Collection> collectionList,
@@ -21,7 +21,7 @@ class Collections with _$Collections {
   /// The Collections from graph json
   factory Collections.fromGraphJson(Map<String, dynamic> json) => Collections(
         collectionList: _getCollectionList(json),
-        hasNextPage: (json['pageInfo'] ?? const {})['hasNextPage'],
+        hasNextPage: (json['pageInfo'] ?? const {})['hasNextPage'] ?? false,
       );
 
   static List<Collection> _getCollectionList(Map<String, dynamic> json) {

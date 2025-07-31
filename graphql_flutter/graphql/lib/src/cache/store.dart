@@ -2,8 +2,6 @@ import 'dart:collection';
 
 import 'package:meta/meta.dart';
 
-// TODO decide if [Store] should have save, etc
-// TODO figure out how to reference non-imported symbols
 /// Raw key-value datastore API leveraged by the [Cache]
 @immutable
 abstract class Store {

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,79 +10,56 @@ part of 'pages.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Pages _$PagesFromJson(Map<String, dynamic> json) {
-  return _Pages.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Pages {
-  List<Page> get pageList => throw _privateConstructorUsedError;
-
-  /// Serializes this Pages to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<Page> get pageList;
 
   /// Create a copy of Pages
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PagesCopyWith<Pages> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PagesCopyWith<$Res> {
-  factory $PagesCopyWith(Pages value, $Res Function(Pages) then) =
-      _$PagesCopyWithImpl<$Res, Pages>;
-  @useResult
-  $Res call({List<Page> pageList});
-}
-
-/// @nodoc
-class _$PagesCopyWithImpl<$Res, $Val extends Pages>
-    implements $PagesCopyWith<$Res> {
-  _$PagesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Pages
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $PagesCopyWith<Pages> get copyWith =>
+      _$PagesCopyWithImpl<Pages>(this as Pages, _$identity);
+
+  /// Serializes this Pages to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? pageList = null,
-  }) {
-    return _then(_value.copyWith(
-      pageList: null == pageList
-          ? _value.pageList
-          : pageList // ignore: cast_nullable_to_non_nullable
-              as List<Page>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Pages &&
+            const DeepCollectionEquality().equals(other.pageList, pageList));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(pageList));
+
+  @override
+  String toString() {
+    return 'Pages(pageList: $pageList)';
   }
 }
 
 /// @nodoc
-abstract class _$$PagesImplCopyWith<$Res> implements $PagesCopyWith<$Res> {
-  factory _$$PagesImplCopyWith(
-          _$PagesImpl value, $Res Function(_$PagesImpl) then) =
-      __$$PagesImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PagesCopyWith<$Res> {
+  factory $PagesCopyWith(Pages value, $Res Function(Pages) _then) =
+      _$PagesCopyWithImpl;
   @useResult
   $Res call({List<Page> pageList});
 }
 
 /// @nodoc
-class __$$PagesImplCopyWithImpl<$Res>
-    extends _$PagesCopyWithImpl<$Res, _$PagesImpl>
-    implements _$$PagesImplCopyWith<$Res> {
-  __$$PagesImplCopyWithImpl(
-      _$PagesImpl _value, $Res Function(_$PagesImpl) _then)
-      : super(_value, _then);
+class _$PagesCopyWithImpl<$Res> implements $PagesCopyWith<$Res> {
+  _$PagesCopyWithImpl(this._self, this._then);
+
+  final Pages _self;
+  final $Res Function(Pages) _then;
 
   /// Create a copy of Pages
   /// with the given fields replaced by the non-null parameter values.
@@ -90,9 +68,9 @@ class __$$PagesImplCopyWithImpl<$Res>
   $Res call({
     Object? pageList = null,
   }) {
-    return _then(_$PagesImpl(
+    return _then(_self.copyWith(
       pageList: null == pageList
-          ? _value._pageList
+          ? _self.pageList
           : pageList // ignore: cast_nullable_to_non_nullable
               as List<Page>,
     ));
@@ -101,11 +79,9 @@ class __$$PagesImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PagesImpl implements _Pages {
-  _$PagesImpl({required final List<Page> pageList}) : _pageList = pageList;
-
-  factory _$PagesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PagesImplFromJson(json);
+class _Pages implements Pages {
+  _Pages({required final List<Page> pageList}) : _pageList = pageList;
+  factory _Pages.fromJson(Map<String, dynamic> json) => _$PagesFromJson(json);
 
   final List<Page> _pageList;
   @override
@@ -115,16 +91,26 @@ class _$PagesImpl implements _Pages {
     return EqualUnmodifiableListView(_pageList);
   }
 
+  /// Create a copy of Pages
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Pages(pageList: $pageList)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PagesCopyWith<_Pages> get copyWith =>
+      __$PagesCopyWithImpl<_Pages>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PagesToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PagesImpl &&
+            other is _Pages &&
             const DeepCollectionEquality().equals(other._pageList, _pageList));
   }
 
@@ -133,34 +119,42 @@ class _$PagesImpl implements _Pages {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_pageList));
 
-  /// Create a copy of Pages
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PagesImplCopyWith<_$PagesImpl> get copyWith =>
-      __$$PagesImplCopyWithImpl<_$PagesImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PagesImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Pages(pageList: $pageList)';
   }
 }
 
-abstract class _Pages implements Pages {
-  factory _Pages({required final List<Page> pageList}) = _$PagesImpl;
-
-  factory _Pages.fromJson(Map<String, dynamic> json) = _$PagesImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$PagesCopyWith<$Res> implements $PagesCopyWith<$Res> {
+  factory _$PagesCopyWith(_Pages value, $Res Function(_Pages) _then) =
+      __$PagesCopyWithImpl;
   @override
-  List<Page> get pageList;
+  @useResult
+  $Res call({List<Page> pageList});
+}
+
+/// @nodoc
+class __$PagesCopyWithImpl<$Res> implements _$PagesCopyWith<$Res> {
+  __$PagesCopyWithImpl(this._self, this._then);
+
+  final _Pages _self;
+  final $Res Function(_Pages) _then;
 
   /// Create a copy of Pages
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PagesImplCopyWith<_$PagesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? pageList = null,
+  }) {
+    return _then(_Pages(
+      pageList: null == pageList
+          ? _self._pageList
+          : pageList // ignore: cast_nullable_to_non_nullable
+              as List<Page>,
+    ));
+  }
 }
+
+// dart format on
