@@ -213,7 +213,7 @@ class ShopifyStore with ShopifyError {
   }
 
   /// Returns a list of recommended [Product] by given id.
-  Future<List<Product>?> getProductRecommendations(
+  Future<Products> getProductRecommendations(
     String productId, {
     List<MetafieldIdentifier>? metafields,
   }) async {
@@ -238,11 +238,11 @@ class ShopifyStore with ShopifyError {
                     (result.data!['productRecommendations'] ?? const {})[index]
               });
       var tempProducts = {"edges": newResponse};
-      return Products.fromGraphJson(tempProducts).productList;
+      return Products.fromGraphJson(tempProducts);
     } catch (e) {
       log(e.toString());
     }
-    return [Product.fromGraphJson({})];
+    return Products(productList: [], hasNextPage: false);
   }
 
   /// Returns a List of [Collection]
@@ -470,7 +470,7 @@ class ShopifyStore with ShopifyError {
   /// 1. https://shopify.dev/docs/custom-storefronts/building-with-the-storefront-api/products-collections/filter-products#step-1-query-products
   ///
   /// 2. https://shopify.dev/docs/api/storefront/2024-07/input-objects/productfilter
-  Future<List<Product>?> getXProductsAfterCursorWithinCollection(
+  Future<Products> getXProductsAfterCursorWithinCollection(
     String id,
     int limit, {
     String? startCursor,
@@ -498,7 +498,7 @@ class ShopifyStore with ShopifyError {
     );
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
-    return (Collection.fromGraphJson(result.data!)).products.productList;
+    return (Collection.fromGraphJson(result.data!)).products;
   }
 
   /// Returns a List of [Product].
