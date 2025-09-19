@@ -353,4 +353,20 @@ class ShopifyAuth with ShopifyError {
     );
     await _setShopifyUser(null, null);
   }
+
+  /// Fetches the user from the server.
+  Future<ShopifyUser?> getShopifyUserByAccessToken(String accessToken) async {
+    final WatchQueryOptions _getCustomer = WatchQueryOptions(
+      document: gql(getCustomerQuery),
+      variables: {'customerAccessToken': accessToken},
+      fetchPolicy: FetchPolicy.networkOnly,
+    );
+    final QueryResult result = (await _graphQLClient!.query(_getCustomer));
+    checkForError(result);
+    ShopifyUser user = ShopifyUser.fromGraphJson(
+        (result.data ?? const {})['customer'] ?? const {});
+    final updatedAccessToken = await _renewAccessToken(accessToken);
+    await _setShopifyUser(updatedAccessToken, user);
+    return user;
+  }
 }

@@ -171,7 +171,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.7/packages/flutter",
+      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.8/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -189,13 +189,13 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.7/packages/flutter_test",
+      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.8/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.7/packages/flutter_web_plugins",
+      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.8/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -549,7 +549,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.7/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/diepmac/fvm/versions/3.32.8/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.7"
     },
@@ -742,7 +742,7 @@
   ],
   "generator": "pub",
   "generatorVersion": "3.8.1",
-  "flutterRoot": "file:///Users/diepmac/fvm/versions/3.32.7",
-  "flutterVersion": "3.32.7",
+  "flutterRoot": "file:///Users/diepmac/fvm/versions/3.32.8",
+  "flutterVersion": "3.32.8",
   "pubCache": "file:///Users/diepmac/.pub-cache"
 }
