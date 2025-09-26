@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "shopify_flutter",
-      "version": "2.6.0",
+      "version": "2.7.0",
       "dependencies": [
         "flutter",
         "freezed_annotation",
@@ -1068,15 +1068,6 @@
       "dependencies": []
     },
     {
-      "name": "http",
-      "version": "0.13.6",
-      "dependencies": [
-        "async",
-        "http_parser",
-        "meta"
-      ]
-    },
-    {
       "name": "normalize",
       "version": "0.9.1",
       "dependencies": [
@@ -1186,6 +1177,16 @@
       "dependencies": [
         "collection",
         "meta"
+      ]
+    },
+    {
+      "name": "http",
+      "version": "1.5.0",
+      "dependencies": [
+        "async",
+        "http_parser",
+        "meta",
+        "web"
       ]
     }
   ],
