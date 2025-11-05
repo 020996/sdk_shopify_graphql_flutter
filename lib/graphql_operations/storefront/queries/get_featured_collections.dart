@@ -147,19 +147,32 @@ query getFeaturedCollectionQuery($metafields: [HasMetafieldsIdentifier!]!, $quer
                 }
               }
               media(first: 250) {
-                edges {
-                  node {
-                    alt
-                    id
-                    mediaContentType
-                    previewImage {
-                      altText
-                      id
-                      originalSrc
-                    }
-                  }
+          edges {
+            node {
+              alt
+              id
+              mediaContentType
+              previewImage {
+                altText
+                id
+                originalSrc
+              }
+              ... on Video {
+                sources {
+                  url
+                  mimeType
+                  format
+                  height
+                  width
                 }
               }
+              ... on ExternalVideo {
+                embedUrl
+                host
+              }
+            }
+          }
+        }
               onlineStoreUrl
               productType
               tags

@@ -57,6 +57,19 @@ query($metafields: [HasMetafieldsIdentifier!]!, $cursor: String, $sortKey : Prod
                 id
                 originalSrc
               }
+              ... on Video {
+                sources {
+                  url
+                  mimeType
+                  format
+                  height
+                  width
+                }
+              }
+              ... on ExternalVideo {
+                embedUrl
+                host
+              }
             }
           }
         }

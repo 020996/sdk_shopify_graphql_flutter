@@ -28,6 +28,19 @@ query getProductRecommentationsQuery($metafields: [HasMetafieldsIdentifier!]!, $
                 id
                 originalSrc
               }
+              ... on Video {
+                sources {
+                  url
+                  mimeType
+                  format
+                  height
+                  width
+                }
+              }
+              ... on ExternalVideo {
+                embedUrl
+                host
+              }
             }
           }
         }

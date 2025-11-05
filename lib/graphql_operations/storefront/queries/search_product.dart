@@ -70,6 +70,19 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
                 id
                 originalSrc
               }
+              ... on Video {
+                sources {
+                  url
+                  mimeType
+                  format
+                  height
+                  width
+                }
+              }
+              ... on ExternalVideo {
+                embedUrl
+                host
+              }
             }
           }
         }

@@ -22,6 +22,9 @@ mixin _$ProductMedia {
   String get mediaContentType;
   ShopifyImage? get image;
   String? get alt;
+  List<VideoSource>? get sources;
+  String? get embedUrl;
+  String? get host;
 
   /// Create a copy of ProductMedia
   /// with the given fields replaced by the non-null parameter values.
@@ -43,17 +46,21 @@ mixin _$ProductMedia {
             (identical(other.mediaContentType, mediaContentType) ||
                 other.mediaContentType == mediaContentType) &&
             (identical(other.image, image) || other.image == image) &&
-            (identical(other.alt, alt) || other.alt == alt));
+            (identical(other.alt, alt) || other.alt == alt) &&
+            const DeepCollectionEquality().equals(other.sources, sources) &&
+            (identical(other.embedUrl, embedUrl) ||
+                other.embedUrl == embedUrl) &&
+            (identical(other.host, host) || other.host == host));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, mediaContentType, image, alt);
+  int get hashCode => Object.hash(runtimeType, id, mediaContentType, image, alt,
+      const DeepCollectionEquality().hash(sources), embedUrl, host);
 
   @override
   String toString() {
-    return 'ProductMedia(id: $id, mediaContentType: $mediaContentType, image: $image, alt: $alt)';
+    return 'ProductMedia(id: $id, mediaContentType: $mediaContentType, image: $image, alt: $alt, sources: $sources, embedUrl: $embedUrl, host: $host)';
   }
 }
 
@@ -64,7 +71,13 @@ abstract mixin class $ProductMediaCopyWith<$Res> {
       _$ProductMediaCopyWithImpl;
   @useResult
   $Res call(
-      {String id, String mediaContentType, ShopifyImage? image, String? alt});
+      {String id,
+      String mediaContentType,
+      ShopifyImage? image,
+      String? alt,
+      List<VideoSource>? sources,
+      String? embedUrl,
+      String? host});
 
   $ShopifyImageCopyWith<$Res>? get image;
 }
@@ -85,6 +98,9 @@ class _$ProductMediaCopyWithImpl<$Res> implements $ProductMediaCopyWith<$Res> {
     Object? mediaContentType = null,
     Object? image = freezed,
     Object? alt = freezed,
+    Object? sources = freezed,
+    Object? embedUrl = freezed,
+    Object? host = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -102,6 +118,18 @@ class _$ProductMediaCopyWithImpl<$Res> implements $ProductMediaCopyWith<$Res> {
       alt: freezed == alt
           ? _self.alt
           : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sources: freezed == sources
+          ? _self.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<VideoSource>?,
+      embedUrl: freezed == embedUrl
+          ? _self.embedUrl
+          : embedUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -125,8 +153,15 @@ class _$ProductMediaCopyWithImpl<$Res> implements $ProductMediaCopyWith<$Res> {
 @JsonSerializable()
 class _ProductVariant extends ProductMedia {
   _ProductVariant(
-      {required this.id, required this.mediaContentType, this.image, this.alt})
-      : super._();
+      {required this.id,
+      required this.mediaContentType,
+      this.image,
+      this.alt,
+      final List<VideoSource>? sources,
+      this.embedUrl,
+      this.host})
+      : _sources = sources,
+        super._();
   factory _ProductVariant.fromJson(Map<String, dynamic> json) =>
       _$ProductVariantFromJson(json);
 
@@ -138,6 +173,20 @@ class _ProductVariant extends ProductMedia {
   final ShopifyImage? image;
   @override
   final String? alt;
+  final List<VideoSource>? _sources;
+  @override
+  List<VideoSource>? get sources {
+    final value = _sources;
+    if (value == null) return null;
+    if (_sources is EqualUnmodifiableListView) return _sources;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? embedUrl;
+  @override
+  final String? host;
 
   /// Create a copy of ProductMedia
   /// with the given fields replaced by the non-null parameter values.
@@ -163,17 +212,21 @@ class _ProductVariant extends ProductMedia {
             (identical(other.mediaContentType, mediaContentType) ||
                 other.mediaContentType == mediaContentType) &&
             (identical(other.image, image) || other.image == image) &&
-            (identical(other.alt, alt) || other.alt == alt));
+            (identical(other.alt, alt) || other.alt == alt) &&
+            const DeepCollectionEquality().equals(other._sources, _sources) &&
+            (identical(other.embedUrl, embedUrl) ||
+                other.embedUrl == embedUrl) &&
+            (identical(other.host, host) || other.host == host));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, mediaContentType, image, alt);
+  int get hashCode => Object.hash(runtimeType, id, mediaContentType, image, alt,
+      const DeepCollectionEquality().hash(_sources), embedUrl, host);
 
   @override
   String toString() {
-    return 'ProductMedia(id: $id, mediaContentType: $mediaContentType, image: $image, alt: $alt)';
+    return 'ProductMedia(id: $id, mediaContentType: $mediaContentType, image: $image, alt: $alt, sources: $sources, embedUrl: $embedUrl, host: $host)';
   }
 }
 
@@ -186,7 +239,13 @@ abstract mixin class _$ProductVariantCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id, String mediaContentType, ShopifyImage? image, String? alt});
+      {String id,
+      String mediaContentType,
+      ShopifyImage? image,
+      String? alt,
+      List<VideoSource>? sources,
+      String? embedUrl,
+      String? host});
 
   @override
   $ShopifyImageCopyWith<$Res>? get image;
@@ -209,6 +268,9 @@ class __$ProductVariantCopyWithImpl<$Res>
     Object? mediaContentType = null,
     Object? image = freezed,
     Object? alt = freezed,
+    Object? sources = freezed,
+    Object? embedUrl = freezed,
+    Object? host = freezed,
   }) {
     return _then(_ProductVariant(
       id: null == id
@@ -227,6 +289,18 @@ class __$ProductVariantCopyWithImpl<$Res>
           ? _self.alt
           : alt // ignore: cast_nullable_to_non_nullable
               as String?,
+      sources: freezed == sources
+          ? _self._sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<VideoSource>?,
+      embedUrl: freezed == embedUrl
+          ? _self.embedUrl
+          : embedUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -242,6 +316,219 @@ class __$ProductVariantCopyWithImpl<$Res>
     return $ShopifyImageCopyWith<$Res>(_self.image!, (value) {
       return _then(_self.copyWith(image: value));
     });
+  }
+}
+
+/// @nodoc
+mixin _$VideoSource {
+  String get url;
+  String get mimeType;
+  String get format;
+  int? get height;
+  int? get width;
+
+  /// Create a copy of VideoSource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $VideoSourceCopyWith<VideoSource> get copyWith =>
+      _$VideoSourceCopyWithImpl<VideoSource>(this as VideoSource, _$identity);
+
+  /// Serializes this VideoSource to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is VideoSource &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.mimeType, mimeType) ||
+                other.mimeType == mimeType) &&
+            (identical(other.format, format) || other.format == format) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, url, mimeType, format, height, width);
+
+  @override
+  String toString() {
+    return 'VideoSource(url: $url, mimeType: $mimeType, format: $format, height: $height, width: $width)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $VideoSourceCopyWith<$Res> {
+  factory $VideoSourceCopyWith(
+          VideoSource value, $Res Function(VideoSource) _then) =
+      _$VideoSourceCopyWithImpl;
+  @useResult
+  $Res call(
+      {String url, String mimeType, String format, int? height, int? width});
+}
+
+/// @nodoc
+class _$VideoSourceCopyWithImpl<$Res> implements $VideoSourceCopyWith<$Res> {
+  _$VideoSourceCopyWithImpl(this._self, this._then);
+
+  final VideoSource _self;
+  final $Res Function(VideoSource) _then;
+
+  /// Create a copy of VideoSource
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? url = null,
+    Object? mimeType = null,
+    Object? format = null,
+    Object? height = freezed,
+    Object? width = freezed,
+  }) {
+    return _then(_self.copyWith(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      mimeType: null == mimeType
+          ? _self.mimeType
+          : mimeType // ignore: cast_nullable_to_non_nullable
+              as String,
+      format: null == format
+          ? _self.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int?,
+      width: freezed == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _VideoSource extends VideoSource {
+  const _VideoSource(
+      {required this.url,
+      required this.mimeType,
+      required this.format,
+      this.height,
+      this.width})
+      : super._();
+  factory _VideoSource.fromJson(Map<String, dynamic> json) =>
+      _$VideoSourceFromJson(json);
+
+  @override
+  final String url;
+  @override
+  final String mimeType;
+  @override
+  final String format;
+  @override
+  final int? height;
+  @override
+  final int? width;
+
+  /// Create a copy of VideoSource
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$VideoSourceCopyWith<_VideoSource> get copyWith =>
+      __$VideoSourceCopyWithImpl<_VideoSource>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$VideoSourceToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _VideoSource &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.mimeType, mimeType) ||
+                other.mimeType == mimeType) &&
+            (identical(other.format, format) || other.format == format) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.width, width) || other.width == width));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, url, mimeType, format, height, width);
+
+  @override
+  String toString() {
+    return 'VideoSource(url: $url, mimeType: $mimeType, format: $format, height: $height, width: $width)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$VideoSourceCopyWith<$Res>
+    implements $VideoSourceCopyWith<$Res> {
+  factory _$VideoSourceCopyWith(
+          _VideoSource value, $Res Function(_VideoSource) _then) =
+      __$VideoSourceCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String url, String mimeType, String format, int? height, int? width});
+}
+
+/// @nodoc
+class __$VideoSourceCopyWithImpl<$Res> implements _$VideoSourceCopyWith<$Res> {
+  __$VideoSourceCopyWithImpl(this._self, this._then);
+
+  final _VideoSource _self;
+  final $Res Function(_VideoSource) _then;
+
+  /// Create a copy of VideoSource
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? url = null,
+    Object? mimeType = null,
+    Object? format = null,
+    Object? height = freezed,
+    Object? width = freezed,
+  }) {
+    return _then(_VideoSource(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      mimeType: null == mimeType
+          ? _self.mimeType
+          : mimeType // ignore: cast_nullable_to_non_nullable
+              as String,
+      format: null == format
+          ? _self.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int?,
+      width: freezed == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
   }
 }
 

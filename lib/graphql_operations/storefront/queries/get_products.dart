@@ -161,6 +161,19 @@ query($metafields: [HasMetafieldsIdentifier!]!, $cursor : String, $reverse: Bool
                 id
                 originalSrc
               }
+              ... on Video {
+                sources {
+                  url
+                  mimeType
+                  format
+                  height
+                  width
+                }
+              }
+              ... on ExternalVideo {
+                embedUrl
+                host
+              }
             }
           }
         }

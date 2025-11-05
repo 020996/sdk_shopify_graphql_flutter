@@ -68,19 +68,32 @@ query($metafields: [HasMetafieldsIdentifier!]!, $id : ID!, $cursor : String, $li
               }
             }
             media(first: 250) {
-              edges {
-                node {
-                  alt
-                  id
-                  mediaContentType
-                  previewImage {
-                    altText
-                    id
-                    originalSrc
-                  }
+          edges {
+            node {
+              alt
+              id
+              mediaContentType
+              previewImage {
+                altText
+                id
+                originalSrc
+              }
+              ... on Video {
+                sources {
+                  url
+                  mimeType
+                  format
+                  height
+                  width
                 }
               }
+              ... on ExternalVideo {
+                embedUrl
+                host
+              }
             }
+          }
+        }
             onlineStoreUrl
             productType
             tags
