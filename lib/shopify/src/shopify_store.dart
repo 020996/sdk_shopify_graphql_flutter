@@ -346,6 +346,7 @@ class ShopifyStore with ShopifyError {
     SortKeyCollection sortKeyCollection = SortKeyCollection.UPDATED_AT,
     bool reverse = false,
     List<MetafieldIdentifier>? metafields,
+    String languageCode = 'EN',
   }) async {
     List<Collection> collectionList = [];
     Collections tempCollection;
@@ -361,6 +362,7 @@ class ShopifyStore with ShopifyError {
           'metafields': metafields != null
               ? metafields.map((e) => e.toJson()).toList()
               : [],
+          'language': languageCode,
         },
         fetchPolicy: ShopifyConfig.fetchPolicy,
       );
@@ -480,6 +482,7 @@ class ShopifyStore with ShopifyError {
     bool reverse = false,
     Map<String, dynamic>? filters,
     List<MetafieldIdentifier>? metafields,
+    String languageCode = 'EN',
   }) async {
     String? cursor = startCursor;
     final WatchQueryOptions _options = WatchQueryOptions(
@@ -495,6 +498,7 @@ class ShopifyStore with ShopifyError {
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
             : [],
+        'language': languageCode,
       },
       fetchPolicy: ShopifyConfig.fetchPolicy,
     );
