@@ -522,7 +522,7 @@ class ShopifyStore with ShopifyError {
     bool reverse = false,
     Map<String, dynamic>? filters,
     List<MetafieldIdentifier>? metafields,
-    String languageCode = 'EN',
+    // String languageCode = 'EN',
     String countryCode = 'US',
   }) async {
     String? cursor = startCursor;
@@ -539,7 +539,7 @@ class ShopifyStore with ShopifyError {
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
             : [],
-        'language': languageCode,
+        // 'language': languageCode,
       },
       fetchPolicy: ShopifyConfig.fetchPolicy,
     );
