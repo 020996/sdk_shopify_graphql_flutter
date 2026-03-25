@@ -115,13 +115,14 @@ class ShopifyStore with ShopifyError {
     List<String> idList, {
     List<MetafieldIdentifier>? metafields,
     String languageCode = 'EN',
+    String countryCode = 'US',
   }) async {
     List<Product>? productList = [];
     final QueryOptions _options = WatchQueryOptions(
       document: gql(getProductsByIdsQuery),
       variables: {
         'ids': idList,
-        'country': ShopifyLocalization.countryCode,
+        'country': countryCode,
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
             : [],
@@ -483,6 +484,7 @@ class ShopifyStore with ShopifyError {
     Map<String, dynamic>? filters,
     List<MetafieldIdentifier>? metafields,
     String languageCode = 'EN',
+    String countryCode = 'US',
   }) async {
     String? cursor = startCursor;
     final WatchQueryOptions _options = WatchQueryOptions(
@@ -494,7 +496,7 @@ class ShopifyStore with ShopifyError {
         'sortKey': sortKey.parseToString(),
         'reverse': reverse,
         'filters': [if (filters != null) filters],
-        'country': ShopifyLocalization.countryCode,
+        'country': countryCode,
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
             : [],
