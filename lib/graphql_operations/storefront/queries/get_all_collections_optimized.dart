@@ -1,6 +1,6 @@
 /// Query to get all collections
 const String getAllCollectionsOptimizedQuery = r'''
-query($metafields: [HasMetafieldsIdentifier!]!, $cursor: String, $sortKey: CollectionSortKeys, $reverse: Boolean, $language: LanguageCode) @inContext(language: $language) {
+query($metafields: [HasMetafieldsIdentifier!]!, $cursor: String, $sortKey: CollectionSortKeys, $reverse: Boolean) {
   collections(first: 250, after: $cursor, sortKey: $sortKey, reverse: $reverse) {
   pageInfo{
     hasNextPage
