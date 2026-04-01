@@ -45,7 +45,6 @@ mutation MyMutation($firstName: String, $lastName: String, $email: String!, $pas
       zip
       provinceCode
     }
-    tags
     displayName
     email
     firstName
