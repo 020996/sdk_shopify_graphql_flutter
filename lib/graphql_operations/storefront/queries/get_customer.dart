@@ -46,7 +46,6 @@ query($customerAccessToken : String!){
     }
     displayName
     email
-    tags
     firstName
     id
     lastName

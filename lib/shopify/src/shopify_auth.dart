@@ -13,6 +13,7 @@ import '../../graphql_operations/storefront/mutations/customer_access_token_crea
 import '../../graphql_operations/storefront/mutations/customer_access_token_renew.dart';
 import '../../graphql_operations/storefront/mutations/customer_create.dart';
 import '../../graphql_operations/storefront/mutations/customer_recover.dart';
+import '../../graphql_operations/storefront/mutations/customer_reset_by_url.dart';
 import '../../graphql_operations/storefront/queries/get_customer.dart';
 import '../../shopify_config.dart';
 
@@ -160,6 +161,26 @@ class ShopifyAuth with ShopifyError {
     checkForError(
       result,
       key: 'customerRecover',
+      errorKey: 'customerUserErrors',
+    );
+  }
+
+  /// Resets a customer password by using Shopify reset URL.
+  Future<void> customerResetByUrl({
+    required String password,
+    required String resetUrl,
+  }) async {
+    final MutationOptions _options = MutationOptions(
+      document: gql(customerResetByUrlMutation),
+      variables: {
+        'password': password,
+        'resetUrl': resetUrl,
+      },
+    );
+    final QueryResult result = await _graphQLClient!.mutate(_options);
+    checkForError(
+      result,
+      key: 'customerResetByUrl',
       errorKey: 'customerUserErrors',
     );
   }

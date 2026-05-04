@@ -70,11 +70,15 @@ class ShopifyCustomer with ShopifyError {
     Map<String, dynamic> variableMap = {};
 
     Map<String, dynamic> dataMap = {};
-    dataMap['email'] = email;
-    dataMap['firstName'] = firstName;
-    dataMap['lastName'] = lastName;
-    dataMap['acceptsMarketing'] = acceptsMarketing;
-    dataMap['customerAccessToken'] = customerAccessToken;
+    if (email != null) dataMap['email'] = email;
+    if (firstName != null) dataMap['firstName'] = firstName;
+    if (lastName != null) dataMap['lastName'] = lastName;
+    if (acceptsMarketing != null) {
+      dataMap['acceptsMarketing'] = acceptsMarketing;
+    }
+    if (customerAccessToken != null) {
+      dataMap['customerAccessToken'] = customerAccessToken;
+    }
     if (phoneNumber != null && phoneNumber.isNotEmpty) {
       dataMap['phone'] = phoneNumber;
     }
@@ -82,7 +86,7 @@ class ShopifyCustomer with ShopifyError {
       dataMap['password'] = password;
     }
 
-    dataMap.forEach((k, v) => v != {} ? variableMap[k] = v : {});
+    variableMap = dataMap;
 
     final MutationOptions _options = MutationOptions(
         document: gql(createValidMutationString(variableMap)),
