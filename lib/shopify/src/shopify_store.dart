@@ -479,7 +479,7 @@ class ShopifyStore with ShopifyError {
     bool reverse = false,
     Map<String, dynamic>? filters,
     List<MetafieldIdentifier>? metafields,
-    String countryCode = 'US',
+    String? countryCode,
   }) async {
     String? cursor = startCursor;
     final WatchQueryOptions _options = WatchQueryOptions(
@@ -516,7 +516,7 @@ class ShopifyStore with ShopifyError {
     bool reverse = false,
     Map<String, dynamic>? filters,
     List<MetafieldIdentifier>? metafields,
-    String countryCode = 'US',
+    String? countryCode,
   }) async {
     String? cursor = startCursor;
     final WatchQueryOptions _options = WatchQueryOptions(
