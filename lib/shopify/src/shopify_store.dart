@@ -114,14 +114,14 @@ class ShopifyStore with ShopifyError {
   Future<List<Product>?> getProductsByIds(
     List<String> idList, {
     List<MetafieldIdentifier>? metafields,
-    String countryCode = 'US',
+    String? countryCode,
   }) async {
     List<Product>? productList = [];
     final QueryOptions _options = WatchQueryOptions(
       document: gql(getProductsByIdsQuery),
       variables: {
         'ids': idList,
-        'country': countryCode,
+        'country': countryCode ?? ShopifyLocalization.countryCode,
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
             : [],
