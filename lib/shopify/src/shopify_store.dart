@@ -121,7 +121,7 @@ class ShopifyStore with ShopifyError {
       document: gql(getProductsByIdsQuery),
       variables: {
         'ids': idList,
-        'country': countryCode ?? ShopifyLocalization.countryCode,
+        'country': countryCode,
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
             : [],
