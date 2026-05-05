@@ -1,6 +1,6 @@
 /// Query to get products by ids
 const String getProductsByIdsQuery = r'''
-query($metafields: [HasMetafieldsIdentifier!]!, $country: [CountryCode]!, $ids : [ID!]!) @inContext(country: $country) {
+query($metafields: [HasMetafieldsIdentifier!]!, $country: String, $ids : [ID!]!) @inContext(country: $country) {
   nodes(ids: $ids) {
     ... on Product {
       metafields(identifiers: $metafields) {
