@@ -6,9 +6,9 @@ part of 'cart_delivery_preference.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CartDeliveryPreference _$CartDeliveryPreferenceFromJson(
+_$CartDeliveryPreferenceImpl _$$CartDeliveryPreferenceImplFromJson(
         Map<String, dynamic> json) =>
-    _CartDeliveryPreference(
+    _$CartDeliveryPreferenceImpl(
       deliveryMethod: json['deliveryMethod'] as String?,
       pickupHandle: (json['pickupHandle'] as List<dynamic>?)
           ?.map((e) => e as String?)
@@ -19,8 +19,8 @@ _CartDeliveryPreference _$CartDeliveryPreferenceFromJson(
               json['coordinates'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CartDeliveryPreferenceToJson(
-        _CartDeliveryPreference instance) =>
+Map<String, dynamic> _$$CartDeliveryPreferenceImplToJson(
+        _$CartDeliveryPreferenceImpl instance) =>
     <String, dynamic>{
       'deliveryMethod': instance.deliveryMethod,
       'pickupHandle': instance.pickupHandle,

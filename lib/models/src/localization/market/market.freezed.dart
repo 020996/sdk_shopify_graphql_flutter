@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,57 +9,46 @@ part of 'market.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Market _$MarketFromJson(Map<String, dynamic> json) {
+  return _Market.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Market {
-  String get id;
-  String get handle;
+  String get id => throw _privateConstructorUsedError;
+  String get handle => throw _privateConstructorUsedError;
+
+  /// Serializes this Market to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Market
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $MarketCopyWith<Market> get copyWith =>
-      _$MarketCopyWithImpl<Market>(this as Market, _$identity);
-
-  /// Serializes this Market to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Market &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.handle, handle) || other.handle == handle));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, handle);
-
-  @override
-  String toString() {
-    return 'Market(id: $id, handle: $handle)';
-  }
+  $MarketCopyWith<Market> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $MarketCopyWith<$Res> {
-  factory $MarketCopyWith(Market value, $Res Function(Market) _then) =
-      _$MarketCopyWithImpl;
+abstract class $MarketCopyWith<$Res> {
+  factory $MarketCopyWith(Market value, $Res Function(Market) then) =
+      _$MarketCopyWithImpl<$Res, Market>;
   @useResult
   $Res call({String id, String handle});
 }
 
 /// @nodoc
-class _$MarketCopyWithImpl<$Res> implements $MarketCopyWith<$Res> {
-  _$MarketCopyWithImpl(this._self, this._then);
+class _$MarketCopyWithImpl<$Res, $Val extends Market>
+    implements $MarketCopyWith<$Res> {
+  _$MarketCopyWithImpl(this._value, this._then);
 
-  final Market _self;
-  final $Res Function(Market) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Market
   /// with the given fields replaced by the non-null parameter values.
@@ -70,13 +58,52 @@ class _$MarketCopyWithImpl<$Res> implements $MarketCopyWith<$Res> {
     Object? id = null,
     Object? handle = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       handle: null == handle
-          ? _self.handle
+          ? _value.handle
+          : handle // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MarketImplCopyWith<$Res> implements $MarketCopyWith<$Res> {
+  factory _$$MarketImplCopyWith(
+          _$MarketImpl value, $Res Function(_$MarketImpl) then) =
+      __$$MarketImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String handle});
+}
+
+/// @nodoc
+class __$$MarketImplCopyWithImpl<$Res>
+    extends _$MarketCopyWithImpl<$Res, _$MarketImpl>
+    implements _$$MarketImplCopyWith<$Res> {
+  __$$MarketImplCopyWithImpl(
+      _$MarketImpl _value, $Res Function(_$MarketImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Market
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? handle = null,
+  }) {
+    return _then(_$MarketImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      handle: null == handle
+          ? _value.handle
           : handle // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -85,35 +112,27 @@ class _$MarketCopyWithImpl<$Res> implements $MarketCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Market implements Market {
-  const _Market({required this.id, required this.handle});
-  factory _Market.fromJson(Map<String, dynamic> json) => _$MarketFromJson(json);
+class _$MarketImpl implements _Market {
+  const _$MarketImpl({required this.id, required this.handle});
+
+  factory _$MarketImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MarketImplFromJson(json);
 
   @override
   final String id;
   @override
   final String handle;
 
-  /// Create a copy of Market
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$MarketCopyWith<_Market> get copyWith =>
-      __$MarketCopyWithImpl<_Market>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$MarketToJson(
-      this,
-    );
+  String toString() {
+    return 'Market(id: $id, handle: $handle)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Market &&
+            other is _$MarketImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.handle, handle) || other.handle == handle));
   }
@@ -122,47 +141,37 @@ class _Market implements Market {
   @override
   int get hashCode => Object.hash(runtimeType, id, handle);
 
+  /// Create a copy of Market
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Market(id: $id, handle: $handle)';
+  @pragma('vm:prefer-inline')
+  _$$MarketImplCopyWith<_$MarketImpl> get copyWith =>
+      __$$MarketImplCopyWithImpl<_$MarketImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MarketImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$MarketCopyWith<$Res> implements $MarketCopyWith<$Res> {
-  factory _$MarketCopyWith(_Market value, $Res Function(_Market) _then) =
-      __$MarketCopyWithImpl;
+abstract class _Market implements Market {
+  const factory _Market(
+      {required final String id, required final String handle}) = _$MarketImpl;
+
+  factory _Market.fromJson(Map<String, dynamic> json) = _$MarketImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({String id, String handle});
-}
-
-/// @nodoc
-class __$MarketCopyWithImpl<$Res> implements _$MarketCopyWith<$Res> {
-  __$MarketCopyWithImpl(this._self, this._then);
-
-  final _Market _self;
-  final $Res Function(_Market) _then;
+  String get id;
+  @override
+  String get handle;
 
   /// Create a copy of Market
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? handle = null,
-  }) {
-    return _then(_Market(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      handle: null == handle
-          ? _self.handle
-          : handle // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MarketImplCopyWith<_$MarketImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

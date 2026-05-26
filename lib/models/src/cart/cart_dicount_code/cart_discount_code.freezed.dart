@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,61 +9,48 @@ part of 'cart_discount_code.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+CartDiscountCode _$CartDiscountCodeFromJson(Map<String, dynamic> json) {
+  return _CartDiscountCode.fromJson(json);
+}
 
 /// @nodoc
 mixin _$CartDiscountCode {
-  bool? get applicable;
-  String? get code;
+  bool? get applicable => throw _privateConstructorUsedError;
+  String? get code => throw _privateConstructorUsedError;
+
+  /// Serializes this CartDiscountCode to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of CartDiscountCode
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $CartDiscountCodeCopyWith<CartDiscountCode> get copyWith =>
-      _$CartDiscountCodeCopyWithImpl<CartDiscountCode>(
-          this as CartDiscountCode, _$identity);
-
-  /// Serializes this CartDiscountCode to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is CartDiscountCode &&
-            (identical(other.applicable, applicable) ||
-                other.applicable == applicable) &&
-            (identical(other.code, code) || other.code == code));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, applicable, code);
-
-  @override
-  String toString() {
-    return 'CartDiscountCode(applicable: $applicable, code: $code)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $CartDiscountCodeCopyWith<$Res> {
+abstract class $CartDiscountCodeCopyWith<$Res> {
   factory $CartDiscountCodeCopyWith(
-          CartDiscountCode value, $Res Function(CartDiscountCode) _then) =
-      _$CartDiscountCodeCopyWithImpl;
+          CartDiscountCode value, $Res Function(CartDiscountCode) then) =
+      _$CartDiscountCodeCopyWithImpl<$Res, CartDiscountCode>;
   @useResult
   $Res call({bool? applicable, String? code});
 }
 
 /// @nodoc
-class _$CartDiscountCodeCopyWithImpl<$Res>
+class _$CartDiscountCodeCopyWithImpl<$Res, $Val extends CartDiscountCode>
     implements $CartDiscountCodeCopyWith<$Res> {
-  _$CartDiscountCodeCopyWithImpl(this._self, this._then);
+  _$CartDiscountCodeCopyWithImpl(this._value, this._then);
 
-  final CartDiscountCode _self;
-  final $Res Function(CartDiscountCode) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of CartDiscountCode
   /// with the given fields replaced by the non-null parameter values.
@@ -74,13 +60,53 @@ class _$CartDiscountCodeCopyWithImpl<$Res>
     Object? applicable = freezed,
     Object? code = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       applicable: freezed == applicable
-          ? _self.applicable
+          ? _value.applicable
           : applicable // ignore: cast_nullable_to_non_nullable
               as bool?,
       code: freezed == code
-          ? _self.code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CartDiscountCodeImplCopyWith<$Res>
+    implements $CartDiscountCodeCopyWith<$Res> {
+  factory _$$CartDiscountCodeImplCopyWith(_$CartDiscountCodeImpl value,
+          $Res Function(_$CartDiscountCodeImpl) then) =
+      __$$CartDiscountCodeImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool? applicable, String? code});
+}
+
+/// @nodoc
+class __$$CartDiscountCodeImplCopyWithImpl<$Res>
+    extends _$CartDiscountCodeCopyWithImpl<$Res, _$CartDiscountCodeImpl>
+    implements _$$CartDiscountCodeImplCopyWith<$Res> {
+  __$$CartDiscountCodeImplCopyWithImpl(_$CartDiscountCodeImpl _value,
+      $Res Function(_$CartDiscountCodeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartDiscountCode
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? applicable = freezed,
+    Object? code = freezed,
+  }) {
+    return _then(_$CartDiscountCodeImpl(
+      applicable: freezed == applicable
+          ? _value.applicable
+          : applicable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      code: freezed == code
+          ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -89,36 +115,28 @@ class _$CartDiscountCodeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _CartDiscountCode extends CartDiscountCode {
-  _CartDiscountCode({required this.applicable, required this.code}) : super._();
-  factory _CartDiscountCode.fromJson(Map<String, dynamic> json) =>
-      _$CartDiscountCodeFromJson(json);
+class _$CartDiscountCodeImpl extends _CartDiscountCode {
+  _$CartDiscountCodeImpl({required this.applicable, required this.code})
+      : super._();
+
+  factory _$CartDiscountCodeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CartDiscountCodeImplFromJson(json);
 
   @override
   final bool? applicable;
   @override
   final String? code;
 
-  /// Create a copy of CartDiscountCode
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$CartDiscountCodeCopyWith<_CartDiscountCode> get copyWith =>
-      __$CartDiscountCodeCopyWithImpl<_CartDiscountCode>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$CartDiscountCodeToJson(
-      this,
-    );
+  String toString() {
+    return 'CartDiscountCode(applicable: $applicable, code: $code)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CartDiscountCode &&
+            other is _$CartDiscountCodeImpl &&
             (identical(other.applicable, applicable) ||
                 other.applicable == applicable) &&
             (identical(other.code, code) || other.code == code));
@@ -128,50 +146,41 @@ class _CartDiscountCode extends CartDiscountCode {
   @override
   int get hashCode => Object.hash(runtimeType, applicable, code);
 
+  /// Create a copy of CartDiscountCode
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'CartDiscountCode(applicable: $applicable, code: $code)';
+  @pragma('vm:prefer-inline')
+  _$$CartDiscountCodeImplCopyWith<_$CartDiscountCodeImpl> get copyWith =>
+      __$$CartDiscountCodeImplCopyWithImpl<_$CartDiscountCodeImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CartDiscountCodeImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$CartDiscountCodeCopyWith<$Res>
-    implements $CartDiscountCodeCopyWith<$Res> {
-  factory _$CartDiscountCodeCopyWith(
-          _CartDiscountCode value, $Res Function(_CartDiscountCode) _then) =
-      __$CartDiscountCodeCopyWithImpl;
+abstract class _CartDiscountCode extends CartDiscountCode {
+  factory _CartDiscountCode(
+      {required final bool? applicable,
+      required final String? code}) = _$CartDiscountCodeImpl;
+  _CartDiscountCode._() : super._();
+
+  factory _CartDiscountCode.fromJson(Map<String, dynamic> json) =
+      _$CartDiscountCodeImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({bool? applicable, String? code});
-}
-
-/// @nodoc
-class __$CartDiscountCodeCopyWithImpl<$Res>
-    implements _$CartDiscountCodeCopyWith<$Res> {
-  __$CartDiscountCodeCopyWithImpl(this._self, this._then);
-
-  final _CartDiscountCode _self;
-  final $Res Function(_CartDiscountCode) _then;
+  bool? get applicable;
+  @override
+  String? get code;
 
   /// Create a copy of CartDiscountCode
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? applicable = freezed,
-    Object? code = freezed,
-  }) {
-    return _then(_CartDiscountCode(
-      applicable: freezed == applicable
-          ? _self.applicable
-          : applicable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      code: freezed == code
-          ? _self.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CartDiscountCodeImplCopyWith<_$CartDiscountCodeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

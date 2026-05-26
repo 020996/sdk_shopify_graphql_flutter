@@ -6,8 +6,8 @@ part of 'product_variant.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
-    _ProductVariant(
+_$ProductVariantImpl _$$ProductVariantImplFromJson(Map<String, dynamic> json) =>
+    _$ProductVariantImpl(
       price: PriceV2.fromJson(json['price'] as Map<String, dynamic>),
       title: json['title'] as String,
       weight: (json['weight'] as num).toDouble(),
@@ -41,9 +41,14 @@ _ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
                   SellingPlanAllocation.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      shopPayInstallmentsPricing: json['shopPayInstallmentsPricing'] == null
+          ? null
+          : ShopPayInstallmentsPricing.fromJson(
+              json['shopPayInstallmentsPricing'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
+Map<String, dynamic> _$$ProductVariantImplToJson(
+        _$ProductVariantImpl instance) =>
     <String, dynamic>{
       'price': instance.price.toJson(),
       'title': instance.title,
@@ -63,4 +68,6 @@ Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
       'product': instance.product?.toJson(),
       'sellingPlanAllocations':
           instance.sellingPlanAllocations.map((e) => e.toJson()).toList(),
+      'shopPayInstallmentsPricing':
+          instance.shopPayInstallmentsPricing?.toJson(),
     };

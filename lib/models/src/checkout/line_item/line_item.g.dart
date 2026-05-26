@@ -6,7 +6,8 @@ part of 'line_item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LineItem _$LineItemFromJson(Map<String, dynamic> json) => _LineItem(
+_$LineItemImpl _$$LineItemImplFromJson(Map<String, dynamic> json) =>
+    _$LineItemImpl(
       title: json['title'] as String,
       quantity: (json['quantity'] as num).toInt(),
       discountAllocations: (json['discountAllocations'] as List<dynamic>?)
@@ -26,7 +27,8 @@ _LineItem _$LineItemFromJson(Map<String, dynamic> json) => _LineItem(
               json['variant'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$LineItemToJson(_LineItem instance) => <String, dynamic>{
+Map<String, dynamic> _$$LineItemImplToJson(_$LineItemImpl instance) =>
+    <String, dynamic>{
       'title': instance.title,
       'quantity': instance.quantity,
       'discountAllocations':

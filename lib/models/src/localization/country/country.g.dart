@@ -6,7 +6,8 @@ part of 'country.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Country _$CountryFromJson(Map<String, dynamic> json) => _Country(
+_$CountryImpl _$$CountryImplFromJson(Map<String, dynamic> json) =>
+    _$CountryImpl(
       market: Market.fromJson(json['market'] as Map<String, dynamic>),
       availableLanguages: (json['availableLanguages'] as List<dynamic>)
           .map((e) => Language.fromJson(e as Map<String, dynamic>))
@@ -17,7 +18,8 @@ _Country _$CountryFromJson(Map<String, dynamic> json) => _Country(
       unitSystem: json['unitSystem'] as String,
     );
 
-Map<String, dynamic> _$CountryToJson(_Country instance) => <String, dynamic>{
+Map<String, dynamic> _$$CountryImplToJson(_$CountryImpl instance) =>
+    <String, dynamic>{
       'market': instance.market.toJson(),
       'availableLanguages':
           instance.availableLanguages.map((e) => e.toJson()).toList(),

@@ -6,8 +6,8 @@ part of 'terms_of_service.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TermsOfService _$TermsOfServiceFromJson(Map<String, dynamic> json) =>
-    _TermsOfService(
+_$TermsOfServiceImpl _$$TermsOfServiceImplFromJson(Map<String, dynamic> json) =>
+    _$TermsOfServiceImpl(
       body: json['body'] as String?,
       handle: json['handle'] as String?,
       id: json['id'] as String?,
@@ -15,7 +15,8 @@ _TermsOfService _$TermsOfServiceFromJson(Map<String, dynamic> json) =>
       url: json['url'] as String?,
     );
 
-Map<String, dynamic> _$TermsOfServiceToJson(_TermsOfService instance) =>
+Map<String, dynamic> _$$TermsOfServiceImplToJson(
+        _$TermsOfServiceImpl instance) =>
     <String, dynamic>{
       'body': instance.body,
       'handle': instance.handle,

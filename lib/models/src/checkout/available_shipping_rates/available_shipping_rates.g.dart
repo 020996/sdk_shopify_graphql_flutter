@@ -6,17 +6,17 @@ part of 'available_shipping_rates.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AvailableShippingRates _$AvailableShippingRatesFromJson(
+_$AvailableShippingRatesImpl _$$AvailableShippingRatesImplFromJson(
         Map<String, dynamic> json) =>
-    _AvailableShippingRates(
+    _$AvailableShippingRatesImpl(
       ready: json['ready'] as bool,
       shippingRates: (json['shippingRates'] as List<dynamic>?)
           ?.map((e) => ShippingRates.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$AvailableShippingRatesToJson(
-        _AvailableShippingRates instance) =>
+Map<String, dynamic> _$$AvailableShippingRatesImplToJson(
+        _$AvailableShippingRatesImpl instance) =>
     <String, dynamic>{
       'ready': instance.ready,
       'shippingRates': instance.shippingRates?.map((e) => e.toJson()).toList(),

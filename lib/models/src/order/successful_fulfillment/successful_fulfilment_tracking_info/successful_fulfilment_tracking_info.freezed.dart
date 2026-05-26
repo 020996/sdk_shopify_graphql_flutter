@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,62 +9,52 @@ part of 'successful_fulfilment_tracking_info.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+SuccessfulFullfilmentTrackingInfo _$SuccessfulFullfilmentTrackingInfoFromJson(
+    Map<String, dynamic> json) {
+  return _SuccessfulFullfilmentTrackingInfo.fromJson(json);
+}
 
 /// @nodoc
 mixin _$SuccessfulFullfilmentTrackingInfo {
-  String? get number;
-  String? get url;
+  String? get number => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+
+  /// Serializes this SuccessfulFullfilmentTrackingInfo to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SuccessfulFullfilmentTrackingInfo
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SuccessfulFullfilmentTrackingInfoCopyWith<SuccessfulFullfilmentTrackingInfo>
-      get copyWith => _$SuccessfulFullfilmentTrackingInfoCopyWithImpl<
-              SuccessfulFullfilmentTrackingInfo>(
-          this as SuccessfulFullfilmentTrackingInfo, _$identity);
-
-  /// Serializes this SuccessfulFullfilmentTrackingInfo to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SuccessfulFullfilmentTrackingInfo &&
-            (identical(other.number, number) || other.number == number) &&
-            (identical(other.url, url) || other.url == url));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, number, url);
-
-  @override
-  String toString() {
-    return 'SuccessfulFullfilmentTrackingInfo(number: $number, url: $url)';
-  }
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SuccessfulFullfilmentTrackingInfoCopyWith<$Res> {
+abstract class $SuccessfulFullfilmentTrackingInfoCopyWith<$Res> {
   factory $SuccessfulFullfilmentTrackingInfoCopyWith(
           SuccessfulFullfilmentTrackingInfo value,
-          $Res Function(SuccessfulFullfilmentTrackingInfo) _then) =
-      _$SuccessfulFullfilmentTrackingInfoCopyWithImpl;
+          $Res Function(SuccessfulFullfilmentTrackingInfo) then) =
+      _$SuccessfulFullfilmentTrackingInfoCopyWithImpl<$Res,
+          SuccessfulFullfilmentTrackingInfo>;
   @useResult
   $Res call({String? number, String? url});
 }
 
 /// @nodoc
-class _$SuccessfulFullfilmentTrackingInfoCopyWithImpl<$Res>
+class _$SuccessfulFullfilmentTrackingInfoCopyWithImpl<$Res,
+        $Val extends SuccessfulFullfilmentTrackingInfo>
     implements $SuccessfulFullfilmentTrackingInfoCopyWith<$Res> {
-  _$SuccessfulFullfilmentTrackingInfoCopyWithImpl(this._self, this._then);
+  _$SuccessfulFullfilmentTrackingInfoCopyWithImpl(this._value, this._then);
 
-  final SuccessfulFullfilmentTrackingInfo _self;
-  final $Res Function(SuccessfulFullfilmentTrackingInfo) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SuccessfulFullfilmentTrackingInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -75,13 +64,56 @@ class _$SuccessfulFullfilmentTrackingInfoCopyWithImpl<$Res>
     Object? number = freezed,
     Object? url = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       number: freezed == number
-          ? _self.number
+          ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as String?,
       url: freezed == url
-          ? _self.url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SuccessfulFullfilmentTrackingInfoImplCopyWith<$Res>
+    implements $SuccessfulFullfilmentTrackingInfoCopyWith<$Res> {
+  factory _$$SuccessfulFullfilmentTrackingInfoImplCopyWith(
+          _$SuccessfulFullfilmentTrackingInfoImpl value,
+          $Res Function(_$SuccessfulFullfilmentTrackingInfoImpl) then) =
+      __$$SuccessfulFullfilmentTrackingInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? number, String? url});
+}
+
+/// @nodoc
+class __$$SuccessfulFullfilmentTrackingInfoImplCopyWithImpl<$Res>
+    extends _$SuccessfulFullfilmentTrackingInfoCopyWithImpl<$Res,
+        _$SuccessfulFullfilmentTrackingInfoImpl>
+    implements _$$SuccessfulFullfilmentTrackingInfoImplCopyWith<$Res> {
+  __$$SuccessfulFullfilmentTrackingInfoImplCopyWithImpl(
+      _$SuccessfulFullfilmentTrackingInfoImpl _value,
+      $Res Function(_$SuccessfulFullfilmentTrackingInfoImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SuccessfulFullfilmentTrackingInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? number = freezed,
+    Object? url = freezed,
+  }) {
+    return _then(_$SuccessfulFullfilmentTrackingInfoImpl(
+      number: freezed == number
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: freezed == url
+          ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -90,41 +122,31 @@ class _$SuccessfulFullfilmentTrackingInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _SuccessfulFullfilmentTrackingInfo
-    extends SuccessfulFullfilmentTrackingInfo {
-  _SuccessfulFullfilmentTrackingInfo({required this.number, required this.url})
+class _$SuccessfulFullfilmentTrackingInfoImpl
+    extends _SuccessfulFullfilmentTrackingInfo {
+  _$SuccessfulFullfilmentTrackingInfoImpl(
+      {required this.number, required this.url})
       : super._();
-  factory _SuccessfulFullfilmentTrackingInfo.fromJson(
+
+  factory _$SuccessfulFullfilmentTrackingInfoImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$SuccessfulFullfilmentTrackingInfoFromJson(json);
+      _$$SuccessfulFullfilmentTrackingInfoImplFromJson(json);
 
   @override
   final String? number;
   @override
   final String? url;
 
-  /// Create a copy of SuccessfulFullfilmentTrackingInfo
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SuccessfulFullfilmentTrackingInfoCopyWith<
-          _SuccessfulFullfilmentTrackingInfo>
-      get copyWith => __$SuccessfulFullfilmentTrackingInfoCopyWithImpl<
-          _SuccessfulFullfilmentTrackingInfo>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SuccessfulFullfilmentTrackingInfoToJson(
-      this,
-    );
+  String toString() {
+    return 'SuccessfulFullfilmentTrackingInfo(number: $number, url: $url)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SuccessfulFullfilmentTrackingInfo &&
+            other is _$SuccessfulFullfilmentTrackingInfoImpl &&
             (identical(other.number, number) || other.number == number) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -133,51 +155,45 @@ class _SuccessfulFullfilmentTrackingInfo
   @override
   int get hashCode => Object.hash(runtimeType, number, url);
 
+  /// Create a copy of SuccessfulFullfilmentTrackingInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SuccessfulFullfilmentTrackingInfo(number: $number, url: $url)';
+  @pragma('vm:prefer-inline')
+  _$$SuccessfulFullfilmentTrackingInfoImplCopyWith<
+          _$SuccessfulFullfilmentTrackingInfoImpl>
+      get copyWith => __$$SuccessfulFullfilmentTrackingInfoImplCopyWithImpl<
+          _$SuccessfulFullfilmentTrackingInfoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SuccessfulFullfilmentTrackingInfoImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SuccessfulFullfilmentTrackingInfoCopyWith<$Res>
-    implements $SuccessfulFullfilmentTrackingInfoCopyWith<$Res> {
-  factory _$SuccessfulFullfilmentTrackingInfoCopyWith(
-          _SuccessfulFullfilmentTrackingInfo value,
-          $Res Function(_SuccessfulFullfilmentTrackingInfo) _then) =
-      __$SuccessfulFullfilmentTrackingInfoCopyWithImpl;
+abstract class _SuccessfulFullfilmentTrackingInfo
+    extends SuccessfulFullfilmentTrackingInfo {
+  factory _SuccessfulFullfilmentTrackingInfo(
+      {required final String? number,
+      required final String? url}) = _$SuccessfulFullfilmentTrackingInfoImpl;
+  _SuccessfulFullfilmentTrackingInfo._() : super._();
+
+  factory _SuccessfulFullfilmentTrackingInfo.fromJson(
+          Map<String, dynamic> json) =
+      _$SuccessfulFullfilmentTrackingInfoImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({String? number, String? url});
-}
-
-/// @nodoc
-class __$SuccessfulFullfilmentTrackingInfoCopyWithImpl<$Res>
-    implements _$SuccessfulFullfilmentTrackingInfoCopyWith<$Res> {
-  __$SuccessfulFullfilmentTrackingInfoCopyWithImpl(this._self, this._then);
-
-  final _SuccessfulFullfilmentTrackingInfo _self;
-  final $Res Function(_SuccessfulFullfilmentTrackingInfo) _then;
+  String? get number;
+  @override
+  String? get url;
 
   /// Create a copy of SuccessfulFullfilmentTrackingInfo
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? number = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_SuccessfulFullfilmentTrackingInfo(
-      number: freezed == number
-          ? _self.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessfulFullfilmentTrackingInfoImplCopyWith<
+          _$SuccessfulFullfilmentTrackingInfoImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-// dart format on

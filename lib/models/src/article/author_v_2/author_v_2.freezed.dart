@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,56 +9,37 @@ part of 'author_v_2.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+AuthorV2 _$AuthorV2FromJson(Map<String, dynamic> json) {
+  return _AuthorV2.fromJson(json);
+}
 
 /// @nodoc
 mixin _$AuthorV2 {
-  String? get bio;
-  String? get email;
-  String? get firstName;
-  String? get lastName;
-  String? get name;
+  String? get bio => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get firstName => throw _privateConstructorUsedError;
+  String? get lastName => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  /// Serializes this AuthorV2 to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of AuthorV2
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $AuthorV2CopyWith<AuthorV2> get copyWith =>
-      _$AuthorV2CopyWithImpl<AuthorV2>(this as AuthorV2, _$identity);
-
-  /// Serializes this AuthorV2 to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AuthorV2 &&
-            (identical(other.bio, bio) || other.bio == bio) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, bio, email, firstName, lastName, name);
-
-  @override
-  String toString() {
-    return 'AuthorV2(bio: $bio, email: $email, firstName: $firstName, lastName: $lastName, name: $name)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AuthorV2CopyWith<$Res> {
-  factory $AuthorV2CopyWith(AuthorV2 value, $Res Function(AuthorV2) _then) =
-      _$AuthorV2CopyWithImpl;
+abstract class $AuthorV2CopyWith<$Res> {
+  factory $AuthorV2CopyWith(AuthorV2 value, $Res Function(AuthorV2) then) =
+      _$AuthorV2CopyWithImpl<$Res, AuthorV2>;
   @useResult
   $Res call(
       {String? bio,
@@ -70,11 +50,14 @@ abstract mixin class $AuthorV2CopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AuthorV2CopyWithImpl<$Res> implements $AuthorV2CopyWith<$Res> {
-  _$AuthorV2CopyWithImpl(this._self, this._then);
+class _$AuthorV2CopyWithImpl<$Res, $Val extends AuthorV2>
+    implements $AuthorV2CopyWith<$Res> {
+  _$AuthorV2CopyWithImpl(this._value, this._then);
 
-  final AuthorV2 _self;
-  final $Res Function(AuthorV2) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of AuthorV2
   /// with the given fields replaced by the non-null parameter values.
@@ -87,25 +70,85 @@ class _$AuthorV2CopyWithImpl<$Res> implements $AuthorV2CopyWith<$Res> {
     Object? lastName = freezed,
     Object? name = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       bio: freezed == bio
-          ? _self.bio
+          ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _self.email
+          ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       firstName: freezed == firstName
-          ? _self.firstName
+          ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String?,
       lastName: freezed == lastName
-          ? _self.lastName
+          ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
               as String?,
       name: freezed == name
-          ? _self.name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AuthorV2ImplCopyWith<$Res>
+    implements $AuthorV2CopyWith<$Res> {
+  factory _$$AuthorV2ImplCopyWith(
+          _$AuthorV2Impl value, $Res Function(_$AuthorV2Impl) then) =
+      __$$AuthorV2ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? bio,
+      String? email,
+      String? firstName,
+      String? lastName,
+      String? name});
+}
+
+/// @nodoc
+class __$$AuthorV2ImplCopyWithImpl<$Res>
+    extends _$AuthorV2CopyWithImpl<$Res, _$AuthorV2Impl>
+    implements _$$AuthorV2ImplCopyWith<$Res> {
+  __$$AuthorV2ImplCopyWithImpl(
+      _$AuthorV2Impl _value, $Res Function(_$AuthorV2Impl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthorV2
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bio = freezed,
+    Object? email = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_$AuthorV2Impl(
+      bio: freezed == bio
+          ? _value.bio
+          : bio // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -114,10 +157,12 @@ class _$AuthorV2CopyWithImpl<$Res> implements $AuthorV2CopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _AuthorV2 implements AuthorV2 {
-  _AuthorV2({this.bio, this.email, this.firstName, this.lastName, this.name});
-  factory _AuthorV2.fromJson(Map<String, dynamic> json) =>
-      _$AuthorV2FromJson(json);
+class _$AuthorV2Impl implements _AuthorV2 {
+  _$AuthorV2Impl(
+      {this.bio, this.email, this.firstName, this.lastName, this.name});
+
+  factory _$AuthorV2Impl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthorV2ImplFromJson(json);
 
   @override
   final String? bio;
@@ -130,26 +175,16 @@ class _AuthorV2 implements AuthorV2 {
   @override
   final String? name;
 
-  /// Create a copy of AuthorV2
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AuthorV2CopyWith<_AuthorV2> get copyWith =>
-      __$AuthorV2CopyWithImpl<_AuthorV2>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AuthorV2ToJson(
-      this,
-    );
+  String toString() {
+    return 'AuthorV2(bio: $bio, email: $email, firstName: $firstName, lastName: $lastName, name: $name)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AuthorV2 &&
+            other is _$AuthorV2Impl &&
             (identical(other.bio, bio) || other.bio == bio) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.firstName, firstName) ||
@@ -164,68 +199,48 @@ class _AuthorV2 implements AuthorV2 {
   int get hashCode =>
       Object.hash(runtimeType, bio, email, firstName, lastName, name);
 
+  /// Create a copy of AuthorV2
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'AuthorV2(bio: $bio, email: $email, firstName: $firstName, lastName: $lastName, name: $name)';
+  @pragma('vm:prefer-inline')
+  _$$AuthorV2ImplCopyWith<_$AuthorV2Impl> get copyWith =>
+      __$$AuthorV2ImplCopyWithImpl<_$AuthorV2Impl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AuthorV2ImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$AuthorV2CopyWith<$Res>
-    implements $AuthorV2CopyWith<$Res> {
-  factory _$AuthorV2CopyWith(_AuthorV2 value, $Res Function(_AuthorV2) _then) =
-      __$AuthorV2CopyWithImpl;
+abstract class _AuthorV2 implements AuthorV2 {
+  factory _AuthorV2(
+      {final String? bio,
+      final String? email,
+      final String? firstName,
+      final String? lastName,
+      final String? name}) = _$AuthorV2Impl;
+
+  factory _AuthorV2.fromJson(Map<String, dynamic> json) =
+      _$AuthorV2Impl.fromJson;
+
   @override
-  @useResult
-  $Res call(
-      {String? bio,
-      String? email,
-      String? firstName,
-      String? lastName,
-      String? name});
-}
-
-/// @nodoc
-class __$AuthorV2CopyWithImpl<$Res> implements _$AuthorV2CopyWith<$Res> {
-  __$AuthorV2CopyWithImpl(this._self, this._then);
-
-  final _AuthorV2 _self;
-  final $Res Function(_AuthorV2) _then;
+  String? get bio;
+  @override
+  String? get email;
+  @override
+  String? get firstName;
+  @override
+  String? get lastName;
+  @override
+  String? get name;
 
   /// Create a copy of AuthorV2
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? bio = freezed,
-    Object? email = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_AuthorV2(
-      bio: freezed == bio
-          ? _self.bio
-          : bio // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      firstName: freezed == firstName
-          ? _self.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: freezed == lastName
-          ? _self.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AuthorV2ImplCopyWith<_$AuthorV2Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

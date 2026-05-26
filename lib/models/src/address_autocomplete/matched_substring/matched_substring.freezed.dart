@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,60 +9,48 @@ part of 'matched_substring.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+MatchedSubstring _$MatchedSubstringFromJson(Map<String, dynamic> json) {
+  return _MatchedSubstring.fromJson(json);
+}
 
 /// @nodoc
 mixin _$MatchedSubstring {
-  int? get length;
-  int? get offset;
+  int? get length => throw _privateConstructorUsedError;
+  int? get offset => throw _privateConstructorUsedError;
+
+  /// Serializes this MatchedSubstring to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of MatchedSubstring
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $MatchedSubstringCopyWith<MatchedSubstring> get copyWith =>
-      _$MatchedSubstringCopyWithImpl<MatchedSubstring>(
-          this as MatchedSubstring, _$identity);
-
-  /// Serializes this MatchedSubstring to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is MatchedSubstring &&
-            (identical(other.length, length) || other.length == length) &&
-            (identical(other.offset, offset) || other.offset == offset));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, length, offset);
-
-  @override
-  String toString() {
-    return 'MatchedSubstring(length: $length, offset: $offset)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $MatchedSubstringCopyWith<$Res> {
+abstract class $MatchedSubstringCopyWith<$Res> {
   factory $MatchedSubstringCopyWith(
-          MatchedSubstring value, $Res Function(MatchedSubstring) _then) =
-      _$MatchedSubstringCopyWithImpl;
+          MatchedSubstring value, $Res Function(MatchedSubstring) then) =
+      _$MatchedSubstringCopyWithImpl<$Res, MatchedSubstring>;
   @useResult
   $Res call({int? length, int? offset});
 }
 
 /// @nodoc
-class _$MatchedSubstringCopyWithImpl<$Res>
+class _$MatchedSubstringCopyWithImpl<$Res, $Val extends MatchedSubstring>
     implements $MatchedSubstringCopyWith<$Res> {
-  _$MatchedSubstringCopyWithImpl(this._self, this._then);
+  _$MatchedSubstringCopyWithImpl(this._value, this._then);
 
-  final MatchedSubstring _self;
-  final $Res Function(MatchedSubstring) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of MatchedSubstring
   /// with the given fields replaced by the non-null parameter values.
@@ -73,13 +60,53 @@ class _$MatchedSubstringCopyWithImpl<$Res>
     Object? length = freezed,
     Object? offset = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       length: freezed == length
-          ? _self.length
+          ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int?,
       offset: freezed == offset
-          ? _self.offset
+          ? _value.offset
+          : offset // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MatchedSubstringImplCopyWith<$Res>
+    implements $MatchedSubstringCopyWith<$Res> {
+  factory _$$MatchedSubstringImplCopyWith(_$MatchedSubstringImpl value,
+          $Res Function(_$MatchedSubstringImpl) then) =
+      __$$MatchedSubstringImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? length, int? offset});
+}
+
+/// @nodoc
+class __$$MatchedSubstringImplCopyWithImpl<$Res>
+    extends _$MatchedSubstringCopyWithImpl<$Res, _$MatchedSubstringImpl>
+    implements _$$MatchedSubstringImplCopyWith<$Res> {
+  __$$MatchedSubstringImplCopyWithImpl(_$MatchedSubstringImpl _value,
+      $Res Function(_$MatchedSubstringImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MatchedSubstring
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? length = freezed,
+    Object? offset = freezed,
+  }) {
+    return _then(_$MatchedSubstringImpl(
+      length: freezed == length
+          ? _value.length
+          : length // ignore: cast_nullable_to_non_nullable
+              as int?,
+      offset: freezed == offset
+          ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -88,36 +115,27 @@ class _$MatchedSubstringCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _MatchedSubstring implements MatchedSubstring {
-  const _MatchedSubstring({this.length, this.offset});
-  factory _MatchedSubstring.fromJson(Map<String, dynamic> json) =>
-      _$MatchedSubstringFromJson(json);
+class _$MatchedSubstringImpl implements _MatchedSubstring {
+  const _$MatchedSubstringImpl({this.length, this.offset});
+
+  factory _$MatchedSubstringImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MatchedSubstringImplFromJson(json);
 
   @override
   final int? length;
   @override
   final int? offset;
 
-  /// Create a copy of MatchedSubstring
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$MatchedSubstringCopyWith<_MatchedSubstring> get copyWith =>
-      __$MatchedSubstringCopyWithImpl<_MatchedSubstring>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$MatchedSubstringToJson(
-      this,
-    );
+  String toString() {
+    return 'MatchedSubstring(length: $length, offset: $offset)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MatchedSubstring &&
+            other is _$MatchedSubstringImpl &&
             (identical(other.length, length) || other.length == length) &&
             (identical(other.offset, offset) || other.offset == offset));
   }
@@ -126,50 +144,39 @@ class _MatchedSubstring implements MatchedSubstring {
   @override
   int get hashCode => Object.hash(runtimeType, length, offset);
 
+  /// Create a copy of MatchedSubstring
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'MatchedSubstring(length: $length, offset: $offset)';
+  @pragma('vm:prefer-inline')
+  _$$MatchedSubstringImplCopyWith<_$MatchedSubstringImpl> get copyWith =>
+      __$$MatchedSubstringImplCopyWithImpl<_$MatchedSubstringImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MatchedSubstringImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$MatchedSubstringCopyWith<$Res>
-    implements $MatchedSubstringCopyWith<$Res> {
-  factory _$MatchedSubstringCopyWith(
-          _MatchedSubstring value, $Res Function(_MatchedSubstring) _then) =
-      __$MatchedSubstringCopyWithImpl;
+abstract class _MatchedSubstring implements MatchedSubstring {
+  const factory _MatchedSubstring({final int? length, final int? offset}) =
+      _$MatchedSubstringImpl;
+
+  factory _MatchedSubstring.fromJson(Map<String, dynamic> json) =
+      _$MatchedSubstringImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({int? length, int? offset});
-}
-
-/// @nodoc
-class __$MatchedSubstringCopyWithImpl<$Res>
-    implements _$MatchedSubstringCopyWith<$Res> {
-  __$MatchedSubstringCopyWithImpl(this._self, this._then);
-
-  final _MatchedSubstring _self;
-  final $Res Function(_MatchedSubstring) _then;
+  int? get length;
+  @override
+  int? get offset;
 
   /// Create a copy of MatchedSubstring
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? length = freezed,
-    Object? offset = freezed,
-  }) {
-    return _then(_MatchedSubstring(
-      length: freezed == length
-          ? _self.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as int?,
-      offset: freezed == offset
-          ? _self.offset
-          : offset // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MatchedSubstringImplCopyWith<_$MatchedSubstringImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

@@ -6,7 +6,8 @@ part of 'checkout.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Checkout _$CheckoutFromJson(Map<String, dynamic> json) => _Checkout(
+_$CheckoutImpl _$$CheckoutImplFromJson(Map<String, dynamic> json) =>
+    _$CheckoutImpl(
       id: json['id'] as String,
       ready: json['ready'] as bool,
       availableShippingRates: json['availableShippingRates'] == null
@@ -48,7 +49,8 @@ _Checkout _$CheckoutFromJson(Map<String, dynamic> json) => _Checkout(
       updatedAt: json['updatedAt'] as String?,
     );
 
-Map<String, dynamic> _$CheckoutToJson(_Checkout instance) => <String, dynamic>{
+Map<String, dynamic> _$$CheckoutImplToJson(_$CheckoutImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'ready': instance.ready,
       'availableShippingRates': instance.availableShippingRates?.toJson(),

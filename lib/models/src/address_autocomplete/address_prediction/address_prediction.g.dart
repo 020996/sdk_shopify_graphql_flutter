@@ -6,8 +6,9 @@ part of 'address_prediction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AddressPrediction _$AddressPredictionFromJson(Map<String, dynamic> json) =>
-    _AddressPrediction(
+_$AddressPredictionImpl _$$AddressPredictionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AddressPredictionImpl(
       addressId: json['addressId'] as String?,
       description: json['description'] as String?,
       matchedSubstrings: (json['matchedSubstrings'] as List<dynamic>?)
@@ -15,7 +16,8 @@ _AddressPrediction _$AddressPredictionFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$AddressPredictionToJson(_AddressPrediction instance) =>
+Map<String, dynamic> _$$AddressPredictionImplToJson(
+        _$AddressPredictionImpl instance) =>
     <String, dynamic>{
       'addressId': instance.addressId,
       'description': instance.description,

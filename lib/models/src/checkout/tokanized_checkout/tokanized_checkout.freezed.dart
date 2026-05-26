@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,67 +9,42 @@ part of 'tokanized_checkout.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+TokanizedCheckout _$TokanizedCheckoutFromJson(Map<String, dynamic> json) {
+  return _TokanizedCheckout.fromJson(json);
+}
 
 /// @nodoc
 mixin _$TokanizedCheckout {
   @JsonKey(name: 'id')
-  String get paymentId;
-  PriceV2 get amountV2;
-  bool get test;
-  bool get ready;
-  String? get nextActionUrl;
-  String? get errorMessage;
+  String get paymentId => throw _privateConstructorUsedError;
+  PriceV2 get amountV2 => throw _privateConstructorUsedError;
+  bool get test => throw _privateConstructorUsedError;
+  bool get ready => throw _privateConstructorUsedError;
+  String? get nextActionUrl => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
   @JsonKey(name: 'checkout', fromJson: _checkoutIdFromJson)
-  String? get checkoutId;
+  String? get checkoutId => throw _privateConstructorUsedError;
+
+  /// Serializes this TokanizedCheckout to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of TokanizedCheckout
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $TokanizedCheckoutCopyWith<TokanizedCheckout> get copyWith =>
-      _$TokanizedCheckoutCopyWithImpl<TokanizedCheckout>(
-          this as TokanizedCheckout, _$identity);
-
-  /// Serializes this TokanizedCheckout to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is TokanizedCheckout &&
-            (identical(other.paymentId, paymentId) ||
-                other.paymentId == paymentId) &&
-            (identical(other.amountV2, amountV2) ||
-                other.amountV2 == amountV2) &&
-            (identical(other.test, test) || other.test == test) &&
-            (identical(other.ready, ready) || other.ready == ready) &&
-            (identical(other.nextActionUrl, nextActionUrl) ||
-                other.nextActionUrl == nextActionUrl) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage) &&
-            (identical(other.checkoutId, checkoutId) ||
-                other.checkoutId == checkoutId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, paymentId, amountV2, test, ready,
-      nextActionUrl, errorMessage, checkoutId);
-
-  @override
-  String toString() {
-    return 'TokanizedCheckout(paymentId: $paymentId, amountV2: $amountV2, test: $test, ready: $ready, nextActionUrl: $nextActionUrl, errorMessage: $errorMessage, checkoutId: $checkoutId)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $TokanizedCheckoutCopyWith<$Res> {
+abstract class $TokanizedCheckoutCopyWith<$Res> {
   factory $TokanizedCheckoutCopyWith(
-          TokanizedCheckout value, $Res Function(TokanizedCheckout) _then) =
-      _$TokanizedCheckoutCopyWithImpl;
+          TokanizedCheckout value, $Res Function(TokanizedCheckout) then) =
+      _$TokanizedCheckoutCopyWithImpl<$Res, TokanizedCheckout>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') String paymentId,
@@ -86,12 +60,14 @@ abstract mixin class $TokanizedCheckoutCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TokanizedCheckoutCopyWithImpl<$Res>
+class _$TokanizedCheckoutCopyWithImpl<$Res, $Val extends TokanizedCheckout>
     implements $TokanizedCheckoutCopyWith<$Res> {
-  _$TokanizedCheckoutCopyWithImpl(this._self, this._then);
+  _$TokanizedCheckoutCopyWithImpl(this._value, this._then);
 
-  final TokanizedCheckout _self;
-  final $Res Function(TokanizedCheckout) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of TokanizedCheckout
   /// with the given fields replaced by the non-null parameter values.
@@ -106,36 +82,36 @@ class _$TokanizedCheckoutCopyWithImpl<$Res>
     Object? errorMessage = freezed,
     Object? checkoutId = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       paymentId: null == paymentId
-          ? _self.paymentId
+          ? _value.paymentId
           : paymentId // ignore: cast_nullable_to_non_nullable
               as String,
       amountV2: null == amountV2
-          ? _self.amountV2
+          ? _value.amountV2
           : amountV2 // ignore: cast_nullable_to_non_nullable
               as PriceV2,
       test: null == test
-          ? _self.test
+          ? _value.test
           : test // ignore: cast_nullable_to_non_nullable
               as bool,
       ready: null == ready
-          ? _self.ready
+          ? _value.ready
           : ready // ignore: cast_nullable_to_non_nullable
               as bool,
       nextActionUrl: freezed == nextActionUrl
-          ? _self.nextActionUrl
+          ? _value.nextActionUrl
           : nextActionUrl // ignore: cast_nullable_to_non_nullable
               as String?,
       errorMessage: freezed == errorMessage
-          ? _self.errorMessage
+          ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
       checkoutId: freezed == checkoutId
-          ? _self.checkoutId
+          ? _value.checkoutId
           : checkoutId // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of TokanizedCheckout
@@ -143,16 +119,92 @@ class _$TokanizedCheckoutCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $PriceV2CopyWith<$Res> get amountV2 {
-    return $PriceV2CopyWith<$Res>(_self.amountV2, (value) {
-      return _then(_self.copyWith(amountV2: value));
+    return $PriceV2CopyWith<$Res>(_value.amountV2, (value) {
+      return _then(_value.copyWith(amountV2: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$TokanizedCheckoutImplCopyWith<$Res>
+    implements $TokanizedCheckoutCopyWith<$Res> {
+  factory _$$TokanizedCheckoutImplCopyWith(_$TokanizedCheckoutImpl value,
+          $Res Function(_$TokanizedCheckoutImpl) then) =
+      __$$TokanizedCheckoutImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'id') String paymentId,
+      PriceV2 amountV2,
+      bool test,
+      bool ready,
+      String? nextActionUrl,
+      String? errorMessage,
+      @JsonKey(name: 'checkout', fromJson: _checkoutIdFromJson)
+      String? checkoutId});
+
+  @override
+  $PriceV2CopyWith<$Res> get amountV2;
+}
+
+/// @nodoc
+class __$$TokanizedCheckoutImplCopyWithImpl<$Res>
+    extends _$TokanizedCheckoutCopyWithImpl<$Res, _$TokanizedCheckoutImpl>
+    implements _$$TokanizedCheckoutImplCopyWith<$Res> {
+  __$$TokanizedCheckoutImplCopyWithImpl(_$TokanizedCheckoutImpl _value,
+      $Res Function(_$TokanizedCheckoutImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TokanizedCheckout
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? paymentId = null,
+    Object? amountV2 = null,
+    Object? test = null,
+    Object? ready = null,
+    Object? nextActionUrl = freezed,
+    Object? errorMessage = freezed,
+    Object? checkoutId = freezed,
+  }) {
+    return _then(_$TokanizedCheckoutImpl(
+      paymentId: null == paymentId
+          ? _value.paymentId
+          : paymentId // ignore: cast_nullable_to_non_nullable
+              as String,
+      amountV2: null == amountV2
+          ? _value.amountV2
+          : amountV2 // ignore: cast_nullable_to_non_nullable
+              as PriceV2,
+      test: null == test
+          ? _value.test
+          : test // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ready: null == ready
+          ? _value.ready
+          : ready // ignore: cast_nullable_to_non_nullable
+              as bool,
+      nextActionUrl: freezed == nextActionUrl
+          ? _value.nextActionUrl
+          : nextActionUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      checkoutId: freezed == checkoutId
+          ? _value.checkoutId
+          : checkoutId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _TokanizedCheckout extends TokanizedCheckout {
-  _TokanizedCheckout(
+class _$TokanizedCheckoutImpl extends _TokanizedCheckout {
+  _$TokanizedCheckoutImpl(
       {@JsonKey(name: 'id') required this.paymentId,
       required this.amountV2,
       required this.test,
@@ -162,8 +214,9 @@ class _TokanizedCheckout extends TokanizedCheckout {
       @JsonKey(name: 'checkout', fromJson: _checkoutIdFromJson)
       this.checkoutId})
       : super._();
-  factory _TokanizedCheckout.fromJson(Map<String, dynamic> json) =>
-      _$TokanizedCheckoutFromJson(json);
+
+  factory _$TokanizedCheckoutImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TokanizedCheckoutImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -182,26 +235,16 @@ class _TokanizedCheckout extends TokanizedCheckout {
   @JsonKey(name: 'checkout', fromJson: _checkoutIdFromJson)
   final String? checkoutId;
 
-  /// Create a copy of TokanizedCheckout
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$TokanizedCheckoutCopyWith<_TokanizedCheckout> get copyWith =>
-      __$TokanizedCheckoutCopyWithImpl<_TokanizedCheckout>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$TokanizedCheckoutToJson(
-      this,
-    );
+  String toString() {
+    return 'TokanizedCheckout(paymentId: $paymentId, amountV2: $amountV2, test: $test, ready: $ready, nextActionUrl: $nextActionUrl, errorMessage: $errorMessage, checkoutId: $checkoutId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TokanizedCheckout &&
+            other is _$TokanizedCheckoutImpl &&
             (identical(other.paymentId, paymentId) ||
                 other.paymentId == paymentId) &&
             (identical(other.amountV2, amountV2) ||
@@ -221,96 +264,59 @@ class _TokanizedCheckout extends TokanizedCheckout {
   int get hashCode => Object.hash(runtimeType, paymentId, amountV2, test, ready,
       nextActionUrl, errorMessage, checkoutId);
 
+  /// Create a copy of TokanizedCheckout
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'TokanizedCheckout(paymentId: $paymentId, amountV2: $amountV2, test: $test, ready: $ready, nextActionUrl: $nextActionUrl, errorMessage: $errorMessage, checkoutId: $checkoutId)';
+  @pragma('vm:prefer-inline')
+  _$$TokanizedCheckoutImplCopyWith<_$TokanizedCheckoutImpl> get copyWith =>
+      __$$TokanizedCheckoutImplCopyWithImpl<_$TokanizedCheckoutImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TokanizedCheckoutImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$TokanizedCheckoutCopyWith<$Res>
-    implements $TokanizedCheckoutCopyWith<$Res> {
-  factory _$TokanizedCheckoutCopyWith(
-          _TokanizedCheckout value, $Res Function(_TokanizedCheckout) _then) =
-      __$TokanizedCheckoutCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'id') String paymentId,
-      PriceV2 amountV2,
-      bool test,
-      bool ready,
-      String? nextActionUrl,
-      String? errorMessage,
+abstract class _TokanizedCheckout extends TokanizedCheckout {
+  factory _TokanizedCheckout(
+      {@JsonKey(name: 'id') required final String paymentId,
+      required final PriceV2 amountV2,
+      required final bool test,
+      required final bool ready,
+      final String? nextActionUrl,
+      final String? errorMessage,
       @JsonKey(name: 'checkout', fromJson: _checkoutIdFromJson)
-      String? checkoutId});
+      final String? checkoutId}) = _$TokanizedCheckoutImpl;
+  _TokanizedCheckout._() : super._();
+
+  factory _TokanizedCheckout.fromJson(Map<String, dynamic> json) =
+      _$TokanizedCheckoutImpl.fromJson;
 
   @override
-  $PriceV2CopyWith<$Res> get amountV2;
-}
-
-/// @nodoc
-class __$TokanizedCheckoutCopyWithImpl<$Res>
-    implements _$TokanizedCheckoutCopyWith<$Res> {
-  __$TokanizedCheckoutCopyWithImpl(this._self, this._then);
-
-  final _TokanizedCheckout _self;
-  final $Res Function(_TokanizedCheckout) _then;
+  @JsonKey(name: 'id')
+  String get paymentId;
+  @override
+  PriceV2 get amountV2;
+  @override
+  bool get test;
+  @override
+  bool get ready;
+  @override
+  String? get nextActionUrl;
+  @override
+  String? get errorMessage;
+  @override
+  @JsonKey(name: 'checkout', fromJson: _checkoutIdFromJson)
+  String? get checkoutId;
 
   /// Create a copy of TokanizedCheckout
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? paymentId = null,
-    Object? amountV2 = null,
-    Object? test = null,
-    Object? ready = null,
-    Object? nextActionUrl = freezed,
-    Object? errorMessage = freezed,
-    Object? checkoutId = freezed,
-  }) {
-    return _then(_TokanizedCheckout(
-      paymentId: null == paymentId
-          ? _self.paymentId
-          : paymentId // ignore: cast_nullable_to_non_nullable
-              as String,
-      amountV2: null == amountV2
-          ? _self.amountV2
-          : amountV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
-      test: null == test
-          ? _self.test
-          : test // ignore: cast_nullable_to_non_nullable
-              as bool,
-      ready: null == ready
-          ? _self.ready
-          : ready // ignore: cast_nullable_to_non_nullable
-              as bool,
-      nextActionUrl: freezed == nextActionUrl
-          ? _self.nextActionUrl
-          : nextActionUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorMessage: freezed == errorMessage
-          ? _self.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      checkoutId: freezed == checkoutId
-          ? _self.checkoutId
-          : checkoutId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-
-  /// Create a copy of TokanizedCheckout
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PriceV2CopyWith<$Res> get amountV2 {
-    return $PriceV2CopyWith<$Res>(_self.amountV2, (value) {
-      return _then(_self.copyWith(amountV2: value));
-    });
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TokanizedCheckoutImplCopyWith<_$TokanizedCheckoutImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

@@ -6,9 +6,9 @@ part of 'product_variant_checkout.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ProductVariantCheckout _$ProductVariantCheckoutFromJson(
+_$ProductVariantCheckoutImpl _$$ProductVariantCheckoutImplFromJson(
         Map<String, dynamic> json) =>
-    _ProductVariantCheckout(
+    _$ProductVariantCheckoutImpl(
       title: json['title'] as String,
       availableForSale: json['availableForSale'] as bool,
       requiresShipping: json['requiresShipping'] as bool,
@@ -38,8 +38,8 @@ _ProductVariantCheckout _$ProductVariantCheckoutFromJson(
           const [],
     );
 
-Map<String, dynamic> _$ProductVariantCheckoutToJson(
-        _ProductVariantCheckout instance) =>
+Map<String, dynamic> _$$ProductVariantCheckoutImplToJson(
+        _$ProductVariantCheckoutImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'availableForSale': instance.availableForSale,

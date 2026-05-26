@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,60 +9,48 @@ part of 'selected_option.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+SelectedOption _$SelectedOptionFromJson(Map<String, dynamic> json) {
+  return _SelectedOption.fromJson(json);
+}
 
 /// @nodoc
 mixin _$SelectedOption {
-  String get name;
-  String get value;
+  String get name => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
+
+  /// Serializes this SelectedOption to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SelectedOption
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SelectedOptionCopyWith<SelectedOption> get copyWith =>
-      _$SelectedOptionCopyWithImpl<SelectedOption>(
-          this as SelectedOption, _$identity);
-
-  /// Serializes this SelectedOption to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SelectedOption &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, value);
-
-  @override
-  String toString() {
-    return 'SelectedOption(name: $name, value: $value)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SelectedOptionCopyWith<$Res> {
+abstract class $SelectedOptionCopyWith<$Res> {
   factory $SelectedOptionCopyWith(
-          SelectedOption value, $Res Function(SelectedOption) _then) =
-      _$SelectedOptionCopyWithImpl;
+          SelectedOption value, $Res Function(SelectedOption) then) =
+      _$SelectedOptionCopyWithImpl<$Res, SelectedOption>;
   @useResult
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class _$SelectedOptionCopyWithImpl<$Res>
+class _$SelectedOptionCopyWithImpl<$Res, $Val extends SelectedOption>
     implements $SelectedOptionCopyWith<$Res> {
-  _$SelectedOptionCopyWithImpl(this._self, this._then);
+  _$SelectedOptionCopyWithImpl(this._value, this._then);
 
-  final SelectedOption _self;
-  final $Res Function(SelectedOption) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SelectedOption
   /// with the given fields replaced by the non-null parameter values.
@@ -73,13 +60,53 @@ class _$SelectedOptionCopyWithImpl<$Res>
     Object? name = null,
     Object? value = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _self.value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SelectedOptionImplCopyWith<$Res>
+    implements $SelectedOptionCopyWith<$Res> {
+  factory _$$SelectedOptionImplCopyWith(_$SelectedOptionImpl value,
+          $Res Function(_$SelectedOptionImpl) then) =
+      __$$SelectedOptionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String value});
+}
+
+/// @nodoc
+class __$$SelectedOptionImplCopyWithImpl<$Res>
+    extends _$SelectedOptionCopyWithImpl<$Res, _$SelectedOptionImpl>
+    implements _$$SelectedOptionImplCopyWith<$Res> {
+  __$$SelectedOptionImplCopyWithImpl(
+      _$SelectedOptionImpl _value, $Res Function(_$SelectedOptionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SelectedOption
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_$SelectedOptionImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -88,36 +115,27 @@ class _$SelectedOptionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _SelectedOption extends SelectedOption {
-  _SelectedOption({required this.name, required this.value}) : super._();
-  factory _SelectedOption.fromJson(Map<String, dynamic> json) =>
-      _$SelectedOptionFromJson(json);
+class _$SelectedOptionImpl extends _SelectedOption {
+  _$SelectedOptionImpl({required this.name, required this.value}) : super._();
+
+  factory _$SelectedOptionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SelectedOptionImplFromJson(json);
 
   @override
   final String name;
   @override
   final String value;
 
-  /// Create a copy of SelectedOption
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SelectedOptionCopyWith<_SelectedOption> get copyWith =>
-      __$SelectedOptionCopyWithImpl<_SelectedOption>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SelectedOptionToJson(
-      this,
-    );
+  String toString() {
+    return 'SelectedOption(name: $name, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SelectedOption &&
+            other is _$SelectedOptionImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.value, value) || other.value == value));
   }
@@ -126,50 +144,41 @@ class _SelectedOption extends SelectedOption {
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
+  /// Create a copy of SelectedOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SelectedOption(name: $name, value: $value)';
+  @pragma('vm:prefer-inline')
+  _$$SelectedOptionImplCopyWith<_$SelectedOptionImpl> get copyWith =>
+      __$$SelectedOptionImplCopyWithImpl<_$SelectedOptionImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SelectedOptionImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SelectedOptionCopyWith<$Res>
-    implements $SelectedOptionCopyWith<$Res> {
-  factory _$SelectedOptionCopyWith(
-          _SelectedOption value, $Res Function(_SelectedOption) _then) =
-      __$SelectedOptionCopyWithImpl;
+abstract class _SelectedOption extends SelectedOption {
+  factory _SelectedOption(
+      {required final String name,
+      required final String value}) = _$SelectedOptionImpl;
+  _SelectedOption._() : super._();
+
+  factory _SelectedOption.fromJson(Map<String, dynamic> json) =
+      _$SelectedOptionImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class __$SelectedOptionCopyWithImpl<$Res>
-    implements _$SelectedOptionCopyWith<$Res> {
-  __$SelectedOptionCopyWithImpl(this._self, this._then);
-
-  final _SelectedOption _self;
-  final $Res Function(_SelectedOption) _then;
+  String get name;
+  @override
+  String get value;
 
   /// Create a copy of SelectedOption
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_SelectedOption(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectedOptionImplCopyWith<_$SelectedOptionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

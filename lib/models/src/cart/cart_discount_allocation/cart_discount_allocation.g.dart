@@ -6,16 +6,16 @@ part of 'cart_discount_allocation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CartDiscountAllocation _$CartDiscountAllocationFromJson(
+_$CartDiscountAllocationImpl _$$CartDiscountAllocationImplFromJson(
         Map<String, dynamic> json) =>
-    _CartDiscountAllocation(
+    _$CartDiscountAllocationImpl(
       discountedAmount: json['discountedAmount'] == null
           ? null
           : PriceV2.fromJson(json['discountedAmount'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CartDiscountAllocationToJson(
-        _CartDiscountAllocation instance) =>
+Map<String, dynamic> _$$CartDiscountAllocationImplToJson(
+        _$CartDiscountAllocationImpl instance) =>
     <String, dynamic>{
       'discountedAmount': instance.discountedAmount?.toJson(),
     };
