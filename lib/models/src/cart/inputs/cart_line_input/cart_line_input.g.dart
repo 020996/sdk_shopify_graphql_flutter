@@ -6,8 +6,8 @@ part of 'cart_line_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CartLineInput _$CartLineInputFromJson(Map<String, dynamic> json) =>
-    _CartLineInput(
+_$CartLineInputImpl _$$CartLineInputImplFromJson(Map<String, dynamic> json) =>
+    _$CartLineInputImpl(
       merchandiseId: json['merchandiseId'] as String,
       quantity: (json['quantity'] as num).toInt(),
       sellingPlanId: json['sellingPlanId'] as String?,
@@ -19,7 +19,7 @@ _CartLineInput _$CartLineInputFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$CartLineInputToJson(_CartLineInput instance) =>
+Map<String, dynamic> _$$CartLineInputImplToJson(_$CartLineInputImpl instance) =>
     <String, dynamic>{
       'merchandiseId': instance.merchandiseId,
       'quantity': instance.quantity,

@@ -6,9 +6,9 @@ part of 'selling_plan_allocation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SellingPlanAllocation _$SellingPlanAllocationFromJson(
+_$SellingPlanAllocationImpl _$$SellingPlanAllocationImplFromJson(
         Map<String, dynamic> json) =>
-    _SellingPlanAllocation(
+    _$SellingPlanAllocationImpl(
       checkoutChargeAmount: json['checkoutChargeAmount'] == null
           ? null
           : PriceV2.fromJson(
@@ -22,8 +22,8 @@ _SellingPlanAllocation _$SellingPlanAllocationFromJson(
           : SellingPlan.fromJson(json['sellingPlan'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SellingPlanAllocationToJson(
-        _SellingPlanAllocation instance) =>
+Map<String, dynamic> _$$SellingPlanAllocationImplToJson(
+        _$SellingPlanAllocationImpl instance) =>
     <String, dynamic>{
       'checkoutChargeAmount': instance.checkoutChargeAmount?.toJson(),
       'remainingBalanceChargeAmount':

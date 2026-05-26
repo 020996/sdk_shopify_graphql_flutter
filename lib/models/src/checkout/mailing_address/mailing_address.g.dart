@@ -6,8 +6,8 @@ part of 'mailing_address.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_MailingAddress _$MailingAddressFromJson(Map<String, dynamic> json) =>
-    _MailingAddress(
+_$MailingAddressImpl _$$MailingAddressImplFromJson(Map<String, dynamic> json) =>
+    _$MailingAddressImpl(
       id: json['id'] as String,
       address1: json['address1'] as String,
       city: json['city'] as String,
@@ -27,7 +27,8 @@ _MailingAddress _$MailingAddressFromJson(Map<String, dynamic> json) =>
       provinceCode: json['provinceCode'] as String?,
     );
 
-Map<String, dynamic> _$MailingAddressToJson(_MailingAddress instance) =>
+Map<String, dynamic> _$$MailingAddressImplToJson(
+        _$MailingAddressImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'address1': instance.address1,

@@ -6,14 +6,15 @@ part of 'orders.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Orders _$OrdersFromJson(Map<String, dynamic> json) => _Orders(
+_$OrdersImpl _$$OrdersImplFromJson(Map<String, dynamic> json) => _$OrdersImpl(
       orderList: (json['orderList'] as List<dynamic>)
           .map((e) => Order.fromJson(e as Map<String, dynamic>))
           .toList(),
       hasNextPage: json['hasNextPage'] as bool,
     );
 
-Map<String, dynamic> _$OrdersToJson(_Orders instance) => <String, dynamic>{
+Map<String, dynamic> _$$OrdersImplToJson(_$OrdersImpl instance) =>
+    <String, dynamic>{
       'orderList': instance.orderList.map((e) => e.toJson()).toList(),
       'hasNextPage': instance.hasNextPage,
     };

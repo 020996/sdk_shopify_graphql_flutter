@@ -6,7 +6,7 @@ part of 'line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Line _$LineFromJson(Map<String, dynamic> json) => _Line(
+_$LineImpl _$$LineImplFromJson(Map<String, dynamic> json) => _$LineImpl(
       id: json['id'] as String?,
       quantity: (json['quantity'] as num?)?.toInt(),
       cost: json['cost'] == null
@@ -32,7 +32,8 @@ _Line _$LineFromJson(Map<String, dynamic> json) => _Line(
           .toList(),
     );
 
-Map<String, dynamic> _$LineToJson(_Line instance) => <String, dynamic>{
+Map<String, dynamic> _$$LineImplToJson(_$LineImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'quantity': instance.quantity,
       'cost': instance.cost?.toJson(),

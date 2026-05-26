@@ -6,8 +6,8 @@ part of 'cart_preference.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CartPreference _$CartPreferenceFromJson(Map<String, dynamic> json) =>
-    _CartPreference(
+_$CartPreferenceImpl _$$CartPreferenceImplFromJson(Map<String, dynamic> json) =>
+    _$CartPreferenceImpl(
       wallet:
           (json['wallet'] as List<dynamic>).map((e) => e as String?).toList(),
       delivery: json['delivery'] == null
@@ -16,7 +16,8 @@ _CartPreference _$CartPreferenceFromJson(Map<String, dynamic> json) =>
               json['delivery'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$CartPreferenceToJson(_CartPreference instance) =>
+Map<String, dynamic> _$$CartPreferenceImplToJson(
+        _$CartPreferenceImpl instance) =>
     <String, dynamic>{
       'wallet': instance.wallet,
       'delivery': instance.delivery?.toJson(),

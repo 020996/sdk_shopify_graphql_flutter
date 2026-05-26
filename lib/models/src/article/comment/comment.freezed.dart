@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,55 +9,36 @@ part of 'comment.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Comment _$CommentFromJson(Map<String, dynamic> json) {
+  return _Comment.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Comment {
-  String? get email;
-  String? get name;
-  String? get content;
-  String? get contentHtml;
-  String? get id;
+  String? get email => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get content => throw _privateConstructorUsedError;
+  String? get contentHtml => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+
+  /// Serializes this Comment to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Comment
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $CommentCopyWith<Comment> get copyWith =>
-      _$CommentCopyWithImpl<Comment>(this as Comment, _$identity);
-
-  /// Serializes this Comment to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Comment &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.contentHtml, contentHtml) ||
-                other.contentHtml == contentHtml) &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, email, name, content, contentHtml, id);
-
-  @override
-  String toString() {
-    return 'Comment(email: $email, name: $name, content: $content, contentHtml: $contentHtml, id: $id)';
-  }
+  $CommentCopyWith<Comment> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $CommentCopyWith<$Res> {
-  factory $CommentCopyWith(Comment value, $Res Function(Comment) _then) =
-      _$CommentCopyWithImpl;
+abstract class $CommentCopyWith<$Res> {
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
+      _$CommentCopyWithImpl<$Res, Comment>;
   @useResult
   $Res call(
       {String? email,
@@ -69,11 +49,14 @@ abstract mixin class $CommentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
-  _$CommentCopyWithImpl(this._self, this._then);
+class _$CommentCopyWithImpl<$Res, $Val extends Comment>
+    implements $CommentCopyWith<$Res> {
+  _$CommentCopyWithImpl(this._value, this._then);
 
-  final Comment _self;
-  final $Res Function(Comment) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Comment
   /// with the given fields replaced by the non-null parameter values.
@@ -86,25 +69,84 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
     Object? contentHtml = freezed,
     Object? id = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       email: freezed == email
-          ? _self.email
+          ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       name: freezed == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       content: freezed == content
-          ? _self.content
+          ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String?,
       contentHtml: freezed == contentHtml
-          ? _self.contentHtml
+          ? _value.contentHtml
           : contentHtml // ignore: cast_nullable_to_non_nullable
               as String?,
       id: freezed == id
-          ? _self.id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CommentImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
+  factory _$$CommentImplCopyWith(
+          _$CommentImpl value, $Res Function(_$CommentImpl) then) =
+      __$$CommentImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? email,
+      String? name,
+      String? content,
+      String? contentHtml,
+      String? id});
+}
+
+/// @nodoc
+class __$$CommentImplCopyWithImpl<$Res>
+    extends _$CommentCopyWithImpl<$Res, _$CommentImpl>
+    implements _$$CommentImplCopyWith<$Res> {
+  __$$CommentImplCopyWithImpl(
+      _$CommentImpl _value, $Res Function(_$CommentImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Comment
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? name = freezed,
+    Object? content = freezed,
+    Object? contentHtml = freezed,
+    Object? id = freezed,
+  }) {
+    return _then(_$CommentImpl(
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contentHtml: freezed == contentHtml
+          ? _value.contentHtml
+          : contentHtml // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: freezed == id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -113,11 +155,13 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Comment extends Comment {
-  _Comment({this.email, this.name, this.content, this.contentHtml, this.id})
+class _$CommentImpl extends _Comment {
+  _$CommentImpl(
+      {this.email, this.name, this.content, this.contentHtml, this.id})
       : super._();
-  factory _Comment.fromJson(Map<String, dynamic> json) =>
-      _$CommentFromJson(json);
+
+  factory _$CommentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommentImplFromJson(json);
 
   @override
   final String? email;
@@ -130,26 +174,16 @@ class _Comment extends Comment {
   @override
   final String? id;
 
-  /// Create a copy of Comment
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$CommentCopyWith<_Comment> get copyWith =>
-      __$CommentCopyWithImpl<_Comment>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$CommentToJson(
-      this,
-    );
+  String toString() {
+    return 'Comment(email: $email, name: $name, content: $content, contentHtml: $contentHtml, id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Comment &&
+            other is _$CommentImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.content, content) || other.content == content) &&
@@ -163,67 +197,48 @@ class _Comment extends Comment {
   int get hashCode =>
       Object.hash(runtimeType, email, name, content, contentHtml, id);
 
+  /// Create a copy of Comment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Comment(email: $email, name: $name, content: $content, contentHtml: $contentHtml, id: $id)';
+  @pragma('vm:prefer-inline')
+  _$$CommentImplCopyWith<_$CommentImpl> get copyWith =>
+      __$$CommentImplCopyWithImpl<_$CommentImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CommentImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
-  factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) _then) =
-      __$CommentCopyWithImpl;
+abstract class _Comment extends Comment {
+  factory _Comment(
+      {final String? email,
+      final String? name,
+      final String? content,
+      final String? contentHtml,
+      final String? id}) = _$CommentImpl;
+  _Comment._() : super._();
+
+  factory _Comment.fromJson(Map<String, dynamic> json) = _$CommentImpl.fromJson;
+
   @override
-  @useResult
-  $Res call(
-      {String? email,
-      String? name,
-      String? content,
-      String? contentHtml,
-      String? id});
-}
-
-/// @nodoc
-class __$CommentCopyWithImpl<$Res> implements _$CommentCopyWith<$Res> {
-  __$CommentCopyWithImpl(this._self, this._then);
-
-  final _Comment _self;
-  final $Res Function(_Comment) _then;
+  String? get email;
+  @override
+  String? get name;
+  @override
+  String? get content;
+  @override
+  String? get contentHtml;
+  @override
+  String? get id;
 
   /// Create a copy of Comment
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? email = freezed,
-    Object? name = freezed,
-    Object? content = freezed,
-    Object? contentHtml = freezed,
-    Object? id = freezed,
-  }) {
-    return _then(_Comment(
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      content: freezed == content
-          ? _self.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contentHtml: freezed == contentHtml
-          ? _self.contentHtml
-          : contentHtml // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CommentImplCopyWith<_$CommentImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

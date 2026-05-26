@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,56 +9,45 @@ part of 'lines.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Lines _$LinesFromJson(Map<String, dynamic> json) {
+  return _Lines.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Lines {
-  List<Line> get lines;
+  List<Line> get lines => throw _privateConstructorUsedError;
+
+  /// Serializes this Lines to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Lines
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $LinesCopyWith<Lines> get copyWith =>
-      _$LinesCopyWithImpl<Lines>(this as Lines, _$identity);
-
-  /// Serializes this Lines to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Lines &&
-            const DeepCollectionEquality().equals(other.lines, lines));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(lines));
-
-  @override
-  String toString() {
-    return 'Lines(lines: $lines)';
-  }
+  $LinesCopyWith<Lines> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $LinesCopyWith<$Res> {
-  factory $LinesCopyWith(Lines value, $Res Function(Lines) _then) =
-      _$LinesCopyWithImpl;
+abstract class $LinesCopyWith<$Res> {
+  factory $LinesCopyWith(Lines value, $Res Function(Lines) then) =
+      _$LinesCopyWithImpl<$Res, Lines>;
   @useResult
   $Res call({List<Line> lines});
 }
 
 /// @nodoc
-class _$LinesCopyWithImpl<$Res> implements $LinesCopyWith<$Res> {
-  _$LinesCopyWithImpl(this._self, this._then);
+class _$LinesCopyWithImpl<$Res, $Val extends Lines>
+    implements $LinesCopyWith<$Res> {
+  _$LinesCopyWithImpl(this._value, this._then);
 
-  final Lines _self;
-  final $Res Function(Lines) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Lines
   /// with the given fields replaced by the non-null parameter values.
@@ -68,9 +56,43 @@ class _$LinesCopyWithImpl<$Res> implements $LinesCopyWith<$Res> {
   $Res call({
     Object? lines = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       lines: null == lines
-          ? _self.lines
+          ? _value.lines
+          : lines // ignore: cast_nullable_to_non_nullable
+              as List<Line>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LinesImplCopyWith<$Res> implements $LinesCopyWith<$Res> {
+  factory _$$LinesImplCopyWith(
+          _$LinesImpl value, $Res Function(_$LinesImpl) then) =
+      __$$LinesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Line> lines});
+}
+
+/// @nodoc
+class __$$LinesImplCopyWithImpl<$Res>
+    extends _$LinesCopyWithImpl<$Res, _$LinesImpl>
+    implements _$$LinesImplCopyWith<$Res> {
+  __$$LinesImplCopyWithImpl(
+      _$LinesImpl _value, $Res Function(_$LinesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Lines
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? lines = null,
+  }) {
+    return _then(_$LinesImpl(
+      lines: null == lines
+          ? _value._lines
           : lines // ignore: cast_nullable_to_non_nullable
               as List<Line>,
     ));
@@ -79,9 +101,11 @@ class _$LinesCopyWithImpl<$Res> implements $LinesCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Lines implements Lines {
-  _Lines({required final List<Line> lines}) : _lines = lines;
-  factory _Lines.fromJson(Map<String, dynamic> json) => _$LinesFromJson(json);
+class _$LinesImpl implements _Lines {
+  _$LinesImpl({required final List<Line> lines}) : _lines = lines;
+
+  factory _$LinesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LinesImplFromJson(json);
 
   final List<Line> _lines;
   @override
@@ -91,26 +115,16 @@ class _Lines implements Lines {
     return EqualUnmodifiableListView(_lines);
   }
 
-  /// Create a copy of Lines
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$LinesCopyWith<_Lines> get copyWith =>
-      __$LinesCopyWithImpl<_Lines>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$LinesToJson(
-      this,
-    );
+  String toString() {
+    return 'Lines(lines: $lines)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Lines &&
+            other is _$LinesImpl &&
             const DeepCollectionEquality().equals(other._lines, _lines));
   }
 
@@ -119,42 +133,34 @@ class _Lines implements Lines {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_lines));
 
+  /// Create a copy of Lines
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Lines(lines: $lines)';
+  @pragma('vm:prefer-inline')
+  _$$LinesImplCopyWith<_$LinesImpl> get copyWith =>
+      __$$LinesImplCopyWithImpl<_$LinesImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LinesImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$LinesCopyWith<$Res> implements $LinesCopyWith<$Res> {
-  factory _$LinesCopyWith(_Lines value, $Res Function(_Lines) _then) =
-      __$LinesCopyWithImpl;
+abstract class _Lines implements Lines {
+  factory _Lines({required final List<Line> lines}) = _$LinesImpl;
+
+  factory _Lines.fromJson(Map<String, dynamic> json) = _$LinesImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({List<Line> lines});
-}
-
-/// @nodoc
-class __$LinesCopyWithImpl<$Res> implements _$LinesCopyWith<$Res> {
-  __$LinesCopyWithImpl(this._self, this._then);
-
-  final _Lines _self;
-  final $Res Function(_Lines) _then;
+  List<Line> get lines;
 
   /// Create a copy of Lines
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? lines = null,
-  }) {
-    return _then(_Lines(
-      lines: null == lines
-          ? _self._lines
-          : lines // ignore: cast_nullable_to_non_nullable
-              as List<Line>,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LinesImplCopyWith<_$LinesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

@@ -6,9 +6,9 @@ part of 'cart_buyer_identity_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CartBuyerIdentityInput _$CartBuyerIdentityInputFromJson(
+_$CartBuyerIdentityInputImpl _$$CartBuyerIdentityInputImplFromJson(
         Map<String, dynamic> json) =>
-    _CartBuyerIdentityInput(
+    _$CartBuyerIdentityInputImpl(
       email: json['email'] as String,
       phone: json['phone'] as String?,
       countryCode: json['countryCode'] as String?,
@@ -22,8 +22,8 @@ _CartBuyerIdentityInput _$CartBuyerIdentityInputFromJson(
           const [],
     );
 
-Map<String, dynamic> _$CartBuyerIdentityInputToJson(
-        _CartBuyerIdentityInput instance) =>
+Map<String, dynamic> _$$CartBuyerIdentityInputImplToJson(
+        _$CartBuyerIdentityInputImpl instance) =>
     <String, dynamic>{
       'email': instance.email,
       'phone': instance.phone,

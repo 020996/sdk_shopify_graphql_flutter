@@ -6,7 +6,8 @@ part of 'selling_plan.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SellingPlan _$SellingPlanFromJson(Map<String, dynamic> json) => _SellingPlan(
+_$SellingPlanImpl _$$SellingPlanImplFromJson(Map<String, dynamic> json) =>
+    _$SellingPlanImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String?,
@@ -26,7 +27,7 @@ _SellingPlan _$SellingPlanFromJson(Map<String, dynamic> json) => _SellingPlan(
           const [],
     );
 
-Map<String, dynamic> _$SellingPlanToJson(_SellingPlan instance) =>
+Map<String, dynamic> _$$SellingPlanImplToJson(_$SellingPlanImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,60 +9,48 @@ part of 'selling_plan_option.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+SellingPlanOption _$SellingPlanOptionFromJson(Map<String, dynamic> json) {
+  return _SellingPlanOption.fromJson(json);
+}
 
 /// @nodoc
 mixin _$SellingPlanOption {
-  String get name;
-  String get value;
+  String get name => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
+
+  /// Serializes this SellingPlanOption to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SellingPlanOption
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SellingPlanOptionCopyWith<SellingPlanOption> get copyWith =>
-      _$SellingPlanOptionCopyWithImpl<SellingPlanOption>(
-          this as SellingPlanOption, _$identity);
-
-  /// Serializes this SellingPlanOption to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SellingPlanOption &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, value);
-
-  @override
-  String toString() {
-    return 'SellingPlanOption(name: $name, value: $value)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SellingPlanOptionCopyWith<$Res> {
+abstract class $SellingPlanOptionCopyWith<$Res> {
   factory $SellingPlanOptionCopyWith(
-          SellingPlanOption value, $Res Function(SellingPlanOption) _then) =
-      _$SellingPlanOptionCopyWithImpl;
+          SellingPlanOption value, $Res Function(SellingPlanOption) then) =
+      _$SellingPlanOptionCopyWithImpl<$Res, SellingPlanOption>;
   @useResult
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class _$SellingPlanOptionCopyWithImpl<$Res>
+class _$SellingPlanOptionCopyWithImpl<$Res, $Val extends SellingPlanOption>
     implements $SellingPlanOptionCopyWith<$Res> {
-  _$SellingPlanOptionCopyWithImpl(this._self, this._then);
+  _$SellingPlanOptionCopyWithImpl(this._value, this._then);
 
-  final SellingPlanOption _self;
-  final $Res Function(SellingPlanOption) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SellingPlanOption
   /// with the given fields replaced by the non-null parameter values.
@@ -73,13 +60,53 @@ class _$SellingPlanOptionCopyWithImpl<$Res>
     Object? name = null,
     Object? value = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _self.value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SellingPlanOptionImplCopyWith<$Res>
+    implements $SellingPlanOptionCopyWith<$Res> {
+  factory _$$SellingPlanOptionImplCopyWith(_$SellingPlanOptionImpl value,
+          $Res Function(_$SellingPlanOptionImpl) then) =
+      __$$SellingPlanOptionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String value});
+}
+
+/// @nodoc
+class __$$SellingPlanOptionImplCopyWithImpl<$Res>
+    extends _$SellingPlanOptionCopyWithImpl<$Res, _$SellingPlanOptionImpl>
+    implements _$$SellingPlanOptionImplCopyWith<$Res> {
+  __$$SellingPlanOptionImplCopyWithImpl(_$SellingPlanOptionImpl _value,
+      $Res Function(_$SellingPlanOptionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SellingPlanOption
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_$SellingPlanOptionImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -88,36 +115,28 @@ class _$SellingPlanOptionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _SellingPlanOption extends SellingPlanOption {
-  _SellingPlanOption({required this.name, required this.value}) : super._();
-  factory _SellingPlanOption.fromJson(Map<String, dynamic> json) =>
-      _$SellingPlanOptionFromJson(json);
+class _$SellingPlanOptionImpl extends _SellingPlanOption {
+  _$SellingPlanOptionImpl({required this.name, required this.value})
+      : super._();
+
+  factory _$SellingPlanOptionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SellingPlanOptionImplFromJson(json);
 
   @override
   final String name;
   @override
   final String value;
 
-  /// Create a copy of SellingPlanOption
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SellingPlanOptionCopyWith<_SellingPlanOption> get copyWith =>
-      __$SellingPlanOptionCopyWithImpl<_SellingPlanOption>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SellingPlanOptionToJson(
-      this,
-    );
+  String toString() {
+    return 'SellingPlanOption(name: $name, value: $value)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SellingPlanOption &&
+            other is _$SellingPlanOptionImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.value, value) || other.value == value));
   }
@@ -126,50 +145,41 @@ class _SellingPlanOption extends SellingPlanOption {
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
+  /// Create a copy of SellingPlanOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SellingPlanOption(name: $name, value: $value)';
+  @pragma('vm:prefer-inline')
+  _$$SellingPlanOptionImplCopyWith<_$SellingPlanOptionImpl> get copyWith =>
+      __$$SellingPlanOptionImplCopyWithImpl<_$SellingPlanOptionImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SellingPlanOptionImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SellingPlanOptionCopyWith<$Res>
-    implements $SellingPlanOptionCopyWith<$Res> {
-  factory _$SellingPlanOptionCopyWith(
-          _SellingPlanOption value, $Res Function(_SellingPlanOption) _then) =
-      __$SellingPlanOptionCopyWithImpl;
+abstract class _SellingPlanOption extends SellingPlanOption {
+  factory _SellingPlanOption(
+      {required final String name,
+      required final String value}) = _$SellingPlanOptionImpl;
+  _SellingPlanOption._() : super._();
+
+  factory _SellingPlanOption.fromJson(Map<String, dynamic> json) =
+      _$SellingPlanOptionImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class __$SellingPlanOptionCopyWithImpl<$Res>
-    implements _$SellingPlanOptionCopyWith<$Res> {
-  __$SellingPlanOptionCopyWithImpl(this._self, this._then);
-
-  final _SellingPlanOption _self;
-  final $Res Function(_SellingPlanOption) _then;
+  String get name;
+  @override
+  String get value;
 
   /// Create a copy of SellingPlanOption
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_SellingPlanOption(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SellingPlanOptionImplCopyWith<_$SellingPlanOptionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

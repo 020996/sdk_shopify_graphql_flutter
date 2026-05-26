@@ -6,8 +6,9 @@ part of 'payment_settings.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_PaymentSettings _$PaymentSettingsFromJson(Map<String, dynamic> json) =>
-    _PaymentSettings(
+_$PaymentSettingsImpl _$$PaymentSettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PaymentSettingsImpl(
       acceptedCardBrands: (json['acceptedCardBrands'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -25,7 +26,8 @@ _PaymentSettings _$PaymentSettingsFromJson(Map<String, dynamic> json) =>
               .toList(),
     );
 
-Map<String, dynamic> _$PaymentSettingsToJson(_PaymentSettings instance) =>
+Map<String, dynamic> _$$PaymentSettingsImplToJson(
+        _$PaymentSettingsImpl instance) =>
     <String, dynamic>{
       'acceptedCardBrands': instance.acceptedCardBrands,
       'cardVaultUrl': instance.cardVaultUrl,

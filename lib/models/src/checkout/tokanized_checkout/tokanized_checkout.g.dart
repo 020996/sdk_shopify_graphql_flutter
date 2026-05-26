@@ -6,8 +6,9 @@ part of 'tokanized_checkout.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TokanizedCheckout _$TokanizedCheckoutFromJson(Map<String, dynamic> json) =>
-    _TokanizedCheckout(
+_$TokanizedCheckoutImpl _$$TokanizedCheckoutImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TokanizedCheckoutImpl(
       paymentId: json['id'] as String,
       amountV2: PriceV2.fromJson(json['amountV2'] as Map<String, dynamic>),
       test: json['test'] as bool,
@@ -17,7 +18,8 @@ _TokanizedCheckout _$TokanizedCheckoutFromJson(Map<String, dynamic> json) =>
       checkoutId: _checkoutIdFromJson(json['checkout'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$TokanizedCheckoutToJson(_TokanizedCheckout instance) =>
+Map<String, dynamic> _$$TokanizedCheckoutImplToJson(
+        _$TokanizedCheckoutImpl instance) =>
     <String, dynamic>{
       'id': instance.paymentId,
       'amountV2': instance.amountV2.toJson(),

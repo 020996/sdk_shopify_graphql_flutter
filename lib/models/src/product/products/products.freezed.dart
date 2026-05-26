@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,60 +9,47 @@ part of 'products.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Products _$ProductsFromJson(Map<String, dynamic> json) {
+  return _Products.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Products {
-  List<Product> get productList;
-  bool get hasNextPage;
+  List<Product> get productList => throw _privateConstructorUsedError;
+  bool get hasNextPage => throw _privateConstructorUsedError;
+
+  /// Serializes this Products to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Products
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ProductsCopyWith<Products> get copyWith =>
-      _$ProductsCopyWithImpl<Products>(this as Products, _$identity);
-
-  /// Serializes this Products to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Products &&
-            const DeepCollectionEquality()
-                .equals(other.productList, productList) &&
-            (identical(other.hasNextPage, hasNextPage) ||
-                other.hasNextPage == hasNextPage));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(productList), hasNextPage);
-
-  @override
-  String toString() {
-    return 'Products(productList: $productList, hasNextPage: $hasNextPage)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ProductsCopyWith<$Res> {
-  factory $ProductsCopyWith(Products value, $Res Function(Products) _then) =
-      _$ProductsCopyWithImpl;
+abstract class $ProductsCopyWith<$Res> {
+  factory $ProductsCopyWith(Products value, $Res Function(Products) then) =
+      _$ProductsCopyWithImpl<$Res, Products>;
   @useResult
   $Res call({List<Product> productList, bool hasNextPage});
 }
 
 /// @nodoc
-class _$ProductsCopyWithImpl<$Res> implements $ProductsCopyWith<$Res> {
-  _$ProductsCopyWithImpl(this._self, this._then);
+class _$ProductsCopyWithImpl<$Res, $Val extends Products>
+    implements $ProductsCopyWith<$Res> {
+  _$ProductsCopyWithImpl(this._value, this._then);
 
-  final Products _self;
-  final $Res Function(Products) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Products
   /// with the given fields replaced by the non-null parameter values.
@@ -73,13 +59,53 @@ class _$ProductsCopyWithImpl<$Res> implements $ProductsCopyWith<$Res> {
     Object? productList = null,
     Object? hasNextPage = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       productList: null == productList
-          ? _self.productList
+          ? _value.productList
           : productList // ignore: cast_nullable_to_non_nullable
               as List<Product>,
       hasNextPage: null == hasNextPage
-          ? _self.hasNextPage
+          ? _value.hasNextPage
+          : hasNextPage // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ProductsImplCopyWith<$Res>
+    implements $ProductsCopyWith<$Res> {
+  factory _$$ProductsImplCopyWith(
+          _$ProductsImpl value, $Res Function(_$ProductsImpl) then) =
+      __$$ProductsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Product> productList, bool hasNextPage});
+}
+
+/// @nodoc
+class __$$ProductsImplCopyWithImpl<$Res>
+    extends _$ProductsCopyWithImpl<$Res, _$ProductsImpl>
+    implements _$$ProductsImplCopyWith<$Res> {
+  __$$ProductsImplCopyWithImpl(
+      _$ProductsImpl _value, $Res Function(_$ProductsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Products
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productList = null,
+    Object? hasNextPage = null,
+  }) {
+    return _then(_$ProductsImpl(
+      productList: null == productList
+          ? _value._productList
+          : productList // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
+      hasNextPage: null == hasNextPage
+          ? _value.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -88,13 +114,14 @@ class _$ProductsCopyWithImpl<$Res> implements $ProductsCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Products extends Products {
-  _Products(
+class _$ProductsImpl extends _Products {
+  _$ProductsImpl(
       {required final List<Product> productList, required this.hasNextPage})
       : _productList = productList,
         super._();
-  factory _Products.fromJson(Map<String, dynamic> json) =>
-      _$ProductsFromJson(json);
+
+  factory _$ProductsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductsImplFromJson(json);
 
   final List<Product> _productList;
   @override
@@ -107,26 +134,16 @@ class _Products extends Products {
   @override
   final bool hasNextPage;
 
-  /// Create a copy of Products
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ProductsCopyWith<_Products> get copyWith =>
-      __$ProductsCopyWithImpl<_Products>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ProductsToJson(
-      this,
-    );
+  String toString() {
+    return 'Products(productList: $productList, hasNextPage: $hasNextPage)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Products &&
+            other is _$ProductsImpl &&
             const DeepCollectionEquality()
                 .equals(other._productList, _productList) &&
             (identical(other.hasNextPage, hasNextPage) ||
@@ -138,48 +155,40 @@ class _Products extends Products {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_productList), hasNextPage);
 
+  /// Create a copy of Products
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Products(productList: $productList, hasNextPage: $hasNextPage)';
+  @pragma('vm:prefer-inline')
+  _$$ProductsImplCopyWith<_$ProductsImpl> get copyWith =>
+      __$$ProductsImplCopyWithImpl<_$ProductsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ProductsImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$ProductsCopyWith<$Res>
-    implements $ProductsCopyWith<$Res> {
-  factory _$ProductsCopyWith(_Products value, $Res Function(_Products) _then) =
-      __$ProductsCopyWithImpl;
+abstract class _Products extends Products {
+  factory _Products(
+      {required final List<Product> productList,
+      required final bool hasNextPage}) = _$ProductsImpl;
+  _Products._() : super._();
+
+  factory _Products.fromJson(Map<String, dynamic> json) =
+      _$ProductsImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({List<Product> productList, bool hasNextPage});
-}
-
-/// @nodoc
-class __$ProductsCopyWithImpl<$Res> implements _$ProductsCopyWith<$Res> {
-  __$ProductsCopyWithImpl(this._self, this._then);
-
-  final _Products _self;
-  final $Res Function(_Products) _then;
+  List<Product> get productList;
+  @override
+  bool get hasNextPage;
 
   /// Create a copy of Products
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? productList = null,
-    Object? hasNextPage = null,
-  }) {
-    return _then(_Products(
-      productList: null == productList
-          ? _self._productList
-          : productList // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-      hasNextPage: null == hasNextPage
-          ? _self.hasNextPage
-          : hasNextPage // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProductsImplCopyWith<_$ProductsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

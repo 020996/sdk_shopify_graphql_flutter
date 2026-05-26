@@ -6,13 +6,14 @@ part of 'attribute_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AttributeInput _$AttributeInputFromJson(Map<String, dynamic> json) =>
-    _AttributeInput(
+_$AttributeInputImpl _$$AttributeInputImplFromJson(Map<String, dynamic> json) =>
+    _$AttributeInputImpl(
       key: json['key'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$AttributeInputToJson(_AttributeInput instance) =>
+Map<String, dynamic> _$$AttributeInputImplToJson(
+        _$AttributeInputImpl instance) =>
     <String, dynamic>{
       'key': instance.key,
       'value': instance.value,

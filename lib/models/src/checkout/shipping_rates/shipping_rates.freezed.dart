@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,51 +9,36 @@ part of 'shipping_rates.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ShippingRates _$ShippingRatesFromJson(Map<String, dynamic> json) {
+  return _ShippingRates.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ShippingRates {
-  String get handle;
-  String get title;
-  PriceV2 get priceV2;
+  String get handle => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  PriceV2 get priceV2 => throw _privateConstructorUsedError;
+
+  /// Serializes this ShippingRates to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ShippingRates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ShippingRatesCopyWith<ShippingRates> get copyWith =>
-      _$ShippingRatesCopyWithImpl<ShippingRates>(
-          this as ShippingRates, _$identity);
-
-  /// Serializes this ShippingRates to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ShippingRates &&
-            (identical(other.handle, handle) || other.handle == handle) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.priceV2, priceV2) || other.priceV2 == priceV2));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, handle, title, priceV2);
-
-  @override
-  String toString() {
-    return 'ShippingRates(handle: $handle, title: $title, priceV2: $priceV2)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ShippingRatesCopyWith<$Res> {
+abstract class $ShippingRatesCopyWith<$Res> {
   factory $ShippingRatesCopyWith(
-          ShippingRates value, $Res Function(ShippingRates) _then) =
-      _$ShippingRatesCopyWithImpl;
+          ShippingRates value, $Res Function(ShippingRates) then) =
+      _$ShippingRatesCopyWithImpl<$Res, ShippingRates>;
   @useResult
   $Res call({String handle, String title, PriceV2 priceV2});
 
@@ -62,12 +46,14 @@ abstract mixin class $ShippingRatesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ShippingRatesCopyWithImpl<$Res>
+class _$ShippingRatesCopyWithImpl<$Res, $Val extends ShippingRates>
     implements $ShippingRatesCopyWith<$Res> {
-  _$ShippingRatesCopyWithImpl(this._self, this._then);
+  _$ShippingRatesCopyWithImpl(this._value, this._then);
 
-  final ShippingRates _self;
-  final $Res Function(ShippingRates) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ShippingRates
   /// with the given fields replaced by the non-null parameter values.
@@ -78,20 +64,20 @@ class _$ShippingRatesCopyWithImpl<$Res>
     Object? title = null,
     Object? priceV2 = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       handle: null == handle
-          ? _self.handle
+          ? _value.handle
           : handle // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
-          ? _self.title
+          ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       priceV2: null == priceV2
-          ? _self.priceV2
+          ? _value.priceV2
           : priceV2 // ignore: cast_nullable_to_non_nullable
               as PriceV2,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of ShippingRates
@@ -99,20 +85,69 @@ class _$ShippingRatesCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $PriceV2CopyWith<$Res> get priceV2 {
-    return $PriceV2CopyWith<$Res>(_self.priceV2, (value) {
-      return _then(_self.copyWith(priceV2: value));
+    return $PriceV2CopyWith<$Res>(_value.priceV2, (value) {
+      return _then(_value.copyWith(priceV2: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$ShippingRatesImplCopyWith<$Res>
+    implements $ShippingRatesCopyWith<$Res> {
+  factory _$$ShippingRatesImplCopyWith(
+          _$ShippingRatesImpl value, $Res Function(_$ShippingRatesImpl) then) =
+      __$$ShippingRatesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String handle, String title, PriceV2 priceV2});
+
+  @override
+  $PriceV2CopyWith<$Res> get priceV2;
+}
+
+/// @nodoc
+class __$$ShippingRatesImplCopyWithImpl<$Res>
+    extends _$ShippingRatesCopyWithImpl<$Res, _$ShippingRatesImpl>
+    implements _$$ShippingRatesImplCopyWith<$Res> {
+  __$$ShippingRatesImplCopyWithImpl(
+      _$ShippingRatesImpl _value, $Res Function(_$ShippingRatesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ShippingRates
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? handle = null,
+    Object? title = null,
+    Object? priceV2 = null,
+  }) {
+    return _then(_$ShippingRatesImpl(
+      handle: null == handle
+          ? _value.handle
+          : handle // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      priceV2: null == priceV2
+          ? _value.priceV2
+          : priceV2 // ignore: cast_nullable_to_non_nullable
+              as PriceV2,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _ShippingRates extends ShippingRates {
-  _ShippingRates(
+class _$ShippingRatesImpl extends _ShippingRates {
+  _$ShippingRatesImpl(
       {required this.handle, required this.title, required this.priceV2})
       : super._();
-  factory _ShippingRates.fromJson(Map<String, dynamic> json) =>
-      _$ShippingRatesFromJson(json);
+
+  factory _$ShippingRatesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ShippingRatesImplFromJson(json);
 
   @override
   final String handle;
@@ -121,26 +156,16 @@ class _ShippingRates extends ShippingRates {
   @override
   final PriceV2 priceV2;
 
-  /// Create a copy of ShippingRates
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ShippingRatesCopyWith<_ShippingRates> get copyWith =>
-      __$ShippingRatesCopyWithImpl<_ShippingRates>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ShippingRatesToJson(
-      this,
-    );
+  String toString() {
+    return 'ShippingRates(handle: $handle, title: $title, priceV2: $priceV2)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ShippingRates &&
+            other is _$ShippingRatesImpl &&
             (identical(other.handle, handle) || other.handle == handle) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.priceV2, priceV2) || other.priceV2 == priceV2));
@@ -150,68 +175,43 @@ class _ShippingRates extends ShippingRates {
   @override
   int get hashCode => Object.hash(runtimeType, handle, title, priceV2);
 
+  /// Create a copy of ShippingRates
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'ShippingRates(handle: $handle, title: $title, priceV2: $priceV2)';
+  @pragma('vm:prefer-inline')
+  _$$ShippingRatesImplCopyWith<_$ShippingRatesImpl> get copyWith =>
+      __$$ShippingRatesImplCopyWithImpl<_$ShippingRatesImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ShippingRatesImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$ShippingRatesCopyWith<$Res>
-    implements $ShippingRatesCopyWith<$Res> {
-  factory _$ShippingRatesCopyWith(
-          _ShippingRates value, $Res Function(_ShippingRates) _then) =
-      __$ShippingRatesCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String handle, String title, PriceV2 priceV2});
+abstract class _ShippingRates extends ShippingRates {
+  factory _ShippingRates(
+      {required final String handle,
+      required final String title,
+      required final PriceV2 priceV2}) = _$ShippingRatesImpl;
+  _ShippingRates._() : super._();
+
+  factory _ShippingRates.fromJson(Map<String, dynamic> json) =
+      _$ShippingRatesImpl.fromJson;
 
   @override
-  $PriceV2CopyWith<$Res> get priceV2;
-}
-
-/// @nodoc
-class __$ShippingRatesCopyWithImpl<$Res>
-    implements _$ShippingRatesCopyWith<$Res> {
-  __$ShippingRatesCopyWithImpl(this._self, this._then);
-
-  final _ShippingRates _self;
-  final $Res Function(_ShippingRates) _then;
+  String get handle;
+  @override
+  String get title;
+  @override
+  PriceV2 get priceV2;
 
   /// Create a copy of ShippingRates
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? handle = null,
-    Object? title = null,
-    Object? priceV2 = null,
-  }) {
-    return _then(_ShippingRates(
-      handle: null == handle
-          ? _self.handle
-          : handle // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _self.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      priceV2: null == priceV2
-          ? _self.priceV2
-          : priceV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
-    ));
-  }
-
-  /// Create a copy of ShippingRates
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PriceV2CopyWith<$Res> get priceV2 {
-    return $PriceV2CopyWith<$Res>(_self.priceV2, (value) {
-      return _then(_self.copyWith(priceV2: value));
-    });
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ShippingRatesImplCopyWith<_$ShippingRatesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

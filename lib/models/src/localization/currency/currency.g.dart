@@ -6,13 +6,15 @@ part of 'currency.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Currency _$CurrencyFromJson(Map<String, dynamic> json) => _Currency(
+_$CurrencyImpl _$$CurrencyImplFromJson(Map<String, dynamic> json) =>
+    _$CurrencyImpl(
       isoCode: json['isoCode'] as String,
       name: json['name'] as String,
       symbol: json['symbol'] as String,
     );
 
-Map<String, dynamic> _$CurrencyToJson(_Currency instance) => <String, dynamic>{
+Map<String, dynamic> _$$CurrencyImplToJson(_$CurrencyImpl instance) =>
+    <String, dynamic>{
       'isoCode': instance.isoCode,
       'name': instance.name,
       'symbol': instance.symbol,

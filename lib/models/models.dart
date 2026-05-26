@@ -45,6 +45,7 @@ export 'src/product/metafield_identifier/metafield_identifier.dart';
 export 'src/product/option/option.dart';
 export 'src/product/price_v_2/price_v_2.dart';
 export 'src/product/product_variant/product_variant.dart';
+export 'src/product/shop_pay_installments_pricing/shop_pay_installments_pricing.dart';
 export 'src/product/selected_option/selected_option.dart';
 export 'src/product/shopify_image/shopify_image.dart';
 export 'src/product/unit_price_measurement/unit_price_measurement.dart';

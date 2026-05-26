@@ -6,9 +6,9 @@ part of 'successful_fullfilment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SuccessfulFullfilment _$SuccessfulFullfilmentFromJson(
+_$SuccessfulFullfilmentImpl _$$SuccessfulFullfilmentImplFromJson(
         Map<String, dynamic> json) =>
-    _SuccessfulFullfilment(
+    _$SuccessfulFullfilmentImpl(
       trackingCompany: json['trackingCompany'] as String?,
       trackingInfo: (json['trackingInfo'] as List<dynamic>?)
           ?.map((e) => SuccessfulFullfilmentTrackingInfo.fromJson(
@@ -16,8 +16,8 @@ _SuccessfulFullfilment _$SuccessfulFullfilmentFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$SuccessfulFullfilmentToJson(
-        _SuccessfulFullfilment instance) =>
+Map<String, dynamic> _$$SuccessfulFullfilmentImplToJson(
+        _$SuccessfulFullfilmentImpl instance) =>
     <String, dynamic>{
       'trackingCompany': instance.trackingCompany,
       'trackingInfo': instance.trackingInfo?.map((e) => e.toJson()).toList(),

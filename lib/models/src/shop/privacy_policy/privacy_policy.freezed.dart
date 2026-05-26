@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,67 +9,52 @@ part of 'privacy_policy.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+PrivacyPolicy _$PrivacyPolicyFromJson(Map<String, dynamic> json) {
+  return _PrivacyPolicy.fromJson(json);
+}
 
 /// @nodoc
 mixin _$PrivacyPolicy {
-  String? get body;
-  String? get handle;
-  String? get id;
-  String? get title;
-  String? get url;
+  String? get body => throw _privateConstructorUsedError;
+  String? get handle => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+
+  /// Serializes this PrivacyPolicy to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of PrivacyPolicy
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $PrivacyPolicyCopyWith<PrivacyPolicy> get copyWith =>
-      _$PrivacyPolicyCopyWithImpl<PrivacyPolicy>(
-          this as PrivacyPolicy, _$identity);
-
-  /// Serializes this PrivacyPolicy to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is PrivacyPolicy &&
-            (identical(other.body, body) || other.body == body) &&
-            (identical(other.handle, handle) || other.handle == handle) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.url, url) || other.url == url));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, body, handle, id, title, url);
-
-  @override
-  String toString() {
-    return 'PrivacyPolicy(body: $body, handle: $handle, id: $id, title: $title, url: $url)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $PrivacyPolicyCopyWith<$Res> {
+abstract class $PrivacyPolicyCopyWith<$Res> {
   factory $PrivacyPolicyCopyWith(
-          PrivacyPolicy value, $Res Function(PrivacyPolicy) _then) =
-      _$PrivacyPolicyCopyWithImpl;
+          PrivacyPolicy value, $Res Function(PrivacyPolicy) then) =
+      _$PrivacyPolicyCopyWithImpl<$Res, PrivacyPolicy>;
   @useResult
   $Res call(
       {String? body, String? handle, String? id, String? title, String? url});
 }
 
 /// @nodoc
-class _$PrivacyPolicyCopyWithImpl<$Res>
+class _$PrivacyPolicyCopyWithImpl<$Res, $Val extends PrivacyPolicy>
     implements $PrivacyPolicyCopyWith<$Res> {
-  _$PrivacyPolicyCopyWithImpl(this._self, this._then);
+  _$PrivacyPolicyCopyWithImpl(this._value, this._then);
 
-  final PrivacyPolicy _self;
-  final $Res Function(PrivacyPolicy) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of PrivacyPolicy
   /// with the given fields replaced by the non-null parameter values.
@@ -83,25 +67,81 @@ class _$PrivacyPolicyCopyWithImpl<$Res>
     Object? title = freezed,
     Object? url = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       body: freezed == body
-          ? _self.body
+          ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as String?,
       handle: freezed == handle
-          ? _self.handle
+          ? _value.handle
           : handle // ignore: cast_nullable_to_non_nullable
               as String?,
       id: freezed == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       title: freezed == title
-          ? _self.title
+          ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
       url: freezed == url
-          ? _self.url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PrivacyPolicyImplCopyWith<$Res>
+    implements $PrivacyPolicyCopyWith<$Res> {
+  factory _$$PrivacyPolicyImplCopyWith(
+          _$PrivacyPolicyImpl value, $Res Function(_$PrivacyPolicyImpl) then) =
+      __$$PrivacyPolicyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? body, String? handle, String? id, String? title, String? url});
+}
+
+/// @nodoc
+class __$$PrivacyPolicyImplCopyWithImpl<$Res>
+    extends _$PrivacyPolicyCopyWithImpl<$Res, _$PrivacyPolicyImpl>
+    implements _$$PrivacyPolicyImplCopyWith<$Res> {
+  __$$PrivacyPolicyImplCopyWithImpl(
+      _$PrivacyPolicyImpl _value, $Res Function(_$PrivacyPolicyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PrivacyPolicy
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? body = freezed,
+    Object? handle = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? url = freezed,
+  }) {
+    return _then(_$PrivacyPolicyImpl(
+      body: freezed == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+      handle: freezed == handle
+          ? _value.handle
+          : handle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: freezed == url
+          ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -110,10 +150,11 @@ class _$PrivacyPolicyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _PrivacyPolicy implements PrivacyPolicy {
-  _PrivacyPolicy({this.body, this.handle, this.id, this.title, this.url});
-  factory _PrivacyPolicy.fromJson(Map<String, dynamic> json) =>
-      _$PrivacyPolicyFromJson(json);
+class _$PrivacyPolicyImpl implements _PrivacyPolicy {
+  _$PrivacyPolicyImpl({this.body, this.handle, this.id, this.title, this.url});
+
+  factory _$PrivacyPolicyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PrivacyPolicyImplFromJson(json);
 
   @override
   final String? body;
@@ -126,26 +167,16 @@ class _PrivacyPolicy implements PrivacyPolicy {
   @override
   final String? url;
 
-  /// Create a copy of PrivacyPolicy
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$PrivacyPolicyCopyWith<_PrivacyPolicy> get copyWith =>
-      __$PrivacyPolicyCopyWithImpl<_PrivacyPolicy>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$PrivacyPolicyToJson(
-      this,
-    );
+  String toString() {
+    return 'PrivacyPolicy(body: $body, handle: $handle, id: $id, title: $title, url: $url)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PrivacyPolicy &&
+            other is _$PrivacyPolicyImpl &&
             (identical(other.body, body) || other.body == body) &&
             (identical(other.handle, handle) || other.handle == handle) &&
             (identical(other.id, id) || other.id == id) &&
@@ -157,66 +188,48 @@ class _PrivacyPolicy implements PrivacyPolicy {
   @override
   int get hashCode => Object.hash(runtimeType, body, handle, id, title, url);
 
+  /// Create a copy of PrivacyPolicy
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'PrivacyPolicy(body: $body, handle: $handle, id: $id, title: $title, url: $url)';
+  @pragma('vm:prefer-inline')
+  _$$PrivacyPolicyImplCopyWith<_$PrivacyPolicyImpl> get copyWith =>
+      __$$PrivacyPolicyImplCopyWithImpl<_$PrivacyPolicyImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PrivacyPolicyImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$PrivacyPolicyCopyWith<$Res>
-    implements $PrivacyPolicyCopyWith<$Res> {
-  factory _$PrivacyPolicyCopyWith(
-          _PrivacyPolicy value, $Res Function(_PrivacyPolicy) _then) =
-      __$PrivacyPolicyCopyWithImpl;
+abstract class _PrivacyPolicy implements PrivacyPolicy {
+  factory _PrivacyPolicy(
+      {final String? body,
+      final String? handle,
+      final String? id,
+      final String? title,
+      final String? url}) = _$PrivacyPolicyImpl;
+
+  factory _PrivacyPolicy.fromJson(Map<String, dynamic> json) =
+      _$PrivacyPolicyImpl.fromJson;
+
   @override
-  @useResult
-  $Res call(
-      {String? body, String? handle, String? id, String? title, String? url});
-}
-
-/// @nodoc
-class __$PrivacyPolicyCopyWithImpl<$Res>
-    implements _$PrivacyPolicyCopyWith<$Res> {
-  __$PrivacyPolicyCopyWithImpl(this._self, this._then);
-
-  final _PrivacyPolicy _self;
-  final $Res Function(_PrivacyPolicy) _then;
+  String? get body;
+  @override
+  String? get handle;
+  @override
+  String? get id;
+  @override
+  String? get title;
+  @override
+  String? get url;
 
   /// Create a copy of PrivacyPolicy
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? body = freezed,
-    Object? handle = freezed,
-    Object? id = freezed,
-    Object? title = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_PrivacyPolicy(
-      body: freezed == body
-          ? _self.body
-          : body // ignore: cast_nullable_to_non_nullable
-              as String?,
-      handle: freezed == handle
-          ? _self.handle
-          : handle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      title: freezed == title
-          ? _self.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _self.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PrivacyPolicyImplCopyWith<_$PrivacyPolicyImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on
