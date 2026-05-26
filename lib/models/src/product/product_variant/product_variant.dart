@@ -2,6 +2,7 @@ import 'package:shopify_flutter/models/src/product/price_v_2/price_v_2.dart';
 import 'package:shopify_flutter/models/src/product/selected_option/selected_option.dart';
 import 'package:shopify_flutter/models/src/product/selling_plan_allocation/selling_plan_allocation.dart';
 import 'package:shopify_flutter/models/src/product/shopify_image/shopify_image.dart';
+import 'package:shopify_flutter/models/src/product/shop_pay_installments_pricing/shop_pay_installments_pricing.dart';
 import 'package:shopify_flutter/models/src/product/unit_price_measurement/unit_price_measurement.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -34,6 +35,7 @@ abstract class ProductVariant with _$ProductVariant {
     ShopifyImage? image,
     Product? product,
     @Default([]) List<SellingPlanAllocation> sellingPlanAllocations,
+    ShopPayInstallmentsPricing? shopPayInstallmentsPricing,
   }) = _ProductVariant;
 
   /// the product variant from graphjson
@@ -76,6 +78,10 @@ abstract class ProductVariant with _$ProductVariant {
           ? Product.fromJson(nodeJson['product'])
           : null,
       sellingPlanAllocations: _getSellingPlanAllocationsList(nodeJson),
+      shopPayInstallmentsPricing: nodeJson['shopPayInstallmentsPricing'] != null
+          ? ShopPayInstallmentsPricing.fromJson(
+              nodeJson['shopPayInstallmentsPricing'])
+          : null,
     );
   }
 

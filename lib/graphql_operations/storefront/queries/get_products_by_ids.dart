@@ -81,6 +81,22 @@ query($metafields: [HasMetafieldsIdentifier!]!, $country: CountryCode, $ids : [I
              }
             id
             quantityAvailable
+            shopPayInstallmentsPricing {
+              available
+              eligible
+              fullPrice {
+                amount
+                currencyCode
+              }
+              installmentsCount {
+                count
+                precision
+              }
+              pricePerTerm {
+                amount
+                currencyCode
+              }
+            }
             sellingPlanAllocations(first: 250) {
               nodes {
                 checkoutChargeAmount {
