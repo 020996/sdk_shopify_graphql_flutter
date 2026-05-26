@@ -24,6 +24,43 @@ abstract class ShopPayInstallmentsCount with _$ShopPayInstallmentsCount {
 
 @freezed
 
+/// Shop Pay financing plan term
+abstract class ShopPayFinancingPlanTerm with _$ShopPayFinancingPlanTerm {
+  const ShopPayFinancingPlanTerm._();
+
+  /// constructor
+  factory ShopPayFinancingPlanTerm({
+    String? id,
+    String? frequency,
+    ShopPayInstallmentsCount? installmentsCount,
+  }) = _ShopPayFinancingPlanTerm;
+
+  /// from json
+  factory ShopPayFinancingPlanTerm.fromJson(Map<String, dynamic> json) =>
+      _$ShopPayFinancingPlanTermFromJson(json);
+}
+
+@freezed
+
+/// Shop Pay financing plan
+abstract class ShopPayFinancingPlan with _$ShopPayFinancingPlan {
+  const ShopPayFinancingPlan._();
+
+  /// constructor
+  factory ShopPayFinancingPlan({
+    String? id,
+    PriceV2? minPrice,
+    PriceV2? maxPrice,
+    @Default([]) List<ShopPayFinancingPlanTerm> terms,
+  }) = _ShopPayFinancingPlan;
+
+  /// from json
+  factory ShopPayFinancingPlan.fromJson(Map<String, dynamic> json) =>
+      _$ShopPayFinancingPlanFromJson(json);
+}
+
+@freezed
+
 /// Shop Pay installments pricing for a product variant.
 /// Only available when Shop Pay Installments is enabled on the store.
 abstract class ShopPayInstallmentsPricing with _$ShopPayInstallmentsPricing {
@@ -36,6 +73,7 @@ abstract class ShopPayInstallmentsPricing with _$ShopPayInstallmentsPricing {
     PriceV2? fullPrice,
     ShopPayInstallmentsCount? installmentsCount,
     PriceV2? pricePerTerm,
+    @Default([]) List<ShopPayFinancingPlan> financingPlans,
   }) = _ShopPayInstallmentsPricing;
 
   /// from json

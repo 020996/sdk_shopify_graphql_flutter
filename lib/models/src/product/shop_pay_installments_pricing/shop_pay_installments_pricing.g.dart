@@ -20,6 +20,51 @@ Map<String, dynamic> _$$ShopPayInstallmentsCountImplToJson(
       'precision': instance.precision,
     };
 
+_$ShopPayFinancingPlanTermImpl _$$ShopPayFinancingPlanTermImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ShopPayFinancingPlanTermImpl(
+      id: json['id'] as String?,
+      frequency: json['frequency'] as String?,
+      installmentsCount: json['installmentsCount'] == null
+          ? null
+          : ShopPayInstallmentsCount.fromJson(
+              json['installmentsCount'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ShopPayFinancingPlanTermImplToJson(
+        _$ShopPayFinancingPlanTermImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'frequency': instance.frequency,
+      'installmentsCount': instance.installmentsCount?.toJson(),
+    };
+
+_$ShopPayFinancingPlanImpl _$$ShopPayFinancingPlanImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ShopPayFinancingPlanImpl(
+      id: json['id'] as String?,
+      minPrice: json['minPrice'] == null
+          ? null
+          : PriceV2.fromJson(json['minPrice'] as Map<String, dynamic>),
+      maxPrice: json['maxPrice'] == null
+          ? null
+          : PriceV2.fromJson(json['maxPrice'] as Map<String, dynamic>),
+      terms: (json['terms'] as List<dynamic>?)
+              ?.map((e) =>
+                  ShopPayFinancingPlanTerm.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+    );
+
+Map<String, dynamic> _$$ShopPayFinancingPlanImplToJson(
+        _$ShopPayFinancingPlanImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'minPrice': instance.minPrice?.toJson(),
+      'maxPrice': instance.maxPrice?.toJson(),
+      'terms': instance.terms.map((e) => e.toJson()).toList(),
+    };
+
 _$ShopPayInstallmentsPricingImpl _$$ShopPayInstallmentsPricingImplFromJson(
         Map<String, dynamic> json) =>
     _$ShopPayInstallmentsPricingImpl(
@@ -35,6 +80,11 @@ _$ShopPayInstallmentsPricingImpl _$$ShopPayInstallmentsPricingImplFromJson(
       pricePerTerm: json['pricePerTerm'] == null
           ? null
           : PriceV2.fromJson(json['pricePerTerm'] as Map<String, dynamic>),
+      financingPlans: (json['financingPlans'] as List<dynamic>?)
+              ?.map((e) =>
+                  ShopPayFinancingPlan.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
     );
 
 Map<String, dynamic> _$$ShopPayInstallmentsPricingImplToJson(
@@ -45,4 +95,5 @@ Map<String, dynamic> _$$ShopPayInstallmentsPricingImplToJson(
       'fullPrice': instance.fullPrice?.toJson(),
       'installmentsCount': instance.installmentsCount?.toJson(),
       'pricePerTerm': instance.pricePerTerm?.toJson(),
+      'financingPlans': instance.financingPlans.map((e) => e.toJson()).toList(),
     };

@@ -142,6 +142,24 @@ query($metafields: [HasMetafieldsIdentifier!]!, $id : ID!, $cursor : String, $li
                       amount
                       currencyCode
                     }
+                    financingPlans {
+                      id
+                      minPrice {
+                        amount
+                        currencyCode
+                      }
+                      maxPrice {
+                        amount
+                        currencyCode
+                      }
+                      terms {
+                        id
+                        frequency
+                        installmentsCount {
+                          count
+                        }
+                      }
+                    }
                   }
                   sellingPlanAllocations(first: 250) {
                     nodes {

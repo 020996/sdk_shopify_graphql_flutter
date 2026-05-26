@@ -96,6 +96,24 @@ query($metafields: [HasMetafieldsIdentifier!]!, $country: CountryCode, $ids : [I
                 amount
                 currencyCode
               }
+              financingPlans {
+                id
+                minPrice {
+                  amount
+                  currencyCode
+                }
+                maxPrice {
+                  amount
+                  currencyCode
+                }
+                terms {
+                  id
+                  frequency
+                  installmentsCount {
+                    count
+                  }
+                }
+              }
             }
             sellingPlanAllocations(first: 250) {
               nodes {
