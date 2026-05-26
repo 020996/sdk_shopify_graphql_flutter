@@ -114,6 +114,22 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
              }
             id
             quantityAvailable
+            shopPayInstallmentsPricing {
+              available
+              eligible
+              fullPrice {
+                amount
+                currencyCode
+              }
+              installmentsCount {
+                count
+                precision
+              }
+              pricePerTerm {
+                amount
+                currencyCode
+              }
+            }
             sellingPlanAllocations(first: 250) {
               nodes {
                 checkoutChargeAmount {
