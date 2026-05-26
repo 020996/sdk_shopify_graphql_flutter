@@ -24,9 +24,9 @@ dependencies:
     sdk: flutter
   graphql_flutter:
     path: graphql_flutter
-  freezed_annotation: ^3.1.0
+  freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-  json_serializable: ^6.9.5
+  json_serializable: ^6.9.0
   shared_preferences: ^2.5.3
   intl: '>=0.19.0 <0.21.2'
   url_launcher: ^6.1.10
@@ -36,6 +36,6 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^3.0.1
   # dart run build_runner watch --delete-conflicting-outputs
-  build_runner: ^2.4.14
+  build_runner: ^2.4.13
   freezed: ^3.0.6
-  analyzer: ^7.6.0
+  analyzer: '>=5.13.0 <7.0.0'
