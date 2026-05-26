@@ -37,5 +37,5 @@ dev_dependencies:
   flutter_lints: ^3.0.1
   # dart run build_runner watch --delete-conflicting-outputs
   build_runner: ^2.4.13
-  freezed: ^2.4.8
+  freezed: ^3.0.6
   analyzer: '>=5.13.0 <7.0.0'
