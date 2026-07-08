@@ -37,6 +37,10 @@ _ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
                   SellingPlanAllocation.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      shopPayInstallmentsPricing: json['shopPayInstallmentsPricing'] == null
+          ? null
+          : ShopPayInstallmentsPricing.fromJson(
+              json['shopPayInstallmentsPricing'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
@@ -59,4 +63,6 @@ Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
       'product': instance.product?.toJson(),
       'sellingPlanAllocations':
           instance.sellingPlanAllocations.map((e) => e.toJson()).toList(),
+      'shopPayInstallmentsPricing':
+          instance.shopPayInstallmentsPricing?.toJson(),
     };

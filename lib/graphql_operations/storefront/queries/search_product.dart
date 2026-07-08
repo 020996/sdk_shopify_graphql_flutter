@@ -13,6 +13,18 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
             id
             name
             values
+            optionValues {
+              id
+              name
+              swatch {
+                color
+                image {
+                  image {
+                    url
+                  }
+                }
+              }
+            }
           }
           metafields(identifiers: $metafields) {
             id

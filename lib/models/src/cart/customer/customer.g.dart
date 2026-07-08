@@ -6,8 +6,7 @@ part of 'customer.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CustomerImpl _$$CustomerImplFromJson(Map<String, dynamic> json) =>
-    _$CustomerImpl(
+_Customer _$CustomerFromJson(Map<String, dynamic> json) => _Customer(
       id: json['id'] as String?,
       email: json['email'] as String?,
       phone: json['phone'] as String?,
@@ -22,8 +21,7 @@ _$CustomerImpl _$$CustomerImplFromJson(Map<String, dynamic> json) =>
       acceptsMarketing: json['acceptsMarketing'] as bool?,
     );
 
-Map<String, dynamic> _$$CustomerImplToJson(_$CustomerImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$CustomerToJson(_Customer instance) => <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
       'phone': instance.phone,

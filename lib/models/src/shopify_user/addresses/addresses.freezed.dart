@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,81 +10,57 @@ part of 'addresses.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Addresses _$AddressesFromJson(Map<String, dynamic> json) {
-  return _Addresses.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Addresses {
-  List<Address> get addressList => throw _privateConstructorUsedError;
-
-  /// Serializes this Addresses to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<Address> get addressList;
 
   /// Create a copy of Addresses
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AddressesCopyWith<Addresses> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AddressesCopyWith<$Res> {
-  factory $AddressesCopyWith(Addresses value, $Res Function(Addresses) then) =
-      _$AddressesCopyWithImpl<$Res, Addresses>;
-  @useResult
-  $Res call({List<Address> addressList});
-}
-
-/// @nodoc
-class _$AddressesCopyWithImpl<$Res, $Val extends Addresses>
-    implements $AddressesCopyWith<$Res> {
-  _$AddressesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Addresses
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AddressesCopyWith<Addresses> get copyWith =>
+      _$AddressesCopyWithImpl<Addresses>(this as Addresses, _$identity);
+
+  /// Serializes this Addresses to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? addressList = null,
-  }) {
-    return _then(_value.copyWith(
-      addressList: null == addressList
-          ? _value.addressList
-          : addressList // ignore: cast_nullable_to_non_nullable
-              as List<Address>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Addresses &&
+            const DeepCollectionEquality()
+                .equals(other.addressList, addressList));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(addressList));
+
+  @override
+  String toString() {
+    return 'Addresses(addressList: $addressList)';
   }
 }
 
 /// @nodoc
-abstract class _$$AddressesImplCopyWith<$Res>
-    implements $AddressesCopyWith<$Res> {
-  factory _$$AddressesImplCopyWith(
-          _$AddressesImpl value, $Res Function(_$AddressesImpl) then) =
-      __$$AddressesImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AddressesCopyWith<$Res> {
+  factory $AddressesCopyWith(Addresses value, $Res Function(Addresses) _then) =
+      _$AddressesCopyWithImpl;
   @useResult
   $Res call({List<Address> addressList});
 }
 
 /// @nodoc
-class __$$AddressesImplCopyWithImpl<$Res>
-    extends _$AddressesCopyWithImpl<$Res, _$AddressesImpl>
-    implements _$$AddressesImplCopyWith<$Res> {
-  __$$AddressesImplCopyWithImpl(
-      _$AddressesImpl _value, $Res Function(_$AddressesImpl) _then)
-      : super(_value, _then);
+class _$AddressesCopyWithImpl<$Res> implements $AddressesCopyWith<$Res> {
+  _$AddressesCopyWithImpl(this._self, this._then);
+
+  final Addresses _self;
+  final $Res Function(Addresses) _then;
 
   /// Create a copy of Addresses
   /// with the given fields replaced by the non-null parameter values.
@@ -92,9 +69,9 @@ class __$$AddressesImplCopyWithImpl<$Res>
   $Res call({
     Object? addressList = null,
   }) {
-    return _then(_$AddressesImpl(
+    return _then(_self.copyWith(
       addressList: null == addressList
-          ? _value._addressList
+          ? _self.addressList
           : addressList // ignore: cast_nullable_to_non_nullable
               as List<Address>,
     ));
@@ -103,13 +80,12 @@ class __$$AddressesImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AddressesImpl extends _Addresses {
-  _$AddressesImpl({required final List<Address> addressList})
+class _Addresses extends Addresses {
+  _Addresses({required final List<Address> addressList})
       : _addressList = addressList,
         super._();
-
-  factory _$AddressesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AddressesImplFromJson(json);
+  factory _Addresses.fromJson(Map<String, dynamic> json) =>
+      _$AddressesFromJson(json);
 
   final List<Address> _addressList;
   @override
@@ -119,16 +95,26 @@ class _$AddressesImpl extends _Addresses {
     return EqualUnmodifiableListView(_addressList);
   }
 
+  /// Create a copy of Addresses
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Addresses(addressList: $addressList)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AddressesCopyWith<_Addresses> get copyWith =>
+      __$AddressesCopyWithImpl<_Addresses>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AddressesToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AddressesImpl &&
+            other is _Addresses &&
             const DeepCollectionEquality()
                 .equals(other._addressList, _addressList));
   }
@@ -138,37 +124,44 @@ class _$AddressesImpl extends _Addresses {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_addressList));
 
-  /// Create a copy of Addresses
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AddressesImplCopyWith<_$AddressesImpl> get copyWith =>
-      __$$AddressesImplCopyWithImpl<_$AddressesImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AddressesImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Addresses(addressList: $addressList)';
   }
 }
 
-abstract class _Addresses extends Addresses {
-  factory _Addresses({required final List<Address> addressList}) =
-      _$AddressesImpl;
-  _Addresses._() : super._();
-
-  factory _Addresses.fromJson(Map<String, dynamic> json) =
-      _$AddressesImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$AddressesCopyWith<$Res>
+    implements $AddressesCopyWith<$Res> {
+  factory _$AddressesCopyWith(
+          _Addresses value, $Res Function(_Addresses) _then) =
+      __$AddressesCopyWithImpl;
   @override
-  List<Address> get addressList;
+  @useResult
+  $Res call({List<Address> addressList});
+}
+
+/// @nodoc
+class __$AddressesCopyWithImpl<$Res> implements _$AddressesCopyWith<$Res> {
+  __$AddressesCopyWithImpl(this._self, this._then);
+
+  final _Addresses _self;
+  final $Res Function(_Addresses) _then;
 
   /// Create a copy of Addresses
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AddressesImplCopyWith<_$AddressesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? addressList = null,
+  }) {
+    return _then(_Addresses(
+      addressList: null == addressList
+          ? _self._addressList
+          : addressList // ignore: cast_nullable_to_non_nullable
+              as List<Address>,
+    ));
+  }
 }
+
+// dart format on

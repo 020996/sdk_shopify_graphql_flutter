@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,146 +10,31 @@ part of 'primary_domain.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-PrimaryDomain _$PrimaryDomainFromJson(Map<String, dynamic> json) {
-  return _PrimaryDomain.fromJson(json);
-}
 
 /// @nodoc
 mixin _$PrimaryDomain {
-  String? get host => throw _privateConstructorUsedError;
-  bool? get sslEnabled => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
-
-  /// Serializes this PrimaryDomain to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get host;
+  bool? get sslEnabled;
+  String? get url;
 
   /// Create a copy of PrimaryDomain
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $PrimaryDomainCopyWith<PrimaryDomain> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$PrimaryDomainCopyWithImpl<PrimaryDomain>(
+          this as PrimaryDomain, _$identity);
 
-/// @nodoc
-abstract class $PrimaryDomainCopyWith<$Res> {
-  factory $PrimaryDomainCopyWith(
-          PrimaryDomain value, $Res Function(PrimaryDomain) then) =
-      _$PrimaryDomainCopyWithImpl<$Res, PrimaryDomain>;
-  @useResult
-  $Res call({String? host, bool? sslEnabled, String? url});
-}
-
-/// @nodoc
-class _$PrimaryDomainCopyWithImpl<$Res, $Val extends PrimaryDomain>
-    implements $PrimaryDomainCopyWith<$Res> {
-  _$PrimaryDomainCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of PrimaryDomain
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? host = freezed,
-    Object? sslEnabled = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_value.copyWith(
-      host: freezed == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sslEnabled: freezed == sslEnabled
-          ? _value.sslEnabled
-          : sslEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$PrimaryDomainImplCopyWith<$Res>
-    implements $PrimaryDomainCopyWith<$Res> {
-  factory _$$PrimaryDomainImplCopyWith(
-          _$PrimaryDomainImpl value, $Res Function(_$PrimaryDomainImpl) then) =
-      __$$PrimaryDomainImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? host, bool? sslEnabled, String? url});
-}
-
-/// @nodoc
-class __$$PrimaryDomainImplCopyWithImpl<$Res>
-    extends _$PrimaryDomainCopyWithImpl<$Res, _$PrimaryDomainImpl>
-    implements _$$PrimaryDomainImplCopyWith<$Res> {
-  __$$PrimaryDomainImplCopyWithImpl(
-      _$PrimaryDomainImpl _value, $Res Function(_$PrimaryDomainImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PrimaryDomain
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? host = freezed,
-    Object? sslEnabled = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_$PrimaryDomainImpl(
-      host: freezed == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sslEnabled: freezed == sslEnabled
-          ? _value.sslEnabled
-          : sslEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$PrimaryDomainImpl implements _PrimaryDomain {
-  _$PrimaryDomainImpl({this.host, this.sslEnabled, this.url});
-
-  factory _$PrimaryDomainImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PrimaryDomainImplFromJson(json);
-
-  @override
-  final String? host;
-  @override
-  final bool? sslEnabled;
-  @override
-  final String? url;
-
-  @override
-  String toString() {
-    return 'PrimaryDomain(host: $host, sslEnabled: $sslEnabled, url: $url)';
-  }
+  /// Serializes this PrimaryDomain to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PrimaryDomainImpl &&
+            other is PrimaryDomain &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.sslEnabled, sslEnabled) ||
                 other.sslEnabled == sslEnabled) &&
@@ -159,42 +45,148 @@ class _$PrimaryDomainImpl implements _PrimaryDomain {
   @override
   int get hashCode => Object.hash(runtimeType, host, sslEnabled, url);
 
-  /// Create a copy of PrimaryDomain
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PrimaryDomainImplCopyWith<_$PrimaryDomainImpl> get copyWith =>
-      __$$PrimaryDomainImplCopyWithImpl<_$PrimaryDomainImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PrimaryDomainImplToJson(
-      this,
-    );
+  String toString() {
+    return 'PrimaryDomain(host: $host, sslEnabled: $sslEnabled, url: $url)';
   }
 }
 
-abstract class _PrimaryDomain implements PrimaryDomain {
-  factory _PrimaryDomain(
-      {final String? host,
-      final bool? sslEnabled,
-      final String? url}) = _$PrimaryDomainImpl;
+/// @nodoc
+abstract mixin class $PrimaryDomainCopyWith<$Res> {
+  factory $PrimaryDomainCopyWith(
+          PrimaryDomain value, $Res Function(PrimaryDomain) _then) =
+      _$PrimaryDomainCopyWithImpl;
+  @useResult
+  $Res call({String? host, bool? sslEnabled, String? url});
+}
 
-  factory _PrimaryDomain.fromJson(Map<String, dynamic> json) =
-      _$PrimaryDomainImpl.fromJson;
+/// @nodoc
+class _$PrimaryDomainCopyWithImpl<$Res>
+    implements $PrimaryDomainCopyWith<$Res> {
+  _$PrimaryDomainCopyWithImpl(this._self, this._then);
+
+  final PrimaryDomain _self;
+  final $Res Function(PrimaryDomain) _then;
+
+  /// Create a copy of PrimaryDomain
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? host = freezed,
+    Object? sslEnabled = freezed,
+    Object? url = freezed,
+  }) {
+    return _then(_self.copyWith(
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sslEnabled: freezed == sslEnabled
+          ? _self.sslEnabled
+          : sslEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      url: freezed == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _PrimaryDomain implements PrimaryDomain {
+  _PrimaryDomain({this.host, this.sslEnabled, this.url});
+  factory _PrimaryDomain.fromJson(Map<String, dynamic> json) =>
+      _$PrimaryDomainFromJson(json);
 
   @override
-  String? get host;
+  final String? host;
   @override
-  bool? get sslEnabled;
+  final bool? sslEnabled;
   @override
-  String? get url;
+  final String? url;
 
   /// Create a copy of PrimaryDomain
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PrimaryDomainImplCopyWith<_$PrimaryDomainImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$PrimaryDomainCopyWith<_PrimaryDomain> get copyWith =>
+      __$PrimaryDomainCopyWithImpl<_PrimaryDomain>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PrimaryDomainToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PrimaryDomain &&
+            (identical(other.host, host) || other.host == host) &&
+            (identical(other.sslEnabled, sslEnabled) ||
+                other.sslEnabled == sslEnabled) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, host, sslEnabled, url);
+
+  @override
+  String toString() {
+    return 'PrimaryDomain(host: $host, sslEnabled: $sslEnabled, url: $url)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$PrimaryDomainCopyWith<$Res>
+    implements $PrimaryDomainCopyWith<$Res> {
+  factory _$PrimaryDomainCopyWith(
+          _PrimaryDomain value, $Res Function(_PrimaryDomain) _then) =
+      __$PrimaryDomainCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? host, bool? sslEnabled, String? url});
+}
+
+/// @nodoc
+class __$PrimaryDomainCopyWithImpl<$Res>
+    implements _$PrimaryDomainCopyWith<$Res> {
+  __$PrimaryDomainCopyWithImpl(this._self, this._then);
+
+  final _PrimaryDomain _self;
+  final $Res Function(_PrimaryDomain) _then;
+
+  /// Create a copy of PrimaryDomain
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? host = freezed,
+    Object? sslEnabled = freezed,
+    Object? url = freezed,
+  }) {
+    return _then(_PrimaryDomain(
+      host: freezed == host
+          ? _self.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sslEnabled: freezed == sslEnabled
+          ? _self.sslEnabled
+          : sslEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      url: freezed == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

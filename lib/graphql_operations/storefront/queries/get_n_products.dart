@@ -12,6 +12,18 @@ query($metafields: [HasMetafieldsIdentifier!]!, $country: CountryCode, $n : Int,
             id
             name
             values
+            optionValues {
+              id
+              name
+              swatch {
+                color
+                image {
+                  image {
+                    url
+                  }
+                }
+              }
+            }
             }
           metafields(identifiers: $metafields) {
             id

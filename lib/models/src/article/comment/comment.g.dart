@@ -6,8 +6,7 @@ part of 'comment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CommentImpl _$$CommentImplFromJson(Map<String, dynamic> json) =>
-    _$CommentImpl(
+_Comment _$CommentFromJson(Map<String, dynamic> json) => _Comment(
       email: json['email'] as String?,
       name: json['name'] as String?,
       content: json['content'] as String?,
@@ -15,8 +14,7 @@ _$CommentImpl _$$CommentImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
     );
 
-Map<String, dynamic> _$$CommentImplToJson(_$CommentImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$CommentToJson(_Comment instance) => <String, dynamic>{
       'email': instance.email,
       'name': instance.name,
       'content': instance.content,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,85 +10,59 @@ part of 'orders.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Orders _$OrdersFromJson(Map<String, dynamic> json) {
-  return _Orders.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Orders {
-  List<Order> get orderList => throw _privateConstructorUsedError;
-  bool get hasNextPage => throw _privateConstructorUsedError;
-
-  /// Serializes this Orders to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<Order> get orderList;
+  bool get hasNextPage;
 
   /// Create a copy of Orders
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $OrdersCopyWith<Orders> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OrdersCopyWith<$Res> {
-  factory $OrdersCopyWith(Orders value, $Res Function(Orders) then) =
-      _$OrdersCopyWithImpl<$Res, Orders>;
-  @useResult
-  $Res call({List<Order> orderList, bool hasNextPage});
-}
-
-/// @nodoc
-class _$OrdersCopyWithImpl<$Res, $Val extends Orders>
-    implements $OrdersCopyWith<$Res> {
-  _$OrdersCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Orders
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $OrdersCopyWith<Orders> get copyWith =>
+      _$OrdersCopyWithImpl<Orders>(this as Orders, _$identity);
+
+  /// Serializes this Orders to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? orderList = null,
-    Object? hasNextPage = null,
-  }) {
-    return _then(_value.copyWith(
-      orderList: null == orderList
-          ? _value.orderList
-          : orderList // ignore: cast_nullable_to_non_nullable
-              as List<Order>,
-      hasNextPage: null == hasNextPage
-          ? _value.hasNextPage
-          : hasNextPage // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Orders &&
+            const DeepCollectionEquality().equals(other.orderList, orderList) &&
+            (identical(other.hasNextPage, hasNextPage) ||
+                other.hasNextPage == hasNextPage));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(orderList), hasNextPage);
+
+  @override
+  String toString() {
+    return 'Orders(orderList: $orderList, hasNextPage: $hasNextPage)';
   }
 }
 
 /// @nodoc
-abstract class _$$OrdersImplCopyWith<$Res> implements $OrdersCopyWith<$Res> {
-  factory _$$OrdersImplCopyWith(
-          _$OrdersImpl value, $Res Function(_$OrdersImpl) then) =
-      __$$OrdersImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $OrdersCopyWith<$Res> {
+  factory $OrdersCopyWith(Orders value, $Res Function(Orders) _then) =
+      _$OrdersCopyWithImpl;
   @useResult
   $Res call({List<Order> orderList, bool hasNextPage});
 }
 
 /// @nodoc
-class __$$OrdersImplCopyWithImpl<$Res>
-    extends _$OrdersCopyWithImpl<$Res, _$OrdersImpl>
-    implements _$$OrdersImplCopyWith<$Res> {
-  __$$OrdersImplCopyWithImpl(
-      _$OrdersImpl _value, $Res Function(_$OrdersImpl) _then)
-      : super(_value, _then);
+class _$OrdersCopyWithImpl<$Res> implements $OrdersCopyWith<$Res> {
+  _$OrdersCopyWithImpl(this._self, this._then);
+
+  final Orders _self;
+  final $Res Function(Orders) _then;
 
   /// Create a copy of Orders
   /// with the given fields replaced by the non-null parameter values.
@@ -97,13 +72,13 @@ class __$$OrdersImplCopyWithImpl<$Res>
     Object? orderList = null,
     Object? hasNextPage = null,
   }) {
-    return _then(_$OrdersImpl(
+    return _then(_self.copyWith(
       orderList: null == orderList
-          ? _value._orderList
+          ? _self.orderList
           : orderList // ignore: cast_nullable_to_non_nullable
               as List<Order>,
       hasNextPage: null == hasNextPage
-          ? _value.hasNextPage
+          ? _self.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -112,13 +87,10 @@ class __$$OrdersImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrdersImpl implements _Orders {
-  _$OrdersImpl(
-      {required final List<Order> orderList, required this.hasNextPage})
+class _Orders implements Orders {
+  _Orders({required final List<Order> orderList, required this.hasNextPage})
       : _orderList = orderList;
-
-  factory _$OrdersImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OrdersImplFromJson(json);
+  factory _Orders.fromJson(Map<String, dynamic> json) => _$OrdersFromJson(json);
 
   final List<Order> _orderList;
   @override
@@ -131,16 +103,26 @@ class _$OrdersImpl implements _Orders {
   @override
   final bool hasNextPage;
 
+  /// Create a copy of Orders
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Orders(orderList: $orderList, hasNextPage: $hasNextPage)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OrdersCopyWith<_Orders> get copyWith =>
+      __$OrdersCopyWithImpl<_Orders>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OrdersToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OrdersImpl &&
+            other is _Orders &&
             const DeepCollectionEquality()
                 .equals(other._orderList, _orderList) &&
             (identical(other.hasNextPage, hasNextPage) ||
@@ -152,38 +134,47 @@ class _$OrdersImpl implements _Orders {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_orderList), hasNextPage);
 
-  /// Create a copy of Orders
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$OrdersImplCopyWith<_$OrdersImpl> get copyWith =>
-      __$$OrdersImplCopyWithImpl<_$OrdersImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OrdersImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Orders(orderList: $orderList, hasNextPage: $hasNextPage)';
   }
 }
 
-abstract class _Orders implements Orders {
-  factory _Orders(
-      {required final List<Order> orderList,
-      required final bool hasNextPage}) = _$OrdersImpl;
-
-  factory _Orders.fromJson(Map<String, dynamic> json) = _$OrdersImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$OrdersCopyWith<$Res> implements $OrdersCopyWith<$Res> {
+  factory _$OrdersCopyWith(_Orders value, $Res Function(_Orders) _then) =
+      __$OrdersCopyWithImpl;
   @override
-  List<Order> get orderList;
-  @override
-  bool get hasNextPage;
+  @useResult
+  $Res call({List<Order> orderList, bool hasNextPage});
+}
+
+/// @nodoc
+class __$OrdersCopyWithImpl<$Res> implements _$OrdersCopyWith<$Res> {
+  __$OrdersCopyWithImpl(this._self, this._then);
+
+  final _Orders _self;
+  final $Res Function(_Orders) _then;
 
   /// Create a copy of Orders
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OrdersImplCopyWith<_$OrdersImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? orderList = null,
+    Object? hasNextPage = null,
+  }) {
+    return _then(_Orders(
+      orderList: null == orderList
+          ? _self._orderList
+          : orderList // ignore: cast_nullable_to_non_nullable
+              as List<Order>,
+      hasNextPage: null == hasNextPage
+          ? _self.hasNextPage
+          : hasNextPage // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
+
+// dart format on

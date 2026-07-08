@@ -6,8 +6,7 @@ part of 'cart_cost.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CartCostImpl _$$CartCostImplFromJson(Map<String, dynamic> json) =>
-    _$CartCostImpl(
+_CartCost _$CartCostFromJson(Map<String, dynamic> json) => _CartCost(
       checkoutChargeAmount: PriceV2.fromJson(
           json['checkoutChargeAmount'] as Map<String, dynamic>),
       subtotalAmount:
@@ -26,8 +25,7 @@ _$CartCostImpl _$$CartCostImplFromJson(Map<String, dynamic> json) =>
       totalTaxAmountEstimated: json['totalTaxAmountEstimated'] as bool,
     );
 
-Map<String, dynamic> _$$CartCostImplToJson(_$CartCostImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$CartCostToJson(_CartCost instance) => <String, dynamic>{
       'checkoutChargeAmount': instance.checkoutChargeAmount.toJson(),
       'subtotalAmount': instance.subtotalAmount.toJson(),
       'subtotalAmountEstimated': instance.subtotalAmountEstimated,

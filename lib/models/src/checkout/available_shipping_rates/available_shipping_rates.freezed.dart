@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,93 +10,62 @@ part of 'available_shipping_rates.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AvailableShippingRates _$AvailableShippingRatesFromJson(
-    Map<String, dynamic> json) {
-  return _AvailableShippingRates.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AvailableShippingRates {
-  bool get ready => throw _privateConstructorUsedError;
-  List<ShippingRates>? get shippingRates => throw _privateConstructorUsedError;
-
-  /// Serializes this AvailableShippingRates to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get ready;
+  List<ShippingRates>? get shippingRates;
 
   /// Create a copy of AvailableShippingRates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AvailableShippingRatesCopyWith<AvailableShippingRates> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AvailableShippingRatesCopyWith<$Res> {
-  factory $AvailableShippingRatesCopyWith(AvailableShippingRates value,
-          $Res Function(AvailableShippingRates) then) =
-      _$AvailableShippingRatesCopyWithImpl<$Res, AvailableShippingRates>;
-  @useResult
-  $Res call({bool ready, List<ShippingRates>? shippingRates});
-}
-
-/// @nodoc
-class _$AvailableShippingRatesCopyWithImpl<$Res,
-        $Val extends AvailableShippingRates>
-    implements $AvailableShippingRatesCopyWith<$Res> {
-  _$AvailableShippingRatesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AvailableShippingRates
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AvailableShippingRatesCopyWith<AvailableShippingRates> get copyWith =>
+      _$AvailableShippingRatesCopyWithImpl<AvailableShippingRates>(
+          this as AvailableShippingRates, _$identity);
+
+  /// Serializes this AvailableShippingRates to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? ready = null,
-    Object? shippingRates = freezed,
-  }) {
-    return _then(_value.copyWith(
-      ready: null == ready
-          ? _value.ready
-          : ready // ignore: cast_nullable_to_non_nullable
-              as bool,
-      shippingRates: freezed == shippingRates
-          ? _value.shippingRates
-          : shippingRates // ignore: cast_nullable_to_non_nullable
-              as List<ShippingRates>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is AvailableShippingRates &&
+            (identical(other.ready, ready) || other.ready == ready) &&
+            const DeepCollectionEquality()
+                .equals(other.shippingRates, shippingRates));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, ready, const DeepCollectionEquality().hash(shippingRates));
+
+  @override
+  String toString() {
+    return 'AvailableShippingRates(ready: $ready, shippingRates: $shippingRates)';
   }
 }
 
 /// @nodoc
-abstract class _$$AvailableShippingRatesImplCopyWith<$Res>
-    implements $AvailableShippingRatesCopyWith<$Res> {
-  factory _$$AvailableShippingRatesImplCopyWith(
-          _$AvailableShippingRatesImpl value,
-          $Res Function(_$AvailableShippingRatesImpl) then) =
-      __$$AvailableShippingRatesImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AvailableShippingRatesCopyWith<$Res> {
+  factory $AvailableShippingRatesCopyWith(AvailableShippingRates value,
+          $Res Function(AvailableShippingRates) _then) =
+      _$AvailableShippingRatesCopyWithImpl;
   @useResult
   $Res call({bool ready, List<ShippingRates>? shippingRates});
 }
 
 /// @nodoc
-class __$$AvailableShippingRatesImplCopyWithImpl<$Res>
-    extends _$AvailableShippingRatesCopyWithImpl<$Res,
-        _$AvailableShippingRatesImpl>
-    implements _$$AvailableShippingRatesImplCopyWith<$Res> {
-  __$$AvailableShippingRatesImplCopyWithImpl(
-      _$AvailableShippingRatesImpl _value,
-      $Res Function(_$AvailableShippingRatesImpl) _then)
-      : super(_value, _then);
+class _$AvailableShippingRatesCopyWithImpl<$Res>
+    implements $AvailableShippingRatesCopyWith<$Res> {
+  _$AvailableShippingRatesCopyWithImpl(this._self, this._then);
+
+  final AvailableShippingRates _self;
+  final $Res Function(AvailableShippingRates) _then;
 
   /// Create a copy of AvailableShippingRates
   /// with the given fields replaced by the non-null parameter values.
@@ -105,13 +75,13 @@ class __$$AvailableShippingRatesImplCopyWithImpl<$Res>
     Object? ready = null,
     Object? shippingRates = freezed,
   }) {
-    return _then(_$AvailableShippingRatesImpl(
+    return _then(_self.copyWith(
       ready: null == ready
-          ? _value.ready
+          ? _self.ready
           : ready // ignore: cast_nullable_to_non_nullable
               as bool,
       shippingRates: freezed == shippingRates
-          ? _value._shippingRates
+          ? _self.shippingRates
           : shippingRates // ignore: cast_nullable_to_non_nullable
               as List<ShippingRates>?,
     ));
@@ -120,14 +90,13 @@ class __$$AvailableShippingRatesImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AvailableShippingRatesImpl extends _AvailableShippingRates {
-  _$AvailableShippingRatesImpl(
+class _AvailableShippingRates extends AvailableShippingRates {
+  _AvailableShippingRates(
       {required this.ready, required final List<ShippingRates>? shippingRates})
       : _shippingRates = shippingRates,
         super._();
-
-  factory _$AvailableShippingRatesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AvailableShippingRatesImplFromJson(json);
+  factory _AvailableShippingRates.fromJson(Map<String, dynamic> json) =>
+      _$AvailableShippingRatesFromJson(json);
 
   @override
   final bool ready;
@@ -141,16 +110,27 @@ class _$AvailableShippingRatesImpl extends _AvailableShippingRates {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of AvailableShippingRates
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'AvailableShippingRates(ready: $ready, shippingRates: $shippingRates)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AvailableShippingRatesCopyWith<_AvailableShippingRates> get copyWith =>
+      __$AvailableShippingRatesCopyWithImpl<_AvailableShippingRates>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AvailableShippingRatesToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AvailableShippingRatesImpl &&
+            other is _AvailableShippingRates &&
             (identical(other.ready, ready) || other.ready == ready) &&
             const DeepCollectionEquality()
                 .equals(other._shippingRates, _shippingRates));
@@ -161,42 +141,50 @@ class _$AvailableShippingRatesImpl extends _AvailableShippingRates {
   int get hashCode => Object.hash(
       runtimeType, ready, const DeepCollectionEquality().hash(_shippingRates));
 
-  /// Create a copy of AvailableShippingRates
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AvailableShippingRatesImplCopyWith<_$AvailableShippingRatesImpl>
-      get copyWith => __$$AvailableShippingRatesImplCopyWithImpl<
-          _$AvailableShippingRatesImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AvailableShippingRatesImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AvailableShippingRates(ready: $ready, shippingRates: $shippingRates)';
   }
 }
 
-abstract class _AvailableShippingRates extends AvailableShippingRates {
-  factory _AvailableShippingRates(
-          {required final bool ready,
-          required final List<ShippingRates>? shippingRates}) =
-      _$AvailableShippingRatesImpl;
-  _AvailableShippingRates._() : super._();
-
-  factory _AvailableShippingRates.fromJson(Map<String, dynamic> json) =
-      _$AvailableShippingRatesImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$AvailableShippingRatesCopyWith<$Res>
+    implements $AvailableShippingRatesCopyWith<$Res> {
+  factory _$AvailableShippingRatesCopyWith(_AvailableShippingRates value,
+          $Res Function(_AvailableShippingRates) _then) =
+      __$AvailableShippingRatesCopyWithImpl;
   @override
-  bool get ready;
-  @override
-  List<ShippingRates>? get shippingRates;
+  @useResult
+  $Res call({bool ready, List<ShippingRates>? shippingRates});
+}
+
+/// @nodoc
+class __$AvailableShippingRatesCopyWithImpl<$Res>
+    implements _$AvailableShippingRatesCopyWith<$Res> {
+  __$AvailableShippingRatesCopyWithImpl(this._self, this._then);
+
+  final _AvailableShippingRates _self;
+  final $Res Function(_AvailableShippingRates) _then;
 
   /// Create a copy of AvailableShippingRates
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AvailableShippingRatesImplCopyWith<_$AvailableShippingRatesImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? ready = null,
+    Object? shippingRates = freezed,
+  }) {
+    return _then(_AvailableShippingRates(
+      ready: null == ready
+          ? _self.ready
+          : ready // ignore: cast_nullable_to_non_nullable
+              as bool,
+      shippingRates: freezed == shippingRates
+          ? _self._shippingRates
+          : shippingRates // ignore: cast_nullable_to_non_nullable
+              as List<ShippingRates>?,
+    ));
+  }
 }
+
+// dart format on

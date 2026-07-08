@@ -8,6 +8,18 @@ query($metafields: [HasMetafieldsIdentifier!]!, $cursor: String, $sortKey : Prod
             id
             name
             values
+            optionValues {
+              id
+              name
+              swatch {
+                color
+                image {
+                  image {
+                    url
+                  }
+                }
+              }
+            }
             }
           metafields(identifiers: $metafields) {
             id

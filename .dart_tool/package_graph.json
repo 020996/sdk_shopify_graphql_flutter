@@ -267,7 +267,7 @@
     },
     {
       "name": "meta",
-      "version": "1.16.0",
+      "version": "1.18.0",
       "dependencies": []
     },
     {
@@ -607,7 +607,7 @@
     },
     {
       "name": "matcher",
-      "version": "0.12.17",
+      "version": "0.12.19",
       "dependencies": [
         "async",
         "meta",
@@ -618,7 +618,7 @@
     },
     {
       "name": "test_api",
-      "version": "0.7.6",
+      "version": "0.7.11",
       "dependencies": [
         "async",
         "boolean_selector",
@@ -842,14 +842,14 @@
     },
     {
       "name": "material_color_utilities",
-      "version": "0.11.1",
+      "version": "0.13.0",
       "dependencies": [
         "collection"
       ]
     },
     {
       "name": "characters",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "dependencies": []
     },
     {
@@ -932,6 +932,17 @@
         "leak_tracker",
         "matcher",
         "meta"
+      ]
+    },
+    {
+      "name": "leak_tracker",
+      "version": "11.0.2",
+      "dependencies": [
+        "clock",
+        "collection",
+        "meta",
+        "path",
+        "vm_service"
       ]
     },
     {
@@ -1109,6 +1120,11 @@
       "dependencies": []
     },
     {
+      "name": "vm_service",
+      "version": "15.0.0",
+      "dependencies": []
+    },
+    {
       "name": "ffi",
       "version": "2.1.4",
       "dependencies": []
@@ -1157,22 +1173,6 @@
         "collection",
         "meta"
       ]
-    },
-    {
-      "name": "leak_tracker",
-      "version": "11.0.2",
-      "dependencies": [
-        "clock",
-        "collection",
-        "meta",
-        "path",
-        "vm_service"
-      ]
-    },
-    {
-      "name": "vm_service",
-      "version": "15.0.0",
-      "dependencies": []
     }
   ],
   "configVersion": 1
