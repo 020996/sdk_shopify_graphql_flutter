@@ -12,9 +12,11 @@ query getProductByHandle($metafields: [HasMetafieldsIdentifier!]!, $country: Cou
         swatch {
           color
           image {
-            image {
-              url
-            }
+            ... on MediaImage {
+              image {
+                url
+              }
+          }
           }
         }
       }

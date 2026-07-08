@@ -19,9 +19,11 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
               swatch {
                 color
                 image {
-                  image {
-                    url
-                  }
+                  ... on MediaImage {
+                    image {
+                      url
+                    }
+                }
                 }
               }
             }

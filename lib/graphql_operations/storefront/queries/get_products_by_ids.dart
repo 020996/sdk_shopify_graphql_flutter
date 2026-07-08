@@ -30,9 +30,11 @@ query($metafields: [HasMetafieldsIdentifier!]!, $country: CountryCode, $ids : [I
               swatch {
                 color
                 image {
-                  image {
-                    url
-                  }
+                  ... on MediaImage {
+                    image {
+                      url
+                    }
+                }
                 }
               }
             }

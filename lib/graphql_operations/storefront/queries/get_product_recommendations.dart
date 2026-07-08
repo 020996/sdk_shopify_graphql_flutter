@@ -55,9 +55,11 @@ query getProductRecommentationsQuery($metafields: [HasMetafieldsIdentifier!]!, $
         swatch {
           color
           image {
-            image {
-              url
-            }
+            ... on MediaImage {
+              image {
+                url
+              }
+          }
           }
         }
       }
