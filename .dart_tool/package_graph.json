@@ -136,15 +136,6 @@
       ]
     },
     {
-      "name": "intl",
-      "version": "0.20.2",
-      "dependencies": [
-        "clock",
-        "meta",
-        "path"
-      ]
-    },
-    {
       "name": "shared_preferences",
       "version": "2.5.3",
       "dependencies": [
@@ -1172,6 +1163,15 @@
       "dependencies": [
         "collection",
         "meta"
+      ]
+    },
+    {
+      "name": "intl",
+      "version": "0.20.3",
+      "dependencies": [
+        "clock",
+        "meta",
+        "path"
       ]
     }
   ],
