@@ -53,6 +53,11 @@ class JsonHelper {
   /// map that drifts. Locale is irrelevant to the lookup, so one instance.
   static final NumberFormat _symbolLookup = NumberFormat();
 
+  /// Currency symbols fetched live from Shopify, keyed by ISO code.
+  /// Populated by [ShopifyLocalization.getLocalization]; takes priority over
+  /// intl's offline table. Empty until a localization query has run.
+  static final Map<String, String> onlineCurrencySymbols = {};
+
   /// returns a formatted acount with currency code with given priceFormat
   static String chooseRightOrderOnCurrencySymbol(
     dynamic amount,
@@ -60,9 +65,12 @@ class JsonHelper {
     NumberFormat? priceFormat,
     String? locale,
   }) {
+    // online (Shopify) -> offline (intl) -> currency code (intl's own fallback)
+    final symbol = onlineCurrencySymbols[currencyCode] ??
+        _symbolLookup.simpleCurrencySymbol(currencyCode);
     return NumberFormat.currency(
       name: currencyCode,
-      symbol: _symbolLookup.simpleCurrencySymbol(currencyCode),
+      symbol: symbol,
       locale: locale,
     ).format(amountFromJson(amount));
   }
