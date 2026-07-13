@@ -58,12 +58,28 @@ class JsonHelper {
   /// intl's offline table. Empty until a localization query has run.
   static final Map<String, String> onlineCurrencySymbols = {};
 
-  /// The shop's locale (e.g. "ar_IQ"), set by
-  /// [ShopifyLocalization.getLocalization]. Used as the default formatting
-  /// locale so prices match Shopify's storefront (thousands grouping, and RTL
-  /// symbol placement — an Arabic symbol like د.ع needs an RTL locale or it
-  /// renders reversed) when no explicit locale is passed.
-  static String? shopLocale;
+  /// Matches Hebrew/Arabic (RTL) letters — used to detect a currency symbol
+  /// like IQD "د.ع" that renders reversed when an LTR pattern places it.
+  static final RegExp _rtlChars = RegExp(r'[\u0590-\u08FF]');
+
+  /// ISO 4217 minor units for currencies that are not the default of 2, so
+  /// amounts show the right precision (e.g. IQD 9.0 -> "9.000", JPY -> "9").
+  /// intl gets some of these wrong (it treats IQD as 0), so we override.
+  static const Map<String, int> _currencyDecimals = {
+    'BIF': 0, 'CLP': 0, 'DJF': 0, 'GNF': 0, 'ISK': 0, 'JPY': 0, 'KMF': 0,
+    'KRW': 0, 'PYG': 0, 'RWF': 0, 'UGX': 0, 'VND': 0, 'VUV': 0, 'XAF': 0,
+    'XOF': 0, 'XPF': 0,
+    'BHD': 3, 'IQD': 3, 'JOD': 3, 'KWD': 3, 'LYD': 3, 'OMR': 3, 'TND': 3,
+    'CLF': 4, 'UYW': 4,
+  };
+
+  /// intl only ships data for some locales; an unknown one (e.g. Kurdish
+  /// "ku_IQ") makes NumberFormat throw. Resolve to a supported locale, else
+  /// null so the caller can default — never throws.
+  static String? _safeLocale(String? locale) => locale == null
+      ? null
+      : Intl.verifiedLocale(locale, NumberFormat.localeExists,
+          onFailure: (_) => 'en');
 
   /// returns a formatted acount with currency code with given priceFormat
   static String chooseRightOrderOnCurrencySymbol(
@@ -72,13 +88,33 @@ class JsonHelper {
     NumberFormat? priceFormat,
     String? locale,
   }) {
-    // online (Shopify) -> offline (intl) -> currency code (intl's own fallback)
+    // online (Shopify) -> offline (intl) -> currency code (intl own fallback)
     final symbol = onlineCurrencySymbols[currencyCode] ??
         _symbolLookup.simpleCurrencySymbol(currencyCode);
+    final value = amountFromJson(amount);
+    // Currency-driven, like Shopify per-currency format: ISO decimal places
+    // (IQD -> 3) + English Latin digits + comma grouping, independent of the
+    // storefront language, so it never crashes on locales intl lacks (e.g.
+    // Kurdish). An explicit locale is honored for LTR currencies only.
+    final digits = _currencyDecimals[currencyCode];
+    final loc = _safeLocale(locale) ?? 'en';
+
+    // An RTL symbol (e.g. IQD "د.ع") renders reversed if an LTR pattern puts
+    // it before the number. So format the number alone (Latin), then append
+    // the symbol after it with a leading RLM and a non-breaking space.
+    if (_rtlChars.hasMatch(symbol)) {
+      final number = NumberFormat.currency(
+              name: currencyCode, symbol: '', locale: 'en', decimalDigits: digits)
+          .format(value)
+          .trim();
+      return '\u200F$number\u00A0$symbol';
+    }
+
     return NumberFormat.currency(
       name: currencyCode,
       symbol: symbol,
-      locale: locale ?? shopLocale,
-    ).format(amountFromJson(amount));
+      locale: loc,
+      decimalDigits: digits,
+    ).format(value);
   }
 }
