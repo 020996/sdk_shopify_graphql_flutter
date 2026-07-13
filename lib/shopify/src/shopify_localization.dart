@@ -60,6 +60,14 @@ class ShopifyLocalization with ShopifyError {
       }
     }
 
+    // Cache the in-context locale so prices format like Shopify's storefront
+    // (grouping + RTL symbol placement), e.g. "ar_IQ".
+    final lang = localization.language.isoCode;
+    final country = localization.country.isoCode;
+    if (lang.isNotEmpty && country.isNotEmpty) {
+      JsonHelper.shopLocale = '${lang.toLowerCase()}_$country';
+    }
+
     return localization;
   }
 }

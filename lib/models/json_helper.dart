@@ -58,6 +58,13 @@ class JsonHelper {
   /// intl's offline table. Empty until a localization query has run.
   static final Map<String, String> onlineCurrencySymbols = {};
 
+  /// The shop's locale (e.g. "ar_IQ"), set by
+  /// [ShopifyLocalization.getLocalization]. Used as the default formatting
+  /// locale so prices match Shopify's storefront (thousands grouping, and RTL
+  /// symbol placement — an Arabic symbol like د.ع needs an RTL locale or it
+  /// renders reversed) when no explicit locale is passed.
+  static String? shopLocale;
+
   /// returns a formatted acount with currency code with given priceFormat
   static String chooseRightOrderOnCurrencySymbol(
     dynamic amount,
@@ -71,7 +78,7 @@ class JsonHelper {
     return NumberFormat.currency(
       name: currencyCode,
       symbol: symbol,
-      locale: locale,
+      locale: locale ?? shopLocale,
     ).format(amountFromJson(amount));
   }
 }
