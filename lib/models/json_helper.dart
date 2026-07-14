@@ -99,16 +99,17 @@ class JsonHelper {
     final digits = _currencyDecimals[currencyCode];
     final loc = _safeLocale(locale) ?? 'en';
 
-    // An RTL symbol (e.g. IQD "د.ع") renders reversed if an LTR pattern puts
-    // it before the number. So format the number alone (Latin), then append
-    // the symbol after it, joined by a non-breaking space. No RLM: in an LTR
-    // UI this reads "9.000 د.ع" (number left, symbol right) like Shopify.
+    // An RTL symbol (e.g. IQD "د.ع") is a strong RTL run, so in an LTR UI the
+    // bidi algorithm reverses it on screen to "ع.د". Format the number alone
+    // (Latin), then append the symbol wrapped in a Left-to-Right Override
+    // (U+202D … U+202C pop) so it lays out as-is "د.ع" (number left, symbol
+    // right) like Shopify, joined by a non-breaking space.
     if (_rtlChars.hasMatch(symbol)) {
       final number = NumberFormat.currency(
               name: currencyCode, symbol: '', locale: 'en', decimalDigits: digits)
           .format(value)
           .trim();
-      return '$number\u00A0$symbol';
+      return '$number\u00A0\u202D$symbol\u202C';
     }
 
     return NumberFormat.currency(
