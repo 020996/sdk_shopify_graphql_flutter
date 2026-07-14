@@ -106,7 +106,7 @@ class ShopifyConfig {
         '$_storeUrl/api/$_storefrontApiVersion/graphql.json',
         defaultHeaders: {
           'X-Shopify-Storefront-Access-Token': _storefrontAccessToken!,
-          'Accept-Language': language ?? 'en',
+          if (language != null) 'Accept-Language': language,
         },
       ),
       cache: GraphQLCache(),
@@ -119,7 +119,7 @@ class ShopifyConfig {
               '$_storeUrl/admin/api/$_storefrontApiVersion/graphql.json',
               defaultHeaders: {
                 'X-Shopify-Access-Token': _adminAccessToken!,
-                'Accept-Language': language ?? 'en',
+                if (language != null) 'Accept-Language': language,
               },
             ),
             cache: GraphQLCache(),
