@@ -9,6 +9,7 @@ import 'package:shopify_flutter/graphql_operations/storefront/queries/get_collec
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_product_by_handle.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_product_recommendations.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_products_by_ids.dart';
+import 'package:shopify_flutter/graphql_operations/storefront/queries/get_search_filters.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_shop.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_collections_and_n_products_sorted.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_after_cursor.dart';
@@ -477,6 +478,27 @@ class ShopifyStore with ShopifyError {
     final filters = (result.data?['collection']?['products']?['filters']
             as List<dynamic>?) ??
         const [];
+    return filters
+        .map((e) => ProductFilter.fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
+
+  /// Returns the available product [ProductFilter]s (facets) for a search
+  /// [query] (the `search` connection exposes its own `productFilters`).
+  Future<List<ProductFilter>> getSearchFilters(String query) async {
+    final WatchQueryOptions _options = WatchQueryOptions(
+      document: gql(getSearchFiltersQuery),
+      variables: {
+        'query': query,
+        'country': ShopifyLocalization.countryCode,
+      },
+      fetchPolicy: ShopifyConfig.fetchPolicy,
+    );
+    final QueryResult result = await _graphQLClient!.query(_options);
+    checkForError(result);
+    final filters =
+        (result.data?['search']?['productFilters'] as List<dynamic>?) ??
+            const [];
     return filters
         .map((e) => ProductFilter.fromJson(e as Map<String, dynamic>))
         .toList();
