@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'product_media.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
+    _ProductVariant(
+      id: json['id'] as String,
+      mediaContentType: json['mediaContentType'] as String,
+      image: json['image'] == null
+          ? null
+          : ShopifyImage.fromJson(json['image'] as Map<String, dynamic>),
+      alt: json['alt'] as String?,
+      sources: (json['sources'] as List<dynamic>?)
+          ?.map((e) => VideoSource.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      embedUrl: json['embedUrl'] as String?,
+      host: json['host'] as String?,
+    );
+
+Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'mediaContentType': instance.mediaContentType,
+      'image': instance.image?.toJson(),
+      'alt': instance.alt,
+      'sources': instance.sources?.map((e) => e.toJson()).toList(),
+      'embedUrl': instance.embedUrl,
+      'host': instance.host,
+    };
+
+_VideoSource _$VideoSourceFromJson(Map<String, dynamic> json) => _VideoSource(
+      url: json['url'] as String,
+      mimeType: json['mimeType'] as String,
+      format: json['format'] as String,
+      height: (json['height'] as num?)?.toInt(),
+      width: (json['width'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$VideoSourceToJson(_VideoSource instance) =>
+    <String, dynamic>{
+      'url': instance.url,
+      'mimeType': instance.mimeType,
+      'format': instance.format,
+      'height': instance.height,
+      'width': instance.width,
+    };

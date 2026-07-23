@@ -4,6 +4,7 @@ import 'package:shopify_flutter/enums/enums.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_all_collections_optimized.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_all_products_from_collection_by_id.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_all_products_on_query.dart';
+import 'package:shopify_flutter/graphql_operations/storefront/queries/get_collection_filters.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_collections_by_ids.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_product_by_handle.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_product_recommendations.dart';
@@ -18,6 +19,7 @@ import 'package:shopify_flutter/mixins/src/shopify_error.dart';
 import 'package:shopify_flutter/models/src/collection/collections/collections.dart';
 import 'package:shopify_flutter/models/src/product/metafield_identifier/metafield_identifier.dart';
 import 'package:shopify_flutter/models/src/product/product.dart';
+import 'package:shopify_flutter/models/src/product/product_filter/product_filter.dart';
 import 'package:shopify_flutter/models/src/product/products/products.dart';
 import 'package:shopify_flutter/models/src/shop/shop.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
@@ -451,6 +453,33 @@ class ShopifyStore with ShopifyError {
       cursor = productList.isNotEmpty ? productList.last.cursor : '';
     } while (collection.products.hasNextPage == true);
     return productList;
+  }
+
+  /// Returns the available product [ProductFilter]s (facets) of a collection.
+  ///
+  /// [handle] is the collection handle (e.g. `all`).
+  /// [limit] is how many products Shopify samples to build the filters.
+  Future<List<ProductFilter>> getCollectionFilters(
+    String handle, {
+    int limit = 250,
+  }) async {
+    final WatchQueryOptions _options = WatchQueryOptions(
+      document: gql(getCollectionFiltersQuery),
+      variables: {
+        'handle': handle,
+        'limit': limit,
+        'country': ShopifyLocalization.countryCode,
+      },
+      fetchPolicy: ShopifyConfig.fetchPolicy,
+    );
+    final QueryResult result = await _graphQLClient!.query(_options);
+    checkForError(result);
+    final filters = (result.data?['collection']?['products']?['filters']
+            as List<dynamic>?) ??
+        const [];
+    return filters
+        .map((e) => ProductFilter.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 
   /// Returns a List of [Product].
