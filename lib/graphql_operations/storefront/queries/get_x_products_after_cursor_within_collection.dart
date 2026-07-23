@@ -15,6 +15,17 @@ query($metafields: [HasMetafieldsIdentifier!]!, $id : ID!, $cursor : String, $li
         originalSrc
       }
       products(first: $limit, sortKey: $sortKey, after: $cursor, reverse: $reverse, filters: $filters) {
+        filters {
+          id
+          label
+          type
+          values {
+            id
+            label
+            count
+            input
+          }
+        }
         edges {
           cursor
           node {

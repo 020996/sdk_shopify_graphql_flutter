@@ -11,9 +11,14 @@ _Products _$ProductsFromJson(Map<String, dynamic> json) => _Products(
           .map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
       hasNextPage: json['hasNextPage'] as bool,
+      filters: (json['filters'] as List<dynamic>?)
+              ?.map((e) => ProductFilter.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <ProductFilter>[],
     );
 
 Map<String, dynamic> _$ProductsToJson(_Products instance) => <String, dynamic>{
       'productList': instance.productList.map((e) => e.toJson()).toList(),
       'hasNextPage': instance.hasNextPage,
+      'filters': instance.filters.map((e) => e.toJson()).toList(),
     };

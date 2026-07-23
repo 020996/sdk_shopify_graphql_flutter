@@ -5,6 +5,17 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
     pageInfo {
       hasNextPage
     }
+    productFilters {
+      id
+      label
+      type
+      values {
+        id
+        label
+        count
+        input
+      }
+    }
     edges{
       cursor
       node{

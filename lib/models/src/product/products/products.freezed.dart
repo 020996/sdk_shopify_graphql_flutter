@@ -17,6 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$Products {
   List<Product> get productList;
   bool get hasNextPage;
+  List<ProductFilter> get filters;
 
   /// Create a copy of Products
   /// with the given fields replaced by the non-null parameter values.
@@ -36,17 +37,21 @@ mixin _$Products {
             const DeepCollectionEquality()
                 .equals(other.productList, productList) &&
             (identical(other.hasNextPage, hasNextPage) ||
-                other.hasNextPage == hasNextPage));
+                other.hasNextPage == hasNextPage) &&
+            const DeepCollectionEquality().equals(other.filters, filters));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(productList), hasNextPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(productList),
+      hasNextPage,
+      const DeepCollectionEquality().hash(filters));
 
   @override
   String toString() {
-    return 'Products(productList: $productList, hasNextPage: $hasNextPage)';
+    return 'Products(productList: $productList, hasNextPage: $hasNextPage, filters: $filters)';
   }
 }
 
@@ -55,7 +60,10 @@ abstract mixin class $ProductsCopyWith<$Res> {
   factory $ProductsCopyWith(Products value, $Res Function(Products) _then) =
       _$ProductsCopyWithImpl;
   @useResult
-  $Res call({List<Product> productList, bool hasNextPage});
+  $Res call(
+      {List<Product> productList,
+      bool hasNextPage,
+      List<ProductFilter> filters});
 }
 
 /// @nodoc
@@ -72,6 +80,7 @@ class _$ProductsCopyWithImpl<$Res> implements $ProductsCopyWith<$Res> {
   $Res call({
     Object? productList = null,
     Object? hasNextPage = null,
+    Object? filters = null,
   }) {
     return _then(_self.copyWith(
       productList: null == productList
@@ -82,6 +91,10 @@ class _$ProductsCopyWithImpl<$Res> implements $ProductsCopyWith<$Res> {
           ? _self.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool,
+      filters: null == filters
+          ? _self.filters
+          : filters // ignore: cast_nullable_to_non_nullable
+              as List<ProductFilter>,
     ));
   }
 }
@@ -90,8 +103,11 @@ class _$ProductsCopyWithImpl<$Res> implements $ProductsCopyWith<$Res> {
 @JsonSerializable()
 class _Products extends Products {
   _Products(
-      {required final List<Product> productList, required this.hasNextPage})
+      {required final List<Product> productList,
+      required this.hasNextPage,
+      final List<ProductFilter> filters = const <ProductFilter>[]})
       : _productList = productList,
+        _filters = filters,
         super._();
   factory _Products.fromJson(Map<String, dynamic> json) =>
       _$ProductsFromJson(json);
@@ -106,6 +122,14 @@ class _Products extends Products {
 
   @override
   final bool hasNextPage;
+  final List<ProductFilter> _filters;
+  @override
+  @JsonKey()
+  List<ProductFilter> get filters {
+    if (_filters is EqualUnmodifiableListView) return _filters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filters);
+  }
 
   /// Create a copy of Products
   /// with the given fields replaced by the non-null parameter values.
@@ -130,17 +154,21 @@ class _Products extends Products {
             const DeepCollectionEquality()
                 .equals(other._productList, _productList) &&
             (identical(other.hasNextPage, hasNextPage) ||
-                other.hasNextPage == hasNextPage));
+                other.hasNextPage == hasNextPage) &&
+            const DeepCollectionEquality().equals(other._filters, _filters));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_productList), hasNextPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_productList),
+      hasNextPage,
+      const DeepCollectionEquality().hash(_filters));
 
   @override
   String toString() {
-    return 'Products(productList: $productList, hasNextPage: $hasNextPage)';
+    return 'Products(productList: $productList, hasNextPage: $hasNextPage, filters: $filters)';
   }
 }
 
@@ -151,7 +179,10 @@ abstract mixin class _$ProductsCopyWith<$Res>
       __$ProductsCopyWithImpl;
   @override
   @useResult
-  $Res call({List<Product> productList, bool hasNextPage});
+  $Res call(
+      {List<Product> productList,
+      bool hasNextPage,
+      List<ProductFilter> filters});
 }
 
 /// @nodoc
@@ -168,6 +199,7 @@ class __$ProductsCopyWithImpl<$Res> implements _$ProductsCopyWith<$Res> {
   $Res call({
     Object? productList = null,
     Object? hasNextPage = null,
+    Object? filters = null,
   }) {
     return _then(_Products(
       productList: null == productList
@@ -178,6 +210,10 @@ class __$ProductsCopyWithImpl<$Res> implements _$ProductsCopyWith<$Res> {
           ? _self.hasNextPage
           : hasNextPage // ignore: cast_nullable_to_non_nullable
               as bool,
+      filters: null == filters
+          ? _self._filters
+          : filters // ignore: cast_nullable_to_non_nullable
+              as List<ProductFilter>,
     ));
   }
 }
