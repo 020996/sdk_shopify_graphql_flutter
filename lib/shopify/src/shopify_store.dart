@@ -506,7 +506,7 @@ class ShopifyStore with ShopifyError {
     String? startCursor,
     SortKeyProductCollection sortKey = SortKeyProductCollection.BEST_SELLING,
     bool reverse = false,
-    Map<String, dynamic>? filters,
+    List<Map<String, dynamic>>? filters,
     List<MetafieldIdentifier>? metafields,
     String? countryCode,
   }) async {
@@ -519,7 +519,7 @@ class ShopifyStore with ShopifyError {
         'limit': limit,
         'sortKey': sortKey.parseToString(),
         'reverse': reverse,
-        'filters': [if (filters != null) filters],
+        'filters': filters ?? const [],
         'country': countryCode,
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
@@ -543,7 +543,7 @@ class ShopifyStore with ShopifyError {
     String? startCursor,
     SearchSortKeys sortKey = SearchSortKeys.RELEVANCE,
     bool reverse = false,
-    Map<String, dynamic>? filters,
+    List<Map<String, dynamic>>? filters,
     List<MetafieldIdentifier>? metafields,
     String? countryCode,
   }) async {
@@ -556,7 +556,7 @@ class ShopifyStore with ShopifyError {
         'limit': limit,
         'sortKey': sortKey.parseToString(),
         'reverse': reverse,
-        'filters': [if (filters != null) filters],
+        'filters': filters ?? const [],
         'country': countryCode,
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
