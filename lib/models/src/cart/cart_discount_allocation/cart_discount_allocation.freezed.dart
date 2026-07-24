@@ -15,7 +15,10 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$CartDiscountAllocation {
-  PriceV2? get discountedAmount;
+  PriceV2?
+      get discountedAmount; // Present only on CartAutomaticDiscountAllocation (the ego discount
+// function's automatic discount); null for code/custom allocations.
+  String? get title;
 
   /// Create a copy of CartDiscountAllocation
   /// with the given fields replaced by the non-null parameter values.
@@ -34,16 +37,17 @@ mixin _$CartDiscountAllocation {
         (other.runtimeType == runtimeType &&
             other is CartDiscountAllocation &&
             (identical(other.discountedAmount, discountedAmount) ||
-                other.discountedAmount == discountedAmount));
+                other.discountedAmount == discountedAmount) &&
+            (identical(other.title, title) || other.title == title));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, discountedAmount);
+  int get hashCode => Object.hash(runtimeType, discountedAmount, title);
 
   @override
   String toString() {
-    return 'CartDiscountAllocation(discountedAmount: $discountedAmount)';
+    return 'CartDiscountAllocation(discountedAmount: $discountedAmount, title: $title)';
   }
 }
 
@@ -53,7 +57,7 @@ abstract mixin class $CartDiscountAllocationCopyWith<$Res> {
           $Res Function(CartDiscountAllocation) _then) =
       _$CartDiscountAllocationCopyWithImpl;
   @useResult
-  $Res call({PriceV2? discountedAmount});
+  $Res call({PriceV2? discountedAmount, String? title});
 
   $PriceV2CopyWith<$Res>? get discountedAmount;
 }
@@ -72,12 +76,17 @@ class _$CartDiscountAllocationCopyWithImpl<$Res>
   @override
   $Res call({
     Object? discountedAmount = freezed,
+    Object? title = freezed,
   }) {
     return _then(_self.copyWith(
       discountedAmount: freezed == discountedAmount
           ? _self.discountedAmount
           : discountedAmount // ignore: cast_nullable_to_non_nullable
               as PriceV2?,
+      title: freezed == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
@@ -99,12 +108,17 @@ class _$CartDiscountAllocationCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _CartDiscountAllocation extends CartDiscountAllocation {
-  _CartDiscountAllocation({required this.discountedAmount}) : super._();
+  _CartDiscountAllocation({required this.discountedAmount, this.title})
+      : super._();
   factory _CartDiscountAllocation.fromJson(Map<String, dynamic> json) =>
       _$CartDiscountAllocationFromJson(json);
 
   @override
   final PriceV2? discountedAmount;
+// Present only on CartAutomaticDiscountAllocation (the ego discount
+// function's automatic discount); null for code/custom allocations.
+  @override
+  final String? title;
 
   /// Create a copy of CartDiscountAllocation
   /// with the given fields replaced by the non-null parameter values.
@@ -128,16 +142,17 @@ class _CartDiscountAllocation extends CartDiscountAllocation {
         (other.runtimeType == runtimeType &&
             other is _CartDiscountAllocation &&
             (identical(other.discountedAmount, discountedAmount) ||
-                other.discountedAmount == discountedAmount));
+                other.discountedAmount == discountedAmount) &&
+            (identical(other.title, title) || other.title == title));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, discountedAmount);
+  int get hashCode => Object.hash(runtimeType, discountedAmount, title);
 
   @override
   String toString() {
-    return 'CartDiscountAllocation(discountedAmount: $discountedAmount)';
+    return 'CartDiscountAllocation(discountedAmount: $discountedAmount, title: $title)';
   }
 }
 
@@ -149,7 +164,7 @@ abstract mixin class _$CartDiscountAllocationCopyWith<$Res>
       __$CartDiscountAllocationCopyWithImpl;
   @override
   @useResult
-  $Res call({PriceV2? discountedAmount});
+  $Res call({PriceV2? discountedAmount, String? title});
 
   @override
   $PriceV2CopyWith<$Res>? get discountedAmount;
@@ -169,12 +184,17 @@ class __$CartDiscountAllocationCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? discountedAmount = freezed,
+    Object? title = freezed,
   }) {
     return _then(_CartDiscountAllocation(
       discountedAmount: freezed == discountedAmount
           ? _self.discountedAmount
           : discountedAmount // ignore: cast_nullable_to_non_nullable
               as PriceV2?,
+      title: freezed == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 

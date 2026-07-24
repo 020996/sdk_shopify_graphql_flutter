@@ -12,10 +12,12 @@ _CartDiscountAllocation _$CartDiscountAllocationFromJson(
       discountedAmount: json['discountedAmount'] == null
           ? null
           : PriceV2.fromJson(json['discountedAmount'] as Map<String, dynamic>),
+      title: json['title'] as String?,
     );
 
 Map<String, dynamic> _$CartDiscountAllocationToJson(
         _CartDiscountAllocation instance) =>
     <String, dynamic>{
       'discountedAmount': instance.discountedAmount?.toJson(),
+      'title': instance.title,
     };

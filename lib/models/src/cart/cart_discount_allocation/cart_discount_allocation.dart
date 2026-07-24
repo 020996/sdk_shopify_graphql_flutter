@@ -13,6 +13,9 @@ abstract class CartDiscountAllocation with _$CartDiscountAllocation {
   /// The cart discount allocation constructor
   factory CartDiscountAllocation({
     required PriceV2? discountedAmount,
+    // Present only on CartAutomaticDiscountAllocation (the ego discount
+    // function's automatic discount); null for code/custom allocations.
+    String? title,
   }) = _CartDiscountAllocation;
 
   /// The cart discount allocation from json
