@@ -102,7 +102,7 @@ query cart($country: CountryCode, $id: ID!, $reverse: Boolean!) @inContext(count
               key
               value
             }
-            discountAllocations(lineLevelOnly: false) {
+            discountAllocations {
               discountedAmount {
                 amount
                 currencyCode
