@@ -547,7 +547,9 @@ class ShopifyStore with ShopifyError {
             ? metafields.map((e) => e.toJson()).toList()
             : [],
       },
-      fetchPolicy: ShopifyConfig.fetchPolicy,
+      // noCache: facet counts must reflect THIS query. cacheAndNetwork returns
+      // a stale eager (previous-query) result, so counts lag one search.
+      fetchPolicy: FetchPolicy.noCache,
     );
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
@@ -584,7 +586,9 @@ class ShopifyStore with ShopifyError {
             ? metafields.map((e) => e.toJson()).toList()
             : [],
       },
-      fetchPolicy: ShopifyConfig.fetchPolicy,
+      // noCache: facet counts must reflect THIS query. cacheAndNetwork returns
+      // a stale eager (previous-query) result, so counts lag one search.
+      fetchPolicy: FetchPolicy.noCache,
     );
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
