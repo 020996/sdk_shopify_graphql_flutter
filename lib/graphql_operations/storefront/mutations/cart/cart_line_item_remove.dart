@@ -42,6 +42,9 @@ mutation cartLinesRemove($country: CountryCode, $cartId: ID!, $lineIds: [ID!]!, 
           amount
           currencyCode
         }
+        ... on CartAutomaticDiscountAllocation {
+          title
+        }
       }
       discountCodes {
         applicable

@@ -1,5 +1,6 @@
 import 'package:intl/intl.dart';
 import 'package:shopify_flutter/models/src/cart/lines/line/line.dart';
+import 'package:shopify_flutter/shopify_config.dart';
 
 import 'src/checkout/line_item/line_item.dart';
 
@@ -89,8 +90,12 @@ class JsonHelper {
     String? locale,
   }) {
     // online (Shopify) -> offline (intl) -> currency code (intl own fallback)
-    final symbol = onlineCurrencySymbols[currencyCode] ??
+    // When symbols are disabled, show the currency code instead (e.g. "USD").
+    final realSymbol = onlineCurrencySymbols[currencyCode] ??
         _symbolLookup.simpleCurrencySymbol(currencyCode);
+    // RTL ordering is decided from the real symbol, so a code for an RTL
+    // currency (e.g. EGP) still trails the number like Shopify — "490.00 EGP".
+    final useSymbol = ShopifyConfig.isSymbol;
     final value = amountFromJson(amount);
     // Currency-driven, like Shopify per-currency format: ISO decimal places
     // (IQD -> 3) + English Latin digits + comma grouping, independent of the
@@ -99,22 +104,24 @@ class JsonHelper {
     final digits = _currencyDecimals[currencyCode];
     final loc = _safeLocale(locale) ?? 'en';
 
-    // An RTL symbol (e.g. IQD "د.ع") is a strong RTL run, so in an LTR UI the
-    // bidi algorithm reverses it on screen to "ع.د". Format the number alone
-    // (Latin), then append the symbol wrapped in a Left-to-Right Override
-    // (U+202D … U+202C pop) so it lays out as-is "د.ع" (number left, symbol
-    // right) like Shopify, joined by a non-breaking space.
-    if (_rtlChars.hasMatch(symbol)) {
+    // An RTL symbol (e.g. IQD) is a strong RTL run, so in an LTR UI the bidi
+    // algorithm reverses it on screen. Format the number alone (Latin), then
+    // append the token: an RTL symbol wrapped in a Left-to-Right Override
+    // (U+202D .. U+202C pop) so it lays out as-is; a Latin code appended plain.
+    // Joined by a non-breaking space, number left / currency right, like Shopify.
+    if (_rtlChars.hasMatch(realSymbol)) {
       final number = NumberFormat.currency(
               name: currencyCode, symbol: '', locale: 'en', decimalDigits: digits)
           .format(value)
           .trim();
-      return '$number\u00A0\u202D$symbol\u202C';
+      return useSymbol
+          ? '$number\u00A0\u202D$realSymbol\u202C'
+          : '$number\u00A0$currencyCode';
     }
 
     return NumberFormat.currency(
       name: currencyCode,
-      symbol: symbol,
+      symbol: useSymbol ? realSymbol : '$currencyCode ',
       locale: loc,
       decimalDigits: digits,
     ).format(value);

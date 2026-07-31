@@ -42,6 +42,9 @@ mutation cartCreate($country: CountryCode, $input: CartInput!) @inContext(countr
           amount
           currencyCode
         }
+        ... on CartAutomaticDiscountAllocation {
+          title
+        }
       }
       discountCodes {
         applicable

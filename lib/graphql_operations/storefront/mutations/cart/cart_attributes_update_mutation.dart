@@ -42,6 +42,9 @@ mutation cartAttributesUpdate($cartId: ID!, $attributes: [AttributeInput!]!, $co
           amount
           currencyCode
         }
+        ... on CartAutomaticDiscountAllocation {
+          title
+        }
       }
       discountCodes {
         applicable

@@ -41,6 +41,9 @@ query cart($country: CountryCode, $id: ID!, $reverse: Boolean!) @inContext(count
           amount
           currencyCode
         }
+        ... on CartAutomaticDiscountAllocation {
+          title
+        }
       }
       discountCodes {
         applicable
