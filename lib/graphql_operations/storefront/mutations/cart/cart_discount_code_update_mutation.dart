@@ -111,6 +111,9 @@ mutation cartDiscountCodesUpdate($cartId: ID!, $discountCodes: [String!]!, $coun
                 amount
                 currencyCode
               }
+              ... on CartAutomaticDiscountAllocation {
+                title
+              }
             }
             sellingPlanAllocation{
                     checkoutChargeAmount {

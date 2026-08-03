@@ -111,6 +111,9 @@ mutation cartNoteUpdate($cartId: ID!, $note: String!, $country: CountryCode, $re
                 amount
                 currencyCode
               }
+              ... on CartAutomaticDiscountAllocation {
+                title
+              }
             }
             sellingPlanAllocation{
                     checkoutChargeAmount {

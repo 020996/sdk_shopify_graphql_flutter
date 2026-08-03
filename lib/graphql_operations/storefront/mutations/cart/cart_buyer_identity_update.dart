@@ -111,6 +111,9 @@ mutation cartBuyerIdentityUpdate($country: CountryCode, $cartId: ID!, $buyerIden
                 amount
                 currencyCode
               }
+              ... on CartAutomaticDiscountAllocation {
+                title
+              }
             }
             sellingPlanAllocation{
                     checkoutChargeAmount {

@@ -111,6 +111,9 @@ mutation cartLineItemAdd($country: CountryCode, $cartId: ID!, $lines: [CartLineI
                 amount
                 currencyCode
               }
+              ... on CartAutomaticDiscountAllocation {
+                title
+              }
             }
             sellingPlanAllocation{
                     checkoutChargeAmount {
