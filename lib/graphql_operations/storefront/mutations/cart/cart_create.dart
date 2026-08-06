@@ -37,15 +37,6 @@ mutation cartCreate($country: CountryCode, $input: CartInput!) @inContext(countr
         }
         totalTaxAmountEstimated
       }
-      discountAllocations {
-        discountedAmount {
-          amount
-          currencyCode
-        }
-        ... on CartAutomaticDiscountAllocation {
-          title
-        }
-      }
       discountCodes {
         applicable
         code
@@ -106,13 +97,37 @@ mutation cartCreate($country: CountryCode, $input: CartInput!) @inContext(countr
               key
               value
             }
-            discountAllocations {
+            discountAllocations(lineLevelOnly: false) {
+              __typename
+              targetType
               discountedAmount {
                 amount
                 currencyCode
               }
               ... on CartAutomaticDiscountAllocation {
                 title
+              }
+              ... on CartCustomDiscountAllocation {
+                title
+              }
+              ... on CartCodeDiscountAllocation {
+                code
+              }
+              sourceDiscountApplication {
+                __typename
+                allocationMethod
+                targetSelection
+                targetType
+                value {
+                  __typename
+                  ... on PricingPercentageValue {
+                    percentage
+                  }
+                  ... on MoneyV2 {
+                    amount
+                    currencyCode
+                  }
+                }
               }
             }
             sellingPlanAllocation{

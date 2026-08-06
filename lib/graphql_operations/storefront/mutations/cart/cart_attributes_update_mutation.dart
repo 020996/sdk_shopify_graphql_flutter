@@ -37,15 +37,6 @@ mutation cartAttributesUpdate($cartId: ID!, $attributes: [AttributeInput!]!, $co
         }
         totalTaxAmountEstimated
       }
-      discountAllocations {
-        discountedAmount {
-          amount
-          currencyCode
-        }
-        ... on CartAutomaticDiscountAllocation {
-          title
-        }
-      }
       discountCodes {
         applicable
         code
@@ -106,13 +97,37 @@ mutation cartAttributesUpdate($cartId: ID!, $attributes: [AttributeInput!]!, $co
               key
               value
             }
-            discountAllocations {
+            discountAllocations(lineLevelOnly: false) {
+              __typename
+              targetType
               discountedAmount {
                 amount
                 currencyCode
               }
               ... on CartAutomaticDiscountAllocation {
                 title
+              }
+              ... on CartCustomDiscountAllocation {
+                title
+              }
+              ... on CartCodeDiscountAllocation {
+                code
+              }
+              sourceDiscountApplication {
+                __typename
+                allocationMethod
+                targetSelection
+                targetType
+                value {
+                  __typename
+                  ... on PricingPercentageValue {
+                    percentage
+                  }
+                  ... on MoneyV2 {
+                    amount
+                    currencyCode
+                  }
+                }
               }
             }
             sellingPlanAllocation{
