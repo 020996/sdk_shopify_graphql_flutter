@@ -59,6 +59,10 @@ class JsonHelper {
   /// intl's offline table. Empty until a localization query has run.
   static final Map<String, String> onlineCurrencySymbols = {};
 
+  /// Matches a symbol ending in a Latin letter (e.g. "USh", "Rp", "CHF") —
+  /// those take a space before the amount, unlike a sign such as "$" or "€".
+  static final RegExp _wordSymbol = RegExp(r'[A-Za-z]$');
+
   /// Matches Hebrew/Arabic (RTL) letters — used to detect a currency symbol
   /// like IQD "د.ع" that renders reversed when an LTR pattern places it.
   static final RegExp _rtlChars = RegExp(r'[\u0590-\u08FF]');
@@ -119,11 +123,18 @@ class JsonHelper {
           : '$number\u00A0$currencyCode';
     }
 
+    // intl's LTR currency pattern glues the symbol to the number ("USh50,000").
+    // Shopify spaces a word-like symbol ("USh 50,000") but not a sign ("$24.00"),
+    // so add a non-breaking space only when the symbol ends in a letter.
+    final symbolText = _wordSymbol.hasMatch(realSymbol)
+        ? '$realSymbol\u00A0'
+        : realSymbol;
+
     return NumberFormat.currency(
       name: currencyCode,
-      symbol: useSymbol ? realSymbol : '$currencyCode ',
+      symbol: useSymbol ? symbolText : '$currencyCode\u00A0',
       locale: loc,
       decimalDigits: digits,
-    ).format(value);
+    ).format(value).trim();
   }
 }

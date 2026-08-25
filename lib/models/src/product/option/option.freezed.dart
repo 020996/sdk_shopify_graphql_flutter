@@ -440,7 +440,7 @@ class __$OptionValueCopyWithImpl<$Res> implements _$OptionValueCopyWith<$Res> {
 
 /// @nodoc
 mixin _$OptionSwatch {
-  String? get color; // ignore: invalid_annotation_target
+  String? get color;
   @JsonKey(name: 'image', fromJson: _swatchImageUrl)
   String? get imageUrl;
 
@@ -526,7 +526,6 @@ class _OptionSwatch extends OptionSwatch {
 
   @override
   final String? color;
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'image', fromJson: _swatchImageUrl)
   final String? imageUrl;
