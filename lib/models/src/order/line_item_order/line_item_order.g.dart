@@ -6,8 +6,8 @@ part of 'line_item_order.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LineItemOrderImpl _$$LineItemOrderImplFromJson(Map<String, dynamic> json) =>
-    _$LineItemOrderImpl(
+_LineItemOrder _$LineItemOrderFromJson(Map<String, dynamic> json) =>
+    _LineItemOrder(
       currentQuantity: (json['currentQuantity'] as num).toInt(),
       discountedTotalPrice: PriceV2.fromJson(
           json['discountedTotalPrice'] as Map<String, dynamic>),
@@ -25,7 +25,7 @@ _$LineItemOrderImpl _$$LineItemOrderImplFromJson(Map<String, dynamic> json) =>
           : ProductVariant.fromJson(json['variant'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$LineItemOrderImplToJson(_$LineItemOrderImpl instance) =>
+Map<String, dynamic> _$LineItemOrderToJson(_LineItemOrder instance) =>
     <String, dynamic>{
       'currentQuantity': instance.currentQuantity,
       'discountedTotalPrice': instance.discountedTotalPrice.toJson(),

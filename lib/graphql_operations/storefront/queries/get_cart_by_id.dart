@@ -36,12 +36,6 @@ query cart($country: CountryCode, $id: ID!, $reverse: Boolean!) @inContext(count
         }
         totalTaxAmountEstimated
       }
-      discountAllocations {
-        discountedAmount {
-          amount
-          currencyCode
-        }
-      }
       discountCodes {
         applicable
         code
@@ -102,10 +96,37 @@ query cart($country: CountryCode, $id: ID!, $reverse: Boolean!) @inContext(count
               key
               value
             }
-            discountAllocations {
+            discountAllocations(lineLevelOnly: false) {
+              __typename
+              targetType
               discountedAmount {
                 amount
                 currencyCode
+              }
+              ... on CartAutomaticDiscountAllocation {
+                title
+              }
+              ... on CartCustomDiscountAllocation {
+                title
+              }
+              ... on CartCodeDiscountAllocation {
+                code
+              }
+              sourceDiscountApplication {
+                __typename
+                allocationMethod
+                targetSelection
+                targetType
+                value {
+                  __typename
+                  ... on PricingPercentageValue {
+                    percentage
+                  }
+                  ... on MoneyV2 {
+                    amount
+                    currencyCode
+                  }
+                }
               }
             }
             sellingPlanAllocation{

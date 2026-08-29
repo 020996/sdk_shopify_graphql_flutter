@@ -15,6 +15,17 @@ query($metafields: [HasMetafieldsIdentifier!]!, $id : ID!, $cursor : String, $li
         originalSrc
       }
       products(first: $limit, sortKey: $sortKey, after: $cursor, reverse: $reverse, filters: $filters) {
+        filters {
+          id
+          label
+          type
+          values {
+            id
+            label
+            count
+            input
+          }
+        }
         edges {
           cursor
           node {
@@ -22,6 +33,20 @@ query($metafields: [HasMetafieldsIdentifier!]!, $id : ID!, $cursor : String, $li
             id
             name
             values
+            optionValues {
+              id
+              name
+              swatch {
+                color
+                image {
+                  ... on MediaImage {
+                    image {
+                      url
+                    }
+                }
+                }
+              }
+            }
             }
           metafields(identifiers: $metafields) {
             id

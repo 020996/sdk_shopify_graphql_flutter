@@ -6,8 +6,8 @@ part of 'product_media.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductVariantImpl _$$ProductVariantImplFromJson(Map<String, dynamic> json) =>
-    _$ProductVariantImpl(
+_ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
+    _ProductVariant(
       id: json['id'] as String,
       mediaContentType: json['mediaContentType'] as String,
       image: json['image'] == null
@@ -21,8 +21,7 @@ _$ProductVariantImpl _$$ProductVariantImplFromJson(Map<String, dynamic> json) =>
       host: json['host'] as String?,
     );
 
-Map<String, dynamic> _$$ProductVariantImplToJson(
-        _$ProductVariantImpl instance) =>
+Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
     <String, dynamic>{
       'id': instance.id,
       'mediaContentType': instance.mediaContentType,
@@ -33,8 +32,7 @@ Map<String, dynamic> _$$ProductVariantImplToJson(
       'host': instance.host,
     };
 
-_$VideoSourceImpl _$$VideoSourceImplFromJson(Map<String, dynamic> json) =>
-    _$VideoSourceImpl(
+_VideoSource _$VideoSourceFromJson(Map<String, dynamic> json) => _VideoSource(
       url: json['url'] as String,
       mimeType: json['mimeType'] as String,
       format: json['format'] as String,
@@ -42,7 +40,7 @@ _$VideoSourceImpl _$$VideoSourceImplFromJson(Map<String, dynamic> json) =>
       width: (json['width'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$VideoSourceImplToJson(_$VideoSourceImpl instance) =>
+Map<String, dynamic> _$VideoSourceToJson(_VideoSource instance) =>
     <String, dynamic>{
       'url': instance.url,
       'mimeType': instance.mimeType,

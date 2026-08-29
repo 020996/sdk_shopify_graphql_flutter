@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,146 +10,30 @@ part of 'currency.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Currency _$CurrencyFromJson(Map<String, dynamic> json) {
-  return _Currency.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Currency {
-  String get isoCode => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get symbol => throw _privateConstructorUsedError;
-
-  /// Serializes this Currency to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get isoCode;
+  String get name;
+  String get symbol;
 
   /// Create a copy of Currency
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $CurrencyCopyWith<Currency> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$CurrencyCopyWithImpl<Currency>(this as Currency, _$identity);
 
-/// @nodoc
-abstract class $CurrencyCopyWith<$Res> {
-  factory $CurrencyCopyWith(Currency value, $Res Function(Currency) then) =
-      _$CurrencyCopyWithImpl<$Res, Currency>;
-  @useResult
-  $Res call({String isoCode, String name, String symbol});
-}
-
-/// @nodoc
-class _$CurrencyCopyWithImpl<$Res, $Val extends Currency>
-    implements $CurrencyCopyWith<$Res> {
-  _$CurrencyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Currency
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isoCode = null,
-    Object? name = null,
-    Object? symbol = null,
-  }) {
-    return _then(_value.copyWith(
-      isoCode: null == isoCode
-          ? _value.isoCode
-          : isoCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      symbol: null == symbol
-          ? _value.symbol
-          : symbol // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$CurrencyImplCopyWith<$Res>
-    implements $CurrencyCopyWith<$Res> {
-  factory _$$CurrencyImplCopyWith(
-          _$CurrencyImpl value, $Res Function(_$CurrencyImpl) then) =
-      __$$CurrencyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String isoCode, String name, String symbol});
-}
-
-/// @nodoc
-class __$$CurrencyImplCopyWithImpl<$Res>
-    extends _$CurrencyCopyWithImpl<$Res, _$CurrencyImpl>
-    implements _$$CurrencyImplCopyWith<$Res> {
-  __$$CurrencyImplCopyWithImpl(
-      _$CurrencyImpl _value, $Res Function(_$CurrencyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Currency
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isoCode = null,
-    Object? name = null,
-    Object? symbol = null,
-  }) {
-    return _then(_$CurrencyImpl(
-      isoCode: null == isoCode
-          ? _value.isoCode
-          : isoCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      symbol: null == symbol
-          ? _value.symbol
-          : symbol // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$CurrencyImpl implements _Currency {
-  const _$CurrencyImpl(
-      {required this.isoCode, required this.name, required this.symbol});
-
-  factory _$CurrencyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CurrencyImplFromJson(json);
-
-  @override
-  final String isoCode;
-  @override
-  final String name;
-  @override
-  final String symbol;
-
-  @override
-  String toString() {
-    return 'Currency(isoCode: $isoCode, name: $name, symbol: $symbol)';
-  }
+  /// Serializes this Currency to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CurrencyImpl &&
+            other is Currency &&
             (identical(other.isoCode, isoCode) || other.isoCode == isoCode) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.symbol, symbol) || other.symbol == symbol));
@@ -158,42 +43,144 @@ class _$CurrencyImpl implements _Currency {
   @override
   int get hashCode => Object.hash(runtimeType, isoCode, name, symbol);
 
-  /// Create a copy of Currency
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CurrencyImplCopyWith<_$CurrencyImpl> get copyWith =>
-      __$$CurrencyImplCopyWithImpl<_$CurrencyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CurrencyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Currency(isoCode: $isoCode, name: $name, symbol: $symbol)';
   }
 }
 
-abstract class _Currency implements Currency {
-  const factory _Currency(
-      {required final String isoCode,
-      required final String name,
-      required final String symbol}) = _$CurrencyImpl;
+/// @nodoc
+abstract mixin class $CurrencyCopyWith<$Res> {
+  factory $CurrencyCopyWith(Currency value, $Res Function(Currency) _then) =
+      _$CurrencyCopyWithImpl;
+  @useResult
+  $Res call({String isoCode, String name, String symbol});
+}
 
-  factory _Currency.fromJson(Map<String, dynamic> json) =
-      _$CurrencyImpl.fromJson;
+/// @nodoc
+class _$CurrencyCopyWithImpl<$Res> implements $CurrencyCopyWith<$Res> {
+  _$CurrencyCopyWithImpl(this._self, this._then);
+
+  final Currency _self;
+  final $Res Function(Currency) _then;
+
+  /// Create a copy of Currency
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isoCode = null,
+    Object? name = null,
+    Object? symbol = null,
+  }) {
+    return _then(_self.copyWith(
+      isoCode: null == isoCode
+          ? _self.isoCode
+          : isoCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      symbol: null == symbol
+          ? _self.symbol
+          : symbol // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _Currency implements Currency {
+  const _Currency(
+      {required this.isoCode, required this.name, required this.symbol});
+  factory _Currency.fromJson(Map<String, dynamic> json) =>
+      _$CurrencyFromJson(json);
 
   @override
-  String get isoCode;
+  final String isoCode;
   @override
-  String get name;
+  final String name;
   @override
-  String get symbol;
+  final String symbol;
 
   /// Create a copy of Currency
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CurrencyImplCopyWith<_$CurrencyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$CurrencyCopyWith<_Currency> get copyWith =>
+      __$CurrencyCopyWithImpl<_Currency>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CurrencyToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Currency &&
+            (identical(other.isoCode, isoCode) || other.isoCode == isoCode) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.symbol, symbol) || other.symbol == symbol));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, isoCode, name, symbol);
+
+  @override
+  String toString() {
+    return 'Currency(isoCode: $isoCode, name: $name, symbol: $symbol)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$CurrencyCopyWith<$Res>
+    implements $CurrencyCopyWith<$Res> {
+  factory _$CurrencyCopyWith(_Currency value, $Res Function(_Currency) _then) =
+      __$CurrencyCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String isoCode, String name, String symbol});
+}
+
+/// @nodoc
+class __$CurrencyCopyWithImpl<$Res> implements _$CurrencyCopyWith<$Res> {
+  __$CurrencyCopyWithImpl(this._self, this._then);
+
+  final _Currency _self;
+  final $Res Function(_Currency) _then;
+
+  /// Create a copy of Currency
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? isoCode = null,
+    Object? name = null,
+    Object? symbol = null,
+  }) {
+    return _then(_Currency(
+      isoCode: null == isoCode
+          ? _self.isoCode
+          : isoCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      symbol: null == symbol
+          ? _self.symbol
+          : symbol // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

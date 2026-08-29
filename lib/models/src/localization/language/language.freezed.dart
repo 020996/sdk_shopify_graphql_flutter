@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,146 +10,30 @@ part of 'language.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Language _$LanguageFromJson(Map<String, dynamic> json) {
-  return _Language.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Language {
-  String get isoCode => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get endonymName => throw _privateConstructorUsedError;
-
-  /// Serializes this Language to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get isoCode;
+  String get name;
+  String get endonymName;
 
   /// Create a copy of Language
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $LanguageCopyWith<Language> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$LanguageCopyWithImpl<Language>(this as Language, _$identity);
 
-/// @nodoc
-abstract class $LanguageCopyWith<$Res> {
-  factory $LanguageCopyWith(Language value, $Res Function(Language) then) =
-      _$LanguageCopyWithImpl<$Res, Language>;
-  @useResult
-  $Res call({String isoCode, String name, String endonymName});
-}
-
-/// @nodoc
-class _$LanguageCopyWithImpl<$Res, $Val extends Language>
-    implements $LanguageCopyWith<$Res> {
-  _$LanguageCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isoCode = null,
-    Object? name = null,
-    Object? endonymName = null,
-  }) {
-    return _then(_value.copyWith(
-      isoCode: null == isoCode
-          ? _value.isoCode
-          : isoCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      endonymName: null == endonymName
-          ? _value.endonymName
-          : endonymName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LanguageImplCopyWith<$Res>
-    implements $LanguageCopyWith<$Res> {
-  factory _$$LanguageImplCopyWith(
-          _$LanguageImpl value, $Res Function(_$LanguageImpl) then) =
-      __$$LanguageImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String isoCode, String name, String endonymName});
-}
-
-/// @nodoc
-class __$$LanguageImplCopyWithImpl<$Res>
-    extends _$LanguageCopyWithImpl<$Res, _$LanguageImpl>
-    implements _$$LanguageImplCopyWith<$Res> {
-  __$$LanguageImplCopyWithImpl(
-      _$LanguageImpl _value, $Res Function(_$LanguageImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isoCode = null,
-    Object? name = null,
-    Object? endonymName = null,
-  }) {
-    return _then(_$LanguageImpl(
-      isoCode: null == isoCode
-          ? _value.isoCode
-          : isoCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      endonymName: null == endonymName
-          ? _value.endonymName
-          : endonymName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LanguageImpl implements _Language {
-  const _$LanguageImpl(
-      {required this.isoCode, required this.name, required this.endonymName});
-
-  factory _$LanguageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LanguageImplFromJson(json);
-
-  @override
-  final String isoCode;
-  @override
-  final String name;
-  @override
-  final String endonymName;
-
-  @override
-  String toString() {
-    return 'Language(isoCode: $isoCode, name: $name, endonymName: $endonymName)';
-  }
+  /// Serializes this Language to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LanguageImpl &&
+            other is Language &&
             (identical(other.isoCode, isoCode) || other.isoCode == isoCode) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.endonymName, endonymName) ||
@@ -159,42 +44,145 @@ class _$LanguageImpl implements _Language {
   @override
   int get hashCode => Object.hash(runtimeType, isoCode, name, endonymName);
 
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LanguageImplCopyWith<_$LanguageImpl> get copyWith =>
-      __$$LanguageImplCopyWithImpl<_$LanguageImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LanguageImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Language(isoCode: $isoCode, name: $name, endonymName: $endonymName)';
   }
 }
 
-abstract class _Language implements Language {
-  const factory _Language(
-      {required final String isoCode,
-      required final String name,
-      required final String endonymName}) = _$LanguageImpl;
+/// @nodoc
+abstract mixin class $LanguageCopyWith<$Res> {
+  factory $LanguageCopyWith(Language value, $Res Function(Language) _then) =
+      _$LanguageCopyWithImpl;
+  @useResult
+  $Res call({String isoCode, String name, String endonymName});
+}
 
-  factory _Language.fromJson(Map<String, dynamic> json) =
-      _$LanguageImpl.fromJson;
+/// @nodoc
+class _$LanguageCopyWithImpl<$Res> implements $LanguageCopyWith<$Res> {
+  _$LanguageCopyWithImpl(this._self, this._then);
+
+  final Language _self;
+  final $Res Function(Language) _then;
+
+  /// Create a copy of Language
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isoCode = null,
+    Object? name = null,
+    Object? endonymName = null,
+  }) {
+    return _then(_self.copyWith(
+      isoCode: null == isoCode
+          ? _self.isoCode
+          : isoCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      endonymName: null == endonymName
+          ? _self.endonymName
+          : endonymName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _Language implements Language {
+  const _Language(
+      {required this.isoCode, required this.name, required this.endonymName});
+  factory _Language.fromJson(Map<String, dynamic> json) =>
+      _$LanguageFromJson(json);
 
   @override
-  String get isoCode;
+  final String isoCode;
   @override
-  String get name;
+  final String name;
   @override
-  String get endonymName;
+  final String endonymName;
 
   /// Create a copy of Language
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LanguageImplCopyWith<_$LanguageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$LanguageCopyWith<_Language> get copyWith =>
+      __$LanguageCopyWithImpl<_Language>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LanguageToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Language &&
+            (identical(other.isoCode, isoCode) || other.isoCode == isoCode) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.endonymName, endonymName) ||
+                other.endonymName == endonymName));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, isoCode, name, endonymName);
+
+  @override
+  String toString() {
+    return 'Language(isoCode: $isoCode, name: $name, endonymName: $endonymName)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$LanguageCopyWith<$Res>
+    implements $LanguageCopyWith<$Res> {
+  factory _$LanguageCopyWith(_Language value, $Res Function(_Language) _then) =
+      __$LanguageCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String isoCode, String name, String endonymName});
+}
+
+/// @nodoc
+class __$LanguageCopyWithImpl<$Res> implements _$LanguageCopyWith<$Res> {
+  __$LanguageCopyWithImpl(this._self, this._then);
+
+  final _Language _self;
+  final $Res Function(_Language) _then;
+
+  /// Create a copy of Language
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? isoCode = null,
+    Object? name = null,
+    Object? endonymName = null,
+  }) {
+    return _then(_Language(
+      isoCode: null == isoCode
+          ? _self.isoCode
+          : isoCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      endonymName: null == endonymName
+          ? _self.endonymName
+          : endonymName // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+// dart format on

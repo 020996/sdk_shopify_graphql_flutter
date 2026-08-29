@@ -55,6 +55,13 @@ class ShopifyConfig {
   /// fetch policy to be used for all queries and mutations
   static CachePolicy? _fetchPolicy;
 
+  /// Whether formatted prices use the currency symbol (e.g. `$`) or the
+  /// currency code (e.g. `USD`). Defaults to true (symbol).
+  static bool _isSymbol = true;
+
+  /// Whether formatted prices use the currency symbol instead of the code.
+  static bool get isSymbol => _isSymbol;
+
   /// returns [FetchPolicy] based on the [CachePolicy]
   static FetchPolicy? get fetchPolicy {
     switch (_fetchPolicy) {
@@ -95,7 +102,9 @@ class ShopifyConfig {
     String storefrontApiVersion = "2024-07",
     CachePolicy? cachePolicy,
     String? language,
+    bool isSymbol = true,
   }) {
+    _isSymbol = isSymbol;
     _storefrontAccessToken = storefrontAccessToken;
     _adminAccessToken = adminAccessToken;
     _storeUrl = !storeUrl.contains('http') ? 'https://$storeUrl' : storeUrl;
@@ -106,7 +115,7 @@ class ShopifyConfig {
         '$_storeUrl/api/$_storefrontApiVersion/graphql.json',
         defaultHeaders: {
           'X-Shopify-Storefront-Access-Token': _storefrontAccessToken!,
-          'Accept-Language': language ?? 'en',
+          if (language != null) 'Accept-Language': language,
         },
       ),
       cache: GraphQLCache(),
@@ -119,7 +128,7 @@ class ShopifyConfig {
               '$_storeUrl/admin/api/$_storefrontApiVersion/graphql.json',
               defaultHeaders: {
                 'X-Shopify-Access-Token': _adminAccessToken!,
-                'Accept-Language': language ?? 'en',
+                if (language != null) 'Accept-Language': language,
               },
             ),
             cache: GraphQLCache(),

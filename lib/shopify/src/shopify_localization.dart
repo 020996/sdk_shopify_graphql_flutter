@@ -1,5 +1,6 @@
 import 'package:shopify_flutter/graphql_operations/storefront/queries/localization_query.dart';
 import 'package:shopify_flutter/mixins/src/shopify_error.dart';
+import 'package:shopify_flutter/models/json_helper.dart';
 import 'package:shopify_flutter/models/src/localization/localization.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -47,7 +48,18 @@ class ShopifyLocalization with ShopifyError {
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
 
-    return Localization.fromJson(
+    final localization = Localization.fromJson(
         (result.data ?? const {})["localization"] ?? {});
+
+    // Cache Shopify's own currency symbols so price formatting prefers them
+    // over the offline table. See [JsonHelper.chooseRightOrderOnCurrencySymbol].
+    for (final country in localization.availableCountries) {
+      final currency = country.currency;
+      if (currency.symbol.isNotEmpty) {
+        JsonHelper.onlineCurrencySymbols[currency.isoCode] = currency.symbol;
+      }
+    }
+
+    return localization;
   }
 }

@@ -6,8 +6,8 @@ part of 'cart_line_cost.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CartLineCostImpl _$$CartLineCostImplFromJson(Map<String, dynamic> json) =>
-    _$CartLineCostImpl(
+_CartLineCost _$CartLineCostFromJson(Map<String, dynamic> json) =>
+    _CartLineCost(
       amountPerQuantity:
           PriceV2.fromJson(json['amountPerQuantity'] as Map<String, dynamic>),
       subtotalAmount:
@@ -20,7 +20,7 @@ _$CartLineCostImpl _$$CartLineCostImplFromJson(Map<String, dynamic> json) =>
               json['compareAtAmountPerQuantity'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$CartLineCostImplToJson(_$CartLineCostImpl instance) =>
+Map<String, dynamic> _$CartLineCostToJson(_CartLineCost instance) =>
     <String, dynamic>{
       'amountPerQuantity': instance.amountPerQuantity.toJson(),
       'subtotalAmount': instance.subtotalAmount.toJson(),

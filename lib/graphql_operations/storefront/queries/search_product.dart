@@ -5,6 +5,17 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
     pageInfo {
       hasNextPage
     }
+    productFilters {
+      id
+      label
+      type
+      values {
+        id
+        label
+        count
+        input
+      }
+    }
     edges{
       cursor
       node{
@@ -13,6 +24,20 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
             id
             name
             values
+            optionValues {
+              id
+              name
+              swatch {
+                color
+                image {
+                  ... on MediaImage {
+                    image {
+                      url
+                    }
+                }
+                }
+              }
+            }
           }
           metafields(identifiers: $metafields) {
             id

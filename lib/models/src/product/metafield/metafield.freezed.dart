@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,113 +10,60 @@ part of 'metafield.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Metafield _$MetafieldFromJson(Map<String, dynamic> json) {
-  return _Metafield.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Metafield {
-  String get id => throw _privateConstructorUsedError;
-  String get namespace => throw _privateConstructorUsedError;
-  String get key => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get reference => throw _privateConstructorUsedError;
-
-  /// Serializes this Metafield to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get namespace;
+  String get key;
+  String get value;
+  String get type;
+  String? get description;
+  Map<String, dynamic>? get reference;
 
   /// Create a copy of Metafield
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MetafieldCopyWith<Metafield> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MetafieldCopyWith<$Res> {
-  factory $MetafieldCopyWith(Metafield value, $Res Function(Metafield) then) =
-      _$MetafieldCopyWithImpl<$Res, Metafield>;
-  @useResult
-  $Res call(
-      {String id,
-      String namespace,
-      String key,
-      String value,
-      String type,
-      String? description,
-      Map<String, dynamic>? reference});
-}
-
-/// @nodoc
-class _$MetafieldCopyWithImpl<$Res, $Val extends Metafield>
-    implements $MetafieldCopyWith<$Res> {
-  _$MetafieldCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Metafield
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MetafieldCopyWith<Metafield> get copyWith =>
+      _$MetafieldCopyWithImpl<Metafield>(this as Metafield, _$identity);
+
+  /// Serializes this Metafield to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? namespace = null,
-    Object? key = null,
-    Object? value = null,
-    Object? type = null,
-    Object? description = freezed,
-    Object? reference = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      namespace: null == namespace
-          ? _value.namespace
-          : namespace // ignore: cast_nullable_to_non_nullable
-              as String,
-      key: null == key
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reference: freezed == reference
-          ? _value.reference
-          : reference // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Metafield &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.namespace, namespace) ||
+                other.namespace == namespace) &&
+            (identical(other.key, key) || other.key == key) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.reference, reference));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, namespace, key, value, type,
+      description, const DeepCollectionEquality().hash(reference));
+
+  @override
+  String toString() {
+    return 'Metafield(id: $id, namespace: $namespace, key: $key, value: $value, type: $type, description: $description, reference: $reference)';
   }
 }
 
 /// @nodoc
-abstract class _$$MetafieldImplCopyWith<$Res>
-    implements $MetafieldCopyWith<$Res> {
-  factory _$$MetafieldImplCopyWith(
-          _$MetafieldImpl value, $Res Function(_$MetafieldImpl) then) =
-      __$$MetafieldImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MetafieldCopyWith<$Res> {
+  factory $MetafieldCopyWith(Metafield value, $Res Function(Metafield) _then) =
+      _$MetafieldCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -128,12 +76,11 @@ abstract class _$$MetafieldImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MetafieldImplCopyWithImpl<$Res>
-    extends _$MetafieldCopyWithImpl<$Res, _$MetafieldImpl>
-    implements _$$MetafieldImplCopyWith<$Res> {
-  __$$MetafieldImplCopyWithImpl(
-      _$MetafieldImpl _value, $Res Function(_$MetafieldImpl) _then)
-      : super(_value, _then);
+class _$MetafieldCopyWithImpl<$Res> implements $MetafieldCopyWith<$Res> {
+  _$MetafieldCopyWithImpl(this._self, this._then);
+
+  final Metafield _self;
+  final $Res Function(Metafield) _then;
 
   /// Create a copy of Metafield
   /// with the given fields replaced by the non-null parameter values.
@@ -148,33 +95,33 @@ class __$$MetafieldImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? reference = freezed,
   }) {
-    return _then(_$MetafieldImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       namespace: null == namespace
-          ? _value.namespace
+          ? _self.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
               as String,
       key: null == key
-          ? _value.key
+          ? _self.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       reference: freezed == reference
-          ? _value._reference
+          ? _self.reference
           : reference // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -183,8 +130,8 @@ class __$$MetafieldImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MetafieldImpl extends _Metafield {
-  _$MetafieldImpl(
+class _Metafield extends Metafield {
+  _Metafield(
       {required this.id,
       required this.namespace,
       required this.key,
@@ -194,9 +141,8 @@ class _$MetafieldImpl extends _Metafield {
       final Map<String, dynamic>? reference})
       : _reference = reference,
         super._();
-
-  factory _$MetafieldImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MetafieldImplFromJson(json);
+  factory _Metafield.fromJson(Map<String, dynamic> json) =>
+      _$MetafieldFromJson(json);
 
   @override
   final String id;
@@ -220,16 +166,26 @@ class _$MetafieldImpl extends _Metafield {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of Metafield
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Metafield(id: $id, namespace: $namespace, key: $key, value: $value, type: $type, description: $description, reference: $reference)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MetafieldCopyWith<_Metafield> get copyWith =>
+      __$MetafieldCopyWithImpl<_Metafield>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MetafieldToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MetafieldImpl &&
+            other is _Metafield &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.namespace, namespace) ||
                 other.namespace == namespace) &&
@@ -247,55 +203,81 @@ class _$MetafieldImpl extends _Metafield {
   int get hashCode => Object.hash(runtimeType, id, namespace, key, value, type,
       description, const DeepCollectionEquality().hash(_reference));
 
-  /// Create a copy of Metafield
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MetafieldImplCopyWith<_$MetafieldImpl> get copyWith =>
-      __$$MetafieldImplCopyWithImpl<_$MetafieldImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MetafieldImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Metafield(id: $id, namespace: $namespace, key: $key, value: $value, type: $type, description: $description, reference: $reference)';
   }
 }
 
-abstract class _Metafield extends Metafield {
-  factory _Metafield(
-      {required final String id,
-      required final String namespace,
-      required final String key,
-      required final String value,
-      required final String type,
-      final String? description,
-      final Map<String, dynamic>? reference}) = _$MetafieldImpl;
-  _Metafield._() : super._();
+/// @nodoc
+abstract mixin class _$MetafieldCopyWith<$Res>
+    implements $MetafieldCopyWith<$Res> {
+  factory _$MetafieldCopyWith(
+          _Metafield value, $Res Function(_Metafield) _then) =
+      __$MetafieldCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String namespace,
+      String key,
+      String value,
+      String type,
+      String? description,
+      Map<String, dynamic>? reference});
+}
 
-  factory _Metafield.fromJson(Map<String, dynamic> json) =
-      _$MetafieldImpl.fromJson;
+/// @nodoc
+class __$MetafieldCopyWithImpl<$Res> implements _$MetafieldCopyWith<$Res> {
+  __$MetafieldCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get namespace;
-  @override
-  String get key;
-  @override
-  String get value;
-  @override
-  String get type;
-  @override
-  String? get description;
-  @override
-  Map<String, dynamic>? get reference;
+  final _Metafield _self;
+  final $Res Function(_Metafield) _then;
 
   /// Create a copy of Metafield
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MetafieldImplCopyWith<_$MetafieldImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? namespace = null,
+    Object? key = null,
+    Object? value = null,
+    Object? type = null,
+    Object? description = freezed,
+    Object? reference = freezed,
+  }) {
+    return _then(_Metafield(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      namespace: null == namespace
+          ? _self.namespace
+          : namespace // ignore: cast_nullable_to_non_nullable
+              as String,
+      key: null == key
+          ? _self.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reference: freezed == reference
+          ? _self._reference
+          : reference // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
 }
+
+// dart format on

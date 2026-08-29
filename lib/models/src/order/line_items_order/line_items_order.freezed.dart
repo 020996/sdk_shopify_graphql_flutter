@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,83 +10,60 @@ part of 'line_items_order.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-LineItemsOrder _$LineItemsOrderFromJson(Map<String, dynamic> json) {
-  return _LineItemsOrder.fromJson(json);
-}
 
 /// @nodoc
 mixin _$LineItemsOrder {
-  List<LineItemOrder> get lineItemOrderList =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this LineItemsOrder to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<LineItemOrder> get lineItemOrderList;
 
   /// Create a copy of LineItemsOrder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LineItemsOrderCopyWith<LineItemsOrder> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LineItemsOrderCopyWith<$Res> {
-  factory $LineItemsOrderCopyWith(
-          LineItemsOrder value, $Res Function(LineItemsOrder) then) =
-      _$LineItemsOrderCopyWithImpl<$Res, LineItemsOrder>;
-  @useResult
-  $Res call({List<LineItemOrder> lineItemOrderList});
-}
-
-/// @nodoc
-class _$LineItemsOrderCopyWithImpl<$Res, $Val extends LineItemsOrder>
-    implements $LineItemsOrderCopyWith<$Res> {
-  _$LineItemsOrderCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LineItemsOrder
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $LineItemsOrderCopyWith<LineItemsOrder> get copyWith =>
+      _$LineItemsOrderCopyWithImpl<LineItemsOrder>(
+          this as LineItemsOrder, _$identity);
+
+  /// Serializes this LineItemsOrder to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? lineItemOrderList = null,
-  }) {
-    return _then(_value.copyWith(
-      lineItemOrderList: null == lineItemOrderList
-          ? _value.lineItemOrderList
-          : lineItemOrderList // ignore: cast_nullable_to_non_nullable
-              as List<LineItemOrder>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LineItemsOrder &&
+            const DeepCollectionEquality()
+                .equals(other.lineItemOrderList, lineItemOrderList));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(lineItemOrderList));
+
+  @override
+  String toString() {
+    return 'LineItemsOrder(lineItemOrderList: $lineItemOrderList)';
   }
 }
 
 /// @nodoc
-abstract class _$$LineItemsOrderImplCopyWith<$Res>
-    implements $LineItemsOrderCopyWith<$Res> {
-  factory _$$LineItemsOrderImplCopyWith(_$LineItemsOrderImpl value,
-          $Res Function(_$LineItemsOrderImpl) then) =
-      __$$LineItemsOrderImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $LineItemsOrderCopyWith<$Res> {
+  factory $LineItemsOrderCopyWith(
+          LineItemsOrder value, $Res Function(LineItemsOrder) _then) =
+      _$LineItemsOrderCopyWithImpl;
   @useResult
   $Res call({List<LineItemOrder> lineItemOrderList});
 }
 
 /// @nodoc
-class __$$LineItemsOrderImplCopyWithImpl<$Res>
-    extends _$LineItemsOrderCopyWithImpl<$Res, _$LineItemsOrderImpl>
-    implements _$$LineItemsOrderImplCopyWith<$Res> {
-  __$$LineItemsOrderImplCopyWithImpl(
-      _$LineItemsOrderImpl _value, $Res Function(_$LineItemsOrderImpl) _then)
-      : super(_value, _then);
+class _$LineItemsOrderCopyWithImpl<$Res>
+    implements $LineItemsOrderCopyWith<$Res> {
+  _$LineItemsOrderCopyWithImpl(this._self, this._then);
+
+  final LineItemsOrder _self;
+  final $Res Function(LineItemsOrder) _then;
 
   /// Create a copy of LineItemsOrder
   /// with the given fields replaced by the non-null parameter values.
@@ -94,9 +72,9 @@ class __$$LineItemsOrderImplCopyWithImpl<$Res>
   $Res call({
     Object? lineItemOrderList = null,
   }) {
-    return _then(_$LineItemsOrderImpl(
+    return _then(_self.copyWith(
       lineItemOrderList: null == lineItemOrderList
-          ? _value._lineItemOrderList
+          ? _self.lineItemOrderList
           : lineItemOrderList // ignore: cast_nullable_to_non_nullable
               as List<LineItemOrder>,
     ));
@@ -105,12 +83,11 @@ class __$$LineItemsOrderImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LineItemsOrderImpl implements _LineItemsOrder {
-  _$LineItemsOrderImpl({required final List<LineItemOrder> lineItemOrderList})
+class _LineItemsOrder implements LineItemsOrder {
+  _LineItemsOrder({required final List<LineItemOrder> lineItemOrderList})
       : _lineItemOrderList = lineItemOrderList;
-
-  factory _$LineItemsOrderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LineItemsOrderImplFromJson(json);
+  factory _LineItemsOrder.fromJson(Map<String, dynamic> json) =>
+      _$LineItemsOrderFromJson(json);
 
   final List<LineItemOrder> _lineItemOrderList;
   @override
@@ -121,16 +98,26 @@ class _$LineItemsOrderImpl implements _LineItemsOrder {
     return EqualUnmodifiableListView(_lineItemOrderList);
   }
 
+  /// Create a copy of LineItemsOrder
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'LineItemsOrder(lineItemOrderList: $lineItemOrderList)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$LineItemsOrderCopyWith<_LineItemsOrder> get copyWith =>
+      __$LineItemsOrderCopyWithImpl<_LineItemsOrder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LineItemsOrderToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LineItemsOrderImpl &&
+            other is _LineItemsOrder &&
             const DeepCollectionEquality()
                 .equals(other._lineItemOrderList, _lineItemOrderList));
   }
@@ -140,38 +127,45 @@ class _$LineItemsOrderImpl implements _LineItemsOrder {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_lineItemOrderList));
 
-  /// Create a copy of LineItemsOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LineItemsOrderImplCopyWith<_$LineItemsOrderImpl> get copyWith =>
-      __$$LineItemsOrderImplCopyWithImpl<_$LineItemsOrderImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LineItemsOrderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LineItemsOrder(lineItemOrderList: $lineItemOrderList)';
   }
 }
 
-abstract class _LineItemsOrder implements LineItemsOrder {
-  factory _LineItemsOrder(
-          {required final List<LineItemOrder> lineItemOrderList}) =
-      _$LineItemsOrderImpl;
-
-  factory _LineItemsOrder.fromJson(Map<String, dynamic> json) =
-      _$LineItemsOrderImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$LineItemsOrderCopyWith<$Res>
+    implements $LineItemsOrderCopyWith<$Res> {
+  factory _$LineItemsOrderCopyWith(
+          _LineItemsOrder value, $Res Function(_LineItemsOrder) _then) =
+      __$LineItemsOrderCopyWithImpl;
   @override
-  List<LineItemOrder> get lineItemOrderList;
+  @useResult
+  $Res call({List<LineItemOrder> lineItemOrderList});
+}
+
+/// @nodoc
+class __$LineItemsOrderCopyWithImpl<$Res>
+    implements _$LineItemsOrderCopyWith<$Res> {
+  __$LineItemsOrderCopyWithImpl(this._self, this._then);
+
+  final _LineItemsOrder _self;
+  final $Res Function(_LineItemsOrder) _then;
 
   /// Create a copy of LineItemsOrder
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LineItemsOrderImplCopyWith<_$LineItemsOrderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? lineItemOrderList = null,
+  }) {
+    return _then(_LineItemsOrder(
+      lineItemOrderList: null == lineItemOrderList
+          ? _self._lineItemOrderList
+          : lineItemOrderList // ignore: cast_nullable_to_non_nullable
+              as List<LineItemOrder>,
+    ));
+  }
 }
+
+// dart format on

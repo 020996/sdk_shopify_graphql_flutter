@@ -3,6 +3,7 @@ export 'cart_buyer_identity/cart_buyer_identity.dart';
 export 'cart_cost/cart_cost.dart';
 export 'cart_dicount_code/cart_discount_code.dart';
 export 'cart_discount_allocation/cart_discount_allocation.dart';
+export 'cart_discount_allocation/cart_discount_application.dart';
 export 'cart_preference/cart_preference.dart';
 export 'cart_preference/cart_delivery_coordinates_preference/cart_delivery_coordinates_preference.dart';
 export 'cart_preference/cart_delivery_preference/cart_delivery_preference.dart';

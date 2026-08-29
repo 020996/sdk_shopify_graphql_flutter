@@ -6,23 +6,23 @@ part of 'shop_pay_installments_pricing.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShopPayInstallmentsCountImpl _$$ShopPayInstallmentsCountImplFromJson(
+_ShopPayInstallmentsCount _$ShopPayInstallmentsCountFromJson(
         Map<String, dynamic> json) =>
-    _$ShopPayInstallmentsCountImpl(
+    _ShopPayInstallmentsCount(
       count: (json['count'] as num?)?.toInt() ?? 0,
       precision: json['precision'] as String? ?? 'EXACT',
     );
 
-Map<String, dynamic> _$$ShopPayInstallmentsCountImplToJson(
-        _$ShopPayInstallmentsCountImpl instance) =>
+Map<String, dynamic> _$ShopPayInstallmentsCountToJson(
+        _ShopPayInstallmentsCount instance) =>
     <String, dynamic>{
       'count': instance.count,
       'precision': instance.precision,
     };
 
-_$ShopPayInstallmentsPricingImpl _$$ShopPayInstallmentsPricingImplFromJson(
+_ShopPayInstallmentsPricing _$ShopPayInstallmentsPricingFromJson(
         Map<String, dynamic> json) =>
-    _$ShopPayInstallmentsPricingImpl(
+    _ShopPayInstallmentsPricing(
       available: json['available'] as bool? ?? false,
       eligible: json['eligible'] as bool? ?? false,
       fullPrice: json['fullPrice'] == null
@@ -37,8 +37,8 @@ _$ShopPayInstallmentsPricingImpl _$$ShopPayInstallmentsPricingImplFromJson(
           : PriceV2.fromJson(json['pricePerTerm'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ShopPayInstallmentsPricingImplToJson(
-        _$ShopPayInstallmentsPricingImpl instance) =>
+Map<String, dynamic> _$ShopPayInstallmentsPricingToJson(
+        _ShopPayInstallmentsPricing instance) =>
     <String, dynamic>{
       'available': instance.available,
       'eligible': instance.eligible,

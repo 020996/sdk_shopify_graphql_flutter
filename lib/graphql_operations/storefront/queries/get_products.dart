@@ -12,6 +12,20 @@ query($metafields: [HasMetafieldsIdentifier!]!, $cursor : String, $reverse: Bool
           id
           name
           values
+          optionValues {
+            id
+            name
+            swatch {
+              color
+              image {
+                ... on MediaImage {
+                  image {
+                    url
+                  }
+              }
+              }
+            }
+          }
         }
         metafields(identifiers: $metafields) {
           id

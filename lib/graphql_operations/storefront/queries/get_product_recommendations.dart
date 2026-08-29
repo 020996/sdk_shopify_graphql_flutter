@@ -49,6 +49,20 @@ query getProductRecommentationsQuery($metafields: [HasMetafieldsIdentifier!]!, $
       id
       name
       values
+      optionValues {
+        id
+        name
+        swatch {
+          color
+          image {
+            ... on MediaImage {
+              image {
+                url
+              }
+          }
+          }
+        }
+      }
     }
     metafields(identifiers: $metafields) {
       id

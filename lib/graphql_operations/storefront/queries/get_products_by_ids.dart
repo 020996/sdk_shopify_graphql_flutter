@@ -24,6 +24,20 @@ query($metafields: [HasMetafieldsIdentifier!]!, $country: CountryCode, $ids : [I
             id
             name
             values
+            optionValues {
+              id
+              name
+              swatch {
+                color
+                image {
+                  ... on MediaImage {
+                    image {
+                      url
+                    }
+                }
+                }
+              }
+            }
             }
       id
       handle
