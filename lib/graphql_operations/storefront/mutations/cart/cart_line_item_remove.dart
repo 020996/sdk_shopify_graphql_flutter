@@ -41,6 +41,10 @@ mutation cartLinesRemove($country: CountryCode, $cartId: ID!, $lineIds: [ID!]!, 
         applicable
         code
       }
+      appliedGiftCards {
+        id
+        lastCharacters
+      }
       note
       buyerIdentity {
         countryCode

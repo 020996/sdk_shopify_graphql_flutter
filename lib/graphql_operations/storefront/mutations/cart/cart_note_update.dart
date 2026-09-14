@@ -41,6 +41,10 @@ mutation cartNoteUpdate($cartId: ID!, $note: String!, $country: CountryCode, $re
         applicable
         code
       }
+      appliedGiftCards {
+        id
+        lastCharacters
+      }
       note
       buyerIdentity {
         countryCode

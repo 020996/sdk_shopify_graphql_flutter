@@ -40,6 +40,10 @@ query cart($country: CountryCode, $id: ID!, $reverse: Boolean!) @inContext(count
         applicable
         code
       }
+      appliedGiftCards {
+        id
+        lastCharacters
+      }
       note
       buyerIdentity {
         countryCode

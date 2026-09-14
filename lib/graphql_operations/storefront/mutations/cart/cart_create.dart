@@ -41,6 +41,10 @@ mutation cartCreate($country: CountryCode, $input: CartInput!) @inContext(countr
         applicable
         code
       }
+      appliedGiftCards {
+        id
+        lastCharacters
+      }
       note
       buyerIdentity {
         countryCode

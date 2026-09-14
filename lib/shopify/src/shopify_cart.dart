@@ -3,6 +3,8 @@ import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/car
 import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_buyer_identity_update.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_create.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_discount_code_update_mutation.dart';
+import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_gift_card_codes_add_mutation.dart';
+import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_gift_card_codes_update_mutation.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_line_item_add.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_line_item_remove.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/mutations/cart/cart_line_item_update.dart';
@@ -198,6 +200,61 @@ class ShopifyCart with ShopifyError {
     return Cart.fromJson(
         ((result.data!['cartDiscountCodesUpdate'] ?? const {})['cart'] ??
             const {}));
+  }
+
+  /// update cart gift card codes (replaces every applied gift card; pass an
+  /// empty list to clear them)
+  ///
+  /// If the [reverse] is set to true, the line items in the cart will be in reverse order.
+  Future<Cart> updateCartGiftCardCodes({
+    required String cartId,
+    required List<String> giftCardCodes,
+    bool reverse = false,
+  }) =>
+      _giftCardCodes(
+        updateCartGiftCardCodesMutation,
+        'cartGiftCardCodesUpdate',
+        cartId: cartId,
+        giftCardCodes: giftCardCodes,
+        reverse: reverse,
+      );
+
+  /// add gift card codes to cart without replacing the ones already applied
+  ///
+  /// If the [reverse] is set to true, the line items in the cart will be in reverse order.
+  Future<Cart> addCartGiftCardCodes({
+    required String cartId,
+    required List<String> giftCardCodes,
+    bool reverse = false,
+  }) =>
+      _giftCardCodes(
+        addCartGiftCardCodesMutation,
+        'cartGiftCardCodesAdd',
+        cartId: cartId,
+        giftCardCodes: giftCardCodes,
+        reverse: reverse,
+      );
+
+  Future<Cart> _giftCardCodes(
+    String document,
+    String key, {
+    required String cartId,
+    required List<String> giftCardCodes,
+    required bool reverse,
+  }) async {
+    final MutationOptions options = MutationOptions(
+      document: gql(document),
+      variables: {
+        'cartId': cartId,
+        'giftCardCodes': giftCardCodes,
+        'country': ShopifyLocalization.countryCode,
+        'reverse': reverse
+      },
+    );
+    QueryResult result = await _graphQLClient!.mutate(options);
+    checkForError(result, key: key, errorKey: 'userErrors');
+
+    return Cart.fromJson(((result.data![key] ?? const {})['cart'] ?? const {}));
   }
 
   /// update Buyer identity in cart

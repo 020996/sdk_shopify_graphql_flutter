@@ -23,6 +23,7 @@ mixin _$Cart {
   List<CartDiscountCode?>? get discountCodes;
   String? get createdAt;
   List<Attribute?>? get attributes;
+  List<AppliedGiftCard?>? get appliedGiftCards;
   CartBuyerIdentity? get buyerIdentity;
   String? get note;
   String? get updatedAt;
@@ -58,6 +59,8 @@ mixin _$Cart {
                 other.createdAt == createdAt) &&
             const DeepCollectionEquality()
                 .equals(other.attributes, attributes) &&
+            const DeepCollectionEquality()
+                .equals(other.appliedGiftCards, appliedGiftCards) &&
             (identical(other.buyerIdentity, buyerIdentity) ||
                 other.buyerIdentity == buyerIdentity) &&
             (identical(other.note, note) || other.note == note) &&
@@ -78,6 +81,7 @@ mixin _$Cart {
       const DeepCollectionEquality().hash(discountCodes),
       createdAt,
       const DeepCollectionEquality().hash(attributes),
+      const DeepCollectionEquality().hash(appliedGiftCards),
       buyerIdentity,
       note,
       updatedAt,
@@ -85,7 +89,7 @@ mixin _$Cart {
 
   @override
   String toString() {
-    return 'Cart(id: $id, checkoutUrl: $checkoutUrl, cost: $cost, totalQuantity: $totalQuantity, discountAllocations: $discountAllocations, discountCodes: $discountCodes, createdAt: $createdAt, attributes: $attributes, buyerIdentity: $buyerIdentity, note: $note, updatedAt: $updatedAt, lines: $lines)';
+    return 'Cart(id: $id, checkoutUrl: $checkoutUrl, cost: $cost, totalQuantity: $totalQuantity, discountAllocations: $discountAllocations, discountCodes: $discountCodes, createdAt: $createdAt, attributes: $attributes, appliedGiftCards: $appliedGiftCards, buyerIdentity: $buyerIdentity, note: $note, updatedAt: $updatedAt, lines: $lines)';
   }
 }
 
@@ -103,6 +107,7 @@ abstract mixin class $CartCopyWith<$Res> {
       List<CartDiscountCode?>? discountCodes,
       String? createdAt,
       List<Attribute?>? attributes,
+      List<AppliedGiftCard?>? appliedGiftCards,
       CartBuyerIdentity? buyerIdentity,
       String? note,
       String? updatedAt,
@@ -132,6 +137,7 @@ class _$CartCopyWithImpl<$Res> implements $CartCopyWith<$Res> {
     Object? discountCodes = freezed,
     Object? createdAt = freezed,
     Object? attributes = freezed,
+    Object? appliedGiftCards = freezed,
     Object? buyerIdentity = freezed,
     Object? note = freezed,
     Object? updatedAt = freezed,
@@ -170,6 +176,10 @@ class _$CartCopyWithImpl<$Res> implements $CartCopyWith<$Res> {
           ? _self.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as List<Attribute?>?,
+      appliedGiftCards: freezed == appliedGiftCards
+          ? _self.appliedGiftCards
+          : appliedGiftCards // ignore: cast_nullable_to_non_nullable
+              as List<AppliedGiftCard?>?,
       buyerIdentity: freezed == buyerIdentity
           ? _self.buyerIdentity
           : buyerIdentity // ignore: cast_nullable_to_non_nullable
@@ -230,6 +240,7 @@ class _Cart extends Cart {
       required final List<CartDiscountCode?>? discountCodes,
       required this.createdAt,
       final List<Attribute?>? attributes,
+      final List<AppliedGiftCard?>? appliedGiftCards,
       this.buyerIdentity,
       this.note,
       this.updatedAt,
@@ -237,6 +248,7 @@ class _Cart extends Cart {
       : _discountAllocations = discountAllocations,
         _discountCodes = discountCodes,
         _attributes = attributes,
+        _appliedGiftCards = appliedGiftCards,
         _lines = lines,
         super._();
   factory _Cart.fromJson(Map<String, dynamic> json) => _$CartFromJson(json);
@@ -278,6 +290,17 @@ class _Cart extends Cart {
     final value = _attributes;
     if (value == null) return null;
     if (_attributes is EqualUnmodifiableListView) return _attributes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<AppliedGiftCard?>? _appliedGiftCards;
+  @override
+  List<AppliedGiftCard?>? get appliedGiftCards {
+    final value = _appliedGiftCards;
+    if (value == null) return null;
+    if (_appliedGiftCards is EqualUnmodifiableListView)
+      return _appliedGiftCards;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -331,6 +354,8 @@ class _Cart extends Cart {
                 other.createdAt == createdAt) &&
             const DeepCollectionEquality()
                 .equals(other._attributes, _attributes) &&
+            const DeepCollectionEquality()
+                .equals(other._appliedGiftCards, _appliedGiftCards) &&
             (identical(other.buyerIdentity, buyerIdentity) ||
                 other.buyerIdentity == buyerIdentity) &&
             (identical(other.note, note) || other.note == note) &&
@@ -351,6 +376,7 @@ class _Cart extends Cart {
       const DeepCollectionEquality().hash(_discountCodes),
       createdAt,
       const DeepCollectionEquality().hash(_attributes),
+      const DeepCollectionEquality().hash(_appliedGiftCards),
       buyerIdentity,
       note,
       updatedAt,
@@ -358,7 +384,7 @@ class _Cart extends Cart {
 
   @override
   String toString() {
-    return 'Cart(id: $id, checkoutUrl: $checkoutUrl, cost: $cost, totalQuantity: $totalQuantity, discountAllocations: $discountAllocations, discountCodes: $discountCodes, createdAt: $createdAt, attributes: $attributes, buyerIdentity: $buyerIdentity, note: $note, updatedAt: $updatedAt, lines: $lines)';
+    return 'Cart(id: $id, checkoutUrl: $checkoutUrl, cost: $cost, totalQuantity: $totalQuantity, discountAllocations: $discountAllocations, discountCodes: $discountCodes, createdAt: $createdAt, attributes: $attributes, appliedGiftCards: $appliedGiftCards, buyerIdentity: $buyerIdentity, note: $note, updatedAt: $updatedAt, lines: $lines)';
   }
 }
 
@@ -377,6 +403,7 @@ abstract mixin class _$CartCopyWith<$Res> implements $CartCopyWith<$Res> {
       List<CartDiscountCode?>? discountCodes,
       String? createdAt,
       List<Attribute?>? attributes,
+      List<AppliedGiftCard?>? appliedGiftCards,
       CartBuyerIdentity? buyerIdentity,
       String? note,
       String? updatedAt,
@@ -408,6 +435,7 @@ class __$CartCopyWithImpl<$Res> implements _$CartCopyWith<$Res> {
     Object? discountCodes = freezed,
     Object? createdAt = freezed,
     Object? attributes = freezed,
+    Object? appliedGiftCards = freezed,
     Object? buyerIdentity = freezed,
     Object? note = freezed,
     Object? updatedAt = freezed,
@@ -446,6 +474,10 @@ class __$CartCopyWithImpl<$Res> implements _$CartCopyWith<$Res> {
           ? _self._attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as List<Attribute?>?,
+      appliedGiftCards: freezed == appliedGiftCards
+          ? _self._appliedGiftCards
+          : appliedGiftCards // ignore: cast_nullable_to_non_nullable
+              as List<AppliedGiftCard?>?,
       buyerIdentity: freezed == buyerIdentity
           ? _self.buyerIdentity
           : buyerIdentity // ignore: cast_nullable_to_non_nullable

@@ -41,6 +41,10 @@ mutation cartAttributesUpdate($cartId: ID!, $attributes: [AttributeInput!]!, $co
         applicable
         code
       }
+      appliedGiftCards {
+        id
+        lastCharacters
+      }
       note
       buyerIdentity {
         countryCode

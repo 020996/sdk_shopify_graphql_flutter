@@ -41,6 +41,10 @@ mutation cartLineItemAdd($country: CountryCode, $cartId: ID!, $lines: [CartLineI
         applicable
         code
       }
+      appliedGiftCards {
+        id
+        lastCharacters
+      }
       note
       buyerIdentity {
         countryCode

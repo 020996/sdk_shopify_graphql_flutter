@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_flutter/models/json_helper.dart';
 import 'package:shopify_flutter/models/src/cart/cart_discount_allocation/cart_discount_allocation.dart';
 import 'package:shopify_flutter/models/src/cart/lines/line/line.dart';
+import 'applied_gift_card/applied_gift_card.dart';
 import 'attribute/attribute.dart';
 import 'cart_buyer_identity/cart_buyer_identity.dart';
 import 'cart_cost/cart_cost.dart';
@@ -28,6 +29,7 @@ abstract class Cart with _$Cart {
     required List<CartDiscountCode?>? discountCodes,
     required String? createdAt,
     List<Attribute?>? attributes,
+    List<AppliedGiftCard?>? appliedGiftCards,
     CartBuyerIdentity? buyerIdentity,
     String? note,
     String? updatedAt,

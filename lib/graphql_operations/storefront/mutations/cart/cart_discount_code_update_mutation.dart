@@ -41,6 +41,10 @@ mutation cartDiscountCodesUpdate($cartId: ID!, $discountCodes: [String!]!, $coun
         applicable
         code
       }
+      appliedGiftCards {
+        id
+        lastCharacters
+      }
       note
       buyerIdentity {
         countryCode

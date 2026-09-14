@@ -1,4 +1,5 @@
 export 'inputs/cart_inputs.dart';
+export 'applied_gift_card/applied_gift_card.dart';
 export 'cart_buyer_identity/cart_buyer_identity.dart';
 export 'cart_cost/cart_cost.dart';
 export 'cart_dicount_code/cart_discount_code.dart';

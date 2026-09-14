@@ -28,6 +28,11 @@ _Cart _$CartFromJson(Map<String, dynamic> json) => _Cart(
           ?.map((e) =>
               e == null ? null : Attribute.fromJson(e as Map<String, dynamic>))
           .toList(),
+      appliedGiftCards: (json['appliedGiftCards'] as List<dynamic>?)
+          ?.map((e) => e == null
+              ? null
+              : AppliedGiftCard.fromJson(e as Map<String, dynamic>))
+          .toList(),
       buyerIdentity: json['buyerIdentity'] == null
           ? null
           : CartBuyerIdentity.fromJson(
@@ -47,6 +52,8 @@ Map<String, dynamic> _$CartToJson(_Cart instance) => <String, dynamic>{
       'discountCodes': instance.discountCodes?.map((e) => e?.toJson()).toList(),
       'createdAt': instance.createdAt,
       'attributes': instance.attributes?.map((e) => e?.toJson()).toList(),
+      'appliedGiftCards':
+          instance.appliedGiftCards?.map((e) => e?.toJson()).toList(),
       'buyerIdentity': instance.buyerIdentity?.toJson(),
       'note': instance.note,
       'updatedAt': instance.updatedAt,
