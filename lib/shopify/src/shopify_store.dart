@@ -15,11 +15,11 @@ import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_coll
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_after_cursor.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_after_cursor_within_collection.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/predictive_search.dart';
-import 'package:shopify_flutter/models/src/predictive_search/predictive_search_result.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/search_product.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_on_query_after_cursor.dart';
 import 'package:shopify_flutter/mixins/src/shopify_error.dart';
 import 'package:shopify_flutter/models/src/collection/collections/collections.dart';
+import 'package:shopify_flutter/models/src/predictive_search/predictive_search_result.dart';
 import 'package:shopify_flutter/models/src/product/metafield_identifier/metafield_identifier.dart';
 import 'package:shopify_flutter/models/src/product/product.dart';
 import 'package:shopify_flutter/models/src/product/product_filter/product_filter.dart';

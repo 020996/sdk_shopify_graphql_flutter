@@ -1,6 +1,5 @@
+import 'package:shopify_flutter/models/src/product/option/option.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../option/option.dart';
 
 part 'product_filter.freezed.dart';
 part 'product_filter.g.dart';

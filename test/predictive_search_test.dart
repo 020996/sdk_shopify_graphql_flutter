@@ -88,6 +88,40 @@ void main() {
     expect(result.collections.single.handle, isNull);
   });
 
+  test('a variant survives an untracked inventory', () {
+    // Shopify sends `quantityAvailable: null` when the shop does not track
+    // inventory, or when the token lacks the inventory scope. Reading it raw
+    // threw, and the catch in `_getProductVariants` then dropped every variant
+    // of the product — the price silently became 0 and there was no variant id
+    // left to add to a cart.
+    final product = Product.fromGraphJson(const {
+      'node': {
+        'id': 'gid://shopify/Product/1',
+        'title': 'Body oil',
+        'variants': {
+          'edges': [
+            {
+              'node': {
+                'id': 'gid://shopify/ProductVariant/1',
+                'title': 'Default Title',
+                'availableForSale': true,
+                'requiresShipping': true,
+                'quantityAvailable': null,
+                'weight': 0.5,
+                'weightUnit': 'KILOGRAMS',
+                'priceV2': {'amount': '100.0', 'currencyCode': 'USD'},
+              }
+            }
+          ]
+        },
+      }
+    });
+
+    expect(product.productVariants, hasLength(1));
+    expect(product.productVariants.single.id, 'gid://shopify/ProductVariant/1');
+    expect(product.price, 100.0);
+  });
+
   test('a shape that is not a predictive payload is empty, not an error', () {
     expect(PredictiveSearchResult.fromGraphJson(const {}).isEmpty, isTrue);
     expect(
