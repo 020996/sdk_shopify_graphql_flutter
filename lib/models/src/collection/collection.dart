@@ -58,11 +58,11 @@ abstract class Collection with _$Collection {
     _products = _products.copyWith.call(productList: _realProducts);
 
     return Collection(
-      title: nodeJson['title'],
+      title: nodeJson['title'] ?? '',
       description: nodeJson['description'],
       descriptionHtml: nodeJson['descriptionHtml'],
       handle: nodeJson['handle'],
-      id: nodeJson['id'],
+      id: nodeJson['id'] ?? '',
       updatedAt: nodeJson['updatedAt'],
       image: nodeJson['image'] != null
           ? ShopifyImage.fromJson(nodeJson['image'])

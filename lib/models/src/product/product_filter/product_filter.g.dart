@@ -32,6 +32,9 @@ _ProductFilterValue _$ProductFilterValueFromJson(Map<String, dynamic> json) =>
       label: json['label'] as String,
       count: (json['count'] as num?)?.toInt() ?? 0,
       input: json['input'] as String?,
+      swatch: json['swatch'] == null
+          ? null
+          : OptionSwatch.fromJson(json['swatch'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductFilterValueToJson(_ProductFilterValue instance) =>
@@ -40,4 +43,5 @@ Map<String, dynamic> _$ProductFilterValueToJson(_ProductFilterValue instance) =>
       'label': instance.label,
       'count': instance.count,
       'input': instance.input,
+      'swatch': instance.swatch?.toJson(),
     };

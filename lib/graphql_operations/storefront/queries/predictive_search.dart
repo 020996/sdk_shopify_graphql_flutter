@@ -2,12 +2,17 @@
 ///
 /// Shopify matches prefixes here by design, so there is no `prefix` argument.
 ///
-/// `pages` and `articles` are behind `@include` because they need the
+/// Products and collections select what `Product.fromGraphJson` and
+/// `Collection.fromGraphJson` read, so a suggestion is the same model the rest
+/// of the package hands back — a row can show its image and price, and a tap
+/// can open it, with no second fetch.
+///
+/// `pages` and `articles` are deliberately absent: they need the
 /// `unauthenticated_read_content` access scope, and Shopify rejects the WHOLE
-/// query when a selected field is out of scope — selecting them on a token
-/// without that scope costs every other suggestion too.
+/// query when a selected field is out of scope, so selecting them on a token
+/// without it would cost every other suggestion too.
 const String getPredictiveSearch = r'''
-query($query: String!, $limit: Int, $types: [PredictiveSearchType!], $unavailableProducts: SearchUnavailableProductsType, $country: CountryCode, $includeContent: Boolean = false) @inContext(country: $country){
+query($query: String!, $limit: Int, $types: [PredictiveSearchType!], $unavailableProducts: SearchUnavailableProductsType, $country: CountryCode) @inContext(country: $country){
   predictiveSearch(query: $query, limit: $limit, limitScope: EACH, types: $types, unavailableProducts: $unavailableProducts){
     queries {
       text
@@ -18,14 +23,37 @@ query($query: String!, $limit: Int, $types: [PredictiveSearchType!], $unavailabl
       title
       handle
       availableForSale
-      featuredImage {
-        url
-        altText
+      createdAt
+      vendor
+      productType
+      images(first: 1) {
+        edges {
+          node {
+            altText
+            id
+            originalSrc
+          }
+        }
       }
-      priceRange {
-        minVariantPrice {
-          amount
-          currencyCode
+      variants(first: 1) {
+        edges {
+          node {
+            id
+            title
+            availableForSale
+            requiresShipping
+            quantityAvailable
+            weight
+            weightUnit
+            priceV2 {
+              amount
+              currencyCode
+            }
+            compareAtPriceV2 {
+              amount
+              currencyCode
+            }
+          }
         }
       }
     }
@@ -33,25 +61,11 @@ query($query: String!, $limit: Int, $types: [PredictiveSearchType!], $unavailabl
       id
       title
       handle
+      description
       image {
-        url
         altText
-      }
-    }
-    pages @include(if: $includeContent) {
-      id
-      title
-      handle
-      onlineStoreUrl
-    }
-    articles @include(if: $includeContent) {
-      id
-      title
-      handle
-      onlineStoreUrl
-      image {
-        url
-        altText
+        id
+        originalSrc
       }
     }
   }

@@ -15,7 +15,7 @@ import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_coll
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_after_cursor.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_after_cursor_within_collection.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/predictive_search.dart';
-import 'package:shopify_flutter/models/src/search/search_result.dart';
+import 'package:shopify_flutter/models/src/predictive_search/predictive_search_result.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/search_product.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_on_query_after_cursor.dart';
 import 'package:shopify_flutter/mixins/src/shopify_error.dart';
@@ -627,100 +627,38 @@ class ShopifyStore with ShopifyError {
   }
 
   /// Type-ahead suggestions for [query]: suggested terms, products and
-  /// collections, and — only with [includeContent] — pages and articles.
+  /// collections, each parsed into the same model the rest of the package
+  /// returns, so a suggestion row can show an image and a price and a tap can
+  /// open it without a second fetch.
   ///
-  /// [includeContent] needs the `unauthenticated_read_content` access scope.
-  /// Leave it off without that scope: Shopify rejects the WHOLE query when a
-  /// SELECTED field is out of scope, so asking for pages on a token that
-  /// cannot read them costs every other suggestion too.
+  /// Pages and articles are not offered: they need the
+  /// `unauthenticated_read_content` access scope, and Shopify rejects the
+  /// WHOLE query when a SELECTED field is out of scope, so asking for them on
+  /// a token that cannot read them would cost every other suggestion too.
   ///
   /// Never cached: the payload carries no `id`, so a normalised cache cannot
   /// store it and a cached round trip reads back as null.
-  Future<List<PredictiveSearchItem>> predictiveSearch(
+  Future<PredictiveSearchResult> predictiveSearch(
     String query, {
     int limit = 5,
-    List<PredictiveSearchKind> types = const [
-      PredictiveSearchKind.query,
-      PredictiveSearchKind.product,
-      PredictiveSearchKind.collection,
-    ],
+    List<PredictiveSearchType> types = PredictiveSearchType.values,
     SearchUnavailableProductsType? unavailableProducts,
     String? countryCode,
-    bool includeContent = false,
   }) async {
     final WatchQueryOptions _options = WatchQueryOptions(
       document: gql(getPredictiveSearch),
       variables: {
         'query': query,
         'limit': limit,
-        'types': types.map((e) => e.name.toUpperCase()).toList(),
+        'types': types.map((e) => e.parseToString()).toList(),
         'unavailableProducts': unavailableProducts?.parseToString(),
         'country': countryCode,
-        'includeContent': includeContent,
       },
       fetchPolicy: FetchPolicy.noCache,
     );
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
-    return PredictiveSearchItem.listFromGraphJson(result.data);
-  }
-
-  /// [searchProducts] plus what `Products` does not model: the total match
-  /// count and the swatch of each filter value.
-  ///
-  /// Same query, same cost — this is the one to call when a filter UI paints
-  /// colour chips, or a results header shows "N results".
-  Future<SearchResult?> search(
-    String query, {
-    int limit = 15,
-    String? startCursor,
-    SearchSortKeys sortKey = SearchSortKeys.RELEVANCE,
-    bool reverse = false,
-    List<Map<String, dynamic>>? filters,
-    List<MetafieldIdentifier>? metafields,
-    String? countryCode,
-    SearchPrefixQueryType? prefix,
-    SearchUnavailableProductsType? unavailableProducts,
-    int imagesFirst = 250,
-    int mediaFirst = 250,
-    int variantsFirst = 250,
-    int collectionsFirst = 250,
-    int sellingPlansFirst = 250,
-    bool includeMedia = true,
-    bool includeSellingPlans = true,
-  }) async {
-    final WatchQueryOptions _options = WatchQueryOptions(
-      document: gql(getSearchedProducts),
-      variables: {
-        'query': query,
-        'cursor': startCursor,
-        'limit': limit,
-        'sortKey': sortKey.parseToString(),
-        'reverse': reverse,
-        'filters': filters ?? const [],
-        'country': countryCode,
-        'prefix': prefix?.parseToString(),
-        'unavailableProducts': unavailableProducts?.parseToString(),
-        'imagesFirst': imagesFirst,
-        'mediaFirst': mediaFirst,
-        'variantsFirst': variantsFirst,
-        'collectionsFirst': collectionsFirst,
-        'sellingPlansFirst': sellingPlansFirst,
-        'includeMedia': includeMedia,
-        'includeSellingPlans': includeSellingPlans,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
-      },
-      // Facet counts must reflect THIS query; a cached eager result lags one
-      // search behind.
-      fetchPolicy: FetchPolicy.noCache,
-    );
-    final QueryResult result = await _graphQLClient!.query(_options);
-    checkForError(result);
-    final search = result.data?['search'] as Map<String, dynamic>?;
-    if (search == null) return null;
-    return SearchResult.fromGraphJson(search);
+    return PredictiveSearchResult.fromGraphJson(result.data ?? const {});
   }
 
   /// How many products match [query], with no product payload attached.

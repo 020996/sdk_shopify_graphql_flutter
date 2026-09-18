@@ -35,6 +35,7 @@ export 'src/order/successful_fulfillment/successful_fullfilment.dart';
 export 'src/order/successful_fulfillment/successful_fulfilment_tracking_info/successful_fulfilment_tracking_info.dart';
 
 export 'src/page/page.dart';
+export 'src/predictive_search/predictive_search_result.dart';
 export 'src/page/pages/pages.dart';
 
 export 'src/product/product.dart';
@@ -45,7 +46,6 @@ export 'src/product/metafield_identifier/metafield_identifier.dart';
 export 'src/product/option/option.dart';
 export 'src/product/price_v_2/price_v_2.dart';
 export 'src/product/product_filter/product_filter.dart';
-export 'src/search/search_result.dart';
 export 'src/product/product_variant/product_variant.dart';
 export 'src/product/shop_pay_installments_pricing/shop_pay_installments_pricing.dart';
 export 'src/product/selected_option/selected_option.dart';

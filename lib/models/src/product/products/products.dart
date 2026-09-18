@@ -16,6 +16,10 @@ abstract class Products with _$Products {
     required List<Product> productList,
     required bool hasNextPage,
     @Default(<ProductFilter>[]) List<ProductFilter> filters,
+
+    /// Total matches for a search, independent of the page size. Null when the
+    /// connection did not carry one — that is not the same as zero.
+    int? totalCount,
   }) = _Products;
 
   /// The products from graphjson factory
@@ -23,6 +27,7 @@ abstract class Products with _$Products {
         productList: _getProductList(json),
         hasNextPage: (json['pageInfo'] ?? const {})['hasNextPage'] ?? false,
         filters: _getFilters(json),
+        totalCount: json['totalCount'] as int?,
       );
 
   static List<Product> _getProductList(Map<String, dynamic> json) {
