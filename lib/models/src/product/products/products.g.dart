@@ -15,10 +15,12 @@ _Products _$ProductsFromJson(Map<String, dynamic> json) => _Products(
               ?.map((e) => ProductFilter.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <ProductFilter>[],
+      totalCount: (json['totalCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$ProductsToJson(_Products instance) => <String, dynamic>{
       'productList': instance.productList.map((e) => e.toJson()).toList(),
       'hasNextPage': instance.hasNextPage,
       'filters': instance.filters.map((e) => e.toJson()).toList(),
+      'totalCount': instance.totalCount,
     };

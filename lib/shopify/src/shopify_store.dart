@@ -14,10 +14,12 @@ import 'package:shopify_flutter/graphql_operations/storefront/queries/get_shop.d
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_collections_and_n_products_sorted.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_after_cursor.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_after_cursor_within_collection.dart';
+import 'package:shopify_flutter/graphql_operations/storefront/queries/predictive_search.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/search_product.dart';
 import 'package:shopify_flutter/graphql_operations/storefront/queries/get_x_products_on_query_after_cursor.dart';
 import 'package:shopify_flutter/mixins/src/shopify_error.dart';
 import 'package:shopify_flutter/models/src/collection/collections/collections.dart';
+import 'package:shopify_flutter/models/src/predictive_search/predictive_search_result.dart';
 import 'package:shopify_flutter/models/src/product/metafield_identifier/metafield_identifier.dart';
 import 'package:shopify_flutter/models/src/product/product.dart';
 import 'package:shopify_flutter/models/src/product/product_filter/product_filter.dart';
@@ -561,6 +563,17 @@ class ShopifyStore with ShopifyError {
   /// Returns the first [limit] Products after the given [startCursor].
   ///
   /// [limit] has to be in the range of 0 and 250.
+  /// [prefix] turns on a partial-word match on the last term.
+  ///
+  /// [unavailableProducts] is how Shopify itself hides or demotes out-of-stock
+  /// products — prefer it over an `available: true` entry in [filters], which
+  /// also locks the Availability facet.
+  ///
+  /// The `*First` arguments and the two `include*` flags size the product
+  /// payload. Shopify prices a query on the values a caller ASKS for, so a
+  /// results grid showing a thumbnail and a price should not pay for 250
+  /// images, 250 media and 250 selling plans per product. Defaults keep the
+  /// historical shape.
   Future<Products?> searchProducts(
     String query, {
     int limit = 15,
@@ -570,6 +583,15 @@ class ShopifyStore with ShopifyError {
     List<Map<String, dynamic>>? filters,
     List<MetafieldIdentifier>? metafields,
     String? countryCode,
+    SearchPrefixQueryType? prefix,
+    SearchUnavailableProductsType? unavailableProducts,
+    int imagesFirst = 250,
+    int mediaFirst = 250,
+    int variantsFirst = 250,
+    int collectionsFirst = 250,
+    int sellingPlansFirst = 250,
+    bool includeMedia = true,
+    bool includeSellingPlans = true,
   }) async {
     String? cursor = startCursor;
     final WatchQueryOptions _options = WatchQueryOptions(
@@ -582,6 +604,15 @@ class ShopifyStore with ShopifyError {
         'reverse': reverse,
         'filters': filters ?? const [],
         'country': countryCode,
+        'prefix': prefix?.parseToString(),
+        'unavailableProducts': unavailableProducts?.parseToString(),
+        'imagesFirst': imagesFirst,
+        'mediaFirst': mediaFirst,
+        'variantsFirst': variantsFirst,
+        'collectionsFirst': collectionsFirst,
+        'sellingPlansFirst': sellingPlansFirst,
+        'includeMedia': includeMedia,
+        'includeSellingPlans': includeSellingPlans,
         'metafields': metafields != null
             ? metafields.map((e) => e.toJson()).toList()
             : [],
@@ -593,6 +624,65 @@ class ShopifyStore with ShopifyError {
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
     return Products.fromGraphJson(result.data?['search']);
+  }
+
+  /// Type-ahead suggestions for [query]: suggested terms, products and
+  /// collections, each parsed into the same model the rest of the package
+  /// returns, so a suggestion row can show an image and a price and a tap can
+  /// open it without a second fetch.
+  ///
+  /// Pages and articles are not offered: they need the
+  /// `unauthenticated_read_content` access scope, and Shopify rejects the
+  /// WHOLE query when a SELECTED field is out of scope, so asking for them on
+  /// a token that cannot read them would cost every other suggestion too.
+  ///
+  /// Never cached: the payload carries no `id`, so a normalised cache cannot
+  /// store it and a cached round trip reads back as null.
+  Future<PredictiveSearchResult> predictiveSearch(
+    String query, {
+    int limit = 5,
+    List<PredictiveSearchType> types = PredictiveSearchType.values,
+    SearchUnavailableProductsType? unavailableProducts,
+    String? countryCode,
+  }) async {
+    final WatchQueryOptions _options = WatchQueryOptions(
+      document: gql(getPredictiveSearch),
+      variables: {
+        'query': query,
+        'limit': limit,
+        'types': types.map((e) => e.parseToString()).toList(),
+        'unavailableProducts': unavailableProducts?.parseToString(),
+        'country': countryCode,
+      },
+      fetchPolicy: FetchPolicy.noCache,
+    );
+    final QueryResult result = await _graphQLClient!.query(_options);
+    checkForError(result);
+    return PredictiveSearchResult.fromGraphJson(result.data ?? const {});
+  }
+
+  /// How many products match [query], with no product payload attached.
+  ///
+  /// Null when the answer did not come back — callers must not read that as
+  /// "no results".
+  Future<int?> searchTotalCount(
+    String query, {
+    SearchUnavailableProductsType? unavailableProducts,
+    String? countryCode,
+  }) async {
+    final WatchQueryOptions _options = WatchQueryOptions(
+      document: gql(getSearchTotalCount),
+      variables: {
+        'query': query,
+        'unavailableProducts': unavailableProducts?.parseToString(),
+        'country': countryCode,
+      },
+      fetchPolicy: FetchPolicy.noCache,
+    );
+    final QueryResult result = await _graphQLClient!.query(_options);
+    checkForError(result);
+    return (result.data?['search'] as Map<String, dynamic>?)?['totalCount']
+        as int?;
   }
 
   /// Returns a List of [Product].

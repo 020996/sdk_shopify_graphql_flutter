@@ -35,6 +35,7 @@ export 'src/order/successful_fulfillment/successful_fullfilment.dart';
 export 'src/order/successful_fulfillment/successful_fulfilment_tracking_info/successful_fulfilment_tracking_info.dart';
 
 export 'src/page/page.dart';
+export 'src/predictive_search/predictive_search_result.dart';
 export 'src/page/pages/pages.dart';
 
 export 'src/product/product.dart';

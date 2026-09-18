@@ -1,7 +1,13 @@
-/// Query search products
+/// Query search products.
+///
+/// Page sizes are variables with the historical 250 as their default, and the
+/// two heaviest branches (`media`, `sellingPlanAllocations`) can be switched
+/// off: Shopify prices a query on the `first:` values a caller asks for, so a
+/// grid that shows a thumbnail and a price should not pay for 250 of each.
 const String getSearchedProducts = r'''
-query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : String, $limit : Int, $sortKey : SearchSortKeys, $reverse: Boolean, $filters: [ProductFilter!], $country: CountryCode)  @inContext(country: $country){
-  search(query: $query, first: $limit, sortKey: $sortKey, after: $cursor, reverse: $reverse, productFilters: $filters, types: PRODUCT){
+query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor: String, $limit: Int, $sortKey: SearchSortKeys, $reverse: Boolean, $filters: [ProductFilter!], $country: CountryCode, $prefix: SearchPrefixQueryType, $unavailableProducts: SearchUnavailableProductsType, $imagesFirst: Int = 250, $mediaFirst: Int = 250, $variantsFirst: Int = 250, $collectionsFirst: Int = 250, $sellingPlansFirst: Int = 250, $includeMedia: Boolean = true, $includeSellingPlans: Boolean = true) @inContext(country: $country){
+  search(query: $query, first: $limit, sortKey: $sortKey, after: $cursor, reverse: $reverse, productFilters: $filters, types: PRODUCT, prefix: $prefix, unavailableProducts: $unavailableProducts){
+    totalCount
     pageInfo {
       hasNextPage
     }
@@ -14,6 +20,16 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
         label
         count
         input
+        swatch {
+          color
+          image {
+            ... on MediaImage {
+              image {
+                url
+              }
+            }
+          }
+        }
       }
     }
     edges{
@@ -58,7 +74,7 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
           }
       id
       handle
-      collections(first: 250) {
+      collections(first: $collectionsFirst) {
         edges {
           node {
             description
@@ -75,7 +91,7 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
       createdAt
       description
       descriptionHtml
-      images(first: 250) {
+      images(first: $imagesFirst) {
           edges {
             node {
               altText
@@ -84,7 +100,7 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
             }
           }
         }
-      media(first: 250) {
+      media(first: $mediaFirst) @include(if: $includeMedia) {
           edges {
             node {
               alt
@@ -111,7 +127,7 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
             }
           }
         }
-      variants(first: 250) {
+      variants(first: $variantsFirst) {
         edges {
           node {
             priceV2 {
@@ -155,7 +171,7 @@ query($metafields: [HasMetafieldsIdentifier!]!, $query: String!, $cursor : Strin
                 currencyCode
               }
             }
-            sellingPlanAllocations(first: 250) {
+            sellingPlanAllocations(first: $sellingPlansFirst) @include(if: $includeSellingPlans) {
               nodes {
                 checkoutChargeAmount {
                   amount

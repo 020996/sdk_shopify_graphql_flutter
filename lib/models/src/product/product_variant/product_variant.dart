@@ -50,7 +50,7 @@ abstract class ProductVariant with _$ProductVariant {
       price: nodeJson.containsKey('priceV2')
           ? PriceV2.fromJson(nodeJson['priceV2'])
           : PriceV2.fromJson(nodeJson['price']),
-      title: nodeJson['title'],
+      title: nodeJson['title'] ?? '',
       image: nodeJson['image'] != null
           ? ShopifyImage.fromJson(nodeJson['image'])
           : null,
@@ -61,11 +61,14 @@ abstract class ProductVariant with _$ProductVariant {
               : PriceV2.fromJson(nodeJson['compareAtPriceV2'])
           : null,
       weight: double.tryParse(nodeJson['weight'].toString()) ?? 0.0,
-      weightUnit: nodeJson['weightUnit'],
-      availableForSale: nodeJson['availableForSale'],
-      requiresShipping: nodeJson['requiresShipping'],
-      id: nodeJson['id'],
-      quantityAvailable: nodeJson['quantityAvailable'],
+      weightUnit: nodeJson['weightUnit'] ?? '',
+      availableForSale: nodeJson['availableForSale'] ?? false,
+      requiresShipping: nodeJson['requiresShipping'] ?? false,
+      id: nodeJson['id'] ?? '',
+      // Null when the shop does not track inventory, or when the token lacks
+      // `unauthenticated_read_product_inventory`. Reading it raw threw, and
+      // the catch below then dropped EVERY variant of the product.
+      quantityAvailable: nodeJson['quantityAvailable'] ?? 0,
       sku: nodeJson['sku'],
       unitPrice: nodeJson['unitPrice'] != null
           ? PriceV2.fromJson(nodeJson['unitPrice'])

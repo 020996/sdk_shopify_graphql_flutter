@@ -1,3 +1,4 @@
+import 'package:shopify_flutter/models/src/product/option/option.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'product_filter.freezed.dart';
@@ -38,6 +39,10 @@ abstract class ProductFilterValue with _$ProductFilterValue {
 
     /// Raw JSON string to pass back as a `ProductFilter` input when applying.
     String? input,
+
+    /// Colour/image to paint when this value is presented as a swatch, e.g. a
+    /// Color facet. Same shape as an option value's swatch.
+    OptionSwatch? swatch,
   }) = _ProductFilterValue;
 
   /// The ProductFilterValue from json

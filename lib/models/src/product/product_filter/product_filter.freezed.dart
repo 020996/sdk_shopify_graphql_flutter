@@ -231,6 +231,10 @@ mixin _$ProductFilterValue {
   /// Raw JSON string to pass back as a `ProductFilter` input when applying.
   String? get input;
 
+  /// Colour/image to paint when this value is presented as a swatch, e.g. a
+  /// Color facet. Same shape as an option value's swatch.
+  OptionSwatch? get swatch;
+
   /// Create a copy of ProductFilterValue
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -250,16 +254,17 @@ mixin _$ProductFilterValue {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.count, count) || other.count == count) &&
-            (identical(other.input, input) || other.input == input));
+            (identical(other.input, input) || other.input == input) &&
+            (identical(other.swatch, swatch) || other.swatch == swatch));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, label, count, input);
+  int get hashCode => Object.hash(runtimeType, id, label, count, input, swatch);
 
   @override
   String toString() {
-    return 'ProductFilterValue(id: $id, label: $label, count: $count, input: $input)';
+    return 'ProductFilterValue(id: $id, label: $label, count: $count, input: $input, swatch: $swatch)';
   }
 }
 
@@ -269,7 +274,14 @@ abstract mixin class $ProductFilterValueCopyWith<$Res> {
           ProductFilterValue value, $Res Function(ProductFilterValue) _then) =
       _$ProductFilterValueCopyWithImpl;
   @useResult
-  $Res call({String id, String label, int count, String? input});
+  $Res call(
+      {String id,
+      String label,
+      int count,
+      String? input,
+      OptionSwatch? swatch});
+
+  $OptionSwatchCopyWith<$Res>? get swatch;
 }
 
 /// @nodoc
@@ -289,6 +301,7 @@ class _$ProductFilterValueCopyWithImpl<$Res>
     Object? label = null,
     Object? count = null,
     Object? input = freezed,
+    Object? swatch = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -307,7 +320,25 @@ class _$ProductFilterValueCopyWithImpl<$Res>
           ? _self.input
           : input // ignore: cast_nullable_to_non_nullable
               as String?,
+      swatch: freezed == swatch
+          ? _self.swatch
+          : swatch // ignore: cast_nullable_to_non_nullable
+              as OptionSwatch?,
     ));
+  }
+
+  /// Create a copy of ProductFilterValue
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OptionSwatchCopyWith<$Res>? get swatch {
+    if (_self.swatch == null) {
+      return null;
+    }
+
+    return $OptionSwatchCopyWith<$Res>(_self.swatch!, (value) {
+      return _then(_self.copyWith(swatch: value));
+    });
   }
 }
 
@@ -315,7 +346,11 @@ class _$ProductFilterValueCopyWithImpl<$Res>
 @JsonSerializable()
 class _ProductFilterValue extends ProductFilterValue {
   _ProductFilterValue(
-      {required this.id, required this.label, this.count = 0, this.input})
+      {required this.id,
+      required this.label,
+      this.count = 0,
+      this.input,
+      this.swatch})
       : super._();
   factory _ProductFilterValue.fromJson(Map<String, dynamic> json) =>
       _$ProductFilterValueFromJson(json);
@@ -331,6 +366,11 @@ class _ProductFilterValue extends ProductFilterValue {
   /// Raw JSON string to pass back as a `ProductFilter` input when applying.
   @override
   final String? input;
+
+  /// Colour/image to paint when this value is presented as a swatch, e.g. a
+  /// Color facet. Same shape as an option value's swatch.
+  @override
+  final OptionSwatch? swatch;
 
   /// Create a copy of ProductFilterValue
   /// with the given fields replaced by the non-null parameter values.
@@ -355,16 +395,17 @@ class _ProductFilterValue extends ProductFilterValue {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.count, count) || other.count == count) &&
-            (identical(other.input, input) || other.input == input));
+            (identical(other.input, input) || other.input == input) &&
+            (identical(other.swatch, swatch) || other.swatch == swatch));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, label, count, input);
+  int get hashCode => Object.hash(runtimeType, id, label, count, input, swatch);
 
   @override
   String toString() {
-    return 'ProductFilterValue(id: $id, label: $label, count: $count, input: $input)';
+    return 'ProductFilterValue(id: $id, label: $label, count: $count, input: $input, swatch: $swatch)';
   }
 }
 
@@ -376,7 +417,15 @@ abstract mixin class _$ProductFilterValueCopyWith<$Res>
       __$ProductFilterValueCopyWithImpl;
   @override
   @useResult
-  $Res call({String id, String label, int count, String? input});
+  $Res call(
+      {String id,
+      String label,
+      int count,
+      String? input,
+      OptionSwatch? swatch});
+
+  @override
+  $OptionSwatchCopyWith<$Res>? get swatch;
 }
 
 /// @nodoc
@@ -396,6 +445,7 @@ class __$ProductFilterValueCopyWithImpl<$Res>
     Object? label = null,
     Object? count = null,
     Object? input = freezed,
+    Object? swatch = freezed,
   }) {
     return _then(_ProductFilterValue(
       id: null == id
@@ -414,7 +464,25 @@ class __$ProductFilterValueCopyWithImpl<$Res>
           ? _self.input
           : input // ignore: cast_nullable_to_non_nullable
               as String?,
+      swatch: freezed == swatch
+          ? _self.swatch
+          : swatch // ignore: cast_nullable_to_non_nullable
+              as OptionSwatch?,
     ));
+  }
+
+  /// Create a copy of ProductFilterValue
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OptionSwatchCopyWith<$Res>? get swatch {
+    if (_self.swatch == null) {
+      return null;
+    }
+
+    return $OptionSwatchCopyWith<$Res>(_self.swatch!, (value) {
+      return _then(_self.copyWith(swatch: value));
+    });
   }
 }
 
