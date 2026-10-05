@@ -42,6 +42,16 @@ class ShopifyStore with ShopifyError {
 
   GraphQLClient? get _graphQLClient => ShopifyConfig.graphQLClient;
 
+  /// Product metafield identifiers plus the standard review ones Judge.me
+  /// writes, so every product list carries rating + count (see [Product.reviewRating]).
+  static List<Map<String, dynamic>> _withReviewMetafields(
+          List<MetafieldIdentifier>? metafields) =>
+      [
+        ...?metafields,
+        MetafieldIdentifier(namespace: 'reviews', key: 'rating'),
+        MetafieldIdentifier(namespace: 'reviews', key: 'rating_count'),
+      ].map((e) => e.toJson()).toList();
+
   /// Returns a List of [Product].
   ///
   /// Simply returns all Products from your Store.
@@ -60,9 +70,7 @@ class ShopifyStore with ShopifyError {
           'cursor': cursor,
           'reverse': reverse,
           'country': ShopifyLocalization.countryCode,
-          'metafields': metafields != null
-              ? metafields.map((e) => e.toJson()).toList()
-              : [],
+          'metafields': _withReviewMetafields(metafields),
         },
         fetchPolicy: ShopifyConfig.fetchPolicy,
       );
@@ -99,9 +107,7 @@ class ShopifyStore with ShopifyError {
         'reverse': reverse,
         'sortKey': sortKeyProduct.parseToString(),
         'country': ShopifyLocalization.countryCode,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
+        'metafields': _withReviewMetafields(metafields),
       },
       fetchPolicy: ShopifyConfig.fetchPolicy,
     );
@@ -127,9 +133,7 @@ class ShopifyStore with ShopifyError {
       variables: {
         'ids': idList,
         'country': countryCode,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
+        'metafields': _withReviewMetafields(metafields),
       },
       fetchPolicy: ShopifyConfig.fetchPolicy,
     );
@@ -160,9 +164,7 @@ class ShopifyStore with ShopifyError {
       variables: {
         'handle': handle,
         'country': ShopifyLocalization.countryCode,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
+        'metafields': _withReviewMetafields(metafields),
       },
       fetchPolicy: ShopifyConfig.fetchPolicy,
     );
@@ -204,9 +206,7 @@ class ShopifyStore with ShopifyError {
         'sortKey': sortKey.parseToString(),
         'reverse': reverse,
         'country': ShopifyLocalization.countryCode,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
+        'metafields': _withReviewMetafields(metafields),
       },
       fetchPolicy: ShopifyConfig.fetchPolicy,
     );
@@ -229,9 +229,7 @@ class ShopifyStore with ShopifyError {
         variables: {
           'id': productId,
           'country': ShopifyLocalization.countryCode,
-          'metafields': metafields != null
-              ? metafields.map((e) => e.toJson()).toList()
-              : [],
+          'metafields': _withReviewMetafields(metafields),
         },
         fetchPolicy: ShopifyConfig.fetchPolicy,
       );
@@ -404,9 +402,7 @@ class ShopifyStore with ShopifyError {
         'x': x,
         'n': n,
         'country': ShopifyLocalization.countryCode,
-        'productMetafields': productMetafields != null
-            ? productMetafields.map((e) => e.toJson()).toList()
-            : [],
+        'productMetafields': _withReviewMetafields(productMetafields),
         'collectionMetafields': collectionMetafields != null
             ? collectionMetafields.map((e) => e.toJson()).toList()
             : [],
@@ -442,9 +438,7 @@ class ShopifyStore with ShopifyError {
           'cursor': cursor,
           'sortKey': sortKeyProductCollection.parseToString(),
           'country': ShopifyLocalization.countryCode,
-          'metafields': metafields != null
-              ? metafields.map((e) => e.toJson()).toList()
-              : [],
+          'metafields': _withReviewMetafields(metafields),
         },
         fetchPolicy: ShopifyConfig.fetchPolicy,
       );
@@ -545,9 +539,7 @@ class ShopifyStore with ShopifyError {
         'reverse': reverse,
         'filters': filters ?? const [],
         'country': countryCode,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
+        'metafields': _withReviewMetafields(metafields),
       },
       // noCache: facet counts must reflect THIS query. cacheAndNetwork returns
       // a stale eager (previous-query) result, so counts lag one search.
@@ -613,9 +605,7 @@ class ShopifyStore with ShopifyError {
         'sellingPlansFirst': sellingPlansFirst,
         'includeMedia': includeMedia,
         'includeSellingPlans': includeSellingPlans,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
+        'metafields': _withReviewMetafields(metafields),
       },
       // noCache: facet counts must reflect THIS query. cacheAndNetwork returns
       // a stale eager (previous-query) result, so counts lag one search.
@@ -708,9 +698,7 @@ class ShopifyStore with ShopifyError {
           'query': query,
           'reverse': reverse,
           'country': ShopifyLocalization.countryCode,
-          'metafields': metafields != null
-              ? metafields.map((e) => e.toJson()).toList()
-              : [],
+          'metafields': _withReviewMetafields(metafields),
         },
         fetchPolicy: ShopifyConfig.fetchPolicy,
       );
@@ -745,9 +733,7 @@ class ShopifyStore with ShopifyError {
         'query': query,
         'reverse': reverse,
         'country': ShopifyLocalization.countryCode,
-        'metafields': metafields != null
-            ? metafields.map((e) => e.toJson()).toList()
-            : [],
+        'metafields': _withReviewMetafields(metafields),
       },
       fetchPolicy: ShopifyConfig.fetchPolicy,
     );

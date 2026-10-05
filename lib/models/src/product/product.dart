@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:shopify_flutter/models/src/product/metafield/metafield.dart';
@@ -109,6 +110,30 @@ abstract class Product with _$Product {
   /// It is useful to show the currency code of the product in the product list
   String get currencyCode =>
       productVariants.isEmpty ? '' : productVariants.first.price.currencyCode;
+
+  /// Average rating from the standard `reviews.rating` metafield (Judge.me),
+  /// a JSON like `{"value":"4.8","scale_max":"5.0"}`; 0 when absent.
+  double get reviewRating {
+    final raw = _metafieldValue('reviews', 'rating');
+    if (raw == null || raw.isEmpty) return 0;
+    try {
+      final json = jsonDecode(raw) as Map<String, dynamic>;
+      return double.tryParse('${json['value']}') ?? 0;
+    } catch (_) {
+      return 0;
+    }
+  }
+
+  /// Review count from the standard `reviews.rating_count` metafield, or 0.
+  int get reviewCount =>
+      int.tryParse(_metafieldValue('reviews', 'rating_count') ?? '') ?? 0;
+
+  String? _metafieldValue(String namespace, String key) {
+    for (final m in metafields) {
+      if (m.namespace == namespace && m.key == key) return m.value;
+    }
+    return null;
+  }
 
   /// Checks if the product is available for sale by checking its variants availability and quantity
   bool get isAvailableForSale {
