@@ -628,11 +628,15 @@ class ShopifyStore with ShopifyError {
   ///
   /// Never cached: the payload carries no `id`, so a normalised cache cannot
   /// store it and a cached round trip reads back as null.
+  ///
+  /// [searchableFields] narrows matching, e.g. `[VARIANTS_BARCODE]` for a
+  /// scanned barcode; null keeps Shopify's defaults.
   Future<PredictiveSearchResult> predictiveSearch(
     String query, {
     int limit = 5,
     List<PredictiveSearchType> types = PredictiveSearchType.values,
     SearchUnavailableProductsType? unavailableProducts,
+    List<SearchableField>? searchableFields,
     String? countryCode,
   }) async {
     final WatchQueryOptions _options = WatchQueryOptions(
@@ -642,6 +646,8 @@ class ShopifyStore with ShopifyError {
         'limit': limit,
         'types': types.map((e) => e.parseToString()).toList(),
         'unavailableProducts': unavailableProducts?.parseToString(),
+        'searchableFields':
+            searchableFields?.map((e) => e.parseToString()).toList(),
         'country': countryCode,
       },
       fetchPolicy: FetchPolicy.noCache,

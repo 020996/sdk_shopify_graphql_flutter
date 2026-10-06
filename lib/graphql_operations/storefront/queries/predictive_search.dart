@@ -12,8 +12,8 @@
 /// query when a selected field is out of scope, so selecting them on a token
 /// without it would cost every other suggestion too.
 const String getPredictiveSearch = r'''
-query($query: String!, $limit: Int, $types: [PredictiveSearchType!], $unavailableProducts: SearchUnavailableProductsType, $country: CountryCode) @inContext(country: $country){
-  predictiveSearch(query: $query, limit: $limit, limitScope: EACH, types: $types, unavailableProducts: $unavailableProducts){
+query($query: String!, $limit: Int, $types: [PredictiveSearchType!], $unavailableProducts: SearchUnavailableProductsType, $searchableFields: [SearchableField!], $country: CountryCode) @inContext(country: $country){
+  predictiveSearch(query: $query, limit: $limit, limitScope: EACH, types: $types, unavailableProducts: $unavailableProducts, searchableFields: $searchableFields){
     queries {
       text
       styledText

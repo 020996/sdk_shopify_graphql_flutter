@@ -8,5 +8,6 @@ export 'src/sort_key_product_collection.dart';
 export 'src/sort_key_product_search.dart';
 export 'src/payment_token_type.dart';
 export 'src/predictive_search_type.dart';
+export 'src/searchable_field.dart';
 export 'src/search_prefix_query_type.dart';
 export 'src/search_unavailable_products_type.dart';
