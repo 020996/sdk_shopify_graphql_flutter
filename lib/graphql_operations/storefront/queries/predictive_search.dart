@@ -83,3 +83,70 @@ query($query: String!, $unavailableProducts: SearchUnavailableProductsType, $cou
   }
 }
 ''';
+
+/// Type-ahead through `search` + `collections`, for buyer locales
+/// `predictiveSearch` does not serve (it answers nothing for ar, he, zh…).
+///
+/// Same product and collection selection as [getPredictiveSearch], so the
+/// result parses into the same [PredictiveSearchResult]. No suggested terms:
+/// only `predictiveSearch` produces those.
+const String getSearchSuggestions = r'''
+query($query: String!, $collectionQuery: String!, $limit: Int!, $withProducts: Boolean!, $withCollections: Boolean!, $unavailableProducts: SearchUnavailableProductsType, $country: CountryCode, $language: LanguageCode) @inContext(country: $country, language: $language){
+  search(query: $query, first: $limit, prefix: LAST, types: PRODUCT, unavailableProducts: $unavailableProducts) @include(if: $withProducts){
+    nodes {
+      ... on Product {
+        id
+        title
+        handle
+        availableForSale
+        createdAt
+        vendor
+        productType
+        images(first: 1) {
+          edges {
+            node {
+              altText
+              id
+              originalSrc
+            }
+          }
+        }
+        variants(first: 1) {
+          edges {
+            node {
+              id
+              title
+              availableForSale
+              requiresShipping
+              quantityAvailable
+              weight
+              weightUnit
+              priceV2 {
+                amount
+                currencyCode
+              }
+              compareAtPriceV2 {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  collections(first: $limit, query: $collectionQuery) @include(if: $withCollections){
+    nodes {
+      id
+      title
+      handle
+      description
+      image {
+        altText
+        id
+        originalSrc
+      }
+    }
+  }
+}
+''';

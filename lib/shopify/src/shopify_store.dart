@@ -657,6 +657,43 @@ class ShopifyStore with ShopifyError {
     return PredictiveSearchResult.fromGraphJson(result.data ?? const {});
   }
 
+  /// Type-ahead via `search` + `collections` for locales [predictiveSearch]
+  /// does not serve. [languageCode] like `ar` or `pt-BR`.
+  Future<PredictiveSearchResult> searchSuggestions(
+    String query, {
+    int limit = 5,
+    bool withProducts = true,
+    bool withCollections = true,
+    SearchUnavailableProductsType? unavailableProducts,
+    String? countryCode,
+    String? languageCode,
+  }) async {
+    if (!withProducts && !withCollections) return PredictiveSearchResult();
+    final WatchQueryOptions _options = WatchQueryOptions(
+      document: gql(getSearchSuggestions),
+      variables: {
+        'query': query,
+        'collectionQuery': 'title:${query.replaceAll('"', '')}*',
+        'limit': limit,
+        'withProducts': withProducts,
+        'withCollections': withCollections,
+        'unavailableProducts': unavailableProducts?.parseToString(),
+        'country': countryCode,
+        'language': languageCode?.toUpperCase().replaceAll('-', '_'),
+      },
+      fetchPolicy: FetchPolicy.noCache,
+    );
+    final QueryResult result = await _graphQLClient!.query(_options);
+    checkForError(result);
+    final data = result.data ?? const {};
+    return PredictiveSearchResult.fromGraphJson({
+      'predictiveSearch': {
+        'products': data['search']?['nodes'],
+        'collections': data['collections']?['nodes'],
+      },
+    });
+  }
+
   /// How many products match [query], with no product payload attached.
   ///
   /// Null when the answer did not come back — callers must not read that as
