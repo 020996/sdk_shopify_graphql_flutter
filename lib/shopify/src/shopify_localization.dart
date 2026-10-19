@@ -51,6 +51,10 @@ class ShopifyLocalization with ShopifyError {
     final localization = Localization.fromJson(
         (result.data ?? const {})["localization"] ?? {});
 
+    final shop = (result.data ?? const {})["shop"];
+    JsonHelper.shopMoneyFormat = shop?["moneyFormat"];
+    JsonHelper.shopCurrencyCode = shop?["paymentSettings"]?["currencyCode"];
+
     // Cache Shopify's own currency symbols so price formatting prefers them
     // over the offline table. See [JsonHelper.chooseRightOrderOnCurrencySymbol].
     for (final country in localization.availableCountries) {

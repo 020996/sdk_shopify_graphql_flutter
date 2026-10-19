@@ -3,6 +3,12 @@
 const String getLocalizationQuery = r'''
 query getCountriesAndCurrencies($country: CountryCode, $language: LanguageCode)
 @inContext(country: $country, language: $language) {
+  shop {
+    moneyFormat
+    paymentSettings {
+      currencyCode
+    }
+  }
   localization {
     availableLanguages {
       isoCode

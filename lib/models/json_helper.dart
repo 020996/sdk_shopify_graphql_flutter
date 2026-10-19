@@ -59,6 +59,16 @@ class JsonHelper {
   /// intl's offline table. Empty until a localization query has run.
   static final Map<String, String> onlineCurrencySymbols = {};
 
+  /// Shop's own money format (`shop.moneyFormat`, e.g. "LE {{amount}}"), applied
+  /// to its base currency only. Populated by [ShopifyLocalization.getLocalization].
+  static String? shopMoneyFormat;
+
+  /// ISO code of the shop's base currency (`shop.paymentSettings.currencyCode`).
+  static String? shopCurrencyCode;
+
+  /// The `{{amount...}}` placeholder of a Shopify money format.
+  static final RegExp _amountPlaceholder = RegExp(r'\{\{\s*(amount\w*)\s*\}\}');
+
   /// Matches a symbol ending in a Latin letter (e.g. "USh", "Rp", "CHF") —
   /// those take a space before the amount, unlike a sign such as "$" or "€".
   static final RegExp _wordSymbol = RegExp(r'[A-Za-z]$');
@@ -108,6 +118,14 @@ class JsonHelper {
     final digits = _currencyDecimals[currencyCode];
     final loc = _safeLocale(locale) ?? 'en';
 
+    final shopFormat = shopMoneyFormat;
+    if (useSymbol && shopFormat != null && currencyCode == shopCurrencyCode) {
+      final formatted = _applyMoneyFormat(shopFormat, value);
+      if (formatted != null) {
+        return formatted;
+      }
+    }
+
     // An RTL symbol (e.g. IQD) is a strong RTL run, so in an LTR UI the bidi
     // algorithm reverses it on screen. Format the number alone (Latin), then
     // append the token: an RTL symbol wrapped in a Left-to-Right Override
@@ -136,5 +154,34 @@ class JsonHelper {
       locale: loc,
       decimalDigits: digits,
     ).format(value).trim();
+  }
+
+  /// Renders [value] into a Shopify money format (each `{{amount_*}}` variant
+  /// has its own separators, spaces made non-breaking); null if no placeholder.
+  // ponytail: tags stripped, HTML entities (e.g. "&#36;") not decoded — add if a shop uses them.
+  static String? _applyMoneyFormat(String format, double value) {
+    final text = format.replaceAll(RegExp(r'<[^>]*>'), '').trim();
+    final match = _amountPlaceholder.firstMatch(text);
+    if (match == null) {
+      return null;
+    }
+    final key = match.group(1)!;
+    final number =
+        NumberFormat(key.contains('no_decimals') ? '#,##0' : '#,##0.00', 'en')
+            .format(value);
+    final (group, decimal) = switch (key.replaceFirst('_no_decimals', '')) {
+      'amount_with_comma_separator' => ('.', ','),
+      'amount_with_space_separator' => ('\u00A0', ','),
+      'amount_with_apostrophe_separator' => ("'", '.'),
+      'amount_with_period_and_space_separator' => ('\u00A0', '.'),
+      _ => (',', '.'),
+    };
+    final amount = number
+        .split('')
+        .map((c) => c == ',' ? group : (c == '.' ? decimal : c))
+        .join();
+    return text
+        .replaceRange(match.start, match.end, amount)
+        .replaceAll(' ', '\u00A0');
   }
 }
