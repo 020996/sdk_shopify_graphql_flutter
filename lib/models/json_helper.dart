@@ -120,7 +120,10 @@ class JsonHelper {
 
     final shopFormat = shopMoneyFormat;
     if (useSymbol && shopFormat != null && currencyCode == shopCurrencyCode) {
-      final formatted = _applyMoneyFormat(shopFormat, value);
+      // Only 3-decimal currencies (IQD/KWD...) differ from 2: verified Shopify
+      // renders IQD 12.0 as "12,000". 0-decimal ones keep the old behavior.
+      final formatted = _applyMoneyFormat(
+          shopFormat, value, (digits ?? 0) > 2 ? digits! : 2);
       if (formatted != null) {
         return formatted;
       }
@@ -159,16 +162,15 @@ class JsonHelper {
   /// Renders [value] into a Shopify money format (each `{{amount_*}}` variant
   /// has its own separators, spaces made non-breaking); null if no placeholder.
   // ponytail: tags stripped, HTML entities (e.g. "&#36;") not decoded — add if a shop uses them.
-  static String? _applyMoneyFormat(String format, double value) {
+  static String? _applyMoneyFormat(String format, double value, int digits) {
     final text = format.replaceAll(RegExp(r'<[^>]*>'), '').trim();
     final match = _amountPlaceholder.firstMatch(text);
     if (match == null) {
       return null;
     }
     final key = match.group(1)!;
-    final number =
-        NumberFormat(key.contains('no_decimals') ? '#,##0' : '#,##0.00', 'en')
-            .format(value);
+    final decimals = key.contains('no_decimals') ? '' : '.${'0' * digits}';
+    final number = NumberFormat('#,##0$decimals', 'en').format(value);
     final (group, decimal) = switch (key.replaceFirst('_no_decimals', '')) {
       'amount_with_comma_separator' => ('.', ','),
       'amount_with_space_separator' => ('\u00A0', ','),
