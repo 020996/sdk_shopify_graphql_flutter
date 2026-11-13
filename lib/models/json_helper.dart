@@ -59,6 +59,119 @@ class JsonHelper {
   /// intl's offline table. Empty until a localization query has run.
   static final Map<String, String> onlineCurrencySymbols = {};
 
+  /// Online Store `money_format` per presentment currency (measured live on a
+  /// storefront, 2026-11); the shop's own format still wins for its base currency.
+  static const Map<String, String> _presentmentMoneyFormats = {
+    'AED': r'Dhs. {{amount}}',
+    'AFN': r'{{amount}}؋',
+    'ALL': r'Lek {{amount}}',
+    'AMD': r'{{amount}} AMD',
+    'ANG': r'ƒ{{amount}}',
+    'AUD': r'${{amount}}',
+    'AWG': r'Afl{{amount}}',
+    'AZN': r'm.{{amount}}',
+    'BAM': r'KM {{amount_with_comma_separator}}',
+    'BBD': r'${{amount}}',
+    'BDT': r'Tk {{amount}}',
+    'BIF': r'FBu. {{amount}}',
+    'BND': r'${{amount}}',
+    'BOB': r'Bs{{amount_with_comma_separator}}',
+    'BSD': r'BS${{amount}}',
+    'BWP': r'P{{amount}}',
+    'BZD': r'BZ${{amount}}',
+    'CAD': r'${{amount}}',
+    'CDF': r'FC{{amount}}',
+    'CHF': r'CHF {{amount}}',
+    'CNY': r'¥{{amount}}',
+    'CRC': r'₡ {{amount_with_comma_separator}}',
+    'CVE': r'{{amount_with_space_separator}}$',
+    'CZK': r'{{amount_with_comma_separator}} Kč',
+    'DJF': r'{{amount_with_comma_separator}} Fdj',
+    'DKK': r'{{amount_with_comma_separator}} kr',
+    'DOP': r'RD$ {{amount}}',
+    'DZD': r'DA {{amount}}',
+    'EGP': r'LE {{amount}}',
+    'ETB': r'Br{{amount}}',
+    'EUR': r'€{{amount_with_comma_separator}}',
+    'FJD': r'${{amount}}',
+    'FKP': r'£{{amount}}',
+    'GBP': r'£{{amount}}',
+    'GMD': r'D {{amount}}',
+    'GNF': r'FG {{amount}}',
+    'GTQ': r'Q{{amount}}',
+    'GYD': r'G${{amount}}',
+    'HKD': r'${{amount}}',
+    'HNL': r'L {{amount}}',
+    'HUF': r'{{amount_no_decimals_with_comma_separator}} Ft',
+    'IDR': r'Rp {{amount_with_comma_separator}}',
+    'ILS': r'{{amount}} NIS',
+    'INR': r'Rs. {{amount}}',
+    'ISK': r'{{amount_no_decimals}} kr',
+    'JMD': r'${{amount}}',
+    'JPY': r'¥{{amount_no_decimals}}',
+    'KES': r'KSh{{amount}}',
+    'KGS': r'лв{{amount}}',
+    'KHR': r'KHR{{amount}}',
+    'KMF': r'{{amount_with_comma_separator}} CF',
+    'KRW': r'₩{{amount_no_decimals}}',
+    'KYD': r'${{amount}}',
+    'KZT': r'₸{{amount}}',
+    'LAK': r'₭{{amount}}',
+    'LBP': r'L£{{amount}}',
+    'LKR': r'Rs {{amount}}',
+    'MAD': r'{{amount}} dh',
+    'MDL': r'{{amount}} L',
+    'MKD': r'ден {{amount}}',
+    'MMK': r'K{{amount}}',
+    'MNT': r'{{amount_no_decimals}} ₮',
+    'MOP': r'MOP${{amount}}',
+    'MUR': r'Rs {{amount}}',
+    'MVR': r'Rf{{amount}}',
+    'MWK': r'Mk{{amount}}',
+    'MYR': r'RM{{amount}} MYR',
+    'NAD': r'N${{amount}}',
+    'NGN': r'₦{{amount}}',
+    'NIO': r'C${{amount}}',
+    'NPR': r'Rs{{amount}}',
+    'NZD': r'${{amount}}',
+    'PEN': r'S/. {{amount}}',
+    'PGK': r'K {{amount}}',
+    'PHP': r'₱{{amount}}',
+    'PKR': r'Rs.{{amount}}',
+    'PLN': r'{{amount_with_comma_separator}} zł',
+    'PYG': r'Gs. {{amount_no_decimals_with_comma_separator}}',
+    'QAR': r'QAR {{amount_with_comma_separator}}',
+    'RON': r'{{amount_with_comma_separator}} lei',
+    'RSD': r'{{amount}} RSD',
+    'RWF': r'{{amount_no_decimals}} RF',
+    'SAR': r'{{amount}} SR',
+    'SBD': r'${{amount}}',
+    'SEK': r'{{amount_with_space_separator}} kr',
+    'SGD': r'${{amount}}',
+    'SHP': r'£{{amount}}',
+    'SLL': r'Le {{amount}}',
+    'STD': r'Db {{amount}}',
+    'THB': r'{{amount}} ฿',
+    'TJS': r'TJS {{amount}}',
+    'TOP': r'${{amount}}',
+    'TTD': r'${{amount}}',
+    'TWD': r'${{amount}}',
+    'TZS': r'{{amount}} TZS',
+    'UAH': r'₴{{amount}}',
+    'UGX': r'Ush {{amount_no_decimals}}',
+    'USD': r'${{amount}}',
+    'UYU': r'${{amount_with_comma_separator}}',
+    'UZS': r'{{amount_no_decimals_with_space_separator}} som',
+    'VND': r'{{amount_no_decimals_with_comma_separator}}₫',
+    'VUV': r'${{amount}}',
+    'WST': r'WS$ {{amount}}',
+    'XAF': r'FCFA{{amount}}',
+    'XCD': r'${{amount}}',
+    'XOF': r'CFA{{amount}}',
+    'XPF': r'{{amount_no_decimals_with_space_separator}} XPF',
+    'YER': r'{{amount_with_comma_separator}} YER',
+  };
+
   /// Shop's own money format (`shop.moneyFormat`, e.g. "LE {{amount}}"), applied
   /// to its base currency only. Populated by [ShopifyLocalization.getLocalization].
   static String? shopMoneyFormat;
@@ -118,8 +231,12 @@ class JsonHelper {
     final digits = _currencyDecimals[currencyCode];
     final loc = _safeLocale(locale) ?? 'en';
 
-    final shopFormat = shopMoneyFormat;
-    if (useSymbol && shopFormat != null && currencyCode == shopCurrencyCode) {
+    // Same text as the web: shop format for the base currency, else Shopify's
+    // per-currency format; unknown currencies fall through to intl below.
+    final shopFormat =
+        (currencyCode == shopCurrencyCode ? shopMoneyFormat : null) ??
+            _presentmentMoneyFormats[currencyCode];
+    if (useSymbol && shopFormat != null) {
       // Only 3-decimal currencies (IQD/KWD...) differ from 2: verified Shopify
       // renders IQD 12.0 as "12,000". 0-decimal ones keep the old behavior.
       final formatted = _applyMoneyFormat(

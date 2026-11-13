@@ -5,9 +5,10 @@ void main() {
   test('word-like symbol is spaced from the amount, a sign is not', () {
     JsonHelper.onlineCurrencySymbols['UGX'] = 'USh';
     // Non-breaking space, so the price never wraps between symbol and amount.
+    // UGX follows the Online Store format "Ush {{amount_no_decimals}}".
     expect(
       JsonHelper.chooseRightOrderOnCurrencySymbol(50000.0, 'UGX'),
-      'USh 50,000',
+      'Ush 50,000',
     );
 
     JsonHelper.onlineCurrencySymbols['USD'] = r'$';
@@ -47,5 +48,18 @@ void main() {
 
     JsonHelper.shopMoneyFormat = null;
     JsonHelper.shopCurrencyCode = null;
+  });
+
+  test('presentment currency uses the Online Store money format', () {
+    // Storefront API sends a bare "$" for BSD; the web shows "BS$".
+    JsonHelper.onlineCurrencySymbols['BSD'] = r'$';
+    expect(
+      JsonHelper.chooseRightOrderOnCurrencySymbol(37.0, 'BSD'),
+      r'BS$37.00',
+    );
+    expect(
+      JsonHelper.chooseRightOrderOnCurrencySymbol(1234.5, 'EUR'),
+      '€1.234,50',
+    );
   });
 }
