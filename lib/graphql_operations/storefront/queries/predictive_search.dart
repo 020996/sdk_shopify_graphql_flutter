@@ -2,6 +2,8 @@
 ///
 /// Shopify matches prefixes here by design, so there is no `prefix` argument.
 ///
+/// Products also carry the app view count metafield ([Product.viewCount]).
+///
 /// Products and collections select what `Product.fromGraphJson` and
 /// `Collection.fromGraphJson` read, so a suggestion is the same model the rest
 /// of the package hands back — a row can show its image and price, and a tap
@@ -22,6 +24,13 @@ query($query: String!, $limit: Int, $types: [PredictiveSearchType!], $unavailabl
       id
       title
       handle
+      metafields(identifiers: [{namespace: "mobile_app_builder", key: "view_count"}]) {
+        id
+        type
+        key
+        namespace
+        value
+      }
       availableForSale
       createdAt
       vendor
@@ -98,6 +107,13 @@ query($query: String!, $collectionQuery: String!, $limit: Int!, $withProducts: B
         id
         title
         handle
+        metafields(identifiers: [{namespace: "mobile_app_builder", key: "view_count"}]) {
+          id
+          type
+          key
+          namespace
+          value
+        }
         availableForSale
         createdAt
         vendor

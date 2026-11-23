@@ -122,6 +122,33 @@ void main() {
     expect(product.price, 100.0);
   });
 
+  test('a suggestion carries the app view count; null when not opted in', () {
+    Product suggestion(dynamic metafield) =>
+        PredictiveSearchResult.fromGraphJson({
+          'predictiveSearch': {
+            'products': [
+              {
+                'id': 'gid://shopify/Product/1',
+                'title': 'Body oil',
+                'metafields': [metafield],
+              },
+            ],
+          },
+        }).products.single;
+
+    expect(
+      suggestion({
+        'id': 'gid://shopify/Metafield/1',
+        'namespace': 'mobile_app_builder',
+        'key': 'view_count',
+        'type': 'number_integer',
+        'value': '42',
+      }).viewCount,
+      42,
+    );
+    expect(suggestion(null).viewCount, 0);
+  });
+
   test('a shape that is not a predictive payload is empty, not an error', () {
     expect(PredictiveSearchResult.fromGraphJson(const {}).isEmpty, isTrue);
     expect(
