@@ -128,6 +128,12 @@ abstract class Product with _$Product {
   int get reviewCount =>
       int.tryParse(_metafieldValue('reviews', 'rating_count') ?? '') ?? 0;
 
+  /// App sessions that opened this product, synced by notify-service into
+  /// `mobile_app_builder.view_count` for opted-in shops only; 0 when absent.
+  int get viewCount =>
+      int.tryParse(_metafieldValue('mobile_app_builder', 'view_count') ?? '') ??
+      0;
+
   String? _metafieldValue(String namespace, String key) {
     for (final m in metafields) {
       if (m.namespace == namespace && m.key == key) return m.value;

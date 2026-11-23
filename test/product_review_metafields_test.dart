@@ -16,8 +16,9 @@ Product _product(List<Map<String, dynamic>?> metafields) =>
       ],
     }).productList.first;
 
-Map<String, dynamic> _mf(String key, String value) =>
-    {'id': key, 'namespace': 'reviews', 'key': key, 'value': value, 'type': ''};
+Map<String, dynamic> _mf(String key, String value,
+        {String namespace = 'reviews'}) =>
+    {'id': key, 'namespace': namespace, 'key': key, 'value': value, 'type': ''};
 
 void main() {
   test('reads Judge.me rating and count', () {
@@ -33,5 +34,15 @@ void main() {
     expect(_product([null, null]).reviewCount, 0);
     expect(_product([null, null]).reviewRating, 0);
     expect(_product([_mf('rating', 'not json')]).reviewRating, 0);
+  });
+
+  test('reads app view count, 0 when the shop is not opted in', () {
+    final p = _product([
+      _mf('view_count', '1234', namespace: 'mobile_app_builder'),
+    ]);
+    expect(p.viewCount, 1234);
+    expect(_product([null]).viewCount, 0);
+    // Same key under another namespace must not leak in.
+    expect(_product([_mf('view_count', '9')]).viewCount, 0);
   });
 }

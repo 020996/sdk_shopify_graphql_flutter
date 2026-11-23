@@ -43,13 +43,15 @@ class ShopifyStore with ShopifyError {
   GraphQLClient? get _graphQLClient => ShopifyConfig.graphQLClient;
 
   /// Product metafield identifiers plus the standard review ones Judge.me
-  /// writes, so every product list carries rating + count (see [Product.reviewRating]).
+  /// writes and the app view count, so every product list carries them
+  /// (see [Product.reviewRating], [Product.viewCount]).
   static List<Map<String, dynamic>> _withReviewMetafields(
           List<MetafieldIdentifier>? metafields) =>
       [
         ...?metafields,
         MetafieldIdentifier(namespace: 'reviews', key: 'rating'),
         MetafieldIdentifier(namespace: 'reviews', key: 'rating_count'),
+        MetafieldIdentifier(namespace: 'mobile_app_builder', key: 'view_count'),
       ].map((e) => e.toJson()).toList();
 
   /// Returns a List of [Product].
